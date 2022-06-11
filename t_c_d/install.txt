@@ -1,0 +1,5 @@
+charset,Shift_JIS
+type,balloon
+name,The Cassini Division
+directory,t_c_d
+refresh,0

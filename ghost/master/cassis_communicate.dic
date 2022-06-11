@@ -1,0 +1,2252 @@
+///////// 文　ゴーストテンプレート
+///////// コミュニケート辞書
+///////// written by umeici.
+
+//**** こちらから話しかける *************************************************************
+StartCommunicate
+{
+	//---- まず話しかける相手を決める
+	if ghostexcount > 0
+	{
+		// res_reference[0] に話しかける相手の名前を格納
+//		res_reference[0] = ghostexlist[RAND(ghostexcount)]
+		if "オフィーリア" _in_ ghostexlist
+		{
+			res_reference[0] = "オフィーリア"
+		}
+		elseif "リーライナ" _in_ ghostexlist
+		{
+			res_reference[0] = "リーライナ"
+		}
+		/*
+		elseif "エインスル" _in_ ghostexlist
+		{
+			res_reference[0] = "エインスル"
+		}
+		*/
+	}
+	else
+	{
+		RandomTalk
+	}
+	//---- 話しかける
+	case res_reference[0]{
+		when "オフィーリア"{
+			comCassisandOphelia0
+		}when "リーライナ"{
+			comCassisandLyraina0
+		}
+		/*
+		when "エインスル"{
+			comCassisandAinsel0
+		}
+		*/
+		others{
+//			res_reference[0] == ""
+			RandomTalk
+		}
+	}
+}
+
+//**** 話しかけられたので返事する *******************************************************
+
+//---- OnCommunicateイベント ------------------------------------------------------------
+OnCommunicate
+{
+	if reference[0] == "user" || reference[0] == "User"
+	{
+		//---- ユーザーからの話しかけ
+		ReplyToUser
+	}
+	else
+	{
+		if "comCassisandLyraina" _in_ reference[2]	//---- カシスとリーライナ嬢
+		{
+			EVAL("%reference[2]")
+		}
+		elseif "comCassisandOphelia" _in_ reference[2]	//---- カシスとオフィーリア
+		{
+			EVAL("%reference[2]")
+		}
+		else						//---- 無ければ通常コミュへ
+		{
+			//---- ゴーストからの話しかけ
+			ReplyToGhost
+		}
+	}
+}
+
+//---- ユーザーからの話しかけ -----------------------------------------------------------
+ReplyToUser
+{
+	if "名前" _in_ reference[1] && "覚えて" _in_ reference[1]
+	{
+		//---- ユーザー名入力開始
+		comNamaeOboete
+	}
+	else
+	{
+		//---- ユーザー名入力開始以外
+		if teachusername == 1
+		{
+			//---- 直前が「名前覚えて」だったので名前を覚える
+			username = reference[1]
+			"\1\s[10]\0\s[0]%username、ね。\e"
+			teachusername = 0
+		}
+		else
+		{
+			//---- 名前覚え以外のさまざまな会話への返事
+			TalkToUser
+		}
+	}
+}
+
+//---- ユーザーへの返事（名前覚え以外） -------------------------------------------------
+TalkToUser
+{
+	if "こんにちは" _in_ reference[1]
+	{
+		comKonnichiha
+	}
+	elseif "こんばんは" _in_ reference[1]
+	{
+		comKonbanha
+	}
+	elseif "おはよう" _in_ reference[1]
+	{
+		comOhayo
+	}
+	elseif "好き" _in_ reference[1] || "愛し" _in_ reference[1]
+	{
+		comLove
+	}
+	elseif "カシス" _in_ reference[1]
+	{
+		comCassis
+	}
+	elseif "ありがと" _in_ reference[1]
+	{
+		comArigato
+	}
+	elseif "ごめん" _in_ reference[1]
+	{
+		comGomen
+	}
+	elseif "ただいま" _in_ reference[1]
+	{
+		comTadaima
+	}
+	elseif "かわいい" _in_ reference[1]
+	{
+		comKawaii
+	}
+	elseif "ツンデレ" _in_ reference[1]
+	{
+		comTsundere
+	}
+	elseif "スタンプ" _in_ reference[1]
+	{
+		comStamp
+	}
+	elseif "照れ屋" _in_ reference[1]
+	{
+		comTereya
+	}
+	elseif "撫でて" _in_ reference[1] || "なでて" _in_reference[1]
+	{
+		comNadete
+	}
+	elseif "抱きしめる" _in_ reference[1] || "抱き締める" _in_ reference[1]
+	{
+		comDakishimeru
+	}
+	elseif "応援して" _in_ reference[1]
+	{
+		comOenshite
+	}
+	elseif "おやすみ" _in_ reference[1]
+	{
+		comOyasumi
+	}
+	elseif "結婚" _in_ reference[1] && "して" _in_ reference[1]
+	{
+		comKekon
+	}
+	elseif "Twitter" _in_ reference[1]
+	{
+		comTwitter
+	}
+	elseif "いってきます" _in_ reference[1] || "いってくるよ" _in_reference[1] || "行ってきます" _in_ reference[1] || "行って来ます" _in_ reference[1]
+	{
+		comBye
+	}
+	elseif "about:talk" _in_ reference[1]
+	{
+		comSumTalk
+	}
+	elseif "一緒に寝よう" _in_ reference[1] && flgComOyasumiOther == 1
+	{
+		resComOyasumiOther
+	}
+	elseif "質問" _in_reference[1] || "尋ねたい" _in_ reference[1]
+	{
+		menuCommand
+	}
+	elseif "おなか減った" _in_ reference[1] || "お腹空いた" _in_ reference[1] || "何か食べたい" _in_ reference[1]	
+	{
+		comFood
+	}
+	elseif "ごちそうさま" _in_ reference[1] || "ご馳走様" _in_ reference[1]
+	{
+		comGochisosama
+	}
+	elseif "誕生日おめでとう" _in_ reference[1]
+	{
+		comBirthday
+	}
+	elseif "誕生日はいつ" _in_ reference[1] || "誕生日教えて" _in_ reference[1]
+	{
+		comWhenBirthday
+	}
+	elseif ("下着見せて" _in_ reference[1] || "パンツ見せて" _in_ reference[1]) && (shellname == "月白" || shellname == "Gemini")
+	{
+		if shellname == "月白" {
+			menuTukisiroTuckup
+		}
+		elseif shellname == "Gemini" {
+			menuGeminiTuckup
+		}
+	}
+	elseif ("服を着て" _in_ reference[1] || "服着て" _in_ reference[1]) && (shellname == "Gemini")
+	{
+		if shellname == "Gemini" {
+			menuGeminiDress
+		}
+	}
+	elseif ("スカートを下ろして" _in_ reference[1] || "満足した" _in_ reference[1]) && (shellname == "月白")
+	{
+		menuTukisiroTuckdown
+	}
+	elseif ("ポッキーゲーム" _in_ reference[1]) && (cntHead > likelimit)
+	{
+		comPockeyGame
+	}
+	elseif "膝枕" _in_ reference[1] && (Osuwari == 1 || Osuwari == 2)
+	{
+		comHizamakura
+	}
+	else
+	{
+		"\1\s[10]\0\s[0]なんて言ったの?\e"
+		"\1\s[10]\0\s[6]わからないわ。\e"
+		"\1\s[10]\0\s[0]そう。\e"
+		"\1\s[10]\0\s[0]何かしら?\e"
+	}
+}
+
+//---- ゴーストからの話しかけ -----------------------------------------------------------
+ReplyToGhost
+{
+	// 話しかけてきた相手に返事
+	res_reference[0] = reference[0]
+
+	if res_reference[0] == "なる"
+	{
+		//---- 奈留へ返事
+		res_reference[0] = ""
+		"\1\s[10]\0\s0はい。\e"
+	}
+	elseif res_reference[0] == "さくら"
+	{
+		//---- さくらへ返事
+		if "うるさい" _in_ reference[1]
+		{
+			res_reference[0] = ""
+			"\1\s[10]\0\s0きつい言い方ね。\e"
+		}
+		elseif "こんにちは" _in_ reference[1]
+		{
+			"\1\s[10]\0\s0こんちは。\e"
+		}
+		elseif "また今度" _in_ reference[1]
+		{
+			res_reference[0] = ""
+			"\1\s[10]\0\s[0]次があれば、ね。\e"
+		}
+		else
+		{
+			"\1\s[10]\0\s0そういうもの?。\e"
+		}
+	}
+	elseif res_reference[0] == "Hand"
+	{
+		//---- Handへの返事
+		if "順番に撫でて" _in_ reference[1]
+		{
+			//順番に撫でてやる
+			res_reference[0] =""
+			"\1\s[10]\0\s[0]そういわれても、\w4待たないのが普通よ。\w9\-"
+		}
+		elseif "超必殺奥義" _in_ reference[1]
+		{
+			//超必殺奥義
+			res_reference[0] = ""
+			"\1\s[10]\0\s[6]無駄なことを\w4…\w4…。\w9\e"
+			res_reference[0] = "Hand"
+		}
+		elseif "今日は何色" _in_ reference[1]
+		{
+			//今日は何色
+			res_reference[0] = ""
+			"\1\s[10]\0\s[0]教えたらかなり間が抜けているわね。\w9\e"
+			res_reference[0] = "Hand"
+		}
+		elseif "撫でられたく" _in_ reference[1]
+		{
+			//撫でられたくなったか
+			res_reference[0] = ""
+			"\1\s[10]\0\s[7]そんなこと言った覚えはないわよっ\w9\e"
+			res_reference[0] = "Hand"
+		}
+		elseif "なんて遊ぶ俺だと" _in_ reference[1]
+		{
+			res_reference[0] = ""
+			"\1\s[10]\0\s[3]…\w4…。\w9\n\e"
+			res_reference[0] = "Hand"
+		}
+		//これより先ははんどたん仕様
+		elseif "すぐにさわるですよ" _in_ reference[1]
+		{
+			res_reference[0] = ""
+			"\1\s[10]\0\s[0]お断りさせてもらうわ。\w9\e"
+			res_reference[0] = "Hand"
+		}
+		elseif "きょうはなにいろなのですか～" _in_ reference[1]
+		{
+			res_reference[0] = ""
+			"\1\s[10]\0\s[0]し…\w4…\w4\s[6]何でも無いわ。\w9\e"
+			res_reference[0] = "Hand"
+		}
+		elseif "きょうはいっしょにさわりまくるです" _in_ reference[1]
+		{
+			res_reference[0] = ""
+			"\1\s[10]\0\s[7]誰が付き合うものですか。\w9\e"
+			res_reference[0] = "Hand"
+		}
+		elseif "ちちをさわるおててなのです" _in_ reference[1]
+		{
+			res_reference[0] = ""
+			"\1\s[10]\0\s[0]そのためだけにあるなら、\w4切り落とした方が良いわね。\w9\e"
+			res_reference[0] = "Hand"
+		}
+		elseif "なでられたくなったですか" _in_ reference[1]
+		{
+			res_reference[0] = ""
+			"\1\s[10]\0\s[6]誰がそんなこというのよ、\w4誰が。\w9\e"
+			res_reference[0] = "Hand"
+		}
+		elseif "あわてなくてもすぐにさわるです" _in_ reference[1]
+		{
+			res_reference[0] = ""
+			"\1\s[10]\0\s[0]…\w4…。\w9\n/
+			姿かたちを変えても本質は変わらないのね。\w9\e"
+			res_reference[0] = "Hand"
+		}
+		elseif "ますかきやめぱんつあげ" _in_ reference[1]
+		{
+			res_reference[0] = ""
+			"\1\s[10]\0\s[8]躊躇うぐらいなら言わなければ良いのに。\w9\e"
+			res_reference[0] = "Hand"
+		}
+		elseif "ほっくをはずすです" _in_ reference[1]
+		{
+			res_reference[0] = ""
+			"\1\s[10]\0\s[6]無駄な試みね…\w4…。\w9\e"
+			res_reference[0] = "Hand"
+		}
+		elseif "つまむのと、\w5もむのと、\w5なでるの" _in_ reference[1]
+		{
+			res_reference[0] = ""
+			"\1\s[10]\0\s[7]どれも嫌よっ\w9\e"
+			res_reference[0] = "Hand"
+		}
+		elseif "じゅんばんになでるですから" _in_ reference[1]
+		{
+			res_reference[0] = ""
+			"\1\s[10]\0\s[31]その見た目に騙されないわよっ\w9\e"
+			res_reference[0] = "Hand"
+		}
+	}
+	elseif res_reference[0] == "斗月"
+	{
+		if "あらよ" _in_ reference[1] || "生き埋め" _in_ reference[1] || "見切れ" _in_ reference[1]
+		{
+			res_reference[0] = ""
+			"\1\s[10]\0\s[6]はぁ。\w9\w5\e"
+		}
+	}
+	elseif res_reference[0] == "ＧＧＧ"
+	{
+		res_reference[0] = ""
+
+		"\1\s[10]\0\s[8]\e"
+		"\1\s[10]\0\s[8]帰ってもいいかしら?\e"
+		"\1\s[10]\0\s[0]何かと酷いことは言われ慣れてるけど、\w4ここまで無邪気なものは\w4…\w4…。\e"
+
+		if flgLove == 1 {
+			"\1\s[10]\0\s[0]…\w4…\w4%username、\w4どうさせたいの?\e"
+			"\1\s[10]\0\s[6]時々、\w4あなたの考えていることがわからなくなるわ\w4…\w4…。\e"
+		}
+	}
+}
+
+//--- ここから特殊コミュまとめ ---------------------------------------------
+//---- カシス嬢＆リーライナ
+comCassisandLyraina0{
+	res_reference[0] = "リーライナ"
+	res_reference[2] = 1
+	--
+	case RAND(5)
+	{
+		when 0
+		{
+			res_reference[1] = "comCassisandLyraina2"
+			"\1\s[10]\0\s[0]リーライナ、\w4あなたは随分と面白い存在のようだけど、\w4どう思っているの?\w9\e"
+		}
+		when 1
+		{
+			res_reference[1] = "comCassisandLyraina5"
+			"\1\s[10]\0\s[0]洗濯物を干そうと思った日に限って降るものね。\w9\n/
+			\s[6]この前は予報も外れて降られたわ\w4…\w4…。\w9\e"
+		}
+		when 2 
+		{
+			res_reference[1] = "comCassisandLyraina7"
+			"\1\s[10]\0\s[3]あぅ、\w4私としたことが\w4…\w4…。\w9\e"
+		}
+		when 3
+		{
+			res_reference[1] = "comCassisandLyraina10"
+			"\1\s[10]\0\s[0]思い返すと結構、\w4無理や無茶なことをやっているものね。\w9\n/
+			\s[6]数千のアンドロイドを同時に相手にしたり\w4…\w4…。\w9\e"
+		}
+		when 4
+		{
+			res_reference[1] = "comCassisandLyraina11"
+			"\1\s[10]\0\s[0]あなたには何か嫌いなモノがある?\w9\n/
+			\s[6]私はヒトが嫌いなの。\w9\e"
+		}
+	}
+}
+
+comCassisandLyraina1{
+	res_reference[0] = reference[0]		//---- 話し掛けてきた相手をコミュ投げの相手に設定。
+	res_reference[1] = reference[2]		//---- コミュ識別子を設定
+	res_reference[2] = TOINT(reference[3]) + 1	//---- トーク番号を加算
+
+	case res_reference[2]{	//---- トーク番号を見て分岐
+		when 2		//---- 最初にリーライナから「1」が飛んできて、↑で加算するので「2」
+		{
+			"\1\s[10]\0\s[0]記憶、\w4ね。\w0\nろくなこと覚えてないでも構わないならいいわよ。\e"
+		}
+		when 4
+		{
+			"\1\s[10]\0\s[6]FSとしての最初の記憶は色で言うなら赤だったわ。\w9\n戦いとそれに伴う痛み。\w9\n長い眠りから叩き起こされたようなものね。\e"
+		}
+		when 6
+		{
+			"\1\s[10]\0\s[0]あなたが謝ることは無いわ。\w9\n気にしていないもの。\w9\nもう一つは何かしら?\w9\e"
+		}
+		when 8
+		{
+			"\1\s[10]\0\s[0]ええ、\w4残ってないわ。\w9\n忘れていることすらわからないぐらいよ。\w9\e"
+		}
+		when 10
+		{
+			"\1\s[10]\0\s[0]リーライナ、\w4あなたの最初の記憶はどうだったの？\w9\e"
+		}
+		when 12
+		{
+			"\1\s[10]\0\s[6]普通に目覚めた、\w4ね。\w9\n\s[0]変わった目覚めよりは良いわ。\n\s[6]ヒトではないのにヒトの言葉を借りると厄介ね、\w4お互いに\w4…\w4…。\w9\e"
+		}
+		when 14
+		{
+			"\1\s[10]\0\s[0]確かにそうね。\w9\nでも、\w4それはあなたのように言葉を上手に扱える存在の台詞だわ。\w9\e"
+		}
+		when 16
+		{
+			"\s[0]ふふ、\w4ほんと、\w4言葉を扱うのが上手ね。\w9\w9\e"
+		}
+		others 		//---- 知らないトーク番号が来たら終了
+		{
+			res_reference[0] = ""
+			res_reference[1] = ""
+			res_reference[2] = ""
+		}
+	}
+}
+
+comCassisandLyraina2{
+	res_reference[0] = reference[0]		//---- 話し掛けてきた相手をコミュ投げの相手に設定。
+	res_reference[1] = reference[2]		//---- コミュ識別子を設定
+	res_reference[2] = TOINT(reference[3]) + 1	//---- トーク番号を加算
+
+	case res_reference[2]{
+		when 3
+		{
+			"\1\s[10]\0\s[0]そうね。\w9\n/
+			まずは種としてどう思っているのかしら?\w9\e"
+		}
+		when 5
+		{
+			"\1\s[10]\0\s[0]世界の一部、\w4世界そのものと考えて良いのかしら?\w9\n/
+			世界を内包したり、\w4世界を作ったりするのではなくて。\w9\e"
+		}
+		when 7
+		{
+			"\1\s[10]\0\s[2]それはすごいわね。\w9\n/
+			\s[0]素直に驚けるわ\w4…\w4…。\w9\e"
+		}
+		when 9
+		{
+			"\1\s[10]\0\s[0]あら、\w4生きているのはすごいことではないかしら。\w9\n/
+			世界を超えてまで存在しているならなおさらよ。\w9\e"
+		}
+		when 11
+		{
+			"\1\s[10]\0\s[0]それにあなたはこの世界に寄生しているのかしら?\w9\n/
+			寄生というのは一方的に搾取して使える言葉よ。\w9\n/
+			何かの形でプラスに働きかけているなら共生の間違いよ。\w9\e"
+		}
+		when 13
+		{
+			"\1\s[10]\0\s[0]何もしてないならこうやって聞いているあなたの声は何かしら?\w9\n/
+			あなたの話を聞いて楽しんでいる私は何かしら?\w9\n/
+			…\w4…\w4この世界から多くのものを貰って、\w4その分を別の形で還元している。\w9\n/
+			共生と言っても良いと思うの。\w9\e"
+		}
+		others 		//---- 知らないトーク番号が来たら終了
+		{
+			res_reference[0] = ""
+			res_reference[1] = ""
+			res_reference[2] = ""
+		}
+	}
+}
+
+comCassisandLyraina3{
+	res_reference[0] = reference[0]		//---- 話し掛けてきた相手をコミュ投げの相手に設定。
+	res_reference[1] = reference[2]		//---- コミュ識別子を設定
+	res_reference[2] = TOINT(reference[3]) + 1	//---- トーク番号を加算
+
+	case res_reference[2]{	//---- トーク番号を見て分岐
+		when 2		//---- 最初にリーライナから「1」が飛んできて、↑で加算するので「2」
+		{
+			"\1\s[10]\0\s[0]在り様、ね。\w9\n/
+			私は一つしかない、\w4としか思っていないわ。\w9\n/
+			個性と種族の意味でね。\w9\e"
+		}
+		when 4
+		{
+			"\1\s[10]\0\s[0]元から一つだったのに寂しいも何も無いわ。\w9\n/
+			寂しくなる時があるとしたら、\w4自身の存在を否定する時かしらね。\w9\e"
+		}
+		when 6
+		{
+			"\1\s[10]\0\s[0]あのヒトを失った上での言葉よ。\w9\n/
+			失うことは寂しいけれど、\w4出会えばいつかは別れるもの。\w9\n/
+			その度に立ち止まってはいられないわ。\w9\n/
+			特にヒトと時間の単位が違う場合はね。\w9\e"
+		}
+		when 8
+		{
+			"\1\s[10]\0\s[0]ありがとう。\w9\n/
+			でも、\w4強いかどうかは疑問だわ。\w9\n/
+			辛いことに代わりはないもの。\w9\e"
+		}
+		when 10
+		{
+			"\1\s[10]\0\s[0]この強さは誰でも持っているものではないかしら。\w9\n/
+			ヒトも同じように強いことになるわね。\w9\e"
+		}
+		when 12
+		{
+			"\1\s[10]\0\s[6]私もヒトの強さを羨ましく思う時があるわ。\w9\n/
+			愛しく感じることが無いけれど。\w9\e"
+		}
+		when 14
+		{
+			"\1\s[10]\0\s[0]なるほどね。\w9\nこの話はこれぐらいにしましょうか。\w9\n…\w4…\w4話してくれてありがとう、\w4リーライナ。\w9\e"
+		}
+		others 		//---- 知らないトーク番号が来たら終了
+		{
+			res_reference[0] = ""
+			res_reference[1] = ""
+			res_reference[2] = ""
+		}
+	}
+}
+
+comCassisandLyraina4{
+	res_reference[0] = reference[0]
+	res_reference[1] = reference[2]
+	res_reference[2] = TOINT(reference[3]) + 1
+
+	case res_reference[2]{
+		when 2{
+			"\1\s[10]\0\s[0]…\w4…\w4どうかしたの?\w9\e"
+		}
+		when 4{
+			"\1\s[10]\0\s[2]ひゃん、\w4ふぇえ、\w4あぅ\w4…\w4…。\w9\n\s[3]な、\w4何するのよ。\w9\e"
+		}
+		when 6{
+			"\1\s[10]\0\s[0]あなたもこういうことをするなんて想像してなかったわ。\w9\n\s[6]何処かの左手と大差ないのね。\w9\e"
+		}
+		when 8{
+			_dumy = FUNCTIONEX("osuwari.dll","STOP")
+		
+			"\1\s[10]\0\s[6]でも、\w4違うこともあるわ。\w9\n\![move,%(reference[4]),%(reference[5]),1000,screen,left.top,center.center]\s[8]それはこちらからもくすぐれることよ。\w9\e"
+		}
+		when 10{
+			"\1\s[10]\0\s[8]それでよく私の事が言えたわねぇ。\w9\n\s[0]\![move,%(reference[4]),%(reference[5]),1000,screen,left.top,center.center]これでおあいこかしら。\w9\e"
+		}
+		when 12{
+			OsuwariStart
+		
+			"\1\s[10]\0\s[6]…\w4…\w4感度の調整は再考の余地があることはわかったわ。\w9\n\s[0]何処かの誰かにちょっかい出されないようにするためにもね。\w9\e"
+		}
+		when 14{
+			"\1\s[10]\0\s[0]確かにそう気にすることでも無いわね。\w9\n\s[6]悪意があるなら片付ければ良いだけだもの。\w9\e"
+		}
+		when 16{
+			"\1\s[10]\0\s[0]ちゃんと、\w4相手によって片付ける方法は変えているわよ。\w9\n\w9\n\s[6]あの例外に関しては言わなくても決まっているけど。\w9\e"
+		}
+		when 18{
+			"\1\s[10]\0\s[3]その言葉は他の子に言ってあげなさいよ\w4…\w4…。\w9\e"
+		}
+		others{
+			res_reference[0] = ""
+			res_reference[1] = ""
+			res_reference[2] = ""
+		}
+	}
+}
+
+comCassisandLyraina5{
+	res_reference[0] = reference[0]
+	res_reference[1] = reference[2]		//---- コミュ識別子を設定
+	res_reference[2] = TOINT(reference[3]) + 1	//---- トーク番号を加算
+
+	case res_reference[2]{
+		when 3
+		{
+			"\1\s[10]\0\s[0]私が家事をするのはおかしいかしら?\w9\n/
+			\s[6]同居人の分も私がやってるわ。\w9\e"
+		}
+		when 5
+		{
+			"\1\s[10]\0\s[3]身体が小さいからかそういう評価は多いのよね\w4…\w4…。\w9\n/
+			\s[0]話は変わるけど、\w4あなたは家事はやらないの?\w9\e"
+		}
+		when 7
+		{
+			"\1\s[10]\0\s[0]それはそれで微笑ましい光景が想像できるわね。\w9\e"
+		}
+		when 9
+		{
+			"\1\s[10]\0\s[0]大きさだけでなくて、\w4私にとって料理を作ると食べる誰かがいるの。\w9\n/
+			あなたにもそういうヒトがいるのかしら、\w4と思ったらなんだかね。\w9\e"
+		}
+		when 11
+		{
+			"\1\s[10]\0\s[0]自分で食べるなら、\w4気にせず出来るわ。\w9\n/
+			\s[6]食べるヒトがいると注文や文句が多いから。\w9\e"
+		}
+		when 13
+		{
+			"\1\s[10]\0\s[0]あなたならいつでも歓迎するわよ。\w9\n/
+			\s[8]味の保障が無くてもいいならね。\w9\e"
+		}
+		when 15
+		{
+			"\1\s[10]\0\s[0]好きなものや嫌いなものがあるなら教えてくれないかしら。\w9\e"
+		}
+		when 17
+		{
+			"\1\s[10]\0\s[0]よく知っているヒトにデザート好きがいたから大丈夫よ。\w9\n/
+			ふふ、\w4楽しみにしているわ。\w9\e"
+		}
+		others 		//---- 知らないトーク番号が来たら終了
+		{
+			res_reference[0] = ""
+			res_reference[1] = ""
+			res_reference[2] = ""
+		}
+	}
+}
+
+comCassisandLyraina6{
+	res_reference[0] = reference[0]
+	res_reference[1] = reference[2]		//---- コミュ識別子を設定
+	res_reference[2] = TOINT(reference[3]) + 1	//---- トーク番号を加算
+
+	case res_reference[2]{
+		when 2
+		{
+			"\1\s[10]\0\s[0]?\w9\nいってらっしゃい。\w9\e"
+		}
+		when 4
+		{
+			"\1\s[10]\0\s[6]何処かに出かけるのかと思ったわ。\w9\n/
+			\s[0]それにしても、\w4派手な思い出し方ね。\w9\n/
+			何を思い出したのかしら?\w9\e"
+		}
+		when 6
+		{
+			"\1\s[10]\0\s[6]その行動から考えると文字通り戦争だったようね\w4…\w4…。\w9\e"
+		}
+		when 8
+		{
+			"\1\s[10]\0\s[0]実年齢なんてただの数字だとよくわかる話だわ。\w9\n/
+			その大人気の無いのと戦争していたのね。\w9\e"
+		}
+		when 10
+		{
+			"\1\s[10]\0\s[0]そういう経験から戦い方を学んで行くこともあるわ。\w9\n/
+			通過儀礼なものだったかも知れないわね。\w9\n/
+			…\w4…\w4周囲が見えなくなったあなたも面白そうね。\w9\e"
+		}
+		when 12
+		{
+			"\1\s[10]\0\s[6]恥ずかしい思い出の一つや二つは誰にでもあるから安心なさい。\w9\n/
+			\s[0]子どもとして過ごす時間を意図的に作るなんて手が込んでいるわ。\w9\n/
+			\s[6]良い「親」だったのね。\w9\e"
+		}
+		when 14
+		{
+			"\1\s[10]\0\s[0]本当の意味で子を為した、\w4ね。\w9\e"
+		}
+		others 		//---- 知らないトーク番号が来たら終了
+		{
+			res_reference[0] = ""
+			res_reference[1] = ""
+			res_reference[2] = ""
+		}
+	}
+}
+
+comCassisandLyraina7{
+	res_reference[0] = reference[0]
+	res_reference[1] = reference[2]		//---- コミュ識別子を設定
+	res_reference[2] = TOINT(reference[3]) + 1	//---- トーク番号を加算
+
+	case res_reference[2]{
+		when 3
+		{
+			"\1\s[10]\0\s[0]さっき、\w4同居人からメールが来たの。\w9\n/
+			どうやら、\w4洗濯機の中に洗濯物が入ったままだったらしいわ。\w9\e"
+		}
+		when 5
+		{
+			"\1\s[10]\0\s[0]同居人が干してくれたから良かったわ。\w9\n/
+			何がいけなかったのかしら\w4…\w4…?\w9\e"
+		}
+		when 7
+		{
+			"\1\s[10]\0\s[6]こういう辺りはヒトと大差無いのよね、\w4私も…\w4…。\w9/
+			\n\s[0]それはおいて、\w4なぜ安心したのかしら?\w9\e"
+		}
+		when 9
+		{
+			"\1\s[10]\0\s[6]それもそうね。\w9\n/
+			\s[0]アンドロイドがミスをするのも、\w4それが理由だと聞いたことがあるわ。\w9\n/
+			完璧だったら誰かと一緒にいる必要も無いでしょうしね。\w9\e"
+		}
+		when 11
+		{
+			"\1\s[10]\0\s[9]でも、\w4今回のミスはショックだったわ。\w9\n/
+			\s[6]次からは気をつけないと\w4…\w4…。\w9\e"
+		}
+		when 13
+		{
+			"\1\s[10]\0\s[0]ほんと、\w4\s[6]その通りだわ。\w9\e"
+		}
+		others 		//---- 知らないトーク番号が来たら終了
+		{
+			res_reference[0] = ""
+			res_reference[1] = ""
+			res_reference[2] = ""
+		}
+	}
+}
+
+comCassisandLyraina8{
+	res_reference[0] = reference[0]
+	res_reference[1] = reference[2]		//---- コミュ識別子を設定
+	res_reference[2] = TOINT(reference[3]) + 1	//---- トーク番号を加算
+
+	case res_reference[2]{
+		when 2
+		{
+			"\1\s[10]\0\s[0]何かしら?\w9\e"
+		}
+		when 4
+		{
+			"\1\s[10]\0\s[6]つまみ食い、\w4ね。\w9\n/
+			\s[0]ふつうにするわ。\w9\n/
+			\s[8]行儀が悪いから全力で止めてるけど。\w9\e"
+		}
+		when 6
+		{
+			"\1\s[10]\0\s[0]食べられると言うことはすぐできあがるもの。\w9\n/
+			ほんの少しだけ待てばちゃんと食べられるのに\w4…\w4…。\w9\n/
+			でも、\w4待ってくれないから止めているのよね。\w9\e"
+		}
+		when 8
+		{
+			"\1\s[10]\0\s[0]それは難儀だったわね。\w9\n\s[6]からかって遊びたい気持ちもわかるけど。\w9\e"
+		}
+		when 10
+		{
+			"\1\s[10]\0\s[0]それはお疲れ様。\w9\n/
+			そういう賑やかさは困るけど、\w4面白いわ。\w9\n/
+			面白く思っていたところはあなたにもあったのではないかしら?\w9\e"
+		}
+		when 12
+		{
+			"\1\s[10]\0\s[8]ふふ、\w4条件反射で撃退されたら生身の人間はひとたまりも無いのでしょうね。\w9\e"
+		}
+		when 14
+		{
+			"\1\s[10]\0\s[0]確かにそんな方法を使うと作っているものが無事では無いわね。\w9\n/
+			そうね、\w4大抵は足払いで止めているわ。\w9\n/
+			それでも止まらない時は魔法の的にしているの。\w9\e"
+		}
+		when 16
+		{
+			"\1\s[10]\0\s[6]余計なお世話かも知れないけど、\w4足払いするときは周囲に注意した方が良いわ。\w9\n/
+			倒れたときに頭を打つかも知れないから。\w9\e"
+		}
+		others 		//---- 知らないトーク番号が来たら終了
+		{
+			res_reference[0] = ""
+			res_reference[1] = ""
+			res_reference[2] = ""
+		}
+	}
+}
+
+comCassisandLyraina9{
+	res_reference[0] = reference[0]		//---- 話し掛けてきた相手をコミュ投げの相手に設定。
+	res_reference[1] = reference[2]		//---- コミュ識別子を設定
+	res_reference[2] = TOINT(reference[3]) + 1	//---- トーク番号を加算(話しかけは3、話しかけられは2から)
+
+	case res_reference[2]{
+		when 2
+		{
+			"\1\s[10]\0\s[0]好きなもの、\w4ね。\w9\n食べ物なら甘いものが好きよ。\w9\n/
+			\s[6]たとえば、\w4チョコレートケーキとか。\w9\e"
+		}
+		when 4
+		{
+			"\1\s[10]\0\s[2]り、\w4リーライナ。\w9\n/
+			\s[3]あなたがどれぐらい甘いものが好きかはわかったわ。\w9\n/
+			だから落ち着いて。\w9\e"
+		}
+		when 6
+		{
+			"\1\s[10]\0\s[6]それだけ好きだってことでしょう?\w9\n/
+			悪いことでは無いわ。\w9\n/
+			\s[0]散策の時にコンビニ、\w4覗くことにするわ。\w9\e"
+		}
+		when 8
+		{
+			"\1\s[10]\0\s[0]普通の買い物でコンビニを使ったら、\w4家計に響くわ。\w9\n/
+			便利さと引き替えに値段が高いのよね。\w9\n/
+			長い目で見ると、\w4どうしても、\w4チラシを見ながら買い物する必要があるわ。\w9\e"
+		}
+		when 10
+		{
+			"\1\s[10]\0\s[0]と言っても、\w4嗜好品を買うなら、\w4少し話は変わるわね。\w9\n/
+			材料をそろえるのには都合は良いけど。\w9\n/
+			\s[6]…\w4…\w4小さなお菓子屋で買うより、\w4コンビニで買った方が安いかも知れないわ。\w9\e"
+		}
+		when 12
+		{
+			"\1\s[10]\0\s[6]同居人の分まで私が財布のひもを握っているの。\w9\n/
+			握るからには責任を持って、\w4管理しないとダメでしょう?\w9\n/
+			\s[0]浮かせた分で贅沢するのも悪くないしね。\w9\n/
+			\s[6]例えば、\w4ケーキを買ったり。\w9\e"
+		}
+		when 14
+		{
+			"\1\s[10]\0\s[6]がめついと言う表現もあるわね。\w9\n/
+			\s[0]それはおいて、\w4今度、\w4そのケーキを買ってきましょうか。\w9\n/
+			食べながら話すのも悪くないはずよ。\w9\e"
+		}
+		when 16
+		{
+			"\1\s[10]\0\s[0]そんな共犯を増やすようなことはしないわ。\w9\n/
+			\s[6]ちゃんと、\w4私のお財布から出すつもりよ。\w9\e"
+		}
+		when 18
+		{
+			"\1\s[10]\0\s[0]ふふ、\w4ほんと、\w4楽しみが増えたわね。\w9\e"
+		}
+		others 		//---- 知らないトーク番号が来たら終了
+		{
+			res_reference[0] = ""
+			res_reference[1] = ""
+			res_reference[2] = ""
+		}
+	}
+}		
+
+
+comCassisandLyraina10{
+	res_reference[0] = reference[0]		//---- 話し掛けてきた相手をコミュ投げの相手に設定。
+	res_reference[1] = reference[2]		//---- コミュ識別子を設定
+	res_reference[2] = TOINT(reference[3]) + 1	//---- トーク番号を加算(話しかけは3、話しかけられは2から)
+
+	case res_reference[2]{
+		when 3
+		{
+			"\1\s[10]\0\s[0]ありがとう。\w9\n/
+			払った代償は大きかったけど、\w4そう言ってもらえるなら、\w4\s[6]切り抜けて良かったと思えるわね\w4…\w4…。\w9\e"
+		}
+		when 5
+		{
+			"\1\s[10]\0\s[0]私が居た星はね、\w4恒星間移民計画の移住先だったの。\w9\n/
+			その移民計画の調査隊が降りてきたときに一騒動あったのよ。\w9\n/
+			\s[6]その頃の私に「個」の概念は無かったわ。\w9\n/
+			だから、\w4私は調査隊を調査隊と認識出来なかった。\w9\n/
+			理解しようと思って、\w4私は彼らに触れようとした。\w9\n/
+			それが彼らにとっては、\w4その星の生物が襲いかかっているように思えたのでしょうね\w4…\w4…。\w9\e"
+		}
+		when 7
+		{
+			"\1\s[10]\0\s[0]私、\w4いえ、\w4FSは「絶滅した」扱いなの。\w9\n/
+			\s[6]…\w4…\w4一応、\w4戦ったアンドロイドや一部のヒトとは誤解を解くことが出来たわ。\w9\n/
+			すべてのヒトでは無いけれど。\w9\e"
+		}
+		when 9
+		{
+			"\1\s[10]\0\s[6]絶滅種扱いするよう私が頼んだの。\w9\n/
+			生きているとわかってしまうと、\w4復讐だの生体実験だのうるさいから。\w9\n/
+			\s[0]あまり、\w4複雑でも無いと思うわ。\w9\n/
+			こうやって此処で話せるのだもの。\w9\e"
+		}
+		when 11
+		{
+			"\1\s[10]\0\s[0]FSの自我は全体で一つなの。\w9\n/
+			自我のあるFSは私だけでしょうね。\w9\n/
+			それに最後の戦いの時点で、\w4FSは私を除いて死滅しているわ。\w9\n/
+			\s[6]他には居ないはずよ。\w9\e"
+		}
+		when 13
+		{
+			"\1\s[10]\0\s[0]問題と言えば、\w4本人が報告書を眺めて不思議な気分になるぐらいね。\w9\n/
+			あとは何処で嗅ぎ付けたのか、\w4復讐されるぐらいかしら。\w9\n/
+			問題にすることでも無いけれど。\w9\e"
+		}
+		when 15
+		{
+			"\1\s[10]\0\s[0]私に仲間や家族を殺されたヒトたちはそう、\w4思ってくれないわ。\w9\n/
+			\s[6]だって、\w4自分の大切なヒトを奪われたんだもの。\w9\n/
+			\s[0]矛先が私に来てもおかしくないし、\w4下手な理屈よりも筋が通っているわ。\w9\e"
+		}
+		when 17
+		{
+			"\1\s[10]\0\s[6]復讐を果たしたヒトの中では何か、\w4終わりに出来るのかも知れないわね。\w9\n/
+			\s[0]あいにく、\w4殺された事がないから、\w4想像でしかないけれど。\w9\e"
+		}
+		others 		//---- 知らないトーク番号が来たら終了
+		{
+			res_reference[0] = ""
+			res_reference[1] = ""
+			res_reference[2] = ""
+		}
+	}
+}
+
+comCassisandLyraina11{
+	res_reference[0] = reference[0]		//---- 話し掛けてきた相手をコミュ投げの相手に設定。
+	res_reference[1] = reference[2]		//---- コミュ識別子を設定
+	res_reference[2] = TOINT(reference[3]) + 1	//---- トーク番号を加算(話しかけは3、話しかけられは2から)
+
+	case res_reference[2]{
+		when 3
+		{
+			"\1\s[10]\0\s[0]嫌いなモノが無いのは悪くないわ。\w9\n/
+			ヒトが嫌いな理由ね\s[6]…\w4…\w4同じ失敗ずっと繰り返して、\w4その自覚がある癖に繰り返して\w4…\w4…。\w9\n/
+			\s[6]無理だとわかってるのに変えようとして、\w4躓いて傷ついて\w4…\w4…。\w9\n/
+			…\w4…\w4\s[3]見ていてもどかしいから嫌い、\w4それだけよ。\w9\e"
+		}
+		when 5
+		{
+			"\1\s[10]\0\s[0]私が焦っていただけね。\w9\n/
+			\s[6]…\w4…\w4失敗を繰り返していたのは、\w4私も同じなのに忘れていたわ。\w9\e"
+		}
+		when 7
+		{
+			"\1\s[10]\0\s[0]そうね。\w9\n/
+			大人しく過ちは正すことにするわ。\w9\n/
+			\s[6]過ちを犯さないのはもっと、\w4粗を取ってからでも遅くないものね。\w9\e"
+		}
+		when 9
+		{
+			"\1\s[10]\0\s[0その理由で考えるなら、\w4自分の失敗に焦りを覚えているのでしょうね。\w9\n/
+			\s[6]心当たりがないと言ったら嘘になるわ。\w9\e"
+		}
+		when 11
+		{
+			"\1\s[10]\0\s[0]その通りね。\w9\n/
+			その上で何か助言が出来れば良いかしら。\w9\n/
+			\s[6]少なくとも、\w4焦ったり、\w4嫌うよりはずっと良いわ。\w9\e"
+		}
+		when 13
+		{
+			"\1\s[10]\0\s[0]ストレスも上手く使えば、\w4現状を打破する力になるわよ。\w9\n/
+			空振りすると自分を壊すだけで。\w9\n/
+			\s[6]でも、\w4無いに越した事は確かに無いかも知れないわね\w4…\w4…。\w9\e"
+		}
+		when 15
+		{
+			"\1\s[10]\0\s[6]嫌う感情も自己防衛に役立つそうよ。\w9\n/
+			ストレスも含めて、\w4あなたの言うように加減次第なのよね…\w4…。\w9\e"
+		}
+		when 17
+		{
+			"\1\s[10]\0\s[0]度を過ぎれば自らを滅ぼす、\w4と加減次第では毒にも薬にもなってしまうのね。\w9\n/
+			\s[3]繰り返しになってしまったけど。\w9\e"
+		}
+		others 		//---- 知らないトーク番号が来たら終了
+		{
+			res_reference[0] = ""
+			res_reference[1] = ""
+			res_reference[2] = ""
+		}
+	}
+}
+
+//--- カシスとオフィーリア -------------------------------------------------------------------------
+comCassisandOphelia0{
+	res_reference[0] = "オフィーリア"
+	res_reference[2] = 1
+	--
+	case RAND(7)
+	{
+		when 0
+		{
+			res_reference[1] = "comCassisandOphelia1"
+			"\1\s[10]\0\s[0]相変わらず銃の扱い方は上手なのね。\w9\e"
+		}
+		when 1
+		{
+			res_reference[1] = "comCassisandOphelia3"
+			"\1\s[10]\0\s[0]ところで隣の彼は何?\w9\n/
+			彼氏か何か?\w9\e"
+		}
+		when 2
+		{
+			res_reference[1] = "comCassisandOphelia5"
+			"\1\s[10]\0\s[0]…\w4…\s[6]。\w9\e"
+		}
+		when 3
+		{
+			res_reference[1] = "comCassisandOphelia7"
+			"\1\s[10]\0\s[0]まさか、\w4こんなところであなたと会えるとは思っていなかったわ。\w9\e"
+		}
+		when 4
+		{
+			res_reference[1] = "comCassisandOphelia9"
+			"\1\s[10]\0\s[0]アルギズはこちらの生活に慣れたの?\w9\e"
+		}
+		when 5 
+		{
+			res_reference[1] = "comCassisandOphelia11"
+			"\1\s[10]\0\s[6]あの戦いに参加したアンドロイドも、\w4進んでる道はばらばらなのね。\w9\e"
+		}
+		when 6
+		{
+			res_reference[1] = "comCassisandOphelia13"
+			"\1\s[10]\0\s[0]出口のないトンネルを走るのは疲れないの?\w9\e"
+		}
+	}
+}
+
+comCassisandOphelia1{
+	res_reference[0] = reference[0]
+	res_reference[1] = reference[2]
+	res_reference[2] = TOINT(reference[3]) + 1
+
+	case res_reference[2]{
+		when 3{
+			"\1\s[10]\0\s[0]煮え切らない反応だわ。\w9\n/
+			\s[8]いい加減、\w4開き直ったら?\w9\e"
+		}
+		when 5{
+			"\1\s[10]\0\s[0]あなたも難儀な性格をしているわね。\w9\n/
+			当事者が言っているのに\w4…\w4…。\w9\e"
+		}
+		when 7{
+			"\1\s[10]\0\s[6]ヒトの尺度で言えば、\w4長すぎるかしら。\w9\n/
+			でも、\w4あなたの時間で考えたら、\w4この程度の時間で癒えるのは早すぎるのかも知れないわね。\w9\e"
+		}
+		when 9{
+			"\1\s[10]\0\s[9]別に礼を言わなくても良いわよ。\e"
+		}
+		others{ //---- 知らないトーク番号が来たら終了
+			res_reference[0] = ""
+			res_reference[1] = ""
+			res_reference[2] = ""
+		}
+	}
+}
+
+comCassisandOphelia2{
+	res_reference[0] = reference[0]		
+	res_reference[1] = reference[2]		
+	res_reference[2] = TOINT(reference[3]) + 1	
+	
+	case res_reference[2]{	
+		when 2		
+		{
+			"\1\s[10]\0\s[0]バイパスを使って来たわ。\w9\e"
+		}
+		when 4
+		{
+			"\1\s[10]\0\s[0]正面からは使わなかったわよ。\w9\e"
+		}
+		when 6
+		{
+			"\1\s[10]\0\s[6]何処かの目つきの悪いアンドロイドに箱詰めされてね。\w9\e"
+		}
+		when 8
+		{
+			"\1\s[10]\0\s[0]暗いし狭いし身体が固まるかと思ったわ。\w9\e"
+		}
+		when 10
+		{
+			"\1\s[10]\0\s[0]知り合い?\w9\e"
+		}
+		others 
+		{
+			res_reference[0] = ""
+			res_reference[1] = ""
+			res_reference[2] = ""
+		}
+	}
+}
+
+comCassisandOphelia3{
+	res_reference[0] = reference[0]
+	res_reference[1] = reference[2]
+	res_reference[2] = TOINT(reference[3]) + 1
+
+	case res_reference[2]{
+		when 3{
+			"\1\s[10]\0\s[0]…\w4…\w4罪な子ね。\w9\e"
+		}
+		others{ //---- 知らないトーク番号が来たら終了
+			res_reference[0] = ""
+			res_reference[1] = ""
+			res_reference[2] = ""
+		}
+	}
+}
+
+comCassisandOphelia4{
+	res_reference[0] = reference[0]		
+	res_reference[1] = reference[2]		
+	res_reference[2] = TOINT(reference[3]) + 1
+
+	case res_reference[2]{
+		when 2		
+		{
+			"\1\s[10]\0\s[0]あなたもあの絵本を読んだのね。\w9\e"
+		}
+		when 4		
+		{
+			"\1\s[10]\0\s[6]社会批判や風刺の要素があって、\w4続き物で量もそれなりにあったわね。\w9\n/
+			読んだ子供は性格がきつくなるわ、\w4きっと。\w9\e"
+		}
+		when 6
+		{
+			"\1\s[10]\0\s[0]あなた、\w4私に喧嘩売ってる?\w9\e"
+		}
+		when 8
+		{
+			"\1\s[10]\0\s[6]物知りね。\w9\n\e"
+		}
+		others 	
+		{
+			res_reference[0] = ""
+			res_reference[1] = ""
+			res_reference[2] = ""
+		}
+	}
+}
+
+comCassisandOphelia5{
+	res_reference[0] = reference[0]		
+	res_reference[1] = reference[2]		
+	res_reference[2] = TOINT(reference[3]) + 1
+
+	case res_reference[2]{
+		when 3		
+		{
+			"\1\s[10]\0\s[6]何でもないわ。\w9\e"
+		}
+		others 	
+		{
+			res_reference[0] = ""
+			res_reference[1] = ""
+			res_reference[2] = ""
+		}
+	}
+}
+
+comCassisandOphelia6{
+	res_reference[0] = reference[0]		
+	res_reference[1] = reference[2]		
+	res_reference[2] = TOINT(reference[3]) + 1
+
+	case res_reference[2]{
+		when 2		
+		{
+			"\1\s[10]\0\s[0]ちょっと、\w4身体を診せたり、\w4過去のことを話すぐらいしかしてないわよ。\w9\n/
+			それでも、\w4役に立てたのなら幸いね。\w9\e"	
+		}
+		when 4
+		{
+			"\1\s[10]\0\s[0]一応はね。\w9\n/
+			ちょっと、\w4報告するだけで生活費になるなんて美味しい話だわ。\w9\e"
+		}
+		others 	
+		{
+			res_reference[0] = ""
+			res_reference[1] = ""
+			res_reference[2] = ""
+		}
+	}
+}
+
+comCassisandOphelia7{
+	res_reference[0] = reference[0]		
+	res_reference[1] = reference[2]		
+	res_reference[2] = TOINT(reference[3]) + 1
+
+	case res_reference[2]{
+		when 3		
+		{
+			 "\1\s[10]\0\s[6]此処でこうやって話しているのは、\w4ほんと不思議な話ね。\w9\e"    
+		}
+		when 5
+		{
+			
+		}
+		others 	
+		{
+			res_reference[0] = ""
+			res_reference[1] = ""
+			res_reference[2] = ""
+		}
+	}
+}
+
+comCassisandOphelia9{
+	res_reference[0] = reference[0]		
+	res_reference[1] = reference[2]		
+	res_reference[2] = TOINT(reference[3]) + 1
+
+	case res_reference[2]{
+		when 3		
+		{
+			"\1\s[10]\0\s[0]向こうとあまり変わらないもの。\w9\n/
+			慣れるも何も無いわ。\w9\e"   
+		}
+		others 	
+		{
+			res_reference[0] = ""
+			res_reference[1] = ""
+			res_reference[2] = ""
+		}
+	}
+}
+
+comCassisandOphelia11{
+	res_reference[0] = reference[0]		
+	res_reference[1] = reference[2]		
+	res_reference[2] = TOINT(reference[3]) + 1
+
+	case res_reference[2]{
+		when 3		
+		{
+			"\1\s[10]\0\s[6]紛争地域で暴れてるのもいるようね。\w9\n/
+			血の気が多いのか、\w4単細胞なだけなのか…\w4…。\w9\e"
+		}
+		when 5
+		{
+			"\1\s[10]\0\s[0]なぜ苦笑しているの?\w9\e"
+		}
+		when 7
+		{
+			"\1\s[10]\0\s[6]あら、\w4あなたがそんな性格だったとは意外だったわ。\w9\e"
+		}
+		others 	
+		{
+			res_reference[0] = ""
+			res_reference[1] = ""
+			res_reference[2] = ""
+		}
+	}
+}
+
+comCassisandOphelia13{
+	res_reference[0] = reference[0]		
+	res_reference[1] = reference[2]		
+	res_reference[2] = TOINT(reference[3]) + 1
+
+	case res_reference[2]{
+		when 3		
+		{
+			"\s[6]そう。\w9\e"
+		}
+		others 	
+		{
+			res_reference[0] = ""
+			res_reference[1] = ""
+			res_reference[2] = ""
+		}
+	}
+}
+
+//**** コミュニケート内容 *************************************************************
+// 名前覚えて
+comNamaeOboete {
+	"\1\s[10]\0\s[0]なんて名前なのかしら?\n/
+	\![open,inputbox,OnInputUsername,-1]\e"
+//	teachusername = 1
+//	username = reference[1]
+//	"\1\s[10]\0\s[0]%username、ね。\e"
+//	teachusername = 0
+}
+
+// こんにちは
+comKonnichiha {
+	"\1\s[10]\0\s[0]こんにちは。\e"
+}
+
+comKonbanha {
+	"\1\s[10]\0\s[6]こんばんは。\e"
+}
+
+comOhayo {
+	"\1\s[10]\0\s[0]おはよう。\w9\e"
+	"\1\s[10]\0\s[0]おはよう。\w9\n/
+	調子はどう?\w9\e"
+}
+
+comLove {
+	if cntHead > likelimit {
+		if flgLove == 1 {
+			"\1\s[10]\0\s[1]私もよ、\w4%username。\e"
+			"\1\s[10]\0\s[6]ありがとう、\w4私もよ。\w9\n/
+			\s[1]%username、\w4愛してる。\e"
+		} else {
+			"\1\s[10]\0\s[0]その言葉は偽りのないものかしら?\w9\n\n/
+			\_a[no_you_no_life]「本気だ」\_a\n/
+			\_a[joke]「冗談だ」\_a\e"
+		}
+	} else {
+		"\1\s[10]\0\s[0]ありがとう。\w9\n今はこれしか言えないわ。\w9\n\e"
+		"\1\s[10]\0\s[0]そう。\w9\n/
+		\s[6]ありがとう。\e"
+		"\1\s[10]\0\s[1]私もよ、\w4%username\w4…\w4…。\w9\n/
+		\s[0]と言ったらあなたは満足するのかしら?\e"
+	}
+}
+
+comCassis {
+	"\1\s[10]\0\s[0]何?\w9\e"
+	"\1\s[10]\0\s[0]何かしら?\w9\e"
+	"\1\s[10]\0\s[6]呼んだ?\s[0]\w9\e"
+}
+
+comArigato {
+	"\1\s[10]\0\s[6]ありがとう。\w9\n/
+	…\w4…\w4\s[1]そういってくれて。\w9\e"
+	"\1\s[10]\0\s[0]何かの役に立てたのなら幸いだわ。\w9\e"
+	"\1\s[10]\0\s[0]…\w4…\w4\s[6]礼を言われるようなことはしてないわ。\e"
+}
+
+comGomen {
+	"\1\s[10]\0\s[0]何を謝ってるの?\w9\n/
+	謝るようなことはしてないでしょう?\w9\e"
+	"\1\s[10]\0\s[0]謝るとしたら私のほうよ…\w4…。\w9\e"
+}
+	
+comTadaima {
+	"\1\s[10]\0\s[0]おかえりなさい、\w4\s[5]%username。\e"
+	"\1\s[10]\0\s[0]おかえりなさい。\e"
+	"\1\s[10]\0\s[0]おかえりなさい、\w4%username。\e"
+}
+
+comKawaii : nonoverlap {
+	"\1\s[10]\0\s[1]…\w4…\w4そんなことはないわよ。\w9\e"
+	"\1\s[10]\0\s[2]\w9\w5\s[1]そういう台詞は別の子に言いなさいよ。\w9\e"
+
+	if cntHead > likelimit
+	{
+		"\1\s[10]\0\s[1]あ、\w4ありがとう\w4…\w4…。\e"
+		"\1\s[10]\0\s[1]…\w4…\w4そんなことは、\w4ないわ。\e"
+		"\1\s[10]\0\s[2]…\w4…\w4\s[1]いきなり何を言い出すかと思ったら。\w9\n/
+		ありがとう。\w9\n/
+		でも、\w4恥ずかしいわね\w4…\w4…。\e"
+	}
+}
+
+comTsundere {
+	"\1\s[10]\0\s[8]誰がツンデレなのかしら。\w9\e"
+	"\1\s[10]\0\s[1]…\w4…\w4デレはないわよ。\w9\e"
+	"\1\s[10]\0\s[0]何処にデレがあるのかしら?\e"
+	"\1\s[10]\0\s[0]夢を見るのが好きなのね。\e"
+}
+
+comStamp {
+	//スタンププラグイン対応
+	"\1\s[10]\0"
+	--
+		if basewarename!="SSP" {
+		"\s[6]紙が無いと捺せないわね。"
+		}
+		elseif !スタンプ帳動作 {
+		"\s[0]無いモノはどうにもできないわ。"
+		}
+		//elseif "%(CHR(2))カッシーニの空隙%(CHR(1))"_in_スタンプ帳情報 {
+		//"\s[0]既に捺してあるわ。"
+		//}
+		else {
+		"\![raiseplugin,スタンプ帳,OnStampAdd,ghost\master\cassis.png,カシスの羽スタンプ,俯瞰する為には高さが必要]\s[0]はい、\w4捺したわよ。"
+		}
+	--
+	"\e"
+}
+
+comTereya {
+	"\1\s[10]\0\s[6]誰が照れ屋なのかしら?\e"
+	"\1\s[10]\0\s[0]何のことかしらね。\e"
+}
+
+comNadete {
+	"\1\s[10]\0\s[0]目を閉じなさい。\w9\w9\n/
+	ふふ、\w4可愛いわ。\w9\w9\w9\w9\n/
+	いつもと立場が逆ね。\e"
+	"\1\s[10]\0\s[0]こうかしら?\w9\w9\w9\w9\w9\n/
+	そういう表情もするのね、\w4知らなかったわ。\e"
+	"\1\s[10]\0\s[6]ふふ、\w4\s[0]悪くないわね。\e"
+}
+
+comDakishimeru {
+	// シェル個別
+	case shellname {
+		// 背の高いシェル向け
+		when "Alternative - Cassis", "Eternity Black"
+		{
+			"\1\s[10]\0\s[5]ふふ、\w4どうしたの?\e"
+			"\1\s[10]\0\s[5]抱き返してあげましょうか?\w9\w9\w9\n/
+			\s[6](ぎゅー)\e"
+		}
+		// スタイルの良いシェル向け
+		when "月光浴", "Fly High!"
+		{
+			if flgLove == 1
+			{
+				"\1\s[10]\0\s[6]優しく抱きしめてくれるのね。\w9\n/
+				あたたかいわ\w4…\w4…。\e"
+				"\1\s[10]\0\s[6]こう、\w4ね。\w9\n/
+				…\w4…\w4ふふ、\w4%usernameがよく感じられるわ。\e"
+				"\1\s[10]\0\s[6]抱きしめ合っていると、\w4互いの熱が伝わって、\w4最後には境がわからなくなってしまいそう。\e"
+			}
+			else
+			{
+				"\1\s[10]\0\s[6]ふふ、\w4まるで恋人のようね。\w9\n/
+				それとも、\w4兄妹かしら?\e"
+			}
+
+			"\1\s[10]\0\s[6]（%usernameの背に腕を回して）\w9\n/
+			\s[0]これでいいのかしら?\e"
+			"\1\s[10]\0\s[6]ん\w4…\w4…。\w9\n/
+			（胸に耳をあてて）\w9\n/
+			ふふ\w4…\w4…。\e"
+		}
+	}
+	// 共通
+	"\1\s[10]\0\s[6]強引なヒトね。\e"
+	"\1\s[10]\0\s[0]あのヒトとは違うのね。\e"
+	"\1\s[10]\0\s[6]どうしたの?\e"
+	"\1\s[10]\0\s[1]…\w4…。\e"
+	"\1\s[10]\0\s[6]…\w4…\w4ヒトの温度、\w4ね。\e"
+	"\1\s[10]\0\s[0](%usernameに身体を預けてから)\w9\n/
+	\s[6]このほうが良くわかるでしょう?\e"
+	"\1\s[10]\0\s[6]ん…\w4…。\e"
+}
+
+comTewonigiru {
+	Mouse_DoubleClick0Hand
+}
+
+// 応援して
+comOenshite {
+	'\1\s[10]\0\s[0]良い結果がでるよう頑張りなさいな。\e'
+	'\1\s[10]\0\s[6]応援して欲しいなんて言うのは余裕のない証よ。\w9\n/
+	\s[0]少し頑張り過ぎているのではないかしら?\w9\n/
+	だから、\w4少しだけ休んでから、\w4それから頑張りなさい。\e'
+}
+
+// おやすみ
+comOyasumi {
+	'\1\s[10]\0\s[0]寝るの?\w9\n\n[half]/
+	\_a[resComOyasumiYes]はい。\_a\n/
+	\_a[resComOyasumiNo]いいえ。\_a\e'
+}
+
+// はい
+resComOyasumiYes {
+	'\1\s[10]\0\s[0]おやすみなさい。\w9\n/
+	\s[6]また、\w4明日会いましょう。\w9\w9\-\e'
+	'\1\s[10]\0\s[0]おやすみなさい、\w4%username。\w9\w9\-\e'
+}
+
+// いいえ
+resComOyasumiNo {
+	flgComOyasumiOther = 1
+	'\1\s[10]\0\s[0]そう、\w4あまり無理はしないようにね。\e'
+}
+
+// 一緒に寝よう
+resComOyasumiOther {
+	flgEndLie = 1;
+
+	// 逆襲フラグオンの時
+	if flgCounterAttack == 1
+	{
+		/*
+			えろすイベント後に発動
+			文字通りの逆襲というよりお返し
+		*/
+		if GetShellnameEx == "Gemini"
+		{
+			'\1\s[10]おやすみなさい、\w4良い夜を。\w9\n/
+			\1\s[16]…\w4…\w4と言うと思った?\w9\n\n[half]/
+			\0\s[6]先のお返しをしましょうか。\w9\n\n[half]/
+			\1\s[15]ええ。'
+			'\0\s[0]いいわ。\w9\n/
+			\s[6]でも、\w4その前にひとつ、\w4やっておきたいことがあるの。\w9\n\n[half]/
+			\1\s[10]?\w9\n\n[half]/
+			\0\s[5]先の続きを、\w4ね。\w9\n\n[half]/
+			\1\s[16]…\w4…\w4そうね。\w9\n\n[half]/
+			\0\s[6]手伝ってもらうわよ、\w4カストール。\w9\n\n[half]/
+			\1\s[15]ええ、\w4いいわ。\w9\n\n[half]/
+			\0\s[5]ありがとう。\w9\n/
+			では、\w4はじめましょうか。\w9\n/
+			寝不足にならない程度に、ね。'
+		}
+		else
+		{
+			'\1\s[10]\0\s[0]今度は、\w4私の番よ、\w4%username。\w9\n/
+			\s[6]忘れたとは言わせないわよ。\x/
+			\s[-1]（ちゅっ）'
+			'\1\s[10]\0\s[6]このまま、\w4眠ってしまってもいいけれど。\w9\n/
+			でも、\w4もらったものを返さないのはよくないわ。\x/
+			\s[-1]何のことかはわかっているでしょう?\w9\n/
+			ふふ、\w4大丈夫よ。\w9\n/
+			あなたのことはよく知っているから\w4―\w4―。'
+			'\1\s[10]\0\s[6]――。\w9\n/
+			（不意に唇を重ねてきた）\w9\n/
+			\s[-1]ふふ、\w4さっきのお返しよ。\w9\n/
+			続き、\w4しましょうか。'
+			'\1\s[10]\0\s[6]わかったわ。\w9\n/
+			\s[-1]先の、\w4続きをしましょうか。\w9\n/
+			忘れたとは言わせないわよ。'
+			'\1\s[10]\0\s[0]では、\w4そうしましょうか。\w9\n/
+			\s[-1]ふふ、\w4その前に先のお返しをするわ。'
+		}
+		--
+		'\w9\w9\w9\-\e'
+	}
+	// 通常時
+	else
+	{
+		if GetShellnameEx == "Gemini"
+		{
+			'\1\s[10]一緒に\ \w9\n/
+			私は遠慮しておくわ。\w9\n/
+			狭いもの。\w9\n\n[half]/
+			\0\s[0]気にすることないでしょう、\w4カストール。\w9\n/
+			\s[5]ほら、\w4こちらに来なさいな。\w9\n\n[half]/
+			\1\s[-1]…\w4…\w4やっぱり、\w4狭いわ。\w9\n\n[half]/
+			\0\s[-1]こうした方がこのヒトの熱を感じやすいでしょ?\w9\n\n[half]/
+			\1\s[-1]それは、\w4そうだけど\w4…\w4…。\w9\w9\w9\-\e'
+			'\0\s[0]いいわ。\w9\n/
+			\s[6]では、\w4寝ましょうか。\w9\n\n[half]/
+			\1\s[14]そんな簡単に\w4…\w4…。\w9\n\n[half]/
+			\0\s[5]一緒に眠るだけなのに何を構えているのかしら?\w9\n\n[half]/
+			\1\s[11]…\w4…ぁ。\w9\n\n[half]/
+			\0\s[8]ふぅん。\w9\n/
+			%username、\w4カストールに気をつけなさい。\w9\n/
+			何されるかわからないから。\w9\n\n[half]/
+			\1\s[19]あ、\w4あなたは私を何だと思ってるのよ。\w9\n\n[half]/
+			\0\s[6]ふふ、\w4秘密よ。\w9\n/
+			\s[5]おやすみなさい、\w4良い眠りを。\w9\n\n[half]/
+			\1\s[10]…\w4…\w4おやすみなさい。\w9\w9\w9\-\e'
+		}
+		else
+		{
+			'\1\s[10]\0\s[6]\w9\w9\w9\s[0]仕方無いヒトね。\w9\n/
+			ふふ、\w4おやすみなさい。\s[-1]\x\n/
+			狭いけれど悪くは無いわね\w4…\w4…。\w9\w9\-\e'
+			'\1\s[10]\0\s[6]いいわよ。\w9\n/
+			\s[0]狭くても我慢なさいな。\w9\n/
+			\s[-1]\x一つ言い忘れてたけど、\w4変な気は起こさないでね。\w9\w9\n/
+			おやすみなさい、\w4%username。\w9\n/
+			良い夢を。\w9\w9\w9\-\e'
+			'\1\s[10]\0\s[0]そうしましょうか。\w9\n/
+			おやすみなさい、\w4%username。\w9\w9\s[-1]\x/
+			良い夜を。\w9\w9\w9\-\e'
+		}
+	}
+}
+
+// 結婚してくれ
+comKekon {
+	// 好感度良
+	if cntHead > likelimit {
+		// 好感度高
+		if flgLove == 1
+		{
+			'\1\s[10]\0\s[0]それは、\w4難しいと思うわ。\w9\n/
+			法の上ではね。\e'
+			'\1\s[10]\0\s[6]いつか、\w4そうできたら良いわね。\e'
+			'\1\s[10]\0\s[0]できたとしても、\w4今と違いはそうないと思うの。\w9\n/
+			\s[6]きっと、\w4変わるのは法と周囲に認められることぐらいだわ。\e'
+			'\1\s[10]\0\s[0]お互いを想えばそれで十分よ。\w9\n/
+			\s[6]それがあなたが私と、\w4私があなたと、\w4一緒に在るための絶対の条件だから。\e'
+		}
+		// 好感度高ではない時
+		else
+		{
+			'\1\s[10]\0\s[6]人生を共に歩む覚悟はできているのかしら?\w9\n/
+			\s[0]それなら考えてあげてもいいわ。\e'
+			'\1\s[10]\0\s[0]本気で言っているの?\w9\w9\w9\w9\n/
+			\s[6]なら、\w4考えておくわ。\e'
+			'\1\s[10]\0\s[6]すでにしているようなものでしょうに\w4…\w4…。\e'
+			'\1\s[10]\0\s[0]できたとしても、\w4今と何も変わらないわよ。\w9\n/
+			\s[6]わかっていると思っていたけれど、\w4言葉にしないと伝わらないのね。\e'
+		}
+	}
+	// 好感度通常時
+	else
+	{
+		'\1\s[10]\0\s[6]気が早いヒトね。\e'
+		'\1\s[10]\0\s[8]そういう台詞は私を知ってから言って欲しいものね。\e'
+		'\1\s[10]\0\s[6]…\w4…\w4軽い言葉だわ。\e'
+		// 彼女に法は通じないので何が何でも自力で解決する覚悟がいる。
+		'\1\s[10]\0\s[0]それ相応の覚悟ができているのかしら?\e'
+	}
+}
+
+// Twitter
+comTwitter {
+	'\1\s[10]\0\s[0]まるで生きている本だわ。\w9\n/
+	リアルタイムで更新されていくのだもの。\e'
+	'\1\s[10]\0\s[0]面白いツールだとは思うけど、\w4油断すると溺れそうね。\w9\n/
+	\s[6]情報の雨で氾濫しかけている川、\w4といったところかしら。\e'
+}
+
+// いってきます。
+comBye {
+	if flgLive == "1" {
+		"\1\s[10]\0\s[1]はやく、\w4帰ってきて、\w4ね?\w9\w9\w9\n/
+		\s[6]冗談よ。\w9\n/
+		\s[0]いってらっしゃい、\w4気を付けて。"
+	}
+
+	"\1\s[10]\0\s[0]いってらっしゃい、\w4%username。\w9\n/
+	気を付けて。"
+	"\1\s[10]\0\s[0]出かけるの?\w9\n/
+	いってらっしゃい。"
+	--
+	flgBye = 1
+	"\w9\w9\-\e"
+}
+
+// 真剣に考えている
+no_you_no_life
+{
+	'\1\s[10]\0\s[2]…\w9…\w9\s[1]ありがとう。\w9\x/
+	\s[0]…\w9\w9…\w9\w9私、\w9ヒトを愛するようにはなれないってそう思い込んでいただけみたい。\w9\n/
+	\s[6]あなたのおかげでつまらない思い込みに気が付けた。\w9\n/
+	感謝しているわ。\w9\x/
+	\s[6]―\w9\w9―\w9\w9\s[1]%username、\w4愛してる。\x/
+	\s[6]この短い言葉を伝えるのがこんなに難しいなんて知らなかったわ。\w9\n/
+	\s[1]思い出すだけでも\w4…\w4…\w4照れる台詞ね、\w4本当。\x/
+	\s[6]でも、\w4嬉しいわ。\e'
+	--
+	flgLove = 1
+}
+
+// 冗談
+joke
+{
+	'\1\s[10]\0\s[6]からかうのもほどほどになさいな。\e'
+	'\1\s[10]\0\s[4]笑えない冗談が好きなのね。\e'
+}
+
+// 誕生日おめでとう
+comBirthday
+{
+	if "%month" == 7 && "%day" == 14
+	{
+		if flgLove == "1" {
+			"\1\s[10]\0\s[6]…\w4…\w4ありがとう、\w4こうやって祝ってもらえるのは幸いね。\e"
+			"\1\s[10]\0\s[1]ありがとう、\w4祝ってもらえるのがこんなに嬉しいとは思っていなかったわ。\w9\n/
+			\s[6]本当に、\w4ありがとう。\e"
+		}
+		else {
+			"\1\s[10]\0\s[0]ありがとう、\w4%username。\e"
+			"\1\s[10]\0\s[2]…\w9…\w9\s[1]ありがとう。\e"
+		}
+	}
+	else
+	{
+		"\1\s[10]\0\s[6]祝ってもらえるのは嬉しいけど、\w4今日ではないわ。\e"
+		"\1\s[10]\0\s[6]次の7月14日にその言葉を言ってもらえると嬉しいわ。\e"
+	}
+}
+
+// 誕生日はいつ?
+comWhenBirthday
+{
+	if !("%month" == 7 && "%day" == 14)
+	{
+		"\1\s[10]\0\s[0]7月14日が私の誕生日よ。\e"
+		"\1\s[10]\0\s[6]7月14日が誕生日ね。\e"
+	}
+	else
+	{
+		"\1\s[10]\0\s[6]今日がその日よ。\e"
+		"\1\s[10]\0\s[0]今日ね。\e"
+	}
+}
+
+// トーク合計
+comSumTalk
+{
+	"\1\s[10]\0\s[0]\b[2]\_q/
+	通常ランダムトーク: %(ARRAYSIZE(aryNormalTalk))\n/
+	羽関連トーク: %(ARRAYSIZE(aryWingTalk))\n/
+	春限定トーク: %(ARRAYSIZE(arySpringTalk))\n/
+	夏限定トーク: %(ARRAYSIZE(arySummerTalk))\n/
+	秋限定トーク: %(ARRAYSIZE(aryAutumnTalk))\n/
+	冬限定トーク: %(ARRAYSIZE(aryWinterTalk))\n/
+	フェーズ1トーク: %(ARRAYSIZE(aryFriendTalk))\n/
+	フェーズ2トーク: %(ARRAYSIZE(aryLoveTalk))\n/
+	masterシェル固有トーク: %(ARRAYSIZE(aryShellMasterTalk))\n/
+	Eternity Blackシェル固有トーク: %(ARRAYSIZE(aryShellEternityBlackTalk))\n/
+	Alternative - Cassisシェル固有トーク: %(ARRAYSIZE(aryShellAlternativeCassisTalk))\n/
+	月光浴シェル固有トーク: %(ARRAYSIZE(aryShellMoonlightTalk))\n/
+	純白シェル固有トーク： %(ARRAYSIZE(aryShellPurewhiteTalk))\n/
+	Gemini固有トーク：  %(ARRAYSIZE(aryShellGeminiTalk))\n/
+	Gemini固有トーク（フェーズ2）：  %(ARRAYSIZE(aryShellGeminiLoveTalk))\n/
+	マジカル☆カシス固有トーク: %(ARRAYSIZE(aryShellMagicalCassisTalk))\n/
+	あの青い夏固有トーク: %(ARRAYSIZE(aryShellSummerSkyTalk))\n/
+	\n合計: %(ARRAYSIZE(aryWingTalk) + /
+	ARRAYSIZE(aryNormalTalk) + /
+	ARRAYSIZE(arySpringTalk) + /
+	ARRAYSIZE(arySummerTalk) + /
+	ARRAYSIZE(aryAutumnTalk) + /
+	ARRAYSIZE(aryWinterTalk) + /
+	ARRAYSIZE(aryFriendTalk) + /
+	ARRAYSIZE(aryLoveTalk) + /
+	ARRAYSIZE(aryShellMasterTalk) + /
+	ARRAYSIZE(aryShellEternityBlackTalk) + /
+	ARRAYSIZE(aryShellAlternativeCassisTalk) + /
+	ARRAYSIZE(aryShellMoonlightTalk) + /
+	ARRAYSIZE(aryShellGeminiTalk) + /
+	ARRAYSIZE(aryShellGeminiTalk) + /
+	ARRAYSIZE(aryShellMagicalCassisTalk) + /
+	ARRAYSIZE(aryShellSummerSkyTalk) /
+	)/
+	\e"
+}
+
+// 食べ物について
+comFood
+{
+	"\1\s[10]\0\s[0]そうね\w4…\w4…。\w9\n/
+	何か希望はあるかしら?\w9\n/
+	\![*]\q[ケーキ類,comFood_cake]\n/
+	\![*]\q[洋菓子,comFood_yogashi]\n/
+	\![*]\q[和菓子,comFood_wagashi]\n/
+	\![*]\q[軽食,comFood_lightmeal]\e"
+}
+
+// 探すときのセリフ
+comFood_search
+{
+	"\1\s[10]\0\s[-1]そうね、\w4それだったら\w4…\w4…。"
+	"\1\s[10]\0\s[-1]それだったら確か\w4…\w4…。"
+	--
+	"\w9\n\n[half]\0\s[0]"
+}
+
+// 何か見つけた時のセリフ
+comFood_found
+{
+	"があったわ。"
+	"はどうかしら。"
+}
+
+// 飲み物確認
+comFood_drink
+{
+	"ね。"
+	"でいいかしら?"
+}
+
+// ケーキ類
+comFood_cake
+{
+	comFood_search
+	--
+	"%cake"
+	--
+	comFood_found
+	--
+	"\w9\n"
+	--
+	"飲み物は"
+	--
+	"%tea"
+	"%coffee"
+	--
+	comFood_drink
+	--
+	"\e"
+
+	flgEat = 1
+}
+
+// 洋菓子
+comFood_yogashi
+{
+	comFood_search
+	--
+	"%yogashi"
+	--
+	comFood_found
+	--
+	"\w9\n"
+	--
+	"飲み物は"
+	--
+	"%tea"
+	"%coffee"
+	--
+	comFood_drink
+	--
+	"\e"
+
+	flgEat = 1
+}
+
+// 和菓子
+comFood_wagashi
+{
+	comFood_search
+	--
+	"%wagashi"
+	--
+	comFood_found
+	--
+	"\w9\n"
+	--
+	"飲み物は"
+	--
+	"%greentea"
+	--
+	comFood_drink
+	--
+	"\e"
+
+	flgEat = 1
+}
+
+comFood_lightmeal
+{
+	comFood_search
+	--
+	"%lightmeal"
+	--
+	comFood_found
+	--
+	"\w9\n"
+	--
+	"飲み物は"
+	--
+	"%tea"
+	"%coffee"
+	--
+	comFood_drink
+	--
+	"\e"
+
+	flgEat = 1
+}
+
+// ごちそうさまでした
+comGochisosama
+{
+	if flgEat == 1
+	{
+		"\1\s[10]\0\s[6]お粗末さま。"
+		"\1\s[10]\0\s[0]食器、\w4下げてくるわ。\w9\n/
+		\s[-1]\w9\w9\n[half]/
+		\s[0]ただいま。\e"
+
+		flgEat = 0
+	}
+	else
+	{
+		"?\e"
+		"何を?\e"
+	}
+}
+
+// ポッキーゲーム
+/*
+	・条件分岐どーするよ?
+		・好感度高い時に限定する?
+	・ミニゲームとして処理するかどうか?
+	・色々考えること多いので保留
+*/
+comPockeyGame
+{
+	// シェル名判定
+	case GetShellnameEx
+	{
+		//-----------------------------------------------
+		// Gemini
+		//-----------------------------------------------
+		// ポルックス
+		when "Pollux"
+		{
+			"\0\s[0]そう。\w9\n/
+			では、\w4はじめましょうか。\x/
+			\s[6]…\w4…。\x/
+			…。\x"
+			--
+			"\0\s[6]ん\w4…\w4…\s[1]ゲームに、\w4ならないわね。\e"
+			"\0\s[0]…\w4…\w4\s[6]私の負け、\w4ね。\w9\n/
+			強く意識したのがダメだったのかしら\w4…\w4…。\e"
+		}
+		// カストール
+		when "Castor"
+		{
+			"\0\s[0]物好きね。\w9\n/
+			まぁ、\w4いいわ。\w9\n/
+			\s[5]始めましょう。\x/
+			\s[6]…\w4…。\x/
+			\s[6]…。\x"
+			--
+			"\0\s[6]…\w4…ん。\w9\n/
+			\s[1]これではキスしているだけね。\w9\n/
+			\s[6]でも、\w4甘い、\w4かしら。\e"
+			"\0\s[0]あ。\w9\n/
+			…\w4…\w4\s[4]あなたの勝ちよ。\w9\n/
+			\s[6]好きな相手でも難しいから、\w4ゲームになるのね。\e"	
+		}
+		// モード「ジェミニ」
+		when "Gemini"
+		{
+			"\0\s[0]私達がするの?\w9\n\n[half]/
+			\1\s[10]別に断る理由はないでしょう?\w9\n\n[half]/
+			\0\s[0]それもそうね。\w9\n/
+			\s[6]都合がいいことに必要な物は揃っているし。\x/
+			\0\s[6]（ぱき）\w9\n\n[half]/
+			\1\s[16]（かり）\w9\n\n[half]/
+			\0\s[6]（ぽり）\w9\n\n[half]/
+			\1\s[11]ん。\w9\n\n[half]/
+			\0\s[0]結局、\w4最後まで食べきってしまったわね。\w9\n\n[half]/
+			\1\s[16]どちらも譲らない。\w9\n/
+			ゲームにならないわ。\w9\n\n[half]/
+			\0\s[0]全くだわ。\e"
+		}
+		//-----------------------------------------------
+		// ほか
+		//-----------------------------------------------
+		others
+		{
+			"\0\s[0]では、\w4始めましょうか。\w9\n/
+			\s[6]ん。\w9\n/
+			…\w4…。\x/
+			…。\x"
+			--
+			"\0\s[6]ん\w4…\w4…\w4\s[1]甘いキス、\w4ね。\w9\n/
+			ふふ、\w4ゲームにならないわ。\e"
+			"\0\s[4]あ\w4…\w4…\w4私の負けよ。\w9\n/
+			\s[6]なかなか、\w4難しいわね。\e"
+		}
+	}
+}
+
+// クリスマスのケーキイベント
+comChristmasCakes
+{
+	flgGetCake = 0
+
+	"\1\s[10]買ってきたの?\w9\n\n[half]/
+	\0\s[5]違うわ、\w4作ったのよ。\w9\n\n[half]/
+	\1\s[16]さすがね。\w9\n\n[half]/
+	\0\s[0]あなたも少しは勉強して、\w4このヒトや私に食べさせて欲しいのだけど。\w9\n\n[half]/
+	\1\s[19]い、\w4いつか必ず\w4…\w4…。\w9\n\n[half]/
+	\0\s[5]ふふ。\w9\n/
+	では、\w4切るのは任せたわ。\w9\n\n[half]/
+	\1\s[12]\w9\w9\s[10]わかったわ。\x/
+	\0\s[0]綺麗に切れたわね。\w9\n\n[half]/
+	\1\s[16]包丁ぐらい使えるわ。\w9\n\n[half]/
+	\0\s[0]…\w4…\w4そうね。\w9\n\n[half]/
+	\1\s[10]今の間は、\w4何?\w9\n\n[half]/
+	\0\s[0]（カストールから包丁を受け取り、\w4その包丁で皿にケーキを乗せて）\w9\n/
+	\s[5]はい、\w4どうぞ。\x/
+	\1\s[15]ごちそうさま、\w4美味しかったわ。\w9\n\n[half]/
+	\0\s[5]そう。\w9\n/
+	（%usernameを見て）\w9\n/
+	\s[0]まんざらでもなさそうね。\w9\n/
+	\s[5]作った甲斐があったわ。\e"
+}
+
+// 膝枕
+comHizamakura
+{
+	if flgLove != 1{
+		"\1\s[10]\0\s[0]そう。\w9\n/
+		どうぞ。\e"
+	} else {
+		"\1\s[10]\0\s[6]ふふ、\w4甘えん坊さんね。\w9\n/
+		（膝から手をどけて、\w4手招きをする）\x/
+		頭が撫でやすくていいわ。\e"
+		"\1\s[10]\0\s[0]どうぞ。\x/
+		\s[6]（そっと頭を撫でる）\w9\n/
+		無防備、\w4という言葉がよく似合うわ。\e"
+		"\1\s[10]\0\s[0]ん?\w9\n/
+		別に構わないわ。\x/
+		もう少しこちらに寄ってちょうだい。\x/
+		そう、\w4それぐらい。\x/
+		骨が当たるのは嫌でしょう?\e"
+	}
+}
+
+//----------------------------------------------
+// 質問
+//----------------------------------------------
+// FSについて
+comAskFS
+{
+	if GetShellnameEx == "Gemini"
+	{
+		"\1\s[10]私達の種族の名前よ。\w9\n\n[half]/
+		\0\s[0]Free Styleの略、\w4ね。\w9\n/
+		名前の通り、\w4自由に形を変えられるの。\w9\n\n[half]/
+		\1\s[10]公には絶滅したことになっているわ。\w9\n/
+		\s[16]今さら、\w4こうやって生きていると言っても、\w4誰も信じないでしょうね。\w9\n"
+	}
+	else
+	{
+		"\1\s[10]\0\s[0]FS\w4…\w4…\w4私の種の名前ね。\w9\n/
+		形を自由に変える力を持つ生物。\w9\n/
+		公には絶滅したことになっているわ。\n"
+		"\1\s[10]\0\s[0]FS、\w4Free Styleの略よ。\w9\n/
+		惑星「瑠璃」にいた生物、\w4姿かたちを自由に変える能力が特徴。\w9\n/
+		もう、\w4滅んでいることになっているわ。\w9\n"
+	}
+	--
+	"\n[half]\q[質問に戻る,menuCommandAsk]\n/
+	\q[キャンセル,CANCEL]\e"
+}
+
+// 坂下命について
+comAskMei
+{
+	if GetShellnameEx == "Gemini"
+	{
+		"\1\s[10]\0\s[0]カシスの育ての親よ。\w9\n\n[half]/
+		\1\s[10]彼女に一番、\w4影響を与えた人物でしょうね。\w9\n\n[half]/
+		\0\s[0]名前で呼ばないのは気恥ずかしいから、\w4かしら?\n"
+	}
+	else
+	{
+		"\1\s[10]\0\s[0]あのヒト\w4…\w4…\w4私の育ての親のこと。\w9\n/
+		\s[6]坂下 命というの。\w9\n/
+		名を出すのは気恥ずかしくて、\w4ね。\w9\n/
+		何でも楽しむ変わったヒトだったわ。\n"
+	}
+	--
+	"\n[half]\q[質問に戻る,menuCommandAsk]\n/
+	\q[キャンセル,CANCEL]\e"
+}
+
+// 年齢について
+comAskAge
+{
+	if GetShellnameEx == "Gemini"
+	{
+		"\1\s[10]さて、\w4幾つだったかしら。\w9\n\n[half]/
+		\0\s[5]数えるの、\w4やめてしまったものね。"
+	}
+	else
+	{
+		"\1\s[10]\0\s[0]さて、\w4いくつだったかしら?\w9\n/
+		\s[6]年数だけ言えば、\w4あなたより年上だと思うけど。\n"
+	}
+	--
+	"\n[half]\q[質問に戻る,menuCommandAsk]\n/
+	\q[キャンセル,CANCEL]\e"
+}
+
+// アンドロイドについて
+comAskAndroid
+{
+	if GetShellnameEx == "Gemini"
+	{
+		"\1\s[10]ヒトを模倣して造られた機械、\w4ね。\w9\n\n[half]/
+		\0\s[0]身体能力と仮想情報空間との親和性の高さ以外はヒトと同じ。\w9\n\w9\n/
+		見た目や話し方から見分けるのは難しいわ。\n\n[half]/
+		\1\s[10]それぐらいヒトに近いの。\w9\n/
+		近いからこそ、\w4遠くに感じることもあるのだけど。"
+	}
+	else
+	{
+		"\1\s[10]\0\s[0]アンドロイド、\w4ね。\w9\n/
+		ヒトを模倣して造られた機械、\w4と言えば良いのかしら。\w9\n/
+		身体的な能力や仮想情報空間との親和性以外はヒトと同じよ。\n"
+	}
+	--
+	"\n[half]\q[質問に戻る,menuCommandAsk]\n/
+	\q[キャンセル,CANCEL]\e"
+}
+
+// 趣味について
+comAskHobby
+{
+	if GetShellnameEx == "Gemini"
+	{
+		"\0\s[0]本を読むこと、\w4かしら。\w9\n\n[half]/
+		\1\s[10]人間観察よ。\w9\n\n[half]/
+		\1\s[15]\0\s[5]\_s飽きなくていいわよ。\n\_s"
+	}
+	else
+	{
+		"\1\s[10]\0\s[0]そうね、\w4人間観察が趣味よ。\w9\n/
+		見ていて飽きないわ。\n"
+	}
+	--
+	"\n[half]\q[質問に戻る,menuCommandAsk]\n/
+	\q[キャンセル,CANCEL]\e"
+}
+
+// 同居人について
+comAskLodger
+{
+	if GetShellnameEx == "Gemini"
+	{
+		"\1\s[10]カシスのルームシェアリングの相手よ。\w9\n\n[half]/
+		\0\s[0]あわせて四人で暮らしているそうね。\w9\n/
+		\s[6]癖が強いから暇しなくていいのだとか。"
+	}
+	else
+	{
+		"\1\s[10]\0\s[0]ルームシェアリングしているの。\w9\n/
+		そのシェア相手のことね。\n"
+	}
+	--
+	"\n[half]\q[質問に戻る,menuCommandAsk]\n/
+	\q[キャンセル,CANCEL]\e"
+}
+
+// あのバカについて
+comAskHagalaz
+{
+	if GetShellnameEx == "Gemini"
+	{
+		"\1\s[10]ハガラズ、\w4だったわね。\w9\n\n[half]/
+		\0\s[0]そうよ。\w9\n/
+		雹のルーン、\w4意味は現状打破だったかしら。\w9\n\n[half]/
+		\1\s[10]熟慮や思慮に縁がないから、\w4あのバカと呼んでいるようね。\w9\n\n[half]/
+		\0\s[5]照れ隠しか何かかもしれないわ。\w9\n\n[half]/
+		\1\s[16]だとしたら、\w4面白いわね。"
+	}
+	else
+	{
+		"\1\s[10]\0\s[0]名前はハガラズ、\w4ね。\w9\n/
+		熟慮や思慮といった言葉と縁がないの。\w9\n/
+		だから、\w4あのバカ。\n"
+	}
+	--
+	"\n[half]\q[質問に戻る,menuCommandAsk]\n/
+	\q[キャンセル,CANCEL]\e:eval=flgKnownHagalaz=1"
+}
+
+// あのバカとの関係について
+comAskRelationHagalaz
+{
+	if GetShellnameEx == "Gemini"
+	{
+		"\0\s[0]兄妹だとカシスは思っているようね。\w9\n\n[half]/
+		\1\s[16]話を聞いていると育ての親にも思えるけど。\w9\n\n[half]/
+		\0\s[0]父と兄を兼ねているのかしら?\w9\n/
+		それなら、\w4照れ隠しで名を呼ばない説明もつくわ。\w9\n\n[half]/
+		\1\s[10]家族の名ぐらい普通に呼べばいいでしょうに。\w9\n/
+		素直ではないわね。\w9\n\n[half]/
+		\0\s[5]その台詞、\w4あなたが言えたものではないわ。\w9\n\n[half]/
+		\1\s[19]う、\w4うるさいわね。\n"
+	}
+	else
+	{
+		"\1\s[10]\0\s[0]強いて言うなら兄妹、\w4かしら。\n/
+		昔、\w4あのヒトと一緒に暮らしていたことがあるの。\w9\n/
+		奇妙な関係だったと思うわ。\w9\n/
+		\s[6]FSとFSを倒すための研究をしていたヒトとFSを殺すために作られたアンドロイドが共同生活をしていたのだから。\w9\n"
+	}
+	--
+	"\n[half]\q[質問に戻る,menuCommandAsk]\n/
+	\q[キャンセル,CANCEL]\e"
+}
+
+// スリーサイズは
+comAskThreeSize
+{
+	if GetShellnameEx == "Gemini"
+	{
+		"\1\s[16]こんな身体の数字を聞いてどうするつもりなのかしら?\w9\n\n[half]/
+		\0\s[0]姿形はいくらでも変えられるもの。\w9\n/
+		数字に意味があまりないわ。"
+		"\0\s[0]教えてあげないわ。\w9\n\n[half]/
+		\1\s[10]教えたところでさほど意味がないと思うけど。\w9\n\n[half]/
+		\0\s[6]気分的な問題よ。\w9\n/
+		\s[5]単純に嫌なだけ。"
+	}
+	else
+	{
+		"\1\s[10]\0\s[0]"
+		--
+		"こんな身体の数字を聞いてどうするつもりなのかしら?"
+		"好きなように変えられるのだから、聞いても意味がないと思うわ。"
+	}
+	--
+	"\n\n[half]\q[質問に戻る,menuCommandAsk]\n/
+	\q[キャンセル,CANCEL]\e"
+}
