@@ -1,0 +1,799 @@
+///////// 文　ゴーストテンプレート
+///////// 種々のイベント辞書
+///////// written by umeici.
+
+//**** インストール関連 *****************************************************************
+
+//---- インストール中のメッセージ -------------------------------------------------------
+OnInstallBegin
+{
+	"\1\s[10]\0\s[0]何かしら…\w4…\w4\e"
+}
+
+//---- インストール完了メッセージ -------------------------------------------------------
+OnInstallComplete
+{
+	"\1\s[10]\0\s[0]"
+	--
+	if reference[0] == "shell"
+	{
+		"シェル"
+	}
+	elseif reference[0] == "ghost"
+	{
+		"ゴースト"
+	}
+	elseif reference[0] == "balloon"
+	{
+		"バルーン"
+	}
+	elseif reference[0] == "plugin"
+	{
+		"プラグイン"
+	}
+	--
+	"「%reference[1]」のようね。\e"
+}
+
+//---- インストール失敗メッセージ -------------------------------------------------------
+OnInstallFailure
+{
+	"\1\s[10]\0\s[0]インストール失敗。\w9\n%reference[0]が理由のようね。\e"
+}
+
+//---- インストール拒否（他のゴーストのためのアーカイブだった） -------------------------
+OnInstallRefuse
+{
+	"\1\s[10]\0\s[0]%reference[0]宛てよ。\w9\n私宛てではないわ。\e"
+}
+
+
+//**** 消滅関連 *************************************************************************
+
+//---- 消滅指示 -------------------------------------------------------------------------
+OnVanishSelecting
+{
+	if basewarename == "斗月"
+	{
+		"\1\s[10]\0\s[8]…\w4…。\w9\e"	
+	}
+	--
+	flgLove == 1 {
+		'\1\s[10]\0\s[2]…\w9…\w9本気なの?\e'
+	} else {
+		"\1\s[10]\0\s[0]そう。\e"
+	}
+}
+
+//---- 消滅開始 -------------------------------------------------------------------------
+OnVanishSelected
+{
+	if flgLove == 1 {
+		'\1\s[10]\0\s[6]そう、\w4わかったわ。\w9\n/
+		\s[0]また、\w4いつか、\w4ここで会いましょう。\w9\n/
+		\s[6]それまで、\w9\w9\s[0]身体壊したりしないでね、\w4%username。\w9\w9\w9\e'
+	} else {
+		"\1\s[10]\0\s[0]今までありがとう、\w4とても、\w4楽しかったわ。\w9\e"
+	}
+}
+
+//---- 消滅中止 -------------------------------------------------------------------------
+OnVanishCancel
+{
+	if flgLove == 1 {
+		'\1\s[10]\0\s[4]そういうからかい方は心臓に悪いわ\w4…\w4…。\e'
+	} else {
+		"\1\s[10]\0\s[0]また、\w4一緒にいてくれるのね。\w9\nありがとう。\w9\e"
+	}
+}
+
+//---- 他のゴーストが消滅して自分に切り替わった -----------------------------------------
+OnVanished
+{
+	if basewarename == "斗月"
+	{
+		"\1\s[10]\0\s[6]死んだふり?\w9\e"
+		"\1\s[10]\0\s[0]はぁ。\w9\e"
+	}
+	--
+	"\1\s[10]\0\s[0]すべては移ろい行くものなのよ。\w9\n\s[6]私も例外では無いでしょうね。\e"
+}
+
+
+//**** メールチェック *******************************************************************
+
+//---- メールチェック開始 ---------------------------------------------------------------
+OnBIFFBegin
+{
+	"\1\s[10]\0\s[0]メールを確かめるわね。\e"
+}
+
+//---- メールチェック成功 ---------------------------------------------------------------
+OnBIFFComplete
+{
+	if reference[0] == 0
+	{
+		//---- メールは無かった
+		"\1\s[10]\0\s[0]メールは見つからなかったわ。\e"
+	}
+	else
+	{
+		//---- メールが届いていた
+		"\1\s[10]\0\s[0]%reference[0]通があるようね。\![open,mailer]\e"
+	}
+}
+
+//---- メールチェック失敗 ---------------------------------------------------------------
+OnBIFFFailure
+{
+	if reference[0] == "timeout"
+	{
+		//---- タイムアウト
+		"\1\s[10]\0\s[0]時間切れ、ね。\e"
+	}
+	elseif reference[0] == "kick"
+	{
+		//---- 蹴られた
+		"\1\s[10]\0\s[0]蹴られた?\w9\n%username、\w4何かやったの?\e"
+	}
+	elseif reference[0] == "defect"
+	{
+		//---- 設定誤り
+		"\1\s[10]\0\s[0]設定がおかしいようね。\e"
+	}
+	else
+	{
+		//---- 原因不明
+		"\1\s[10]\0\s[0]原因不明\w4…\w4…設定を見直しても出来ないようなら、\w4待つしかないわね。\e"
+	}
+}
+
+
+//**** ネットワーク更新 *****************************************************************
+
+//---- ネットワーク更新開始 -------------------------------------------------------------
+OnUpdateBegin
+{
+	if reference[3] == "ghost"
+	{
+		"\1\s[10]\0\s[0]外部情報の取り込み、\w4ね。\e"
+	}
+	elseif reference[3] == "shell"
+	{
+		"\1\s[10]\0\s[6]ちょっと、\w4着直してくるわ。\w9\e"
+	}
+	elseif reference[3] == "balloon"
+	{
+		"\1\s[10]\0\s[0]綺麗な風船ね。\w9\e"
+	}
+}
+
+//---- ネットワーク更新準備完了 ---------------------------------------------------------
+OnUpdateReady
+{
+	if reference[3] == "ghost"
+	{
+		"\1\s[10]\0\s[0]%reference[0]個の外部情報があるわ。\w5\e"
+	}
+}
+
+//---- ネットワーク更新終了 -------------------------------------------------------------
+OnUpdateComplete
+{
+	if reference[0] == "none"
+	{
+		//---- 更新すべきファイルが無かった
+		if reference[3] == "ghost"
+		{
+			"\1\s[10]\0\s[0]取り込むものがないようね。\e"
+		}
+		elseif reference[3] == "shell"
+		{
+			"\1\s[10]\0\s[6]お待たせ。\w9\e"
+		}
+		elseif reference[3] == "balloon"
+		{
+			"\1\s[10]\0\s[6]…\w4…。\w9\e"
+		}
+		elseif reference[3] == "baseware"
+		{
+			"\1\s[10]\0\s[6]……\w9\e"
+		}
+		else
+		{
+		"\1\s[10]\0\s[6]はぁ\w4…\w4…。\w9\e"
+		"\1\s[10]\0\s[6]何でもないわ。\w9\e"
+		}
+	}
+	else
+	{
+		//---- 実際に更新が完了した
+		if reference[3] == "ghost"
+		{
+			"\1\s[10]\0\s[0]取り込み終了、\w4と言っても大きな変化は無いわ。\w9\n/
+			\s[6]ちょっと、\w4見たり聞いただけで自我が消えたり、\w4変わってしまったら困るわね。\w9\e"
+		}
+		elseif reference[3] == "shell"
+		{
+			"\1\s[10]\0\s[6]終わったわ。\w9\e"
+		}
+		elseif refenrece3 == "balloon"
+		{
+			"\1\s[10]\0\s[5]\w9\w5\s[0]何?\w9\e"
+		}
+	}
+}
+
+//---- ネットワーク更新失敗 -------------------------------------------------------------
+OnUpdateFailure
+{
+	if reference[0] == "timeout"
+	{
+		//---- タイムアウトした
+		"\1\s[10]\0\s[0]時間切れね。\w9"
+	}
+	elseif reference[0] == "md5 miss"
+	{
+		//---- MD5値が一致しなかった
+		"\1\s[10]\0\s[0]MD5値不一致\w4…\w4…\w4。"
+	}
+	else
+	{
+		//---- 上記以外の理由で失敗した
+		"\1\s[10]\0\s[0]理由は%reference[0]ね。"
+	}
+	--
+	"\n\n\0\s[6]外部情報の取り込みに失敗したわ\e"
+}
+
+//---- ネットワーク更新 ダウンロード開始 ------------------------------------------------
+//OnUpdate.OnDownloadBegin
+//{
+//	"\1\s[10]\0\s[0]「%reference[0]」の取り込みをはじめるわ。\e"
+//}
+
+//---- ネットワーク更新 MD5値照合開始 ---------------------------------------------------
+//OnUpdate.OnMD5CompareBegin
+//{
+//	"\1\s[10]\0\s[0]MD5値の確認…\w4…\w4。\e"
+//}
+
+//---- ネットワーク更新 MD5値一致 -------------------------------------------------------
+//OnUpdate.OnMD5CompareComplete
+//{
+//	"\1\s[10]\0\s[6]大丈夫のようね。\e"
+//}
+
+//---- ネットワーク更新 MD5値不一致 -----------------------------------------------------
+//OnUpdate.OnMD5CompareFailure
+//{
+//	"\1\s[10]\0\s[0]MD5不一致?\e"
+//}
+
+//**** ヘッドラインセンス ***************************************************************
+
+//---- ヘッドラインセンス開始 -----------------------------------------------------------
+OnHeadlinesenseBegin
+{
+	"\1\s[10]\0\s[0]%reference[0]ヘッドライン取得中。\e"
+}
+
+//---- ヘッドライン読み上げ -------------------------------------------------------------
+OnHeadlinesense.OnFind
+{
+	//---- はじめのセリフ
+	if reference[2] == "First" || reference[2] == "First and Last"
+	{
+		//---- 最初のページ
+		"\1\s[10]\0\b2\s[0]%reference[0]のヘッドラインよ。"
+	}
+	elseif reference[2] == "Next"
+	{
+		//---- 真ん中あたりのページ
+		"\1\s[10]\0\b2\s[0]%reference[0]ヘッドライン、続き。"
+	}
+	elseif reference[2] == "Last"
+	{
+		//---- 最後のページ
+		"\1\s[10]\0\b2\s[0]%reference[0]ヘッドライン、これが最後ね。"
+	}
+	--
+	//---- ヘッドライン本体
+	"\n\n%reference[3]\n\n"
+	--
+	//---- 選択肢
+	if reference[2] == "First" || reference[2] == "Next"
+	{
+		//---- 次のページがある場合
+		"\q0[][次のページ]/
+		\q1[%reference[1]][サイトへ]/
+		\q2[HEADLINECANCEL][やめ]\e"
+	}
+	else
+	{
+		//---- 次のページがない場合
+		"\q0[%reference[1]][サイトへ]/
+		\q1[HEADLINECANCEL][やめ]\e"
+	}
+}
+
+//---- ヘッドライン更新が無かった -------------------------------------------------------
+OnHeadlinesenseComplete
+{
+	"\1\s[10]\0\s[0]%reference[0]、更新はないわ。\e"
+}
+
+//---- ヘッドラインセンス失敗 -----------------------------------------------------------
+OnHeadlinesenseFailure
+{
+	"\1\s[10]\0\s[0]ヘッドラインセンスに失敗しました。\n\n理由："
+	--
+	if reference[0] == "can't download"
+	{
+		"ダウンロード失敗。"
+	}
+	elseif reference[0] == "can't analyze"
+	{
+		"ヘッドライン解析失敗。"
+	}
+	else
+	{
+		"謎。"
+	}
+	--
+	"\e"
+}
+
+
+//**** ファイル作成関連 *****************************************************************
+
+//---- updates2.dau作成開始 -------------------------------------------------------------
+OnUpdatedataCreating
+{
+	"\1\s[10]\0\s[0]アップデートデータファイルを作っているわ。\e"
+}
+
+//---- updates2.dau作成完了 -------------------------------------------------------------
+OnUpdatedataCreated
+{
+	"\1\s[10]\0\s[0]アップデートデータファイルを作り終えたわよ。\e"
+}
+
+//---- NAR作成開始 ----------------------------------------------------------------------
+OnNarCreating
+{
+	"\1\s[10]\0\s[0]NARの作成を始めるわよ。\e"
+}
+
+//---- NAR作成完了 ----------------------------------------------------------------------
+OnNarCreated
+{
+	"\1\s[10]\0\s[0]「%reference[0]」のNAR「%reference[1]」ができたわ。\e"
+}
+
+//****　時計合わせ　*********************************************************************
+//**** みか (http://homepage2.nifty.com/ko-ki/) の辞書を参考にしました。感謝＞こーき氏
+
+//----　時計合わせ開始 ------------------------------------------------------------------
+OnSNTPBegin
+{
+	"\1\s[10]\0\s[0]時計の針をあわせるわ、%reference[0] に接続中。\e"
+}
+
+//----　時刻取得成功、比較開始 ----------------------------------------------------------
+OnSNTPCompare
+{
+	"\1\s[10]\0\s[0]/
+	current %reference[1][0]/%reference[1][1]/%reference[1][2] %reference[1][3]:%reference[1][4]:%reference[1][5]\w2\n/
+	local   %reference[2][0]/%reference[2][1]/%reference[2][2] %reference[2][3]:%reference[2][4]:%reference[2][5]\w2\n/
+	\n"
+	--
+	if reference[3] == 0
+	{
+		"ぴったりね。\e"
+	}
+	else
+	{
+		"\1\s[10]\0\n\s[0]%reference[3]秒ずれてるわよ。\n\n/
+		\q0[OnSNTPEXECUTE][時刻を合わせる]/
+		\q1[OnSNTPCANCEL][放置]\e"
+	}
+}
+
+//----　時計合わせ実行 ------------------------------------------------------------------
+OnSNTPEXECUTE
+{
+	"\1\s[10]\0\s[0]針を合わせたわよ。\6\e"
+}
+
+//----　時計合わせ中止 ------------------------------------------------------------------
+OnSNTPCANCEL
+{
+	"\1\s[10]\0\s[0]わかったわ。\e"
+}
+
+//----　時計合わせ失敗 ------------------------------------------------------------------
+OnSNTPFailure
+{
+	"\1\s[10]\0\s[0]失敗\w4…\w4…?。\e"
+}
+
+
+//**** そのほか *************************************************************************
+
+//---- ディスプレイ解像度変更 -----------------------------------------------------------
+OnDisplayChange
+{
+	//---- 変数にディスプレイ解像度と色深度に関する情報を取得
+	//---- 使うかどうかは分からないがとりあえず保持しておく
+	displaybpp    = reference[0]
+	displaywidth  = reference[1]
+	displayheight = reference[2]
+}
+
+//---- URLドロップ ----------------------------------------------------------------------
+//---- CROW でゴーストインストーラからゴーストをインストールを始めた時にも呼ばれます ----
+OnURLDropping
+{
+	"\1\s[10]\0\s[0]%reference[0]からデータを取得中。\e"
+}
+
+//---- 起動時に MATERIA を検出 ----------------------------------------------------------
+OnEmbryoExist
+{
+	"\1\s[10]\0\s[0]既に「伺か」が起動してるわ。\e"
+}
+
+//---- 起動時に猫どりふを検出 -----------------------------------------------------------
+OnNekodorifExist
+{
+	"\1\s[10]\0\s[0]よりによって面倒な\w4…\w4…\w4\e"
+}
+
+//---- スクリーンセーバー実行開始 -------------------------------------------------------
+OnScreenSaverStart
+{
+	"\1\s[10]\0\s[0]少しの間お別れね。\e"
+}
+
+//---- スクリーンセーバー実行終了 -------------------------------------------------------
+OnScreenSaverEnd
+{
+	"\1\s[10]\0\s[0]お帰りなさい、%username。\e"
+}
+
+//---- プラグイン -----------------------------------------------------------------------
+OnDive
+{
+	if sender == "斗月"
+	{
+		"\1\s[10]\0\s[8]あなたは現実に落とされて溺れると良いわ。\w9\e"
+	}
+	else
+	{
+		"\1\s[10]\0\s[8]私を突き落とそうなんて100年早いわ。\w9\n/
+		\s[6]あなたが落ちなさい。\w9"
+	}
+}
+
+OnBeerShower
+{
+	if sender == "斗月"
+	{
+		"\1\s[10]\0\s[0]汚れた服はどうするつもりかしら?\w9\n/
+		\s[6]片付けも出来ない子どもには酷だったわね。\w9\e"
+	}
+	else
+	{
+		"\1\s[10]\0\s[0]ビール掛け…\w4…?\w9\n/
+		\s[2]きゃっ\w9\w5\n/
+		\s[3]…\w4…。\w9"
+	}
+}
+
+OnMusicPlayEx
+{
+	"\1\s[10]\0\s[0]%reference[1]の%reference[0]が聞こえるわ。\w9\e"
+	"\1\s[10]\0\s[6]%reference[1]の%reference[0]を聴いているのね。\w9\e"
+}
+
+OnHitThunder
+{
+	"\1\s[10]\0\s[2]きゃっ\w9\n/
+	\s[3]…\w4…\w4雷、\w4ね。\w9\e"
+	"\1\s[10]\0\s[2]!\w9\w9\n/
+	\s[1]別に雷が怖いわけじゃないわ\w4…\w4…。\w9\e"
+}
+
+//--- 他のゴーストさんのセーブデータ確認 主に切り替え時対応 -----------------------------
+savedatacheck{
+	_dummy = FOPEN("%_argv[0]","r")
+	if _dummy == 1{
+		dataplace = _argv[0]
+		EVAL("savedatacheck_%(_argv[1])")
+	}else{
+		FCLOSE("%_argv[0]")
+	}
+}
+
+savedatacheck_unknown{
+	while 1{
+		if (_line = FREAD("%(dataplace)")) == -1{
+			record = "master"
+			break
+		}else{
+			if "k-mode" _in_ CUTSPACE(_line){
+				record = "k-mode"
+				break
+			}elseif "m-mode" _in_ CUTSPACE(_line){
+				record = "m-mode"
+				break
+			}elseif "月はピアノに誘われて" _in_ CUTSPACE(_line){
+				record = "月はピアノに誘われて"
+				break
+			}elseif "くろゆり" _in_ CUTSPACE(_line){
+				record = "くろゆり"
+				break
+			}elseif "sss-mode" _in_ CUTSPACE(_line){
+				record = "sss-mode"
+				break
+			}elseif "Alternative - Ainsel" _in_ CUTSPACE(_line){
+				record = "Alternative - Ainsel"
+				break
+			}
+		}
+	}
+	FCLOSE("%(dataplace)")
+	dataplace=''
+}
+
+savedatacheck_Vanishing{
+	while 1{
+		if (_line = FREAD("%(dataplace)")) == -1{
+			record = "mastar"
+			break
+		}else{
+			if "familiar" _in_ CUTSPACE(_line){
+				record = "familiar"
+				break
+			}elseif "mutter" _in_ CUTSPACE(_line){
+				record = "mutter"
+				break
+			}elseif "vater" _in_ CUTSPACE(_line){
+				record = "vater"
+				break
+			}
+		}
+	}
+	FCLOSE("%(dataplace)")
+	dataplace=''
+}
+
+savedatacheck_vii{
+	while 1{
+		if (_line = FREAD("%(dataplace)")) == -1{
+			record = "ヴィイ"
+			break
+		}else{
+			case CUTSPACE(_line[0]){
+				when "＄辞書フォルダ	."{
+					if CUTSPACE(_line[1]) == "party_time"{
+						record = "ウタゲ"
+						break
+					}else{
+						record = "ヴィイ"
+						break
+					}
+				}
+			}
+		}
+	}
+	FCLOSE("%(dataplace)")
+	dataplace=''
+}
+
+//**** スタンプ対応 *****************************************************
+OnStampInfo
+{
+	スタンプ帳動作=reference[4]
+	スタンプ帳情報=(CHR(2))+reference[3]
+}
+
+//**** ウェイトコントロール *********************************************
+TextOnlyTranslator
+{
+	_string = RE_SPLIT(_argv[0],'\\(\\|q\[.*?\]\[.*?\]|[!&8cfijmpqsn]\[.*?\]|[-*+014567bcehntuvxz]|_[ablmsuvw]\[.*?\]|__(t|[qw]\[.*?\])|_[!?+nqsV]|[sipw][0-9])')
+	_n = ARRAYSIZE(_string)
+	_tag = RE_GETSTR()
+	_tr = ''
+	_qs = 0
+	
+	for _i = 0 ; _i < _n ; _i++ {
+		_tr += EVAL("%(_argv[1])(_string[_i],_qs)")
+		_tr += _tag[_i]
+		if '\_q' _in_ _tag[_i] {
+			_qs = ! _qs
+		}
+	}
+	
+	_tr
+}
+
+TextOnlyTranslatorFunc
+{
+    //_argv[0] = 置換対象テキスト
+    //_argv[1] = クイックセクション内か否か
+    
+    _text = _argv[0]
+    if ! _argv[1]
+    {
+		if WC == "fast"
+		{
+			_text = REPLACE(_text, "、", "、")
+			_text = REPLACE(_text, "。", "。")
+			_text = REPLACE(_text, "?", "?")
+			_text = REPLACE(_text, "!", "!")
+			_text = RE_REPLACE(_text , '\n\n(?=[^\[])', '\w9\n\n')
+			_text = RE_REPLACE(_text ,'！(?=[^！])', '！\w9')
+		}
+		elseif WC == "normal"
+		{
+			_text = REPLACE(_text, "、", "、\w3")
+			_text = REPLACE(_text, "。", "。\w5")
+			_text = REPLACE(_text, "?", "?\w5")
+			_text = REPLACE(_text, "!", "!\w5")
+			_text = RE_REPLACE(_text , '\n\n(?=[^\[])', '\w9\n\n')
+			_text = RE_REPLACE(_text ,'！(?=[^！])', '！\w9')
+		}
+		elseif WC == "slow"
+		{
+			_text = REPLACE(_text, "、", "、\w9\w9")
+			_text = REPLACE(_text, "。", "。\w9\w9")
+			_text = REPLACE(_text, "?", "?\w9\w9")
+			_text = REPLACE(_text, "!", "!\w9\w9")
+			_text = RE_REPLACE(_text , '\n\n(?=[^\[])', '\w9\n\n')
+			_text = RE_REPLACE(_text ,'！(?=[^！])', '！\w9')
+		}
+    }
+    _text
+}
+
+//**** ツールチップ関連 *************************************************
+// コア処理
+AYATEMPLATE.MouseEventExec
+{
+  _fname = _argv[0] + TOSTR(reference[3]) + TOSTR(reference[4])
+  if ISFUNC(_fname) {
+    EVAL(_fname)
+    return
+  }
+
+  _fname = _argv[0] + TOSTR(reference[3])
+  if ISFUNC(_fname) {
+    EVAL(_fname)
+    return
+  }
+}
+
+// リソース
+On_tooltip
+{
+	if shellname == "master" && flgTooltip == "1"
+	{
+		AYATEMPLATE.MouseEventExec('tooltipMaster')
+	}
+}
+
+// マスターシェルツールチップ
+tooltipMaster0Head
+{
+	'撫でたいの?\nそれとも撫でられたいの?'
+}
+
+tooltipMaster0Face
+{
+	'顔よ。'
+}
+
+tooltipMaster0Lip
+{
+	'唇ね。'
+}
+
+tooltipMaster0Bust
+{
+	'胸よ。\n触れて楽しい?'
+}
+
+tooltipMaster0Skirt
+{
+	'スカートよ。\nめくるの?'
+}
+
+tooltipMaster0Skirt_s
+{
+	'スカートね。'
+}
+
+tooltipMaster0Wing
+{
+	'羽、飛ぶのに必要でしょう。\n形だけでも。'
+}
+
+//--------------------------
+// 翼の有無判定
+//--------------------------
+getWingStatus
+{
+	case shellname {
+		// 鳥の羽以外の形状
+		when "master", "Alternative - Cassis", "Eternity Black", "White Days Actress", "White Lolita", "スプートニクを探して", "拡大鏡", "蒼月", "銀色","Gemini","桜吹雪","マジカル☆カシス", "Fly High!","新月"
+			flgWing = 1
+		// 鳥の羽
+		when "純白","瑠璃","月白","プラジャーパティ","桃色月","さすらいウサギ","ほわいときゃっと"
+			flgWing = 2
+		// それ以外
+		others {
+			flgWing = 0
+		}
+	}
+}
+
+//-------------------------
+// 初期値設定
+//-------------------------
+setInit
+{
+	// 好感度閾値
+	likelimit = 50
+
+	// 座り関連処理
+	OsuwariStart
+
+	// 羽状態取得
+	getWingStatus
+
+	// 他ゴーストトーク取得有効
+	"\![set,otherghosttalk,true]"
+
+	// シェル回りの互換処理
+	ShellCompatibility
+
+	// 桜吹雪：サーフェス切り替え
+	if GetShellnameEx == "桜吹雪" {
+		SakurafubukiShiftBase;
+		SakurafubukiPhase = 0;
+		cntEros = 0;
+	}
+}
+
+// ロード時初期化
+OnGhostLoad : void
+{
+	mikireflag = 0
+	stroke = (0,0,0,0)
+	stroketimer = (0,0,0,0)
+}
+
+// アンロード時初期化
+OnGhostUnload : void
+{
+	ERASEVAR('mikireflag')
+	ERASEVAR('stroke')
+	ERASEVAR('stroketimer')
+	ERASEVAR('otherghostname')
+	ERASEVAR('mouse_double_click_name')
+	ERASEVAR('mouse_double_click_counter')
+	ERASEVAR('スタンプ帳動作')
+	ERASEVAR('スタンプ帳情報')
+	ERASEVAR('cntEros')
+}
+
+// さくらスクリプトを取り除く
+// via Tips/SAKURAスクリプトタグを取り除く - 文Wiki「文屋」 http://emily.shillest.net/ayaya/index.php?Tips%2FSAKURA%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%97%E3%83%88%E3%82%BF%E3%82%B0%E3%82%92%E5%8F%96%E3%82%8A%E9%99%A4%E3%81%8F
+RemoveSakuraScript
+{
+  _text = RE_REPLACE(_argv[0],'\\_{0,2}[a-zA-Z0-9*!&](\d|\[("([^"]|\\")+?"|([^\]]|\\\])+?)+?\])?','')
+  _text = REPLACE(_text,'\\','\')
+  _text
+}

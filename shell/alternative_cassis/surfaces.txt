@@ -1,0 +1,1659 @@
+charset,Shift_JIS
+
+descript
+{
+	version,1
+}
+
+surface0
+{
+	element0,overlay,surface0.png,0,0
+
+	collision0,192,68,266,106,Head
+	collision1,238,143,248,151,Lip
+	collision2,218,195,262,224,Bust
+	collision3,198,337,321,375,Skirt
+	collision4,149,330,186,360,Hand
+	collision5,263,86,289,185,Hair
+	collision6,136,146,166,167,Wing
+	collision7,114,165,164,196,Wing
+	collision8,63,196,151,301,Wing
+
+	animation0.interval,sometimes
+	animation0.pattern0,overlay,6,50,0,0
+	animation0.pattern1,overlay,-1,60,0,0
+
+	animation1.interval,bind
+	animation1.pattern0,overlay,2000,0,0,0
+
+}
+
+surface1
+{
+	element0,overlay,surface0.png,0,0
+	element1,overlay,surface1.png,0,0
+
+	collision0,192,68,266,106,Head
+	collision1,238,143,248,151,Lip
+	collision2,218,195,262,224,Bust
+	collision3,198,337,321,375,Skirt
+	collision4,149,330,186,360,Hand
+	collision5,263,86,289,185,Hair
+	collision6,136,146,166,167,Wing
+	collision7,114,165,164,196,Wing
+	collision8,63,196,151,301,Wing
+
+	animation1.interval,bind
+	animation1.pattern0,overlay,2000,0,0,0
+
+}
+
+surface2
+{
+	element0,overlay,surface0.png,0,0
+	element1,overlay,surface2.png,0,0
+
+	collision0,192,68,266,106,Head
+	collision1,238,143,248,151,Lip
+	collision2,218,195,262,224,Bust
+	collision3,198,337,321,375,Skirt
+	collision4,149,330,186,360,Hand
+	collision5,263,86,289,185,Hair
+	collision6,136,146,166,167,Wing
+	collision7,114,165,164,196,Wing
+	collision8,63,196,151,301,Wing
+
+	animation1.interval,bind
+	animation1.pattern0,overlay,2000,0,0,0
+
+}
+
+surface3
+{
+	element0,overlay,surface0.png,0,0
+	element1,overlay,surface3.png,0,0
+
+	collision0,192,68,266,106,Head
+	collision1,238,143,248,151,Lip
+	collision2,218,195,262,224,Bust
+	collision3,198,337,321,375,Skirt
+	collision4,149,330,186,360,Hand
+	collision5,263,86,289,185,Hair
+	collision6,136,146,166,167,Wing
+	collision7,114,165,164,196,Wing
+	collision8,63,196,151,301,Wing
+
+	animation1.interval,bind
+	animation1.pattern0,overlay,2000,0,0,0
+
+}
+
+surface4
+{
+	element0,overlay,surface0.png,0,0
+	element1,overlay,surface4.png,0,0
+
+	collision0,192,68,266,106,Head
+	collision1,238,143,248,151,Lip
+	collision2,218,195,262,224,Bust
+	collision3,198,337,321,375,Skirt
+	collision4,149,330,186,360,Hand
+	collision5,263,86,289,185,Hair
+	collision6,136,146,166,167,Wing
+	collision7,114,165,164,196,Wing
+	collision8,63,196,151,301,Wing
+
+	animation1.interval,bind
+	animation1.pattern0,overlay,2000,0,0,0
+
+}
+
+surface5
+{
+	element0,overlay,surface0.png,0,0
+	element1,overlay,surface5.png,0,0
+
+	collision0,192,68,266,106,Head
+	collision1,238,143,248,151,Lip
+	collision2,218,195,262,224,Bust
+	collision3,198,337,321,375,Skirt
+	collision4,149,330,186,360,Hand
+	collision5,263,86,289,185,Hair
+	collision6,136,146,166,167,Wing
+	collision7,114,165,164,196,Wing
+	collision8,63,196,151,301,Wing
+
+	animation1.interval,bind
+	animation1.pattern0,overlay,2000,0,0,0
+
+}
+
+surface6
+{
+	element0,overlay,surface0.png,0,0
+	element1,overlay,surface6.png,0,0
+
+	collision0,192,68,266,106,Head
+	collision1,238,143,248,151,Lip
+	collision2,218,195,262,224,Bust
+	collision3,198,337,321,375,Skirt
+	collision4,149,330,186,360,Hand
+	collision5,263,86,289,185,Hair
+	collision6,136,146,166,167,Wing
+	collision7,114,165,164,196,Wing
+	collision8,63,196,151,301,Wing
+
+	animation1.interval,bind
+	animation1.pattern0,overlay,2000,0,0,0
+
+}
+
+surface7
+{
+	element0,overlay,surface0.png,0,0
+	element1,overlay,surface7.png,0,0
+
+	collision0,192,68,266,106,Head
+	collision1,238,143,248,151,Lip
+	collision2,218,195,262,224,Bust
+	collision3,198,337,321,375,Skirt
+	collision4,149,330,186,360,Hand
+	collision5,263,86,289,185,Hair
+	collision6,136,146,166,167,Wing
+	collision7,114,165,164,196,Wing
+	collision8,63,196,151,301,Wing
+
+	animation1.interval,bind
+	animation1.pattern0,overlay,2000,0,0,0
+
+}
+
+surface8
+{
+	element0,overlay,surface0.png,0,0
+	element1,overlay,surface8.png,0,0
+
+	collision0,192,68,266,106,Head
+	collision1,230,142,248,151,Lip
+	collision2,218,195,262,224,Bust
+	collision3,198,337,321,375,Skirt
+	collision4,149,330,186,360,Hand
+	collision5,263,86,289,185,Hair
+	collision6,136,146,166,167,Wing
+	collision7,114,165,164,196,Wing
+	collision8,63,196,151,301,Wing
+
+	animation1.interval,bind
+	animation1.pattern0,overlay,2000,0,0,0
+
+}
+
+surface9
+{
+	element0,overlay,surface0.png,0,0
+	element1,overlay,surface9.png,0,0
+
+	collision0,192,68,266,106,Head
+	collision1,231,141,245,155,Lip
+	collision2,218,195,262,224,Bust
+	collision3,198,337,321,375,Skirt
+	collision4,149,330,186,360,Hand
+	collision5,263,86,289,185,Hair
+	collision6,136,146,166,167,Wing
+	collision7,114,165,164,196,Wing
+	collision8,63,196,151,301,Wing
+
+	animation1.interval,bind
+	animation1.pattern0,overlay,2000,0,0,0
+
+}
+
+surface30
+{
+	element0,overlay,surface0.png,0,0
+	element1,overlay,surface2012.png,0,0
+
+	collision0,192,68,266,106,Head
+	collision1,235,145,245,153,Lip
+	collision2,218,195,262,224,Bust
+	collision3,198,337,321,375,Skirt
+	collision4,149,330,186,360,Hand
+	collision5,263,86,289,185,Hair
+	collision6,136,146,166,167,Wing
+	collision7,114,165,164,196,Wing
+	collision8,63,196,151,301,Wing
+
+	animation1.interval,bind
+	animation1.pattern0,overlay,2000,0,0,0
+
+}
+
+surface31
+{
+	element0,overlay,surface0.png,0,0
+	element1,overlay,surface2011.png,0,0
+
+	collision0,192,68,266,106,Head
+	collision1,238,143,248,151,Lip
+	collision2,218,195,262,224,Bust
+	collision3,198,337,321,375,Skirt
+	collision4,149,330,186,360,Hand
+	collision5,263,86,289,185,Hair
+	collision6,136,146,166,167,Wing
+	collision7,114,165,164,196,Wing
+	collision8,63,196,151,301,Wing
+
+	animation1.interval,bind
+	animation1.pattern0,overlay,2000,0,0,0
+
+}
+
+surface32
+{
+	element0,overlay,surface0.png,0,0
+	element1,overlay,surface6.png,0,0
+
+	collision0,192,68,266,106,Head
+	collision1,238,143,248,151,Lip
+	collision2,218,195,262,224,Bust
+	collision3,198,337,321,375,Skirt
+	collision4,149,330,186,360,Hand
+	collision5,263,86,289,185,Hair
+	collision6,136,146,166,167,Wing
+	collision7,114,165,164,196,Wing
+	collision8,63,196,151,301,Wing
+
+	animation1.interval,bind
+	animation1.pattern0,overlay,2000,0,0,0
+
+}
+
+surface1000
+{
+	element0,overlay,surface1000.png,0,0
+
+	collision0,192,68,266,106,Head
+	collision1,238,143,248,151,Lip
+	collision2,218,195,262,224,Bust
+	collision3,238,293,257,313,Mystic
+	collision4,149,330,186,360,Hand
+	collision5,263,86,289,185,Hair
+	collision6,136,146,166,167,Wing
+	collision7,114,165,164,196,Wing
+	collision8,63,196,151,301,Wing
+	collision9,274,309,309,350,Hand
+	collision10,249,245,266,263,Navel
+
+	animation0.interval,sometimes
+	animation0.pattern0,overlay,1006,50,0,0
+	animation0.pattern1,overlay,-1,60,0,0
+
+	animation1.interval,bind
+	animation1.pattern0,overlay,3000,0,0,0
+
+}
+
+surface1001
+{
+	element0,overlay,surface1000.png,0,0
+	element1,overlay,surface1001.png,0,0
+
+	collision0,192,68,266,106,Head
+	collision1,238,143,248,151,Lip
+	collision2,218,195,262,224,Bust
+	collision3,238,293,257,313,Mystic
+	collision4,149,330,186,360,Hand
+	collision5,263,86,289,185,Hair
+	collision6,136,146,166,167,Wing
+	collision7,114,165,164,196,Wing
+	collision8,63,196,151,301,Wing
+	collision9,274,309,309,350,Hand
+	collision10,249,245,266,263,Navel
+
+	animation1.interval,bind
+	animation1.pattern0,overlay,3000,0,0,0
+
+}
+
+surface1002
+{
+	element0,overlay,surface1000.png,0,0
+	element1,overlay,surface1002.png,0,0
+
+	collision0,192,68,266,106,Head
+	collision1,238,143,248,151,Lip
+	collision2,218,195,262,224,Bust
+	collision3,238,293,257,313,Mystic
+	collision4,149,330,186,360,Hand
+	collision5,263,86,289,185,Hair
+	collision6,136,146,166,167,Wing
+	collision7,114,165,164,196,Wing
+	collision8,63,196,151,301,Wing
+	collision9,274,309,309,350,Hand
+	collision10,249,245,266,263,Navel
+	
+	animation1.interval,bind
+	animation1.pattern0,overlay,3000,0,0,0
+
+}
+
+surface1003
+{
+	element0,overlay,surface1000.png,0,0
+	element1,overlay,surface1003.png,0,0
+
+	collision0,192,68,266,106,Head
+	collision1,238,143,248,151,Lip
+	collision2,218,195,262,224,Bust
+	collision3,238,293,257,313,Mystic
+	collision4,149,330,186,360,Hand
+	collision5,263,86,289,185,Hair
+	collision6,136,146,166,167,Wing
+	collision7,114,165,164,196,Wing
+	collision8,63,196,151,301,Wing
+	collision9,274,309,309,350,Hand
+	collision10,249,245,266,263,Navel
+
+	animation1.interval,bind
+	animation1.pattern0,overlay,3000,0,0,0
+
+}
+
+surface1004
+{
+	element0,overlay,surface1000.png,0,0
+	element1,overlay,surface1004.png,0,0
+
+	collision0,192,68,266,106,Head
+	collision1,238,143,248,151,Lip
+	collision2,218,195,262,224,Bust
+	collision3,238,293,257,313,Mystic
+	collision4,149,330,186,360,Hand
+	collision5,263,86,289,185,Hair
+	collision6,136,146,166,167,Wing
+	collision7,114,165,164,196,Wing
+	collision8,63,196,151,301,Wing
+	collision9,274,309,309,350,Hand
+	collision10,249,245,266,263,Navel
+
+	animation1.interval,bind
+	animation1.pattern0,overlay,3000,0,0,0
+
+}
+
+surface1005
+{
+	element0,overlay,surface1000.png,0,0
+	element1,overlay,surface1005.png,0,0
+
+	collision0,192,68,266,106,Head
+	collision1,238,143,248,151,Lip
+	collision2,218,195,262,224,Bust
+	collision3,238,293,257,313,Mystic
+	collision4,149,330,186,360,Hand
+	collision5,263,86,289,185,Hair
+	collision6,136,146,166,167,Wing
+	collision7,114,165,164,196,Wing
+	collision8,63,196,151,301,Wing
+	collision9,274,309,309,350,Hand
+	collision10,249,245,266,263,Navel
+
+	animation1.interval,bind
+	animation1.pattern0,overlay,3000,0,0,0
+
+}
+
+surface1006
+{
+	element0,overlay,surface1000.png,0,0
+	element1,overlay,surface1006.png,0,0
+
+	collision0,192,68,266,106,Head
+	collision1,238,143,248,151,Lip
+	collision2,218,195,262,224,Bust
+	collision3,238,293,257,313,Mystic
+	collision4,149,330,186,360,Hand
+	collision5,263,86,289,185,Hair
+	collision6,136,146,166,167,Wing
+	collision7,114,165,164,196,Wing
+	collision8,63,196,151,301,Wing
+	collision9,274,309,309,350,Hand
+	collision10,249,245,266,263,Navel
+
+	animation1.interval,bind
+	animation1.pattern0,overlay,3000,0,0,0
+
+}
+
+surface1007
+{
+	element0,overlay,surface1000.png,0,0
+	element1,overlay,surface1007.png,0,0
+
+	collision0,192,68,266,106,Head
+	collision1,238,143,248,151,Lip
+	collision2,218,195,262,224,Bust
+	collision3,238,293,257,313,Mystic
+	collision4,149,330,186,360,Hand
+	collision5,263,86,289,185,Hair
+	collision6,136,146,166,167,Wing
+	collision7,114,165,164,196,Wing
+	collision8,63,196,151,301,Wing
+	collision9,274,309,309,350,Hand
+	collision10,249,245,266,263,Navel
+
+	animation1.interval,bind
+	animation1.pattern0,overlay,3000,0,0,0
+
+}
+
+surface1008
+{
+	element0,overlay,surface1000.png,0,0
+	element1,overlay,surface1008.png,0,0
+
+	collision0,192,68,266,106,Head
+	collision1,238,143,248,151,Lip
+	collision2,218,195,262,224,Bust
+	collision3,238,293,257,313,Mystic
+	collision4,149,330,186,360,Hand
+	collision5,263,86,289,185,Hair
+	collision6,136,146,166,167,Wing
+	collision7,114,165,164,196,Wing
+	collision8,63,196,151,301,Wing
+	collision9,274,309,309,350,Hand
+	collision10,249,245,266,263,Navel
+
+	animation1.interval,bind
+	animation1.pattern0,overlay,3000,0,0,0
+
+}
+
+surface1009
+{
+	element0,overlay,surface1000.png,0,0
+	element1,overlay,surface1009.png,0,0
+
+	collision0,192,68,266,106,Head
+	collision1,238,143,248,151,Lip
+	collision2,218,195,262,224,Bust
+	collision3,238,293,257,313,Mystic
+	collision4,149,330,186,360,Hand
+	collision5,263,86,289,185,Hair
+	collision6,136,146,166,167,Wing
+	collision7,114,165,164,196,Wing
+	collision8,63,196,151,301,Wing
+	collision9,274,309,309,350,Hand
+	collision10,249,245,266,263,Navel
+	
+	animation1.interval,bind
+	animation1.pattern0,overlay,3000,0,0,0
+
+}
+
+surface1030
+{
+	element0,overlay,surface1000.png,0,0
+	element1,overlay,surface1012.png,0,0
+
+	collision0,192,68,266,106,Head
+	collision1,238,143,248,151,Lip
+	collision2,218,195,262,224,Bust
+	collision3,238,293,257,313,Mystic
+	collision4,149,330,186,360,Hand
+	collision5,263,86,289,185,Hair
+	collision6,136,146,166,167,Wing
+	collision7,114,165,164,196,Wing
+	collision8,63,196,151,301,Wing
+	collision9,274,309,309,350,Hand
+	collision10,249,245,266,263,Navel
+
+	animation1.interval,bind
+	animation1.pattern0,overlay,3000,0,0,0
+
+}
+
+surface1031
+{
+	element0,overlay,surface1000.png,0,0
+	element1,overlay,surface1011.png,0,0
+
+	collision0,192,68,266,106,Head
+	collision1,238,143,248,151,Lip
+	collision2,218,195,262,224,Bust
+	collision3,238,293,257,313,Mystic
+	collision4,149,330,186,360,Hand
+	collision5,263,86,289,185,Hair
+	collision6,136,146,166,167,Wing
+	collision7,114,165,164,196,Wing
+	collision8,63,196,151,301,Wing
+	collision9,274,309,309,350,Hand
+	collision10,249,245,266,263,Navel
+
+	animation1.interval,bind
+	animation1.pattern0,overlay,3000,0,0,0
+
+}
+
+surface1032
+{
+	element0,overlay,surface1000.png,0,0
+	element1,overlay,surface1006.png,0,0
+
+	collision0,192,68,266,106,Head
+	collision1,238,143,248,151,Lip
+	collision2,218,195,262,224,Bust
+	collision3,238,293,257,313,Mystic
+	collision4,149,330,186,360,Hand
+	collision5,263,86,289,185,Hair
+	collision6,136,146,166,167,Wing
+	collision7,114,165,164,196,Wing
+	collision8,63,196,151,301,Wing
+	collision9,274,309,309,350,Hand
+	collision10,249,245,266,263,Navel
+
+	animation1.interval,bind
+	animation1.pattern0,overlay,3000,0,0,0
+
+}
+
+surface6100
+{
+	element0,overlay,surface6100.png,0,0
+
+	collision0,192,68,266,106,Head
+	collision1,238,143,248,151,Lip
+	collision2,218,195,254,224,Bust
+	collision3,198,337,321,375,Skirt
+	collision4,228,165,255,187,Hand
+	collision5,263,86,289,185,Hair
+	collision6,263,86,289,185,Hair
+	collision7,136,146,166,167,Wing
+	collision8,114,165,164,196,Wing
+	collision9,63,196,151,301,Wing
+
+	animation1.interval,bind
+	animation1.pattern0,overlay,2000,0,0,0
+
+}
+
+surface6101
+{
+	element0,overlay,surface6100.png,0,0
+	element1,overlay,surface1.png,0,0
+
+	collision0,192,68,266,106,Head
+	collision1,238,143,248,151,Lip
+	collision2,218,195,254,224,Bust
+	collision3,198,337,321,375,Skirt
+	collision4,228,165,255,187,Hand
+	collision5,263,86,289,185,Hair
+	collision6,263,86,289,185,Hair
+	collision7,136,146,166,167,Wing
+	collision8,114,165,164,196,Wing
+	collision9,63,196,151,301,Wing
+
+	animation1.interval,bind
+	animation1.pattern0,overlay,2000,0,0,0
+
+}
+
+surface6102
+{
+	element0,overlay,surface6100.png,0,0
+	element1,overlay,surface2.png,0,0
+
+	collision0,192,68,266,106,Head
+	collision1,238,143,248,151,Lip
+	collision2,218,195,254,224,Bust
+	collision3,198,337,321,375,Skirt
+	collision4,228,165,255,187,Hand
+	collision5,263,86,289,185,Hair
+	collision6,263,86,289,185,Hair
+	collision7,136,146,166,167,Wing
+	collision8,114,165,164,196,Wing
+	collision9,63,196,151,301,Wing
+
+	animation1.interval,bind
+	animation1.pattern0,overlay,2000,0,0,0
+
+}
+
+surface6103
+{
+	element0,overlay,surface6100.png,0,0
+	element1,overlay,surface3.png,0,0
+
+	collision0,192,68,266,106,Head
+	collision1,238,143,248,151,Lip
+	collision2,218,195,254,224,Bust
+	collision3,198,337,321,375,Skirt
+	collision4,228,165,255,187,Hand
+	collision5,263,86,289,185,Hair
+	collision6,263,86,289,185,Hair
+	collision7,136,146,166,167,Wing
+	collision8,114,165,164,196,Wing
+	collision9,63,196,151,301,Wing
+
+	animation1.interval,bind
+	animation1.pattern0,overlay,2000,0,0,0
+
+}
+
+surface6104
+{
+	element0,overlay,surface6100.png,0,0
+	element1,overlay,surface4.png,0,0
+
+	collision0,192,68,266,106,Head
+	collision1,231,149,241,157,Lip
+	collision2,218,195,254,224,Bust
+	collision3,198,337,321,375,Skirt
+	collision4,228,165,255,187,Hand
+	collision5,263,86,289,185,Hair
+	collision6,263,86,289,185,Hair
+	collision7,136,146,166,167,Wing
+	collision8,114,165,164,196,Wing
+	collision9,63,196,151,301,Wing
+
+	animation1.interval,bind
+	animation1.pattern0,overlay,2000,0,0,0
+
+}
+
+surface6105
+{
+	element0,overlay,surface6100.png,0,0
+	element1,overlay,surface5.png,0,0
+
+	collision0,192,68,266,106,Head
+	collision1,238,143,248,151,Lip
+	collision2,218,195,254,224,Bust
+	collision3,198,337,321,375,Skirt
+	collision4,228,165,255,187,Hand
+	collision5,263,86,289,185,Hair
+	collision6,263,86,289,185,Hair
+	collision7,136,146,166,167,Wing
+	collision8,114,165,164,196,Wing
+	collision9,63,196,151,301,Wing
+
+	animation1.interval,bind
+	animation1.pattern0,overlay,2000,0,0,0
+
+}
+
+surface6106
+{
+	element0,overlay,surface6100.png,0,0
+	element1,overlay,surface6.png,0,0
+
+	collision0,192,68,266,106,Head
+	collision1,238,143,248,151,Lip
+	collision2,218,195,254,224,Bust
+	collision3,198,337,321,375,Skirt
+	collision4,228,165,255,187,Hand
+	collision5,263,86,289,185,Hair
+	collision6,263,86,289,185,Hair
+	collision7,136,146,166,167,Wing
+	collision8,114,165,164,196,Wing
+	collision9,63,196,151,301,Wing
+
+	animation1.interval,bind
+	animation1.pattern0,overlay,2000,0,0,0
+
+}
+
+surface6107
+{
+	element0,overlay,surface6100.png,0,0
+	element1,overlay,surface7.png,0,0
+
+	collision0,192,68,266,106,Head
+	collision1,238,143,248,151,Lip
+	collision2,218,195,254,224,Bust
+	collision3,198,337,321,375,Skirt
+	collision4,228,165,255,187,Hand
+	collision5,263,86,289,185,Hair
+	collision6,263,86,289,185,Hair
+	collision7,136,146,166,167,Wing
+	collision8,114,165,164,196,Wing
+	collision9,63,196,151,301,Wing
+
+	animation1.interval,bind
+	animation1.pattern0,overlay,2000,0,0,0
+
+}
+
+surface6108
+{
+	element0,overlay,surface6100.png,0,0
+	element1,overlay,surface8.png,0,0
+
+	collision0,192,68,266,106,Head
+	collision1,230,140,248,151,Lip
+	collision2,218,195,254,224,Bust
+	collision3,198,337,321,375,Skirt
+	collision4,228,165,255,187,Hand
+	collision5,263,86,289,185,Hair
+	collision6,263,86,289,185,Hair
+	collision7,136,146,166,167,Wing
+	collision8,114,165,164,196,Wing
+	collision9,63,196,151,301,Wing
+
+	animation1.interval,bind
+	animation1.pattern0,overlay,2000,0,0,0
+
+}
+
+surface6109
+{
+	element0,overlay,surface6100.png,0,0
+	element1,overlay,surface9.png,0,0
+
+	collision0,192,68,266,106,Head
+	collision1,231,142,244,153,Lip
+	collision2,218,195,254,224,Bust
+	collision3,198,337,321,375,Skirt
+	collision4,228,165,255,187,Hand
+	collision5,263,86,289,185,Hair
+	collision6,263,86,289,185,Hair
+	collision7,136,146,166,167,Wing
+	collision8,114,165,164,196,Wing
+	collision9,63,196,151,301,Wing
+
+	animation1.interval,bind
+	animation1.pattern0,overlay,2000,0,0,0
+
+}
+
+surface6130
+{
+	element0,overlay,surface6100.png,0,0
+	element1,overlay,surface2012.png,0,0
+
+	collision0,192,68,266,106,Head
+	collision1,235,145,245,153,Lip
+	collision2,218,195,254,224,Bust
+	collision3,198,337,321,375,Skirt
+	collision4,228,165,255,187,Hand
+	collision5,263,86,289,185,Hair
+	collision6,263,86,289,185,Hair
+	collision7,136,146,166,167,Wing
+	collision8,114,165,164,196,Wing
+	collision9,63,196,151,301,Wing
+
+	animation1.interval,bind
+	animation1.pattern0,overlay,2000,0,0,0
+
+}
+
+surface6131
+{
+	element0,overlay,surface6100.png,0,0
+	element1,overlay,surface2011.png,0,0
+
+	collision0,192,68,266,106,Head
+	collision1,238,143,248,151,Lip
+	collision2,218,195,254,224,Bust
+	collision3,198,337,321,375,Skirt
+	collision4,228,165,255,187,Hand
+	collision5,263,86,289,185,Hair
+	collision6,263,86,289,185,Hair
+	collision7,136,146,166,167,Wing
+	collision8,114,165,164,196,Wing
+	collision9,63,196,151,301,Wing
+
+	animation1.interval,bind
+	animation1.pattern0,overlay,2000,0,0,0
+
+}
+
+surface6132
+{
+	element0,overlay,surface6100.png,0,0
+	element1,overlay,surface6.png,0,0
+
+	collision0,192,68,266,106,Head
+	collision1,238,143,248,151,Lip
+	collision2,218,195,254,224,Bust
+	collision3,198,337,321,375,Skirt
+	collision4,228,165,255,187,Hand
+	collision5,263,86,289,185,Hair
+	collision6,263,86,289,185,Hair
+	collision7,136,146,166,167,Wing
+	collision8,114,165,164,196,Wing
+	collision9,63,196,151,301,Wing
+
+	animation1.interval,bind
+	animation1.pattern0,overlay,2000,0,0,0
+
+}
+
+surface6400
+{
+	element0,overlay,surface6400.png,0,0
+
+	collision0,192,68,266,106,Head
+	collision1,238,143,248,151,Lip
+	collision2,218,195,255,224,Bust
+	collision3,198,337,321,375,Skirt
+	collision4,230,162,254,186,Hand
+	collision5,263,86,289,185,Hair
+	collision6,263,86,289,185,Hair
+	collision7,136,146,166,167,Wing
+	collision8,114,165,164,196,Wing
+	collision9,63,196,151,301,Wing
+
+	animation1.interval,bind
+	animation1.pattern0,overlay,2000,0,0,0
+
+}
+
+surface6401
+{
+	element0,overlay,surface6400.png,0,0
+	element1,overlay,surface1.png,0,0
+
+	collision0,192,68,266,106,Head
+	collision1,238,143,248,151,Lip
+	collision2,218,195,255,224,Bust
+	collision3,198,337,321,375,Skirt
+	collision4,230,162,254,186,Hand
+	collision5,263,86,289,185,Hair
+	collision6,263,86,289,185,Hair
+	collision7,136,146,166,167,Wing
+	collision8,114,165,164,196,Wing
+	collision9,63,196,151,301,Wing
+
+	animation1.interval,bind
+	animation1.pattern0,overlay,2000,0,0,0
+
+}
+
+surface6402
+{
+	element0,overlay,surface6400.png,0,0
+	element1,overlay,surface2.png,0,0
+
+	collision0,192,68,266,106,Head
+	collision1,238,143,248,151,Lip
+	collision2,218,195,255,224,Bust
+	collision3,198,337,321,375,Skirt
+	collision4,230,162,254,186,Hand
+	collision5,263,86,289,185,Hair
+	collision6,263,86,289,185,Hair
+	collision7,136,146,166,167,Wing
+	collision8,114,165,164,196,Wing
+	collision9,63,196,151,301,Wing
+
+	animation1.interval,bind
+	animation1.pattern0,overlay,2000,0,0,0
+
+}
+
+surface6403
+{
+	element0,overlay,surface6400.png,0,0
+	element1,overlay,surface3.png,0,0
+
+	collision0,192,68,266,106,Head
+	collision1,238,143,248,151,Lip
+	collision2,218,195,255,224,Bust
+	collision3,198,337,321,375,Skirt
+	collision4,230,162,254,186,Hand
+	collision5,263,86,289,185,Hair
+	collision6,263,86,289,185,Hair
+	collision7,136,146,166,167,Wing
+	collision8,114,165,164,196,Wing
+	collision9,63,196,151,301,Wing
+
+	animation1.interval,bind
+	animation1.pattern0,overlay,2000,0,0,0
+
+}
+
+surface6404
+{
+	element0,overlay,surface6400.png,0,0
+	element1,overlay,surface4.png,0,0
+
+	collision0,192,68,266,106,Head
+	collision1,233,147,243,155,Lip
+	collision2,218,195,255,224,Bust
+	collision3,198,337,321,375,Skirt
+	collision4,230,162,254,186,Hand
+	collision5,263,86,289,185,Hair
+	collision6,263,86,289,185,Hair
+	collision7,136,146,166,167,Wing
+	collision8,114,165,164,196,Wing
+	collision9,63,196,151,301,Wing
+
+	animation1.interval,bind
+	animation1.pattern0,overlay,2000,0,0,0
+
+}
+
+surface6405
+{
+	element0,overlay,surface6400.png,0,0
+	element1,overlay,surface5.png,0,0
+
+	collision0,192,68,266,106,Head
+	collision1,238,143,248,151,Lip
+	collision2,218,195,255,224,Bust
+	collision3,198,337,321,375,Skirt
+	collision4,230,162,254,186,Hand
+	collision5,263,86,289,185,Hair
+	collision6,263,86,289,185,Hair
+	collision7,136,146,166,167,Wing
+	collision8,114,165,164,196,Wing
+	collision9,63,196,151,301,Wing
+
+	animation1.interval,bind
+	animation1.pattern0,overlay,2000,0,0,0
+
+}
+
+surface6406
+{
+	element0,overlay,surface6400.png,0,0
+	element1,overlay,surface6.png,0,0
+
+	collision0,192,68,266,106,Head
+	collision1,238,143,248,151,Lip
+	collision2,218,195,255,224,Bust
+	collision3,198,337,321,375,Skirt
+	collision4,230,162,254,186,Hand
+	collision5,263,86,289,185,Hair
+	collision6,263,86,289,185,Hair
+	collision7,136,146,166,167,Wing
+	collision8,114,165,164,196,Wing
+	collision9,63,196,151,301,Wing
+
+	animation1.interval,bind
+	animation1.pattern0,overlay,2000,0,0,0
+
+}
+
+surface6407
+{
+	element0,overlay,surface6400.png,0,0
+	element1,overlay,surface7.png,0,0
+
+	collision0,192,68,266,106,Head
+	collision1,238,143,248,151,Lip
+	collision2,218,195,255,224,Bust
+	collision3,198,337,321,375,Skirt
+	collision4,230,162,254,186,Hand
+	collision5,263,86,289,185,Hair
+	collision6,263,86,289,185,Hair
+	collision7,136,146,166,167,Wing
+	collision8,114,165,164,196,Wing
+	collision9,63,196,151,301,Wing
+
+	animation1.interval,bind
+	animation1.pattern0,overlay,2000,0,0,0
+
+}
+
+surface6408
+{
+	element0,overlay,surface6400.png,0,0
+	element1,overlay,surface8.png,0,0
+
+	collision0,192,68,266,106,Head
+	collision1,232,142,248,151,Lip
+	collision2,218,195,255,224,Bust
+	collision3,198,337,321,375,Skirt
+	collision4,230,162,254,186,Hand
+	collision5,263,86,289,185,Hair
+	collision6,263,86,289,185,Hair
+	collision7,136,146,166,167,Wing
+	collision8,114,165,164,196,Wing
+	collision9,63,196,151,301,Wing
+
+	animation1.interval,bind
+	animation1.pattern0,overlay,2000,0,0,0
+
+}
+
+surface6409
+{
+	element0,overlay,surface6400.png,0,0
+	element1,overlay,surface9.png,0,0
+
+	collision0,192,68,266,106,Head
+	collision1,234,144,244,152,Lip
+	collision2,218,195,255,224,Bust
+	collision3,198,337,321,375,Skirt
+	collision4,230,162,254,186,Hand
+	collision5,263,86,289,185,Hair
+	collision6,263,86,289,185,Hair
+	collision7,136,146,166,167,Wing
+	collision8,114,165,164,196,Wing
+	collision9,63,196,151,301,Wing
+
+	animation1.interval,bind
+	animation1.pattern0,overlay,2000,0,0,0
+
+}
+
+surface6430
+{
+	element0,overlay,surface6400.png,0,0
+	element1,overlay,surface2012.png,0,0
+
+	collision0,192,68,266,106,Head
+	collision1,232,143,248,151,Lip
+	collision2,218,195,255,224,Bust
+	collision3,198,337,321,375,Skirt
+	collision4,230,162,254,186,Hand
+	collision5,263,86,289,185,Hair
+	collision6,263,86,289,185,Hair
+	collision7,136,146,166,167,Wing
+	collision8,114,165,164,196,Wing
+	collision9,63,196,151,301,Wing
+
+	animation1.interval,bind
+	animation1.pattern0,overlay,2000,0,0,0
+
+}
+
+surface6431
+{
+	element0,overlay,surface6400.png,0,0
+	element1,overlay,surface2011.png,0,0
+
+	collision0,192,68,266,106,Head
+	collision1,238,143,248,151,Lip
+	collision2,218,195,255,224,Bust
+	collision3,198,337,321,375,Skirt
+	collision4,230,162,254,186,Hand
+	collision5,263,86,289,185,Hair
+	collision6,263,86,289,185,Hair
+	collision7,136,146,166,167,Wing
+	collision8,114,165,164,196,Wing
+	collision9,63,196,151,301,Wing
+
+	animation1.interval,bind
+	animation1.pattern0,overlay,2000,0,0,0
+
+}
+
+surface6432
+{
+	element0,overlay,surface6400.png,0,0
+	element1,overlay,surface6.png,0,0
+
+	collision0,192,68,266,106,Head
+	collision1,238,143,248,151,Lip
+	collision2,218,195,255,224,Bust
+	collision3,198,337,321,375,Skirt
+	collision4,230,162,254,186,Hand
+	collision5,263,86,289,185,Hair
+	collision6,263,86,289,185,Hair
+	collision7,136,146,166,167,Wing
+	collision8,114,165,164,196,Wing
+	collision9,63,196,151,301,Wing
+
+	animation1.interval,bind
+	animation1.pattern0,overlay,2000,0,0,0
+
+}
+
+surface7100
+{
+	element0,overlay,surface7100.png,0,0
+
+	collision0,192,68,266,106,Head
+	collision1,238,143,248,151,Lip
+	collision2,218,195,254,224,Bust
+	collision3,242,293,259,316,Mystic
+	collision4,228,165,255,187,Hand
+	collision5,263,86,289,185,Hair
+	collision6,263,86,289,185,Hair
+	collision7,136,146,166,167,Wing
+	collision8,114,165,164,196,Wing
+	collision9,63,196,151,301,Wing
+
+	animation1.interval,bind
+	animation1.pattern0,overlay,3000,0,0,0
+
+}
+
+surface7101
+{
+	element0,overlay,surface7100.png,0,0
+	element1,overlay,surface1001.png,0,0
+
+	collision0,192,68,266,106,Head
+	collision1,238,143,248,151,Lip
+	collision2,218,195,254,224,Bust
+	collision3,242,293,259,316,Mystic
+	collision4,228,165,255,187,Hand
+	collision5,263,86,289,185,Hair
+	collision6,263,86,289,185,Hair
+	collision7,136,146,166,167,Wing
+	collision8,114,165,164,196,Wing
+	collision9,63,196,151,301,Wing
+
+	animation1.interval,bind
+	animation1.pattern0,overlay,3000,0,0,0
+
+}
+
+surface7102
+{
+	element0,overlay,surface7100.png,0,0
+	element1,overlay,surface1002.png,0,0
+
+	collision0,192,68,266,106,Head
+	collision1,238,143,248,151,Lip
+	collision2,218,195,254,224,Bust
+	collision3,242,293,259,316,Mystic
+	collision4,228,165,255,187,Hand
+	collision5,263,86,289,185,Hair
+	collision6,263,86,289,185,Hair
+	collision7,136,146,166,167,Wing
+	collision8,114,165,164,196,Wing
+	collision9,63,196,151,301,Wing
+
+	animation1.interval,bind
+	animation1.pattern0,overlay,3000,0,0,0
+
+}
+
+surface7103
+{
+	element0,overlay,surface7100.png,0,0
+	element1,overlay,surface1003.png,0,0
+
+	collision0,192,68,266,106,Head
+	collision1,238,143,248,151,Lip
+	collision2,218,195,254,224,Bust
+	collision3,242,293,259,316,Mystic
+	collision4,228,165,255,187,Hand
+	collision5,263,86,289,185,Hair
+	collision6,263,86,289,185,Hair
+	collision7,136,146,166,167,Wing
+	collision8,114,165,164,196,Wing
+	collision9,63,196,151,301,Wing
+
+	animation1.interval,bind
+	animation1.pattern0,overlay,3000,0,0,0
+
+}
+
+surface7104
+{
+	element0,overlay,surface7100.png,0,0
+	element1,overlay,surface1004.png,0,0
+
+	collision0,192,68,266,106,Head
+	collision1,238,143,248,151,Lip
+	collision2,218,195,254,224,Bust
+	collision3,242,293,259,316,Mystic
+	collision4,228,165,255,187,Hand
+	collision5,263,86,289,185,Hair
+	collision6,263,86,289,185,Hair
+	collision7,136,146,166,167,Wing
+	collision8,114,165,164,196,Wing
+	collision9,63,196,151,301,Wing
+
+	animation1.interval,bind
+	animation1.pattern0,overlay,3000,0,0,0
+
+}
+
+surface7105
+{
+	element0,overlay,surface7100.png,0,0
+	element1,overlay,surface1005.png,0,0
+
+	collision0,192,68,266,106,Head
+	collision1,238,143,248,151,Lip
+	collision2,218,195,254,224,Bust
+	collision3,242,293,259,316,Mystic
+	collision4,228,165,255,187,Hand
+	collision5,263,86,289,185,Hair
+	collision6,263,86,289,185,Hair
+	collision7,136,146,166,167,Wing
+	collision8,114,165,164,196,Wing
+	collision9,63,196,151,301,Wing
+
+	animation1.interval,bind
+	animation1.pattern0,overlay,3000,0,0,0
+
+}
+
+surface7106
+{
+	element0,overlay,surface7100.png,0,0
+	element1,overlay,surface1006.png,0,0
+
+	collision0,192,68,266,106,Head
+	collision1,238,143,248,151,Lip
+	collision2,218,195,254,224,Bust
+	collision3,242,293,259,316,Mystic
+	collision4,228,165,255,187,Hand
+	collision5,263,86,289,185,Hair
+	collision6,263,86,289,185,Hair
+	collision7,136,146,166,167,Wing
+	collision8,114,165,164,196,Wing
+	collision9,63,196,151,301,Wing
+
+	animation1.interval,bind
+	animation1.pattern0,overlay,3000,0,0,0
+
+}
+
+surface7107
+{
+	element0,overlay,surface7100.png,0,0
+	element1,overlay,surface1007.png,0,0
+
+	collision0,192,68,266,106,Head
+	collision1,238,143,248,151,Lip
+	collision2,218,195,254,224,Bust
+	collision3,242,293,259,316,Mystic
+	collision4,228,165,255,187,Hand
+	collision5,263,86,289,185,Hair
+	collision6,263,86,289,185,Hair
+	collision7,136,146,166,167,Wing
+	collision8,114,165,164,196,Wing
+	collision9,63,196,151,301,Wing
+
+	animation1.interval,bind
+	animation1.pattern0,overlay,3000,0,0,0
+
+}
+
+surface7108
+{
+	element0,overlay,surface7100.png,0,0
+	element1,overlay,surface1008.png,0,0
+
+	collision0,192,68,266,106,Head
+	collision1,238,143,248,151,Lip
+	collision2,218,195,254,224,Bust
+	collision3,242,293,259,316,Mystic
+	collision4,228,165,255,187,Hand
+	collision5,263,86,289,185,Hair
+	collision6,263,86,289,185,Hair
+	collision7,136,146,166,167,Wing
+	collision8,114,165,164,196,Wing
+	collision9,63,196,151,301,Wing
+
+	animation1.interval,bind
+	animation1.pattern0,overlay,3000,0,0,0
+
+}
+
+surface7109
+{
+	element0,overlay,surface7100.png,0,0
+	element1,overlay,surface1009.png,0,0
+
+	collision0,192,68,266,106,Head
+	collision1,238,143,248,151,Lip
+	collision2,218,195,254,224,Bust
+	collision3,242,293,259,316,Mystic
+	collision4,228,165,255,187,Hand
+	collision5,263,86,289,185,Hair
+	collision6,263,86,289,185,Hair
+	collision7,136,146,166,167,Wing
+	collision8,114,165,164,196,Wing
+	collision9,63,196,151,301,Wing
+	animation1.interval,bind
+	animation1.pattern0,overlay,3000,0,0,0
+
+}
+
+surface7130
+{
+	element0,overlay,surface7100.png,0,0
+	element1,overlay,surface1012.png,0,0
+
+	collision0,192,68,266,106,Head
+	collision1,238,143,248,151,Lip
+	collision2,218,195,254,224,Bust
+	collision3,242,293,259,316,Mystic
+	collision4,228,165,255,187,Hand
+	collision5,263,86,289,185,Hair
+	collision6,263,86,289,185,Hair
+	collision7,136,146,166,167,Wing
+	collision8,114,165,164,196,Wing
+	collision9,63,196,151,301,Wing
+
+	animation1.interval,bind
+	animation1.pattern0,overlay,3000,0,0,0
+
+}
+
+surface7131
+{
+	element0,overlay,surface7100.png,0,0
+	element1,overlay,surface1011.png,0,0
+
+	collision0,192,68,266,106,Head
+	collision1,238,143,248,151,Lip
+	collision2,218,195,254,224,Bust
+	collision3,242,293,259,316,Mystic
+	collision4,228,165,255,187,Hand
+	collision5,263,86,289,185,Hair
+	collision6,263,86,289,185,Hair
+	collision7,136,146,166,167,Wing
+	collision8,114,165,164,196,Wing
+	collision9,63,196,151,301,Wing
+
+	animation1.interval,bind
+	animation1.pattern0,overlay,3000,0,0,0
+
+}
+
+surface7132
+{
+	element0,overlay,surface7100.png,0,0
+	element1,overlay,surface1006.png,0,0
+
+	collision0,192,68,266,106,Head
+	collision1,238,143,248,151,Lip
+	collision2,218,195,254,224,Bust
+	collision3,242,293,259,316,Mystic
+	collision4,228,165,255,187,Hand
+	collision5,263,86,289,185,Hair
+	collision6,263,86,289,185,Hair
+	collision7,136,146,166,167,Wing
+	collision8,114,165,164,196,Wing
+	collision9,63,196,151,301,Wing
+
+	animation1.interval,bind
+	animation1.pattern0,overlay,3000,0,0,0
+
+}
+
+surface7400
+{
+	element0,overlay,surface7400.png,0,0
+
+	collision0,192,68,266,106,Head
+	collision1,238,143,248,151,Lip
+	collision2,218,195,254,224,Bust
+	collision3,242,293,259,316,Mystic
+	collision4,228,165,255,187,Hand
+	collision5,263,86,289,185,Hair
+	collision6,263,86,289,185,Hair
+	collision7,136,146,166,167,Wing
+	collision8,114,165,164,196,Wing
+	collision9,63,196,151,301,Wing
+	collision10,249,245,266,263,Navel
+
+	animation1.interval,bind
+	animation1.pattern0,overlay,3000,0,0,0
+
+}
+
+surface7401
+{
+	element0,overlay,surface7400.png,0,0
+	element1,overlay,surface1001.png,0,0
+
+	collision0,192,68,266,106,Head
+	collision1,238,143,248,151,Lip
+	collision2,218,195,254,224,Bust
+	collision3,242,293,259,316,Mystic
+	collision4,228,165,255,187,Hand
+	collision5,263,86,289,185,Hair
+	collision6,263,86,289,185,Hair
+	collision7,136,146,166,167,Wing
+	collision8,114,165,164,196,Wing
+	collision9,63,196,151,301,Wing
+	collision10,249,245,266,263,Navel
+
+	animation1.interval,bind
+	animation1.pattern0,overlay,3000,0,0,0
+
+}
+
+surface7402
+{
+	element0,overlay,surface7400.png,0,0
+	element1,overlay,surface1002.png,0,0
+
+	collision0,192,68,266,106,Head
+	collision1,238,143,248,151,Lip
+	collision2,218,195,254,224,Bust
+	collision3,242,293,259,316,Mystic
+	collision4,228,165,255,187,Hand
+	collision5,263,86,289,185,Hair
+	collision6,263,86,289,185,Hair
+	collision7,136,146,166,167,Wing
+	collision8,114,165,164,196,Wing
+	collision9,63,196,151,301,Wing
+	collision10,249,245,266,263,Navel
+
+	animation1.interval,bind
+	animation1.pattern0,overlay,3000,0,0,0
+
+}
+
+surface7403
+{
+	element0,overlay,surface7400.png,0,0
+	element1,overlay,surface1003.png,0,0
+
+	collision0,192,68,266,106,Head
+	collision1,238,143,248,151,Lip
+	collision2,218,195,254,224,Bust
+	collision3,242,293,259,316,Mystic
+	collision4,228,165,255,187,Hand
+	collision5,263,86,289,185,Hair
+	collision6,263,86,289,185,Hair
+	collision7,136,146,166,167,Wing
+	collision8,114,165,164,196,Wing
+	collision9,63,196,151,301,Wing
+	collision10,249,245,266,263,Navel
+
+	animation1.interval,bind
+	animation1.pattern0,overlay,3000,0,0,0
+
+}
+
+surface7404
+{
+	element0,overlay,surface7400.png,0,0
+	element1,overlay,surface1004.png,0,0
+
+	collision0,192,68,266,106,Head
+	collision1,238,143,248,151,Lip
+	collision2,218,195,254,224,Bust
+	collision3,242,293,259,316,Mystic
+	collision4,228,165,255,187,Hand
+	collision5,263,86,289,185,Hair
+	collision6,263,86,289,185,Hair
+	collision7,136,146,166,167,Wing
+	collision8,114,165,164,196,Wing
+	collision9,63,196,151,301,Wing
+	collision10,249,245,266,263,Navel
+
+	animation1.interval,bind
+	animation1.pattern0,overlay,3000,0,0,0
+
+}
+
+surface7405
+{
+	element0,overlay,surface7400.png,0,0
+	element1,overlay,surface1005.png,0,0
+
+	collision0,192,68,266,106,Head
+	collision1,238,143,248,151,Lip
+	collision2,218,195,254,224,Bust
+	collision3,242,293,259,316,Mystic
+	collision4,228,165,255,187,Hand
+	collision5,263,86,289,185,Hair
+	collision6,263,86,289,185,Hair
+	collision7,136,146,166,167,Wing
+	collision8,114,165,164,196,Wing
+	collision9,63,196,151,301,Wing
+	collision10,249,245,266,263,Navel
+	
+	animation1.interval,bind
+	animation1.pattern0,overlay,3000,0,0,0
+
+}
+
+surface7406
+{
+	element0,overlay,surface7400.png,0,0
+	element1,overlay,surface1006.png,0,0
+
+	collision0,192,68,266,106,Head
+	collision1,238,143,248,151,Lip
+	collision2,218,195,254,224,Bust
+	collision3,242,293,259,316,Mystic
+	collision4,228,165,255,187,Hand
+	collision5,263,86,289,185,Hair
+	collision6,263,86,289,185,Hair
+	collision7,136,146,166,167,Wing
+	collision8,114,165,164,196,Wing
+	collision9,63,196,151,301,Wing
+	collision10,249,245,266,263,Navel
+
+	animation1.interval,bind
+	animation1.pattern0,overlay,3000,0,0,0
+
+}
+
+surface7407
+{
+	element0,overlay,surface7400.png,0,0
+	element1,overlay,surface1007.png,0,0
+
+	collision0,192,68,266,106,Head
+	collision1,238,143,248,151,Lip
+	collision2,218,195,254,224,Bust
+	collision3,242,293,259,316,Mystic
+	collision4,228,165,255,187,Hand
+	collision5,263,86,289,185,Hair
+	collision6,263,86,289,185,Hair
+	collision7,136,146,166,167,Wing
+	collision8,114,165,164,196,Wing
+	collision9,63,196,151,301,Wing
+	collision10,249,245,266,263,Navel
+
+	animation1.interval,bind
+	animation1.pattern0,overlay,3000,0,0,0
+
+}
+
+surface7408
+{
+	element0,overlay,surface7400.png,0,0
+	element1,overlay,surface1008.png,0,0
+
+	collision0,192,68,266,106,Head
+	collision1,238,143,248,151,Lip
+	collision2,218,195,254,224,Bust
+	collision3,242,293,259,316,Mystic
+	collision4,228,165,255,187,Hand
+	collision5,263,86,289,185,Hair
+	collision6,263,86,289,185,Hair
+	collision7,136,146,166,167,Wing
+	collision8,114,165,164,196,Wing
+	collision9,63,196,151,301,Wing
+	collision10,249,245,266,263,Navel
+
+	animation1.interval,bind
+	animation1.pattern0,overlay,3000,0,0,0
+
+}
+
+surface7409
+{
+	element0,overlay,surface7400.png,0,0
+	element1,overlay,surface1009.png,0,0
+
+	collision0,192,68,266,106,Head
+	collision1,238,143,248,151,Lip
+	collision2,218,195,254,224,Bust
+	collision3,242,293,259,316,Mystic
+	collision4,228,165,255,187,Hand
+	collision5,263,86,289,185,Hair
+	collision6,263,86,289,185,Hair
+	collision7,136,146,166,167,Wing
+	collision8,114,165,164,196,Wing
+	collision9,63,196,151,301,Wing
+	collision10,249,245,266,263,Navel
+
+	animation1.interval,bind
+	animation1.pattern0,overlay,3000,0,0,0
+
+}
+
+surface7430
+{
+	element0,overlay,surface7400.png,0,0
+	element1,overlay,surface1012.png,0,0
+
+	collision0,192,68,266,106,Head
+	collision1,238,143,248,151,Lip
+	collision2,218,195,254,224,Bust
+	collision3,242,293,259,316,Mystic
+	collision4,228,165,255,187,Hand
+	collision5,263,86,289,185,Hair
+	collision6,263,86,289,185,Hair
+	collision7,136,146,166,167,Wing
+	collision8,114,165,164,196,Wing
+	collision9,63,196,151,301,Wing
+	collision10,249,245,266,263,Navel
+
+	animation1.interval,bind
+	animation1.pattern0,overlay,3000,0,0,0
+
+}
+
+surface7431
+{
+	element0,overlay,surface7400.png,0,0
+	element1,overlay,surface1011.png,0,0
+
+	collision0,192,68,266,106,Head
+	collision1,238,143,248,151,Lip
+	collision2,218,195,254,224,Bust
+	collision3,242,293,259,316,Mystic
+	collision4,228,165,255,187,Hand
+	collision5,263,86,289,185,Hair
+	collision6,263,86,289,185,Hair
+	collision7,136,146,166,167,Wing
+	collision8,114,165,164,196,Wing
+	collision9,63,196,151,301,Wing
+	collision10,249,245,266,263,Navel
+
+	animation1.interval,bind
+	animation1.pattern0,overlay,3000,0,0,0
+
+}
+
+surface7432
+{
+	element0,overlay,surface7400.png,0,0
+	element1,overlay,surface1006.png,0,0
+
+	collision0,192,68,266,106,Head
+	collision1,238,143,248,151,Lip
+	collision2,218,195,254,224,Bust
+	collision3,242,293,259,316,Mystic
+	collision4,228,165,255,187,Hand
+	collision5,263,86,289,185,Hair
+	collision6,263,86,289,185,Hair
+	collision7,136,146,166,167,Wing
+	collision8,114,165,164,196,Wing
+	collision9,63,196,151,301,Wing
+	collision10,249,245,266,263,Navel
+
+	animation1.interval,bind
+	animation1.pattern0,overlay,3000,0,0,0
+
+}
+
