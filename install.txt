@@ -1,5 +1,0 @@
-charset, UTF-8
-type,ghost
-name,カッシーニの空隙
-directory,the_Cassini_Division
-balloon.directory,t_c_d
