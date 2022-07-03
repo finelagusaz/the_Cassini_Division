@@ -23,28 +23,23 @@ On_portalrootbutton.caption
 }
 
 //---- ポータルサイトのリスト -----------------------------------------------------------
-On_sakura.portalsites
-{
-	LinkMenuConvert(On_sakura.portalsites_EX)
-}
-
 On_sakura.portalsites_EX : array
 {
-	'SSP BUGTRQ	|	http://ssp.shillest.net/'
-	'うさださくら	|	http://usada.sakura.vg/'
-	'C.R.O.W.	|	http://crow.aqrs.jp/'
-	'-		|	'
-	'Disc-2		|	http://disc2.s56.xrea.com/'
-	'Encyclopedia of 伺か	|	http://dic.sstp.jp/'
-	'GHOST TOWN	|	http://ghosttown.mikage.jp/'
-	'BALOON TOWN	|	http://ghosttown.mikage.jp/balloontown.html'
-	'-		| '
-	'YAYA	|	http://ms.shillest.net/yaya.xhtml'
-	'里々/整備班カスタム	|	http://ms.shillest.net/satoriya.xhtml'
-	'灯	|	http://le.silk.to/'
-	'美坂	|	http://lovelove.rabi-en-rose.net/index_misaka.php'
-	'梨野	|	http://www.junkyard.jp/nasino/index.shtml'
-	'華和梨	|	http://kawari.sourceforge.net/'
+	"SSP BUGTRQ	|	http://ssp.shillest.net/ | "
+	"うさださくら	|	http://usada.sakura.vg/ | "
+	"C.R.O.W.	|	http://crow.aqrs.jp/ | "
+	"-		|	"
+	"Disc-2		|	http://disc2.s56.xrea.com/ | "
+	"Encyclopedia of 伺か	|	http://dic.sstp.jp/ | "
+	"GHOST TOWN	|	http://ghosttown.mikage.jp/ | "
+	"BALOON TOWN	|	http://ghosttown.mikage.jp/balloontown.html | "
+	"-		|  | "
+	"YAYA	|	http://ms.shillest.net/yaya.xhtml | "
+	"里々/整備班カスタム	|	http://ms.shillest.net/satoriya.xhtml | "
+	"灯	|	http://le.silk.to/ | "
+	"美坂	|	http://lovelove.rabi-en-rose.net/index_misaka.php | "
+	"梨野	|	http://www.junkyard.jp/nasino/index.shtml | "
+	"華和梨	|	http://kawari.sourceforge.net/ | "
 }
 
 //---- 本体側おすすめサイトのボタンキャプション -----------------------------------------
@@ -54,75 +49,70 @@ On_recommendrootbutton.caption
 }
 
 //---- 本体側おすすめサイトのリスト -----------------------------------------------------
-On_sakura.recommendsites
-{
-	LinkMenuConvert(On_sakura.recommendsites_EX)
-}
-
 On_sakura.recommendsites_EX : array
 {
-	'The Hand		|	http://ukiya.sakura.ne.jp/'
-	'Un Known		|	'
-	'消えた墓標 -IN MY DREAMS-	|	http://www.d6.dion.ne.jp/~ky_kmo/'
-	'言追人			|	http://blue.zero.jp/sukino/menu.html'
-	'人体視願／ヴィイ	|	http://project.hacca.jp/'
-	'シャープとフラット	|	'
-	'DEADEND		|	http://good-bye.sakura.ne.jp/va/deadend.html'
-	'アファーム/デニアル	|	http://haka.sakura.ne.jp/'
-	'希望の光	|	http://colorbox.saloon.jp'
-	'ゲッシーズの空費	|	'
-	'マロンとブラン～Early Type～	|	http://descriptus.nobody.jp/'
-	'MORAIの血	|	http://highkaru.pa.land.to/'
-	'ちびすけとねこと	|	http://yamagashi.me.land.to/'
-	'隙間の世界／リーライナ	|	'
-	'Scar of Doll	|	http://colorbox.saloon.jp'
-	'隙間の世界/泡影	|	'
-	'ゆうやけ ないて	|	http://project.hacca.jp/'
-	'ＲＯＡＭＩＮＧ＊ＫＩＤ ～二匹の子やぎ～	|	'
-	'侵されざる黒	|	http://nonamefactory.shillest.net/'
-	'ヒュールフリス	|	'
-	'あったかいヒカリ	|	http://colorbox.saloon.jp'
-	'54	|	'
-	'多律背反／ウィラ・ジーン	|	'
-	'図書館バイト	|	'
-	'無限遠	|	http://hwm3.gyao.ne.jp/shiroi-niwatori/'
-	'隙間の世界／アルルカン	|	'
-	'百目千眼	|	http://februaryblossom.web.fc2.com/'
-	'碧野遼子	|	http://colorbox.saloon.jp'
-	'ニコニコ少女(NAR)	|	'
-	'実梅と弥涼	|	'
-	'隙間の世界/ウィンディア	|	'
-	'狼姫	|	'
-	'血と肉	|	http://fonshitu.fc2web.com/mikan/'
-	'耶美	|	http://cutnate.pa.land.to/'
-	'あすといっしょ！	|	http://blog.livedoor.jp/umaa/'
-	'声なき世界の声	|	http://februaryblossom.web.fc2.com/'
-	'虹のうらがわ	|	http://nar.sub.jp/'
-	'360度Qibla	|	http://risna.nobody.jp/'
-	'燃える稲穂	|	http://nonamefactory.shillest.net/'
-	'静カナル乙女	|	http://februaryblossom.web.fc2.com/'
-	'自然科学―民俗学境界	|	http://nonamefactory.shillest.net/'
-	'モリアーティの残影	|	http://risna.nobody.jp/'
-	'Half＆Falf	|	http://seventhseason.if.land.to/'
-	'only friend	|	http://blackcocol.seesaa.net/'
-	'Humility Plus	|	'
-	'結う世界	|	http://mukunahakoniwa.blog.fc2.com/'
-	'ロスト・ユー・サムウェア	|	http://earlduant.blog.fc2.com/'
-	'あるいは可能性の終点にて	|	http://yurikagoyugetu.blog.fc2.com/blog-entry-46.html'
-	'汎用的休憩室	|	http://kuronekokuro.bake-neko.net/'
-	'-	|	'
-	'バルーン「White Heart」	|	'
-	'追加シェル「あの青い夏」「ほわいときゃっと」「新月」「Fly High!」ほか	|	http://februaryblossom.web.fc2.com/'
-	'追加シェル「拡大鏡」「WhiteLolita」		|	https://blankrune.sakura.ne.jp/'
-	'追加シェル「銀色」「蒼月」「純白」「夏季休業」		|	http://catbottle.sakura.ne.jp/'
-	'追加シェル「スプートニクを探して」		|	http://ozuakihi.pv.land.to/'
-	'追加シェル「瑠璃」「月白」「Gemini」「桜吹雪」「バニスさん」	|	https://blankrune.sakura.ne.jp/'
-	'追加シェル「プラジャーパティ」	|	'
-	'追加シェル「マジカル☆カシス」	|	https://blankrune.sakura.ne.jp/'
-	'追加シェル「桃色月」	|	http://misoduke.akazunoma.com/'
-	'追加シェル「さすらいウサギ」	|	http://mad-hatter.silk.to/'
-	'-	|	'
-	'Feathery Instrument	|	https://blankrune.sakura.ne.jp/'
+	"The Hand		|	http://ukiya.sakura.ne.jp/ | "
+	"Un Known		|	"
+	"消えた墓標 -IN MY DREAMS-	|	http://www.d6.dion.ne.jp/~ky_kmo/ | "
+	"言追人			|	http://blue.zero.jp/sukino/menu.html | "
+	"人体視願／ヴィイ	|	http://project.hacca.jp/ | "
+	"シャープとフラット	|	"
+	"DEADEND		|	http://good-bye.sakura.ne.jp/va/deadend.html | "
+	"アファーム/デニアル	|	http://haka.sakura.ne.jp/ | "
+	"希望の光	|	http://colorbox.saloon.jp | "
+	"ゲッシーズの空費	|	 | "
+	"マロンとブラン～Early Type～	|	http://descriptus.nobody.jp/ | "
+	"MORAIの血	|	http://highkaru.pa.land.to/ | "
+	"ちびすけとねこと	|	http://yamagashi.me.land.to/ | "
+	"隙間の世界／リーライナ	|	 | "
+	"Scar of Doll	|	http://colorbox.saloon.jp | "
+	"隙間の世界/泡影	|	"
+	"ゆうやけ ないて	|	http://project.hacca.jp/ | "
+	"ＲＯＡＭＩＮＧ＊ＫＩＤ ～二匹の子やぎ～	|	 | "
+	"侵されざる黒	|	http://nonamefactory.shillest.net/ | "
+	"ヒュールフリス	|	"
+	"あったかいヒカリ	|	http://colorbox.saloon.jp | "
+	"54	|	"
+	"多律背反／ウィラ・ジーン	|	 | "
+	"図書館バイト	|	 | "
+	"無限遠	|	http://hwm3.gyao.ne.jp/shiroi-niwatori/ | "
+	"隙間の世界／アルルカン	|	 | "
+	"百目千眼	|	http://februaryblossom.web.fc2.com/ | "
+	"碧野遼子	|	http://colorbox.saloon.jp | "
+	"ニコニコ少女(NAR)	|	 | "
+	"実梅と弥涼	|	 | "
+	"隙間の世界/ウィンディア	|	 | "
+	"狼姫	|	 | "
+	"血と肉	|	http://fonshitu.fc2web.com/mikan/ | "
+	"耶美	|	http://cutnate.pa.land.to/ | "
+	"あすといっしょ！	|	http://blog.livedoor.jp/umaa/ | "
+	"声なき世界の声	|	http://februaryblossom.web.fc2.com/ | "
+	"虹のうらがわ	|	http://nar.sub.jp/ | "
+	"360度Qibla	|	http://risna.nobody.jp/ | "
+	"燃える稲穂	|	http://nonamefactory.shillest.net/ | "
+	"静カナル乙女	|	http://februaryblossom.web.fc2.com/ | "
+	"自然科学―民俗学境界	|	http://nonamefactory.shillest.net/ | "
+	"モリアーティの残影	|	http://risna.nobody.jp/ | "
+	"Half＆Falf	|	http://seventhseason.if.land.to/ | "
+	"only friend	|	http://blackcocol.seesaa.net/ | "
+	"Humility Plus	|	 | "
+	"結う世界	|	http://mukunahakoniwa.blog.fc2.com/ | "
+	"ロスト・ユー・サムウェア	|	http://earlduant.blog.fc2.com/ | "
+	"あるいは可能性の終点にて	|	http://yurikagoyugetu.blog.fc2.com/blog-entry-46.html | "
+	"汎用的休憩室	|	http://kuronekokuro.bake-neko.net/ | "
+	"-	|	"
+	"バルーン「White Heart」	|	 | "
+	"追加シェル「あの青い夏」「ほわいときゃっと」「新月」「Fly High!」ほか	|	http://februaryblossom.web.fc2.com/ | "
+	"追加シェル「拡大鏡」「WhiteLolita」		|	https://blankrune.sakura.ne.jp/ | "
+	"追加シェル「銀色」「蒼月」「純白」「夏季休業」		|	http://catbottle.sakura.ne.jp/ | "
+	"追加シェル「スプートニクを探して」		|	http://ozuakihi.pv.land.to/ | "
+	"追加シェル「瑠璃」「月白」「Gemini」「桜吹雪」「バニスさん」	|	https://blankrune.sakura.ne.jp/ | "
+	"追加シェル「プラジャーパティ」	|	 | "
+	"追加シェル「マジカル☆カシス」	|	https://blankrune.sakura.ne.jp/ | "
+	"追加シェル「桃色月」	|	http://misoduke.akazunoma.com/ | "
+	"追加シェル「さすらいウサギ」	|	http://mad-hatter.silk.to/ | "
+	"-	|	 | "
+	"Feathery Instrument	|	https://blankrune.sakura.ne.jp/ | "
 }	
 
 //---- ネットワーク更新ボタンのキャプション ---------------------------------------------
@@ -194,14 +184,21 @@ On_hwnd
 	keroblnhwnd   = reference[1][1]
 }
 
-//---- お気に入りを書きやすくするために
-LinkMenuConvert
+//******************************************************************************
+//おすすめサイトのリストを書きやすくするためのコア
+//基本的には以下はいじらなくていいです。
+//******************************************************************************
+On_sakura.recommendsites
 {
-    _text = ''
-    _data = IARRAY
-    for _i = 0 ; _i < _argc ; _i++ {
-        _data = (RE_SPLIT(_argv[_i],'[ \t]*\|[ \t]*'),'','') //ダミー
-        _text += "%(_data[0])%(CHR(1))%(_data[1])%(CHR(1))%(_data[2])%(CHR(1))%(CHR(2))"
-    }
-    _text;
+	AYATEMPLATE.LinkMenuConvert(On_sakura.recommendsites_EX)
+}
+
+On_sakura.portalsites
+{
+	AYATEMPLATE.LinkMenuConvert(On_sakura.portalsites_EX)
+}
+
+On_kero.recommendsites
+{
+	AYATEMPLATE.LinkMenuConvert(On_kero.recommendsites_EX)
 }
