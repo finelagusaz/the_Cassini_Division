@@ -5,7 +5,7 @@
 //**** メインメニューの展開 *************************************************************
 
 //---- メインメニュー展開 ---------------------------------------------------------------
-openMenu
+OpenMenu
 {
 	"\1\s[10]\0\s[0]"
 	--
@@ -29,8 +29,13 @@ openMenu
 	--
 	"\_q"
 	--
-	"\n\n[half]/
-	\![*]\q[トーク（t）,AITALK]\n"
+	"\n\n[half]"
+	--
+	AYATEMPLATE.MenuItem("トーク","Menu_AITALK",200)
+	--
+	if ( STRLEN(AYATEMPLATE.LastTalk) > 0 ) {
+		AYATEMPLATE.MenuItem("さっきの話をもう一度","Menu_LASTTALK")
+	}
 	--
 	if GetShellnameEx == "Gemini"
 	{
@@ -459,16 +464,9 @@ sakurafubukiP2
 
 //**** メニュー項目選択 *****************************************************************
 
-//---- OnChoiceSelectイベント -----------------------------------------------------------
-OnChoiceSelect
-{
-	if ISFUNC(reference[0]) {
-		EVAL(reference[0])
-   	}
-}
-
 //---- メインメニュー
-AITALK {
+Menu_AITALK
+ {
 	//---- 明示的にAIトーク開始を指示
 	OnAiTalk
 }
@@ -1084,18 +1082,6 @@ OnInputWebclap
 	"…\w4…。\w9\e"
 }
 
-//---- アンカー
-/*
-	参考：
-	Tips/選択肢をいきなり独立した関数で書く - 文Wiki「文屋」
-	http://emily.shillest.net/ayaya/index.php?Tips%2F%E9%81%B8%E6%8A%9E%E8%82%A2%E3%82%92%E3%81%84%E3%81%8D%E3%81%AA%E3%82%8A%E7%8B%AC%E7%AB%8B%E3%81%97%E3%81%9F%E9%96%A2%E6%95%B0%E3%81%A7%E6%9B%B8%E3%81%8F
-
-*/
-OnAnchorSelect
-{
-   EVAL(reference[0])
-}
-
 //---- シェルごとの特殊メニュー
 menuChange
 {
@@ -1157,4 +1143,10 @@ menuGeminiHandshake
 menuGeminiBreak
 {
 	HandshakeFlg = 0
+}
+
+//---- さっきの話は
+Menu_LASTTALK
+{
+	AYATEMPLATE.LastTalk
 }

@@ -24,32 +24,32 @@ OnTranslate
 //**** ランダムトーク *******************************************************************
 
 //---- OnAiTalkイベント -----------------------------------------------------------------
-OnAiTalk
-{
-	if RAND(100) < communicateratio
-	{
-		//---- communicateratio % の率で他ゴーストへ話しかけ
-		StartCommunicate
-	}
-	else
-	{
-		if mikireflag == 0
-		{
-			//---- 通常のランダムトーク、ただしチェイン中はチェイントーク
-			if CHAIN.IDName == "" {
-				RandomTalk
-			}
-			else {
-				ChainTalk
-			}
-		}
-		else
-		{
-			//---- 見切れ中なので見切れ中のトークを行う
-			MikireTalk
-		}
-	}
-}
+// OnAiTalk
+// {
+// 	if RAND(100) < communicateratio
+// 	{
+// 		//---- communicateratio % の率で他ゴーストへ話しかけ
+// 		StartCommunicate
+// 	}
+// 	else
+// 	{
+// 		if mikireflag == 0
+// 		{
+// 			//---- 通常のランダムトーク、ただしチェイン中はチェイントーク
+// 			if CHAIN.IDName == "" {
+// 				RandomTalk
+// 			}
+// 			else {
+// 				ChainTalk
+// 			}
+// 		}
+// 		else
+// 		{
+// 			//---- 見切れ中なので見切れ中のトークを行う
+// 			MikireTalk
+// 		}
+// 	}
+// }
 
 //---- ランダムトーク -------------------------------------------------------------------
 RandomTalk

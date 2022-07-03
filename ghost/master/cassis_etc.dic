@@ -660,20 +660,20 @@ TextOnlyTranslatorFunc
 
 //**** ツールチップ関連 *************************************************
 // コア処理
-AYATEMPLATE.MouseEventExec
-{
-  _fname = _argv[0] + TOSTR(reference[3]) + TOSTR(reference[4])
-  if ISFUNC(_fname) {
-    EVAL(_fname)
-    return
-  }
+// AYATEMPLATE.MouseEventExec
+// {
+//   _fname = _argv[0] + TOSTR(reference[3]) + TOSTR(reference[4])
+//   if ISFUNC(_fname) {
+//     EVAL(_fname)
+//     return
+//   }
 
-  _fname = _argv[0] + TOSTR(reference[3])
-  if ISFUNC(_fname) {
-    EVAL(_fname)
-    return
-  }
-}
+//   _fname = _argv[0] + TOSTR(reference[3])
+//   if ISFUNC(_fname) {
+//     EVAL(_fname)
+//     return
+//   }
+// }
 
 // リソース
 On_tooltip

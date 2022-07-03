@@ -157,24 +157,6 @@ On_vanishbutton.visible
 	}
 }
 
-//---- 起動中の他のゴースト名取得 -------------------------------------------------------
-On_otherghostname
-{
-	// 現在起動中のゴーストのリストを作成する
-	ghostexlist = ""
-	_i = 0
-	while _i >= 0 {
-//		_ghostname = EVAL("reference%(_i)")
-		_ghostname = SPLIT(reference[_i],CHR(1),2)[0]
-		if _ghostname != "" {
-			if _i > 0; ghostexlist += ","
-			ghostexlist += _ghostname[0]
-			_i++
-		}
-		else; _i = -1
-	}
-	ghostexcount = ARRAYSIZE(ghostexlist)
-}
 
 //---- SHIORI 関連情報 ------------------------------------------------------------------
 On_version
