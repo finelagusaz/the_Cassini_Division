@@ -2059,82 +2059,64 @@ OnOtherGhostClosedOther
 	}
 }
 
-// 交代反応コア
-TranslateSystemChar
+eventEndLieChanged
 {
-  _text = TOSTR(_argv[0])
-  _text = RE_REPLACE(_text,"[ !%(CHR(0x22))%(CHR(0x25))#$&()*+,\-/:;<=>?@\[\]`{|}~]","_")
-  _text
+	flgEndLie = 0;
+	flgCounterAttack = 0;
 }
 
-ExecuteChangeCallTalk
-{
-  setShellInit
-  --
+//******************************************************************************
+//この下は切り替えトーク処理用
+//通常はいじる必要はありませんが、必要に応じて適宜変更してください。
+//AYATEMPLATE.ではじまる関数は _tmpl_util.dic にあります。
+//******************************************************************************
 
-  _ghostname = TranslateSystemChar(reference[0])
-  
-  _funcname = "%(_argv[0])_%(_ghostname)"
-  if ISFUNC(_funcname) {
-    _script = EVAL(_funcname)
-    if STRLEN(_script) != 0 {
-      _script
-      return
-    }
-  }
-
-  _funcname = "%(_argv[0])Other"
-  if ISFUNC(_funcname) {
-    _script = EVAL(_funcname)
-    if STRLEN(_script) != 0 {
-      _script
-      return
-    }
-  }
-
-  if _argc >= 2 {
-    _script = EVAL(_argv[1])
-    if STRLEN(_script) != 0 {
-      REPLACE(_script,"\-","")
-      return
-    }
-  }
-}
- 
 OnGhostChanging
 {
-	ExecuteChangeCallTalk("OnGhostChanging","OnClose")
+	setShellInit
+	AYATEMPLATE.ExecuteChangeCallTalk("OnGhostChanging","OnClose")
 }
 
 OnGhostChanged
 {
 	eventEndLieChanged
-	ExecuteChangeCallTalk("OnGhostChanged","OnBoot")
+	setShellInit
+	AYATEMPLATE.ExecuteChangeCallTalk("OnGhostChanged","OnBoot")
 }
 
 OnGhostCalling
 {
-	ExecuteChangeCallTalk("OnGhostCalling")
+	setShellInit
+	AYATEMPLATE.ExecuteChangeCallTalk("OnGhostCalling")
 }
 
 OnGhostCalled
 {
 	eventEndLieChanged
-	ExecuteChangeCallTalk("OnGhostCalled","OnBoot")
+	setShellInit
+	AYATEMPLATE.ExecuteChangeCallTalk("OnGhostCalled","OnBoot")
 }
 
 OnGhostCallComplete
-{
-	ExecuteChangeCallTalk("OnGhostCallComplete")
+{	
+	setShellInit
+	AYATEMPLATE.ExecuteChangeCallTalk("OnGhostCallComplete")
 }
 
 OnOtherGhostClosed
 {
-	ExecuteChangeCallTalk("OnOtherGhostClosed")
+	setShellInit
+	AYATEMPLATE.ExecuteChangeCallTalk("OnOtherGhostClosed")
 }
 
-eventEndLieChanged
+OnOtherGhostBooted
 {
-	flgEndLie = 0;
-	flgCounterAttack = 0;
+	setShellInit
+	AYATEMPLATE.ExecuteChangeCallTalk("OnOtherGhostBooted")
+}
+
+OnOtherGhostChanged
+{
+	setShellInit
+	AYATEMPLATE.ExecuteChangeCallTalk("OnOtherGhostChanged")
 }
