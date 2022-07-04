@@ -31,271 +31,264 @@ OpenMenu
 	--
 	"\n\n[half]"
 	--
-	AYATEMPLATE.MenuItem("トーク","Menu_AITALK",200)
+	AYATEMPLATE.MenuItem("トーク（t）","Menu_AITALK",200)
 	--
 	if ( STRLEN(AYATEMPLATE.LastTalk) > 0 ) {
-		AYATEMPLATE.MenuItem("さっきの話をもう一度","Menu_LASTTALK")
+		AYATEMPLATE.MenuItem("もう一度（l）","Menu_LASTTALK")
 	}
 	--
 	if GetShellnameEx == "Gemini"
 	{
-		"\![*]\q[二人で話す,GEMINITALK]\n"
+		AYATEMPLATE.MenuItem("二人で話す", "Menu_GEMINITALK")
 	}
 	--
 	// クリスマスケーキ
 	if flgGetCake == 1
 	{
-		"\![*]\q[ケーキを食べる,comChristmasCakes]\n\n[half]"
+		AYATEMPLATE.MenuItem("ケーキを食べる", "comChristmasCakes")
+		--
+		"\n[half]"
 	}
 	--
-	"\![*]\q[コミュニケート（c）,COMMUNICATEOPEN]\n"
+	AYATEMPLATE.MenuItem("コミュニケート（c）","Menu_COMMUNICATEOPEN")
 	--
 	if "オフィーリア" _in_ ghostexlist || "リーライナ" _in_ ghostexlist {
-		"\![*]\q[他のゴーストに話しかける,CHAT]\n\n[half]"
+		AYATEMPLATE.MenuItem("他のゴーストに話しかける", "StartCommunicate")
 	}
 	--
-	"\![*]\q[コマンド（d）,COMMAND]\n"
+	AYATEMPLATE.MenuItem("コマンド（d）", "Menu_COMMAND")
 	--
 	// 表示設定がnewでなければ従来通り表示
 	if strMenuMode != "new"
 	{
-		menuChange
+		Menu_Change
 	}
 	--
-	"\![*]\q[設定,CONFIG]\n/
-	\![*]\q[連絡,WEBCLAP]\n\n[half]"
+	AYATEMPLATE.MenuItem("設定", "Menu_CONFIG")
 	--
-	"\![*]\q[メニューを閉じる,CANCEL]\e"
+	AYATEMPLATE.MenuItem("連絡", "Menu_WEBCLAP")
+	--
+	"\n[half]"
+	--
+	AYATEMPLATE.MenuItem("メニューを閉じる", "Menu_CANCEL")
 }
 
 //座り有効
-menuSitOrStand
+Menu_SitOrStand
 {
-	"\n[half]/
-	【座る／立つ】\n/
-	\![*]\q[座る,menuSit]\n/
-	\![*]\q[タイトルバーに座る,menuSitA]\n/
-	\![*]\q[タスクバーに座る,menuSitF]\n/
-	\![*]\q[立つ,menuStand]\n/
-	\n[half]"
-}
-
-// Alternative - Cassis
-menuAlternativeCassis
-{
-	"【着せ替え】\n"
+	"\n[half]"
 	--
-	if AlternativeSurfaceMode != 0 {
-		"\![*]\q[普段着,menuNormal]\n"
-	}
+	AYATEMPLATE.MenuItem("座る", "Menu_Sit")
 	--
-	if AlternativeSurfaceMode != 1000 {
-		"\![*]\q[水着,menuSwimming]\n"
-	}
+	AYATEMPLATE.MenuItem("タイトルバーに座る", "Menu_SitA")
+	--
+	AYATEMPLATE.MenuItem("タスクバーに座る", "Menu_SitF")
+	--
+	AYATEMPLATE.MenuItem("立つ", "Menu_Stand")
 	--
 	"\n[half]"
 }
 
 // 月光浴
-menuMoonlightBlue
+Menu_MoonlightBlue
 {
 	"【着せ替え】\n"
 	--
 	if MoonlightBlueSurfaceMode != 0 {
-		"\![*]\q[ロングスカート,menuMbNormal]\n"
+		"\![*]\q[ロングスカート,Menu_MbNormal]\n"
 	}
 	--
 	if MoonlightBlueSurfaceMode != 2000 {
-		"\![*]\q[ショートスカート,menuMbShort]\n"
+		"\![*]\q[ショートスカート,Menu_MbShort]\n"
 	}
 	--
 	if MoonlightBlueSurfaceMode != 1000 {
-		"\![*]\q[スクール水着,menuMbSwimming]\n"
+		"\![*]\q[スクール水着,Menu_MbSwimming]\n"
 	}
 	--
 	if MoonlightBlueSurfaceMode != 3000 {
-		"\![*]\q[ビキニ,menuMbBikini]\n"
+		"\![*]\q[ビキニ,Menu_MbBikini]\n"
 	}
 	--
 	"\n[half]"
 }
 
 // bridal butterfly
-menuBridalButterfly
+Menu_BridalButterfly
 {
 	"【着せ替え】\n"
 	--
 	if BridalButterflySurfaceMode != 0 {
-		"\![*]\q[通常,menuBbNormal]\n"
+		"\![*]\q[通常,Menu_BbNormal]\n"
 	}
 	--
 	if BridalButterflySurfaceMode != 1000 {
-		"\![*]\q[ビスチェ,menuBbBustier]\n"
+		"\![*]\q[ビスチェ,Menu_BbBustier]\n"
 	}
 	--
 	"\n[half]"
 }
 
 // 月白
-menuTukisiro
+Menu_Tukisiro
 {
 	"【座る／立つ】\n"
 	--
 	if (TukisiroSurfaceMode != 1000 && TukisiroOsuwariMode != 0) {
-		"\![*]\q[座る,menuTukisiroSit]\n"
+		"\![*]\q[座る,Menu_TukisiroSit]\n"
 	}
 	--
 	if TukisiroSurfaceMode != 1000 && TukisiroOsuwariMode != 1 {
-		"\![*]\q[タイトルバーに座る,menuTukisiroSitA]\n"
+		"\![*]\q[タイトルバーに座る,Menu_TukisiroSitA]\n"
 	}
 	--
 	if TukisiroSurfaceMode != 1000 && TukisiroOsuwariMode != 2 {
-		"\![*]\q[タスクバーに座る,menuTukisiroSitF]\n"
+		"\![*]\q[タスクバーに座る,Menu_TukisiroSitF]\n"
 	}
 	--
 	if TukisiroSurfaceMode != 0 && TukisiroOsuwariMode != 0 {
-		"\![*]\q[立つ,menuTukisiroStand]\n"
+		"\![*]\q[立つ,Menu_TukisiroStand]\n"
 	}
 	--
 	"\n[half]"
 }
 
 // Gemini
-menuGemini
+Menu_Gemini
 {
 	"【Gemini】\n"
 	--
 	if GeminiSurfaceMode >= 0 && GeminiSurfaceMode <= 2000
 	{
 		if GeminiSurfaceMode != 0 {
-			"\![*]\q[ポルックス,menuGeminiPollux]\n"
+			"\![*]\q[ポルックス,Menu_GeminiPollux]\n"
 		}
 		--
 		if GeminiSurfaceMode != 1000 {
-			"\![*]\q[カストール,menuGeminiCastor]\n"
+			"\![*]\q[カストール,Menu_GeminiCastor]\n"
 		}
 		--
 		if GeminiSurfaceMode != 2000 {
-			"\![*]\q[ジェミニ,menuGeminiPolluxAndCastor]\n"
+			"\![*]\q[ジェミニ,Menu_GeminiPolluxAndCastor]\n"
 		}
 		--
 		"\n[half]"
 	}
 	else
 	{
-		"\![*]\q[服を着て,menuGeminiDress]\n\n[half]"
+		"\![*]\q[服を着て,Menu_GeminiDress]\n\n[half]"
 	}
 	--
 	if GetShellnameEx == "Gemini"
 	{
 		if HandshakeFlg != 1
 		{
-			"\![*]\q[手をつなぐ,menuGeminiHandshake]\n\n[half]"
+			"\![*]\q[手をつなぐ,Menu_GeminiHandshake]\n\n[half]"
 		}
 		else
 		{
-			"\![*]\q[手を離す,menuGeminiBreak]\n\n[half]"
+			"\![*]\q[手を離す,Menu_GeminiBreak]\n\n[half]"
 		}
 	}
 }
 
 // 桜吹雪
-menuSakurafubuki
+Menu_Sakurafubuki
 {
 	"【変化】\n"
 	--
 	if SakurafubukiFox < 10000
 	{
-		"\![*]\q[変化する,menuSakurafubukiFox]\n\n[half]"
+		"\![*]\q[変化する,Menu_SakurafubukiFox]\n\n[half]"
 	}
 	else
 	{
-		"\![*]\q[戻る,menuSakurafubukiNormal]\n\n[half]"
+		"\![*]\q[戻る,Menu_SakurafubukiNormal]\n\n[half]"
 	}
 	--
 	"【色】\n"
 	--
 	if flgSakurafubukiShift != 1 {
-		"\![*]\q[時間帯で色を変える,menuSakurafubukiAuto]\n"
+		"\![*]\q[時間帯で色を変える,Menu_SakurafubukiAuto]\n"
 		--
 		if SakurafubukiBase == 0 {
-			"\![*]\q[夜桜,menuSakurafubukiYozakura]\n\n[half]"
+			"\![*]\q[夜桜,Menu_SakurafubukiYozakura]\n\n[half]"
 		} else {
-			"\![*]\q[桜,menuSakurafubukiAsa]\n\n[half]"
+			"\![*]\q[桜,Menu_SakurafubukiAsa]\n\n[half]"
 		}
 	} else {
-		"\![*]\q[時間帯で色を変えない,menuSakurafubukiManual]\n\n[half]"
+		"\![*]\q[時間帯で色を変えない,Menu_SakurafubukiManual]\n\n[half]"
 	}
 	--
-	if SakurafubukiPhase == 1000
+	if Menu_SakurafubukiPhase == 1000
 	{
-		"【他】\n\![*]\q[脱がす,sakurafubukiP2]\n\n[half]"
+		"【他】\n\![*]\q[脱がす,Menu_SakurafubukiP2]\n\n[half]"
 	}
-	elseif SakurafubukiPhase == 3000 || SakurafubukiPhase == 4000
+	elseif Menu_SakurafubukiPhase == 3000 || Menu_SakurafubukiPhase == 4000
 	{
-		"【他】\n\![*]\q[シャワーを浴びさせる,sakurafubukiPRest]\n\n[half]"
+		"【他】\n\![*]\q[シャワーを浴びさせる,Menu_SakurafubukiPRest]\n\n[half]"
 	}
 }
 
 // 桃色月
-menuPinkMoon
+Menu_PinkMoon
 {
 	"【着せ替え】\n"
 	--
 	if PinkMoonSurfaceMode != 0 {
-		"\![*]\q[スリットドレス,menuPmSlit]\n"
+		"\![*]\q[スリットドレス,Menu_PmSlit]\n"
 	}
 	--
 	if PinkMoonSurfaceMode != 1000 { 
-		"\![*]\q[ワンピース,menuPmOp]\n"
+		"\![*]\q[ワンピース,Menu_PmOp]\n"
 	}
 	--
 	"\n[half]"
 }
 
 // ll29yo
-menuLl29yo
+Menu_Ll29yo
 {
 	"【着せ替え】\n"
 	--
 	if Ll29yoSurfaceMode != 0 {
-		"\![*]\q[私服,menuLl29yoNormal]\n"
+		"\![*]\q[私服,Menu_Ll29yoNormal]\n"
 	}
 	--
 	if Ll29yoSurfaceMode != 1000 {
-		"\![*]\q[メイド服,menuLl29yoMaid]\n"
+		"\![*]\q[メイド服,Menu_Ll29yoMaid]\n"
 	}
 	--
 	"\n[half]"
 }
 
 // マジカルカシス
-menuMagicalcassis
+Menu_Magicalcassis
 {
 	"【着せ替え】\n"
 	--
 	if MagicalCassisSurfaceMode != 0 {
-		"\![*]\q[魔法少女,menuMcMagical]\n"
+		"\![*]\q[魔法少女,Menu_McMagical]\n"
 	}
 	--
 	if MagicalCassisSurfaceMode != 1000 {
-		"\![*]\q[和服,menuMcJc]\n"
+		"\![*]\q[和服,Menu_McJc]\n"
 	}
 	--
 	if MagicalCassisSurfaceMode != 2000 {
-		"\![*]\q[ちゃいな,menuMcChina]\n"
+		"\![*]\q[ちゃいな,Menu_McChina]\n"
 	}
 	--
 	if MagicalCassisSurfaceMode != 3000 {
-		"\![*]\q[セーラー服,menuMcSailer]\n"
+		"\![*]\q[セーラー服,Menu_McSailer]\n"
 	}
 	--
 	if MagicalCassisSurfaceMode != 4000 {
-		"\![*]\q[軍服風,menuMcMu]\n"
+		"\![*]\q[軍服風,Menu_McMu]\n"
 	}
 	--
 	if MagicalCassisSurfaceMode != 5000 {
-		"\![*]\q[ノースリーブ,menuMcNosleeve]\n"
+		"\![*]\q[ノースリーブ,Menu_McNosleeve]\n"
 	}
 	--
 	"\n[half]"
@@ -303,20 +296,20 @@ menuMagicalcassis
 
 
 // コマンド
-menuCommand
+Menu_Command
 {
 	"\1\s[10]\0\s[0]\_q/
-	\_a[menuCommandGreeting]「挨拶」\_a\n/
-	\_a[menuCommandAction]「行動」\_a\n/
-	\_a[menuCommandAsk]「質問」\_a\n/
-	\_a[menuCommandOthers]「そのほか」\_a\n/
+	\_a[Menu_CommandGreeting]「挨拶」\_a\n/
+	\_a[Menu_CommandAction]「行動」\_a\n/
+	\_a[Menu_CommandAsk]「質問」\_a\n/
+	\_a[Menu_CommandOthers]「そのほか」\_a\n/
 	\n[half]\n/
 	\q[メニューへ戻る,openMenu]\n/
 	\q[キャンセル,CANCEL]\e"
 }
 
 // 挨拶
-menuCommandGreeting
+Menu_CommandGreeting
 {
 	"\1\s[10]\0\s[0]\b[2]\_q/
 	【挨拶】\n/
@@ -332,12 +325,12 @@ menuCommandGreeting
 		"\_a[comGochisosama]「ごちそうさま」\_a\n"
 	}
 	--
-	"\n\n[half]\q[コマンドに戻る,menuCommand]\n/
+	"\n\n[half]\q[コマンドに戻る,Menu_Command]\n/
 	\q[キャンセル,CANCEL]\e"
 }
 
 // 行動
-menuCommandAction
+Menu_CommandAction
 {
 	"\1\s[10]\0\s[0]\b[2]\_q/
 	【行動】\n/
@@ -359,12 +352,12 @@ menuCommandAction
 		"\_a[comHizamakura]「膝枕」\_a\n"
 	}
 	--
-	"\n\n[half]\q[コマンドに戻る,menuCommand]\n/
+	"\n\n[half]\q[コマンドに戻る,Menu_Command]\n/
 	\q[キャンセル,CANCEL]\e"
 }
 
 // 質問
-menuCommandAsk
+Menu_CommandAsk
 {
 	"\1\s[10]\0\s[0]\b[2]\_q/
 	【質問】\n/
@@ -389,12 +382,12 @@ menuCommandAsk
 	}
 
 	--
-	"\n\n[half]\q[コマンドに戻る,menuCommand]\n/
+	"\n\n[half]\q[コマンドに戻る,Menu_Command]\n/
 	\q[キャンセル,CANCEL]\e"	
 }
 
 // そのほか
-menuCommandOthers
+Menu_CommandOthers
 {
 	"\1\s[10]\0\s[0]\b[2]\_q/
 	【そのほか】\n/
@@ -420,29 +413,30 @@ menuCommandOthers
 	--
 	if cntEros > 10 && shellname == "月白" && TukisiroSurfaceMode != 3000
 	{
-		"\_a[menuTukisiroTuckup]「下着見せて」\_a\n"
+		"\_a[Menu_TukisiroTuckup]「下着見せて」\_a\n"
 	}
 	elseif shellname == "月白" && TukisiroSurfaceMode == 3000 {
-		"\_a[menuTukisiroTuckdown]「満足した」\_a\n"
+		"\_a[Menu_TukisiroTuckdown]「満足した」\_a\n"
 	}
 	elseif shellname == "Gemini" && flgLove == 1
 	{
 		if GeminiSurfaceMode >= 0 && GeminiSurfaceMode <= 2000
 		{
-			"\_a[menuGeminiTuckup]「下着見せて」\_a\n"
+			"\_a[Menu_GeminiTuckup]「下着見せて」\_a\n"
 		}
 		else
 		{
-			"\_a[menuGeminiDress]「服を着て」\_a\n"
+			"\_a[Menu_GeminiDress]「服を着て」\_a\n"
 		}
 	}
 	--
-	"\n\n[half]\q[コマンドに戻る,menuCommand]\n/
-	\q[キャンセル,CANCEL]\e"
+	AYATEMPLATE.MenuItem("コマンドに戻る", "Menu_Command")
+	--
+	AYATEMPLATE.MenuItem("キャンセル","Menu_CANCEL",150)
 }
 
 // コミュニケート
-menuCommunicate
+Menu_Communicate
 {
 	//---- コミュニケートボックスオープン
 	"\1\s[10]\0\s[0]何かしら?"
@@ -453,7 +447,7 @@ menuCommunicate
 }
 
 // 桜吹雪フェイズ2
-sakurafubukiP2
+Menu_SakurafubukiP2
 {
 	SakurafubukiShiftPhase("hadaka");
 	--
@@ -466,12 +460,12 @@ sakurafubukiP2
 
 //---- メインメニュー
 Menu_AITALK
- {
+{
 	//---- 明示的にAIトーク開始を指示
 	OnAiTalk
 }
 
-GEMINITALK {
+Menu_GEMINITALK {
 	_talk_array = IARRAY
 	_talk_array ,= aryShellGeminiTalk
 
@@ -491,74 +485,54 @@ TALKINTERVAL {
 	\q[黙ってて,TALKNONE]\e"
 }
 
-COMMUNICATEOPEN {
-	menuCommunicate
-}
-
-CHAT {
-	StartCommunicate
-}
-
 // 座り制御
 // マスターシェル系
-menuStand {
+Menu_Stand {
 	SurfaceModeChangeEx(0, 0)
 	OsuwariStop
 	"\1\s[10]\0\s[0]ん。\w9\e"
 }
 
-menuSit {
+Menu_Sit {
 	SurfaceModeChangeEx(1000, 0)
 	OsuwariStop
 	"\1\s[10]\0\s[6]座らせてもらうわ。\w9\e"
 } 
 
-menuSitA {
+Menu_SitA {
 	SurfaceModeChangeEx(1000, 1)
 	OsuwariStart
 	"\1\s[10]\0\s[6]座らせてもらうわ。\w9\e"
 }
 
-menuSitF {
+Menu_SitF {
 	SurfaceModeChangeEx(1000, 2)
 	OsuwariStart
 	"\1\s[10]\0\s[6]座らせてもらうわ。\w9\e"
 }
 
 //---------------------------
-//Alternative - Cassis
-//---------------------------
-menuNormal {
-	SurfaceModeChangeEx(0, 0)
-	"\1\s[10]\0\s[0]ん。\e"
-}
-
-menuSwimming {
-	SurfaceModeChangeEx(1000, 0)
-	"\1\s[10]\0\s[6]……。\e"
-}
-//---------------------------
 // 月光浴
 //---------------------------
 // 普段着
-menuMbNormal {
+Menu_MbNormal {
 	SurfaceModeChangeEx(0, 0)
 	"\1\s[10]\0\s[6]ん。\e"
 }
 // ショートスカート
-menuMbShort {
+Menu_MbShort {
 	SurfaceModeChangeEx(2000, 0)
 	"\1\s[10]\0\s[0]…\w4…。\w9\n/
 	\s[6]少し、\w4落ち着かないわね。\e"
 }
 
 // スクール水着
-menuMbSwimming {
+Menu_MbSwimming {
 	SurfaceModeChangeEx(1000, 0)
 	"\1\s[10]\0\s[1]少し恥ずかしいわ。\e"
 }
 // ビキニ
-menuMbBikini {
+Menu_MbBikini {
 	SurfaceModeChangeEx(3000, 0)
 	"\1\s[10]\0\s[0]どう、\w4\s[5]似合う?\w9\w9\n/
 	\s[0]なんてね。\e"
@@ -567,12 +541,12 @@ menuMbBikini {
 //------------------------------------
 // Bridal Butterfly
 //------------------------------------
-menuBbNormal {
+Menu_BbNormal {
 	SurfaceModeChangeEx(0, 0)
 	"\1\s[10]\0\s[0]こうかしら?\e"
 }
 
-menuBbBustier {
+Menu_BbBustier {
 	SurfaceModeChangeEx(1000, 0)
 	"\1\s[10]\0\s[1]…\w4…。\e"
 }
@@ -581,8 +555,8 @@ menuBbBustier {
 // 月白
 //------------------------------------
 // 立ち
-menuTukisiroStand {
-/* ToDo なんか怪しい */
+Menu_TukisiroStand {
+	// FIXME なんか怪しい
 	SurfaceModeChangeEx(0, 0)
 	OsuwariStop
 	if TukisiroSurfaceMode == 3000 {
@@ -595,21 +569,21 @@ menuTukisiroStand {
 }
 
 // 座り
-menuTukisiroSit {
+Menu_TukisiroSit {
 	SurfaceModeChangeEx(1000, 0)
 	OsuwariStop
 	"\1\s[10]\0\s[0]座らせてもらうわ。\e"
 }
 
 // 座り
-menuTukisiroSitA {
+Menu_TukisiroSitA {
 	SurfaceModeChangeEx(1000, 1)
 	OsuwariStart
 	"\1\s[10]\0\s[0]座らせてもらうわ。\e"
 }
 
 // 座り
-menuTukisiroSitF {
+Menu_TukisiroSitF {
 	SurfaceModeChangeEx(1000, 2)
 	OsuwariStart
 	"\1\s[10]\0\s[0]座らせてもらうわ。\e"
@@ -617,7 +591,7 @@ menuTukisiroSitF {
 
 
 // 月白/たくし上げ
-menuTukisiroTuckup {
+Menu_TukisiroTuckup {
 	if flgLove == 1 && TukisiroSurfaceMode !=3000 && GetShellnameEx == "月白"  {
 		TukisiroSurfaceMode = 3000
 		"\1\s[10]\0\s[1]…\w4…\w4恥ずかしい、\w4わ。\e"
@@ -631,7 +605,7 @@ menuTukisiroTuckup {
 	}
 }
 
-menuTukisiroTuckdown {
+Menu_TukisiroTuckdown {
 	SurfaceModeChangeEx(0, 0)
 	"\1\s[10]\0\s[1]はぁ\w4…\w4…。\e"
 	"\1\s[10]\0\s[1]…\w4…。\e"
@@ -641,19 +615,19 @@ menuTukisiroTuckdown {
 // Gemini
 //------------------------------------
 // Gemini/ポルックス
-menuGeminiPollux {
+Menu_GeminiPollux {
 	SurfaceModeChangeEx(0, 0)
 	"\1\s[10]\0\s[0]こうかしら?\e"
 }
 
 // Gemini/カストール
-menuGeminiCastor {
+Menu_GeminiCastor {
 	SurfaceModeChangeEx(1000, 0)
 	"\1\s[10]\0\s[0]これでいいかしら?\e"
 }
 
 // Gemini/双子
-menuGeminiPolluxAndCastor {
+Menu_GeminiPolluxAndCastor {
 	SurfaceModeChangeEx(2000, 0)
 	"\1\s[10]\0\s[0]では、\w4こうしましょうか。\w9\n\n[half]/
 	\1\s[10]こういう使い方もできるのよ。\e"
@@ -662,7 +636,7 @@ menuGeminiPolluxAndCastor {
 }
 
 // Gemini/脱衣
-menuGeminiTuckup {
+Menu_GeminiTuckup {
 	if flgLove == 1 && (GeminiSurfaceMode >= 0 && GeminiSurfacemode <= 2000) && shellname == "Gemini"  {
 		case GeminiSurfaceMode {
 			when 0, 1000 {
@@ -693,7 +667,7 @@ menuGeminiTuckup {
 	}
 }
 
-menuGeminiDress {
+Menu_GeminiDress {
 	if flgLove == 1 && (GeminiSurfaceMode >= 3000 && GeminiSurfacemode <= 6000) && shellname == "Gemini"  {
 		case GeminiSurfaceMode {
 			when 3000, 4000 {
@@ -726,7 +700,7 @@ menuGeminiDress {
 // 桜吹雪
 //------------------------------
 // 狐耳
-menuSakurafubukiFox {
+Menu_SakurafubukiFox {
 	SakurafubukiFox = 10000;
 	"\0\s[-1]こう、\w4かしら。\w9\w9\n/
 	\s[5]お待たせ。\w9\n/
@@ -734,13 +708,13 @@ menuSakurafubukiFox {
 }
 
 // 通常
-menuSakurafubukiNormal {
+Menu_SakurafubukiNormal {
 	SakurafubukiFox = 0;
 	"\0\s[6]いつもどおり、\w4ね。\e"
 }
 
 // 夜桜
-menuSakurafubukiYozakura
+Menu_SakurafubukiYozakura
 {
 	SakurafubukiBase = 20000;
 	flgSakurafubukiShift = 0;
@@ -749,7 +723,7 @@ menuSakurafubukiYozakura
 }
 
 // 桜
-menuSakurafubukiAsa
+Menu_SakurafubukiAsa
 {
 	SakurafubukiBase = 0;
 	flgSakurafubukiShift = 0;
@@ -758,7 +732,7 @@ menuSakurafubukiAsa
 }
 
 // 自動変更
-menuSakurafubukiAuto
+Menu_SakurafubukiAuto
 {
 	flgSakurafubukiShift = 1;
 	SakurafubukiShiftBase;
@@ -767,7 +741,7 @@ menuSakurafubukiAuto
 }
 
 // 手動変更
-menuSakurafubukiManual
+Menu_SakurafubukiManual
 {
 	flgSakurafubukiShift = 0;
 	--
@@ -775,8 +749,8 @@ menuSakurafubukiManual
 }
 
 // リセット
-sakurafubukiPRest {
-	SakurafubukiPhase = 0;
+Menu_SakurafubukiPRest {
+	Menu_SakurafubukiPhase = 0;
 	--
 	"\0\s[-1]そうするわ。\w9\n/
 	…\w4…。\w9\n/
@@ -788,7 +762,7 @@ sakurafubukiPRest {
 //桃色月
 //------------------------------
 // スリットドレス
-menuPmSlit
+Menu_PmSlit
 {
 	SurfaceModeChangeEx(0, 0);
 	--
@@ -796,7 +770,7 @@ menuPmSlit
 }
 
 // ワンピース
-menuPmOp
+Menu_PmOp
 {
 	SurfaceModeChangeEx(1000, 0);
 	--
@@ -807,7 +781,7 @@ menuPmOp
 // ll29yo
 //------------------------------
 // 私服
-menuLl29yoNormal
+Menu_Ll29yoNormal
 {
 	SurfaceModeChangeEx(0, 0);
 	--
@@ -815,7 +789,7 @@ menuLl29yoNormal
 }
 
 // メイド
-menuLl29yoMaid
+Menu_Ll29yoMaid
 {
 	SurfaceModeChangeEx(1000, 0);
 	--
@@ -827,7 +801,7 @@ menuLl29yoMaid
 // マジカル☆カシス
 //------------------------------
 // 魔法少女
-menuMcMagical
+Menu_McMagical
 {
 	SurfaceModeChangeEx(0, 0);
 	--
@@ -835,7 +809,7 @@ menuMcMagical
 }
 
 // 和服
-menuMcJc
+Menu_McJc
 {
 	SurfaceModeChangeEx(1000, 0);
 	--
@@ -843,7 +817,7 @@ menuMcJc
 }
 
 // ちゃいな
-menuMcChina
+Menu_McChina
 {
 	SurfaceModeChangeEx(2000, 0);
 	--
@@ -851,7 +825,7 @@ menuMcChina
 }
 
 // セーラー服
-menuMcSailer
+Menu_McSailer
 {
 	SurfaceModeChangeEx(3000, 0);
 	--
@@ -860,7 +834,7 @@ menuMcSailer
 }
 
 // 軍服
-menuMcMu
+Menu_McMu
 {
 	SurfaceModeChangeEx(4000, 0);
 	--
@@ -868,7 +842,7 @@ menuMcMu
 }
 
 // ノースリーブ
-menuMcNosleeve
+Menu_McNosleeve
 {
 	SurfaceModeChangeEx(5000, 0);
 	--
@@ -878,35 +852,35 @@ menuMcNosleeve
 //------------------------------------------------------------------------------
 
 // Web拍手
-WEBCLAP {
+Menu_WEBCLAP {
 	"\1\s[10]\0\s[0]?\w9\n/
 	\![open,inputbox,OnInputWebclap,0,バグ報告などどうぞ（最大200字）]\e"
 }
-CANCEL {
+Menu_CANCEL {
 	//---- キャンセルされた
 	"\1\s[10]\0\s[6]そう。\e"
 }
 
 //---- トーク頻度
-TALKMAX {
+Menu_TALKMAX {
 	//---- うるさく話す(15秒間隔)
 	aitalkinterval = 15
 	"\1\s[10]\0\s[0]気に障るようなら言ってちょうだい。\e"
 }
 
-TALKNORMAL {
+Menu_TALKNORMAL {
 	//---- ふつうに話す(3分間隔)
 	aitalkinterval = 180
 	"\1\s[10]\0\s[0]普通というのも曖昧ね。\e"
 }
 
-TALKPOOR {
+Menu_TALKPOOR {
 	//---- 静かに話す(5分間隔)
 	aitalkinterval = 300
 	"\1\s[10]\0\s[0]静か、ね。\e"
 }
 
-TALKNONE {
+Menu_TALKNONE {
 	//---- 話さない
 	aitalkinterval = 0
 	"\1\s[10]\0\s[0]わかったわ。\w9\n本でも読んでようかしら。\e"
@@ -914,40 +888,35 @@ TALKNONE {
 }
 
 //---- ヘッドライン
-HEADLINECANCEL {
+Menu_HEADLINECANCEL {
 	//---- キャンセルされた
 	"\1\s[10]\0\s[0]そう。\e"
 }
 
 //---- トークウェイト設定
-WCC {
+Menu_WCC {
 	"\1\s[10]\0\s[0]\q[早く,WCFAST]\n/
 	\q[普通,WCNORMAL]\n/
 	\q[遅く,WCSLOW]\e"
 }
 
-WCFAST {
+Menu_WCFAST {
 	WC = "fast"
 	"\1\s[10]\0\s[6]噛まない程度に早くするわ。\w9\e"
 }
 
-WCNORMAL {
+Menu_WCNORMAL {
 	WC = "normal"
 	"\1\s[10]\0\s[6]そう。\w9\e"
 }
 
-WCSLOW {
+Menu_WCSLOW {
 	WC = "slow"
 	"\1\s[10]\0\s[6]わかったわ。\w9\e"
 }
 
-//---- コマンド選択時
-COMMAND {
-	menuCommand
-}
-
 //---- 設定
-CONFIG {
+Menu_CONFIG {
 	if strMenuMode == "new" {
 		"\b[2]"
 	}
@@ -958,36 +927,36 @@ CONFIG {
 	--
 	if shellname == "master" {
 		if flgTooltip != "1" {
-			"\![*]\q[ツールチップを表示する,tooltipEnable]\n"
+			"\![*]\q[ツールチップを表示する,Menu_TooltipEnable]\n"
 		}
 		else {
-			"\![*]\q[ツールチップを表示しない,tooltipDisable]\n"
+			"\![*]\q[ツールチップを表示しない,Menu_TooltipDisable]\n"
 		}
 	}
 	--
 	if strMenuMode == "new" && flgNoSfcnv != 1
 	{
-		menuChange
+		Menu_Change
 	}
 	--
 	if flgNoSfcnv != 1
 	{
 		if strMenuMode == "new" {
-			"\![*]\q[着せ替え・座る／立つメニューをメニューに,menuClassic]\n"
+			"\![*]\q[着せ替え・座る／立つメニューをメニューに,Menu_Classic]\n"
 		}
 		else {
-			"\![*]\q[着せ替え・座る／立つメニューを設定に,menuNew]\n"
+			"\![*]\q[着せ替え・座る／立つメニューを設定に,Menu_New]\n"
 		}
 	}
 	--
-	"\![*]\q[アンインストール設定,VANISHCONTROL]\n"
+	"\![*]\q[アンインストール設定,Menu_VANISHCONTROL]\n"
 	--
 	// 見切れ設定
 	if flgMikireEnable == "1" {
-		"\![*]\q[見切れトークを無効にする,mikireDisable]\n"
+		"\![*]\q[見切れトークを無効にする,Menu_MikireDisable]\n"
 	}
 	else {
-		"\![*]\q[見切れトークを有効にする,mikireEnable]\n"
+		"\![*]\q[見切れトークを有効にする,Menu_MikireEnable]\n"
 	}
 	--
 	"[half]"
@@ -997,50 +966,50 @@ CONFIG {
 }
 
 // ツールチップ制御
-tooltipEnable {
+Menu_TooltipEnable {
 	flgTooltip = 1
 	"\1\s[10]\0\s[6]わかったわ。\e"
 }
 
-tooltipDisable {
+Menu_TooltipDisable {
 	flgTooltip = 0
 	"\1\s[10]\0\s[6]そう。\e"
 }
 
 // 見切れトーク制御
-mikireEnable {
+Menu_MikireEnable {
 	flgMikireEnable = "1"
 	"\1\s[10]\0\s[6]\e"
 }
 
-mikireDisable {
+Menu_MikireDisable {
 	flgMikireEnable = "0"
 	"\1\s[10]\0\s[0]\e"
 }
 
 
 // メニュー設定
-menuClassic {
+Menu_Classic {
 	strMenuMode = "classic"
 	"\1\s[10]\0\s[0]こうかしら?\e"
 }
 
-menuNew {
+Menu_New {
 	strMenuMode = "new"
 	"\1\s[10]\0\s[0]こう?\e"
 }
 
 // アンインストールメニュー設定
-VANISHCONTROL {
+Menu_VANISHCONTROL {
 	"（アンインストールメニューの表示設定です。）\n/
 	（現在:"
 	--
 	if vanishflg != 1 {
 		"非表示)\n/
-		\![*]\q[アンインストールメニュー表示,VANISH_TRUE]"
+		\![*]\q[アンインストールメニュー表示,Menu_VANISH_TRUE]"
 	} else {
 		"表示)\n/
-		\![*]\q[アンインストールメニュー非表示,VANISH_FALSE]"
+		\![*]\q[アンインストールメニュー非表示,Menu_VANISH_FALSE]"
 	}
 	--
 	"\n\n[half]/
@@ -1048,13 +1017,13 @@ VANISHCONTROL {
 	\q[キャンセル,CANSEL]\e"
 }
 
-VANISH_TRUE {
+Menu_VANISH_TRUE {
 	vanishflg = 1
 	--
 	"\1\s[10]\0\s[0]――そう。\e"
 }
 
-VANISH_FALSE {
+Menu_VANISH_FALSE {
 	vanishflg = 0
 	--
 	"\1\s[10]\0\s[6]…\w4…\w4ふふ。\e"
@@ -1083,48 +1052,48 @@ OnInputWebclap
 }
 
 //---- シェルごとの特殊メニュー
-menuChange
+Menu_Change
 {
 	case shellname {
 		// 座り対応
 		when "master", "Eternity Black", "拡大鏡", "White Lolita", "銀色", "瑠璃" {
-			"%menuSitOrStand"
+			"%Menu_SitOrStand"
 		}
 		// Alternative - Cassis
 		when "Alternative - Cassis" {
-			"%menuAlternativeCassis"
+			"%Menu_AlternativeCassis"
 		}
 		// 月光浴
 		when "月光浴" {
-			"%menuMoonlightBlue"
+			"%Menu_MoonlightBlue"
 		}
 		// Bridal_Butterfly
 		when "Bridal Butterfly", 'Bridal Butterfly 75%' {
-			"%menuBridalButterfly"
+			"%Menu_BridalButterfly"
 		}
 		// 月白
 		when "月白" {
-			"%menuTukisiro"
+			"%Menu_Tukisiro"
 		}
 		// Gemini
 		when "Gemini" {
-			"%menuGemini"
+			"%Menu_Gemini"
 		}
 		// 桜吹雪
 		when "桜吹雪" {
-			"%menuSakurafubuki"
+			"%Menu_Sakurafubuki"
 		}
 		// 桃色月
 		when "桃色月" {
-			"%menuPinkMoon"
+			"%Menu_PinkMoon"
 		}
 		// ll29yo
 		when "ll29yo" {
-			"%menuLl29yo"
+			"%Menu_Ll29yo"
 		}
 		// マジカル☆カシス 
 		when "マジカル☆カシス" {
-			"%menuMagicalcassis"
+			"%Menu_Magicalcassis"
 		}
 	}	
 }
@@ -1133,14 +1102,14 @@ menuChange
 // Gemini手つなぎ用
 // ------------------------
 // 手をつなぐ
-menuGeminiHandshake
+Menu_GeminiHandshake
 {
 	SetFit
 	HandshakeFlg = 1
 }
 
 // 手をはなす
-menuGeminiBreak
+Menu_GeminiBreak
 {
 	HandshakeFlg = 0
 }
