@@ -30,6 +30,7 @@ dic, cassis_communicate.dic		// コミュニケート辞書
 dic, cassis_mouse.dic			// マウス入力関連辞書
 dic, cassis_menu.dic			// メニュー処理辞書
 dic, menu/alternative_cassis.dic   // メニュー処理辞書 Altenative - Cassis
+dic, menu/moonlight_blue.dic    // メニュー処理辞書 月光浴
 dic, cassis_aprication.dic		// 汎用アプリケーション/どりふ/きのこ辞書
 dic, cassis_etc.dic				// 種々のイベント辞書
 dic, cassis_mouse_core.dic		// マウス入力関連コア
