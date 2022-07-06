@@ -89,24 +89,6 @@ Menu_SitOrStand
 	"\n[half]"
 }
 
-
-
-// bridal butterfly
-Menu_BridalButterfly
-{
-	"【着せ替え】\n"
-	--
-	if BridalButterflySurfaceMode != 0 {
-		"\![*]\q[通常,Menu_BbNormal]\n"
-	}
-	--
-	if BridalButterflySurfaceMode != 1000 {
-		"\![*]\q[ビスチェ,Menu_BbBustier]\n"
-	}
-	--
-	"\n[half]"
-}
-
 // 月白
 Menu_Tukisiro
 {
@@ -487,19 +469,6 @@ Menu_SitF {
 	SurfaceModeChangeEx(1000, 2)
 	OsuwariStart
 	"\1\s[10]\0\s[6]座らせてもらうわ。\w9\e"
-}
-
-//------------------------------------
-// Bridal Butterfly
-//------------------------------------
-Menu_BbNormal {
-	SurfaceModeChangeEx(0, 0)
-	"\1\s[10]\0\s[0]こうかしら?\e"
-}
-
-Menu_BbBustier {
-	SurfaceModeChangeEx(1000, 0)
-	"\1\s[10]\0\s[1]…\w4…。\e"
 }
 
 //------------------------------------
