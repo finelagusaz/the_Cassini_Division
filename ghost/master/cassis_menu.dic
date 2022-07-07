@@ -89,46 +89,6 @@ Menu_SitOrStand
 	"\n[half]"
 }
 
-// 月光浴
-Menu_MoonlightBlue
-{
-	"【着せ替え】\n"
-	--
-	if MoonlightBlueSurfaceMode != 0 {
-		"\![*]\q[ロングスカート,Menu_MbNormal]\n"
-	}
-	--
-	if MoonlightBlueSurfaceMode != 2000 {
-		"\![*]\q[ショートスカート,Menu_MbShort]\n"
-	}
-	--
-	if MoonlightBlueSurfaceMode != 1000 {
-		"\![*]\q[スクール水着,Menu_MbSwimming]\n"
-	}
-	--
-	if MoonlightBlueSurfaceMode != 3000 {
-		"\![*]\q[ビキニ,Menu_MbBikini]\n"
-	}
-	--
-	"\n[half]"
-}
-
-// bridal butterfly
-Menu_BridalButterfly
-{
-	"【着せ替え】\n"
-	--
-	if BridalButterflySurfaceMode != 0 {
-		"\![*]\q[通常,Menu_BbNormal]\n"
-	}
-	--
-	if BridalButterflySurfaceMode != 1000 {
-		"\![*]\q[ビスチェ,Menu_BbBustier]\n"
-	}
-	--
-	"\n[half]"
-}
-
 // 月白
 Menu_Tukisiro
 {
@@ -509,46 +469,6 @@ Menu_SitF {
 	SurfaceModeChangeEx(1000, 2)
 	OsuwariStart
 	"\1\s[10]\0\s[6]座らせてもらうわ。\w9\e"
-}
-
-//---------------------------
-// 月光浴
-//---------------------------
-// 普段着
-Menu_MbNormal {
-	SurfaceModeChangeEx(0, 0)
-	"\1\s[10]\0\s[6]ん。\e"
-}
-// ショートスカート
-Menu_MbShort {
-	SurfaceModeChangeEx(2000, 0)
-	"\1\s[10]\0\s[0]…\w4…。\w9\n/
-	\s[6]少し、\w4落ち着かないわね。\e"
-}
-
-// スクール水着
-Menu_MbSwimming {
-	SurfaceModeChangeEx(1000, 0)
-	"\1\s[10]\0\s[1]少し恥ずかしいわ。\e"
-}
-// ビキニ
-Menu_MbBikini {
-	SurfaceModeChangeEx(3000, 0)
-	"\1\s[10]\0\s[0]どう、\w4\s[5]似合う?\w9\w9\n/
-	\s[0]なんてね。\e"
-}
-
-//------------------------------------
-// Bridal Butterfly
-//------------------------------------
-Menu_BbNormal {
-	SurfaceModeChangeEx(0, 0)
-	"\1\s[10]\0\s[0]こうかしら?\e"
-}
-
-Menu_BbBustier {
-	SurfaceModeChangeEx(1000, 0)
-	"\1\s[10]\0\s[1]…\w4…。\e"
 }
 
 //------------------------------------
