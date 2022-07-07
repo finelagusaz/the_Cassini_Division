@@ -29,8 +29,6 @@ OpenMenu
 	--
 	"\_q"
 	--
-	"\n\n[half]"
-	--
 	AYATEMPLATE.MenuItem("トーク（t）","Menu_AITALK",200)
 	--
 	if ( STRLEN(AYATEMPLATE.LastTalk) > 0 ) {
@@ -84,7 +82,9 @@ Menu_SitOrStand
 	--
 	AYATEMPLATE.MenuItem("タスクバーに座る", "Menu_SitF")
 	--
-	AYATEMPLATE.MenuItem("立つ", "Menu_Stand")
+	if (MasterSurfaceMode != 0) {
+		AYATEMPLATE.MenuItem("立つ", "Menu_Stand")
+	}
 	--
 	"\n[half]"
 }
