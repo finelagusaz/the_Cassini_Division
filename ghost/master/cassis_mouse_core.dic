@@ -8,21 +8,21 @@
 //******************************************************************************
 OnMouseMove
 {
-	AYATEMPLATE.MouseMoveWheelFunc(0,50,'MouseMove')
+	AYATEMPLATE.MouseMoveWheelFunc(0,50, "%(EMGetPrefix)Move")
 }
 
 OnMouseWheel
 {
 	_result = ''
 	if TOINT(reference[2]) > 0 {
-		_result = AYATEMPLATE.MouseMoveWheelFunc(1,4,'MouseWheelUp')
+		_result = AYATEMPLATE.MouseMoveWheelFunc(1,4, "%(EMGetPrefix)WheelUp")
 	}
 	else {
-		_result = AYATEMPLATE.MouseMoveWheelFunc(1,4,'MouseWheelDown')
+		_result = AYATEMPLATE.MouseMoveWheelFunc(1,4,"%(EMGetPrefix)WheelDown")
 	}
 	
 	if _result == '' {
-		_result = AYATEMPLATE.MouseMoveWheelFunc(1,4,'MouseWheel')
+		_result = AYATEMPLATE.MouseMoveWheelFunc(1,4,"%(EMGetPrefix)MouseWheel")
 	}
 	
 	_result
