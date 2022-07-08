@@ -32,6 +32,9 @@ dic, cassis_menu.dic				// メニュー処理辞書
 dic, menu/alternative_cassis.dic	// メニュー処理辞書 Altenative - Cassis
 dic, menu/moonlight_blue.dic 		// メニュー処理辞書 月光浴
 dic, menu/bridal_butterfly.dic  	// メニュー処理辞書 bridal butterfly
+dic, menu/tukisiro.dic              // メニュー処理辞書 月白
+dic, menu/gemini.dic                // メニュー処理辞書 Gemini
+dic, menu/sakurafubuki.dic          // メニュー処理辞書 桜吹雪
 dic, cassis_aprication.dic			// 汎用アプリケーション/どりふ/きのこ辞書
 dic, cassis_etc.dic					// 種々のイベント辞書
 dic, cassis_mouse_core.dic			// マウス入力関連コア
