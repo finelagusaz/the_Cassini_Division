@@ -8,21 +8,25 @@
 //******************************************************************************
 OnMouseMove
 {
-	AYATEMPLATE.MouseMoveWheelFunc(0,50, "%(EMGetPrefix)Move")
+	AYATEMPLATE.MouseMoveWheelFunc(0,50, "%(EMGetPrefix)DoubleClick")
 }
 
 OnMouseWheel
 {
 	_result = ''
+
 	if TOINT(reference[2]) > 0 {
-		_result = AYATEMPLATE.MouseMoveWheelFunc(1,4, "%(EMGetPrefix)WheelUp")
+		_name = "%(EMGetPrefix)WheelUp"
+		_result = AYATEMPLATE.MouseMoveWheelFunc(1,4, _name)
 	}
 	else {
-		_result = AYATEMPLATE.MouseMoveWheelFunc(1,4,"%(EMGetPrefix)WheelDown")
+		_name = "%(EMGetPrefix)WheelDown"
+		_result = AYATEMPLATE.MouseMoveWheelFunc(1,4, _name)
 	}
 	
 	if _result == '' {
-		_result = AYATEMPLATE.MouseMoveWheelFunc(1,4,"%(EMGetPrefix)MouseWheel")
+		_name = "%(EMGetPrefix)Wheel"
+		_result = AYATEMPLATE.MouseMoveWheelFunc(1,4, _name)
 	}
 	
 	_result
@@ -30,11 +34,9 @@ OnMouseWheel
 
 OnMouseDoubleClick
 {
-	AYATEMPLATE.MouseEventExec('MouseDoubleClick');
+	AYATEMPLATE.MouseEventExec("%(EMGetPrefix)DoubleClick");
 }
 
-
-// ---- extend -----------------------------------------------------------
 EMMouseHitExec
 {
 	_name = _argv[0]
@@ -86,6 +88,7 @@ EMGetPrefix
 	}
 }
 
+// ホイールクリック
 OnMouseClickEx
 {
 	_prefix = EMGetPrefix
