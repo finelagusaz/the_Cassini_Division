@@ -21,32 +21,33 @@ charset.save.old, UTF-8 	// 文字コード指定のない旧セーブデータ�
 charset.extension, UTF-8 	// SAORI入出力
 
 //---- 読み込む辞書 ---------------------------------------------------------------------
-dic, yaya_tmpl_util.dic	 			// テンプレート共通処理
-dic, cassis_word.dic				// 単語辞書
-dic, cassis_string.dic				// 文字列リソース辞書
-dic, cassis_aitalk.dic				// ランダムトーク辞書
-dic, cassis_bootend.dic				// 起動/終了辞書
-dic, cassis_communicate.dic			// コミュニケート辞書
-dic, cassis_mouse.dic				// マウス入力関連辞書
-dic, cassis_menu.dic				// メニュー処理辞書
-dic, menu/master.dic                // メニュー処理辞書 master
-dic, menu/alternative_cassis.dic	// メニュー処理辞書 Altenative - Cassis
-dic, menu/moonlight_blue.dic 		// メニュー処理辞書 月光浴
-dic, menu/bridal_butterfly.dic  	// メニュー処理辞書 bridal butterfly
-dic, menu/tukisiro.dic              // メニュー処理辞書 月白
-dic, menu/gemini.dic                // メニュー処理辞書 Gemini
-dic, menu/sakurafubuki.dic          // メニュー処理辞書 桜吹雪
-dic, cassis_aprication.dic			// 汎用アプリケーション/どりふ/きのこ辞書
-dic, cassis_etc.dic					// 種々のイベント辞書
-dic, cassis_mouse_core.dic			// マウス入力関連コア
-dic, cassis_mouse_special.dic		// The Handイベント用
-dic, cassis_aitalk_gemini.dic		// 追加シェル「Gemini」用トーク関連辞書
-dic, cassis_mouse_gemini.dic		// 追加シェル「Gemini」用マウス入力関連辞書
-dic, cassis_mouse_socb.dic			// 追加シェル「桜吹雪」用マウス入力関連辞書
-dic, cassis_sck.dic					// ショートカットキー
-dic, cassis_change.dic				// 切り替えトーク辞書
-dic, cassis_property.dic			// プロパティシステム辞書
-dic, cassis_shell.dic				// サーフェス値加算処理・Osuwari.dll関連処理
+dic, yaya_tmpl_util.dic	 				// テンプレート共通処理
+dic, cassis_word.dic					// 単語辞書
+dic, cassis_string.dic					// 文字列リソース辞書
+dic, cassis_aitalk.dic					// ランダムトーク辞書
+dic, cassis_bootend.dic					// 起動/終了辞書
+dic, cassis_communicate.dic				// コミュニケート辞書
+dic, cassis_mouse.dic					// マウス入力関連辞書
+dic, cassis_menu.dic					// メニュー処理辞書
+dic, menu/shell/master.dic				// メニュー処理辞書 master
+dic, menu/shell/alternative_cassis.dic	// メニュー処理辞書 Altenative - Cassis
+dic, menu/shell/moonlight_blue.dic		// メニュー処理辞書 月光浴
+dic, menu/shell/bridal_butterfly.dic	// メニュー処理辞書 bridal butterfly
+dic, menu/shell/tukisiro.dic			// メニュー処理辞書 月白
+dic, menu/shell/gemini.dic				// メニュー処理辞書 Gemini
+dic, menu/shell/sakurafubuki.dic		// メニュー処理辞書 桜吹雪
+dic, menu/shell/pink_moon.dic			// メニュー処理辞書 桃色月
+dic, cassis_aprication.dic				// 汎用アプリケーション/どりふ/きのこ辞書
+dic, cassis_etc.dic						// 種々のイベント辞書
+dic, cassis_mouse_core.dic				// マウス入力関連コア
+dic, cassis_mouse_special.dic			// The Handイベント用
+dic, cassis_aitalk_gemini.dic			// 追加シェル「Gemini」用トーク関連辞書
+dic, cassis_mouse_gemini.dic			// 追加シェル「Gemini」用マウス入力関連辞書
+dic, cassis_mouse_socb.dic				// 追加シェル「桜吹雪」用マウス入力関連辞書
+dic, cassis_sck.dic						// ショートカットキー
+dic, cassis_change.dic					// 切り替えトーク辞書
+dic, cassis_property.dic				// プロパティシステム辞書
+dic, cassis_shell.dic					// サーフェス値加算処理・Osuwari.dll関連処理
 
 //---- 実行ログ -------------------------------------------------------------------------
 // log, ayame.log		// 実行ログをayame.logに記録します。開発時には記録しておいたほうが良いです。

@@ -1,0 +1,33 @@
+//------------------------------
+//桃色月
+//------------------------------
+Menu_PinkMoon
+{
+	"\n[half]"
+	--
+	if PinkMoonSurfaceMode != 0 {
+		"\![*]\q[スリットドレス,Menu_PmSlit]\n"
+	}
+	--
+	if PinkMoonSurfaceMode != 1000 { 
+		"\![*]\q[ワンピース,Menu_PmOp]\n"
+	}
+	--
+	"\n[half]"
+}
+
+// スリットドレス
+Menu_PmSlit
+{
+	SurfaceModeChangeEx(0, 0);
+	--
+	"\0\s[0]ん?\e"
+}
+
+// ワンピース
+Menu_PmOp
+{
+	SurfaceModeChangeEx(1000, 0);
+	--
+	"\0\s[0]そう。\e"
+}
