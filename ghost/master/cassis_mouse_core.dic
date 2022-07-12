@@ -8,7 +8,7 @@
 //******************************************************************************
 OnMouseMove
 {
-	AYATEMPLATE.MouseMoveWheelFunc(0,50, "%(EMGetPrefix)DoubleClick")
+	AYATEMPLATE.MouseMoveWheelFunc(0,50, "%(EMGetPrefix)Move")
 }
 
 OnMouseWheel
@@ -16,17 +16,14 @@ OnMouseWheel
 	_result = ''
 
 	if TOINT(reference[2]) > 0 {
-		_name = "%(EMGetPrefix)WheelUp"
-		_result = AYATEMPLATE.MouseMoveWheelFunc(1,4, _name)
+		_result = AYATEMPLATE.MouseMoveWheelFunc(1,4, "%(EMGetPrefix)WheelUp")
 	}
 	else {
-		_name = "%(EMGetPrefix)WheelDown"
-		_result = AYATEMPLATE.MouseMoveWheelFunc(1,4, _name)
+		_result = AYATEMPLATE.MouseMoveWheelFunc(1,4, "%(EMGetPrefix)WheelDown")
 	}
 	
 	if _result == '' {
-		_name = "%(EMGetPrefix)Wheel"
-		_result = AYATEMPLATE.MouseMoveWheelFunc(1,4, _name)
+		_result = AYATEMPLATE.MouseMoveWheelFunc(1,4, "%(EMGetPrefix)Wheel")
 	}
 	
 	_result
@@ -81,7 +78,7 @@ EMGetPrefix
 	}
 	elseif shellname == '桜吹雪'
 	{
-		'MouseSAK'
+		'SakurafubukiMouse'
 	}
 	else {
 		'Mouse'

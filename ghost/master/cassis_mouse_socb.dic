@@ -91,7 +91,7 @@ MouseSAK_ClickEx0Lip
 //----------------------------------
 // 狐耳なで
 //----------------------------------
-MouseSAMouseMove0Fox_ears
+SakurafubukiMouseMove0Fox_ears
 {
 	_talk_array = IARRAY
 
@@ -149,7 +149,7 @@ arySakNade0Fox_earsPhase2 : array
 //----------------------------------
 // 髪なで
 //----------------------------------
-MouseSAMouseMove0Hair
+SakurafubukiMouseMove0Hair
 {
 	_talk_array = IARRAY
 
@@ -201,7 +201,7 @@ arySakNade0HairPhase2 : array
 //----------------------------------
 // 頭なで
 //----------------------------------
-MouseSAMouseMove0Head
+SakurafubukiMouseMove0Head
 {
 	// 好感度加算
 	cntHead++
@@ -257,7 +257,7 @@ arySakNade0HeadPhase2 : array
 //----------------------------------
 // 唇なで
 //----------------------------------
-MouseSAMouseMove0Lip
+SakurafubukiMouseMove0Lip
 {
 	_talk_array = IARRAY
 
@@ -316,7 +316,7 @@ arySakNade0LipPhase2 : array
 //----------------------------------
 // 胸なで
 //----------------------------------
-MouseSAMouseMove0Bust
+SakurafubukiMouseMove0Bust
 {
 	_talk_array = IARRAY
 
@@ -371,7 +371,7 @@ arySakNade0BustPhase2 : array
 //----------------------------------
 // スカートなで
 //----------------------------------
-MouseSAMouseMove0Skirt
+SakurafubukiMouseMove0Skirt
 {
 	_talk_array = IARRAY
 
@@ -427,7 +427,7 @@ arySakNade0SkirtPhase2 : array
 //----------------------------------
 // 羽なで
 //----------------------------------
-MouseSAMouseMove0Wing
+SakurafubukiMouseMove0Wing
 {
 	Mouse_Nade0Wing
 }
@@ -435,7 +435,7 @@ MouseSAMouseMove0Wing
 //----------------------------------
 // 神秘の領域なで
 //----------------------------------
-MouseSAMouseMove0Mystic
+SakurafubukiMouseMove0Mystic
 {
 	_talk_array = IARRAY
 
@@ -494,7 +494,7 @@ arySakNade0MysticPhase2 : array
 //----------------------------------
 // 狐尻尾なで
 //----------------------------------
-MouseSAMouseMove0Fox_tail
+SakurafubukiMouseMove0Fox_tail
 {
 	_talk_array = IARRAY
 
@@ -550,7 +550,7 @@ arySakNade0Fox_tailPhase2 : array
 //----------------------------------
 // 尻なで
 //----------------------------------
-MouseSAMouseMove0Hip
+SakurafubukiMouseMove0Hip
 {
 	_talk_array = IARRAY
 
@@ -608,7 +608,7 @@ arySakNade0HipPhase2 : array
 //----------------------------------
 // 足なで
 //----------------------------------
-MouseSAMouseMove0Leg
+SakurafubukiMouseMove0Leg
 {
 	_talk_array = IARRAY
 
@@ -662,15 +662,15 @@ arySakNade0LegPhase2 : array
 //----------------------------------
 // 頭ホイール
 //----------------------------------
-MouseSAKWheelUp00Head
+SakurafubukiMouseWheelUp0Head
 {
-	MouseWheelUp00Head
+	MouseWheelUp0Head
 }
 
 //----------------------------------
 // スカートホイール
 //----------------------------------
-MouseSAKWheelUp00Skirt
+SakurafubukiMouseWheelUp0Skirt
 {
 	_talk_array = IARRAY
 
@@ -730,7 +730,7 @@ arySakWheel0SkirtPhase2 : array
 //----------------------------------
 // 胸ホイール
 //----------------------------------
-MouseSAKWheelUp00Bust
+SakurafubukiMouseWheelUp0Bust
 {
 	_talk_array = IARRAY
 
@@ -787,23 +787,23 @@ arySakWheel0BustPhase2 : array
 //----------------------------------
 // 羽ホイール
 //----------------------------------
-MouseSAKWheelUp00Wing
+SakurafubukiMouseWheelUp0Wing
 {
-	MouseWheelUp00Wing
+	MouseWheelUp0Wing
 }
 
 //----------------------------------
 // 髪ホイール
 //----------------------------------
-MouseSAKWheelUp00Hair
+SakurafubukiMouseWheelUp0Hair
 {
-	MouseWheelUp00Hair
+	MouseWheelUp0Hair
 }
 
 //----------------------------------
 // 神秘の領域ホイール
 //----------------------------------
-MouseSAKWheelUp00Mystic
+SakurafubukiMouseWheelUp0Mystic
 {
 	_talk_array = IARRAY
 
@@ -859,7 +859,7 @@ arySakWheel0MysticPhase2 : array
 //----------------------------------
 // 尻ホイール
 //----------------------------------
-MouseSAKWheelUp00Hip
+SakurafubukiMouseWheelUp0Hip
 {
 	_talk_array = IARRAY
 
@@ -916,7 +916,7 @@ arySakWheel0HipPhase2 : array
 //----------------------------------
 // 足ホイール
 //----------------------------------
-MouseSAKWheelUp00Leg
+SakurafubukiMouseWheelUp0Leg
 {
 	_talk_array = IARRAY
 
@@ -974,15 +974,15 @@ arySakWheel0LegPhase2 : array
 //----------------------------------
 // どこにもない箇所でメニューオープン
 //----------------------------------
-MouseSAKDoubleClick0
+SakurafubukiMouseDoubleClick0
 {
-	openMenu
+	OpenMenu
 }
 
 //----------------------------------
 // 狐耳つつき
 //----------------------------------
-MouseSAKDoubleClick0Fox_ears
+SakurafubukiMouseDoubleClick0Fox_ears
 {
 	// 好感度加算
 	cntFox_ears++
@@ -1042,8 +1042,10 @@ arySakDoubleClick0Fox_earsPhase2 : array
 //----------------------------------
 // 頭つつき
 //----------------------------------
-MouseSAKDoubleClick0Head
+SakurafubukiMouseDoubleClick0Head
 {
+	_talk_array = IARRAY
+
 	case calcErosPhase(0) {
 		when "n" {
 			_talk_array ,= arySakDoubleClick0HeadPhaseN
@@ -1097,7 +1099,7 @@ arySakDoubleClick0HeadPhase2 : array
 //----------------------------------
 // 唇つつき
 //----------------------------------
-MouseSAKDoubleClick0Lip
+SakurafubukiMouseDoubleClick0Lip
 {
 	_talk_array = IARRAY
 
@@ -1158,7 +1160,7 @@ arySakDoubleClick0LipPhase2 : array
 //----------------------------------
 // 胸つつき
 //----------------------------------
-MouseSAKDoubleClick0Bust
+SakurafubukiMouseDoubleClick0Bust
 {
 	_talk_array = IARRAY
 
@@ -1218,7 +1220,7 @@ arySakDoubleClick0BustPhase2 : array
 //----------------------------------
 // 髪つつき
 //----------------------------------
-MouseSAKDoubleClick0Hair
+SakurafubukiMouseDoubleClick0Hair
 {
 	_talk_array = IARRAY
 
@@ -1286,7 +1288,7 @@ arySakDoubleClick0HairPhase2 : array
 //----------------------------------
 // スカートつつき
 //----------------------------------
-MouseSAKDoubleClick0Skirt
+SakurafubukiMouseDoubleClick0Skirt
 {
 	MouseDoubleClick0Skirt
 }
@@ -1294,7 +1296,7 @@ MouseSAKDoubleClick0Skirt
 //----------------------------------
 // 羽つつき
 //----------------------------------
-MouseSAKDoubleClick0Wing
+SakurafubukiMouseDoubleClick0Wing
 {
 	MouseDoubleClick0Wing
 }
@@ -1302,7 +1304,7 @@ MouseSAKDoubleClick0Wing
 //----------------------------------
 // 神秘の領域つつき
 //----------------------------------
-MouseSAKDoubleClick0Mystic
+SakurafubukiMouseDoubleClick0Mystic
 {
 	_talk_array = IARRAY
 
@@ -1362,7 +1364,7 @@ arySakDoubleClick0MysticPhase2 : array
 //----------------------------------
 // 狐尻尾つつき
 //----------------------------------
-MouseSAKDoubleClick0Fox_tail
+SakurafubukiMouseDoubleClick0Fox_tail
 {
 	_talk_array = IARRAY
 
@@ -1419,7 +1421,7 @@ arySakDoubleClick0Fox_tailPhase2 : array
 //----------------------------------
 // 尻つつき
 //----------------------------------
-MouseSAKDoubleClick0Hip
+SakurafubukiMouseDoubleClick0Hip
 {
 	_talk_array = IARRAY
 
@@ -1475,7 +1477,7 @@ arySakDoubleClick0HipPhase2 : array
 //----------------------------------
 // 足つつき
 //----------------------------------
-MouseSAKDoubleClick0Leg
+SakurafubukiMouseDoubleClick0Leg
 {
 	// 好感度加算
 	cntLeg++
