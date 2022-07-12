@@ -10,12 +10,6 @@ On_username
 	username
 }
 
-//---- ネットワーク更新の基準位置となるURL ----------------------------------------------
-On_homeurl
-{
-	"https://blankrune.sakura.ne.jp/named/the_Cassini_Division/update/"
-}
-
 //---- ポータルサイトのボタンキャプション -----------------------------------------------
 On_portalrootbutton.caption
 {

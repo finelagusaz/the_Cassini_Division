@@ -6,11 +6,11 @@ Menu_PinkMoon
 	"\n[half]"
 	--
 	if PinkMoonSurfaceMode != 0 {
-		"\![*]\q[スリットドレス,Menu_PmSlit]\n"
+		AYATEMPLATE.MenuItem("スリットドレス", "Menu_PmSlit")
 	}
 	--
 	if PinkMoonSurfaceMode != 1000 { 
-		"\![*]\q[ワンピース,Menu_PmOp]\n"
+		AYATEMPLATE.MenuItem("ワンピース", "Menu_PmOp")
 	}
 	--
 	"\n[half]"

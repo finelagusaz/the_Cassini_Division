@@ -97,6 +97,7 @@ Menu_GeminiTuckup {
 	}
 }
 
+// FIXME: 判定処理を汎用のものに置き換える
 Menu_GeminiDress {
 	if flgLove == 1 && (GeminiSurfaceMode >= 3000 && GeminiSurfacemode <= 6000) && shellname == "Gemini"  {
 		case GeminiSurfaceMode {
@@ -124,4 +125,23 @@ Menu_GeminiDress {
 			}
 		}
 	}
+}
+
+// 手をつなぐ
+Menu_GeminiHandshake
+{
+	SetFit
+	HandshakeFlg = 1
+}
+
+// 手をはなす
+Menu_GeminiBreak
+{
+	HandshakeFlg = 0
+}
+
+//---- さっきの話は
+Menu_LASTTALK
+{
+	AYATEMPLATE.LastTalk
 }
