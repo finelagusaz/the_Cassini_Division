@@ -101,24 +101,19 @@ Menu_AITALK
 	OnAiTalk
 }
 
-Menu_GEMINITALK {
-	_talk_array = IARRAY
-	_talk_array ,= aryShellGeminiTalk
-
-	if flgLove == 1 {
-		_talk_array ,= aryShellGeminiLoveTalk
-	}
-	
-	parallel _talk_array
-}
-
 TALKINTERVAL {
 	//---- トーク頻度の調整
-	"\1\s[10]\0\s[0]どのくらいがいいの?\n\n/
-	\q[うるさいくらい,TALKMAX]\n/
-	\q[ふつう,TALKNORMAL]\n/
-	\q[静か,TALKPOOR]\n/
-	\q[黙ってて,TALKNONE]\e"
+	"\1\s[10]\0\s[0]どのくらいがいいの?"
+	--
+	AYATEMPLATE.MenuItem("うるさいくらい", "TALKMAX", 200)
+	--
+	AYATEMPLATE.MenuItem("ふつう", "TALKNORMAL")
+	--
+	AYATEMPLATE.MenuItem("静か", "TALKPOOR")
+	--
+	AYATEMPLATE.MenuItem("黙ってて", "TALKNONE")
+	--
+	AYATEMPLATE.MenuItem("戻る", "OpenMenu", 150)
 }
 
 //------------------------------------------------------------------------------
@@ -193,13 +188,15 @@ Menu_CONFIG {
 		"\b[2]"
 	}
 	--
-	"\1\s[10]\0\s[0]どうしたいの?\n\n/
-	\![*]\q[トーク頻度,TALKINTERVAL]\n/
-	\![*]\q[トーク速度,WCC]\n"
+	"\1\s[10]\0\s[0]どうしたいの?"
+	--
+	AYATEMPLATE.MenuItem("トーク頻度", "TALKINTERVAL", 200)
+	--
+	AYATEMPLATE.MenuItem("トーク速度", "WCC")
 	--
 	if shellname == "master" {
 		if flgTooltip != "1" {
-			"\![*]\q[ツールチップを表示する,Menu_TooltipEnable]\n"
+			AYATEMPLATE.MenuItem("ツールチップを表示する", "Menu_TooltipEnable")
 		}
 		else {
 			"\![*]\q[ツールチップを表示しない,Menu_TooltipDisable]\n"
@@ -233,7 +230,7 @@ Menu_CONFIG {
 	--
 	"[half]"
 	--
-	"\n\n[half]\q[メニューへ戻る,openMenu]\n/
+	"\n\n[half]\q[メニューへ戻る,OpenMenu]\n/
 	\q[キャンセル,CANCEL]\e"
 }
 
