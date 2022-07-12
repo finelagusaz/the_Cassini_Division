@@ -29,6 +29,7 @@ dic, cassis_bootend.dic				// 起動/終了辞書
 dic, cassis_communicate.dic			// コミュニケート辞書
 dic, cassis_mouse.dic				// マウス入力関連辞書
 dic, cassis_menu.dic				// メニュー処理辞書
+dic, menu/master.dic                // メニュー処理辞書 master
 dic, menu/alternative_cassis.dic	// メニュー処理辞書 Altenative - Cassis
 dic, menu/moonlight_blue.dic 		// メニュー処理辞書 月光浴
 dic, menu/bridal_butterfly.dic  	// メニュー処理辞書 bridal butterfly

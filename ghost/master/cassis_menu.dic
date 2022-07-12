@@ -71,24 +71,6 @@ OpenMenu
 	AYATEMPLATE.MenuItem("メニューを閉じる","Menu_CANCEL")
 }
 
-//座り有効
-Menu_SitOrStand
-{
-	"\n[half]"
-	--
-	AYATEMPLATE.MenuItem("座る", "Menu_Sit")
-	--
-	AYATEMPLATE.MenuItem("タイトルバーに座る", "Menu_SitA")
-	--
-	AYATEMPLATE.MenuItem("タスクバーに座る", "Menu_SitF")
-	--
-	if (MasterSurfaceMode != 0) {
-		AYATEMPLATE.MenuItem("立つ", "Menu_Stand")
-	}
-	--
-	"\n[half]"
-}
-
 // 桃色月
 Menu_PinkMoon
 {
@@ -333,31 +315,7 @@ TALKINTERVAL {
 	\q[黙ってて,TALKNONE]\e"
 }
 
-// 座り制御
-// マスターシェル系
-Menu_Stand {
-	SurfaceModeChangeEx(0, 0)
-	OsuwariStop
-	"\1\s[10]\0\s[0]ん。\w9\e"
-}
 
-Menu_Sit {
-	SurfaceModeChangeEx(1000, 0)
-	OsuwariStop
-	"\1\s[10]\0\s[6]座らせてもらうわ。\w9\e"
-} 
-
-Menu_SitA {
-	SurfaceModeChangeEx(1000, 1)
-	OsuwariStart
-	"\1\s[10]\0\s[6]座らせてもらうわ。\w9\e"
-}
-
-Menu_SitF {
-	SurfaceModeChangeEx(1000, 2)
-	OsuwariStart
-	"\1\s[10]\0\s[6]座らせてもらうわ。\w9\e"
-}
 
 //------------------------------
 //桃色月
