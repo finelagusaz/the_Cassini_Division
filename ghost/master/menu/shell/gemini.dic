@@ -1,6 +1,19 @@
 //------------------------------------
 // Gemini
 //------------------------------------
+// トーク
+Menu_GEMINITALK {
+	_talk_array = IARRAY
+	_talk_array ,= aryShellGeminiTalk
+
+	if flgLove == 1 {
+		_talk_array ,= aryShellGeminiLoveTalk
+	}
+	
+	parallel _talk_array
+}
+
+// 着せ替え
 Menu_Gemini
 {
 	"\n[half]"

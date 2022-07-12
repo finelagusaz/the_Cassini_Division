@@ -162,9 +162,15 @@ Menu_HEADLINECANCEL {
 
 //---- トークウェイト設定
 Menu_WCC {
-	"\1\s[10]\0\s[0]\q[早く,WCFAST]\n/
-	\q[普通,WCNORMAL]\n/
-	\q[遅く,WCSLOW]\e"
+	"\1\s[10]\0\s[0]"
+	--
+	AYATEMPLATE.MenuItem("早く", "WCFAST")
+	--
+	AYATEMPLATE.MenuItem("普通", "WCNORMAL")
+	--
+	AYATEMPLATE.MenuItem("遅く", "WCSLOW")
+	--
+	AYATEMPLATE.MenuItem("設定へ戻る","Menu_CONFIG", 150)
 }
 
 Menu_WCFAST {
@@ -192,14 +198,14 @@ Menu_CONFIG {
 	--
 	AYATEMPLATE.MenuItem("トーク頻度", "TALKINTERVAL", 200)
 	--
-	AYATEMPLATE.MenuItem("トーク速度", "WCC")
+	AYATEMPLATE.MenuItem("トーク速度", "Menu_WCC")
 	--
 	if shellname == "master" {
 		if flgTooltip != "1" {
 			AYATEMPLATE.MenuItem("ツールチップを表示する", "Menu_TooltipEnable")
 		}
 		else {
-			"\![*]\q[ツールチップを表示しない,Menu_TooltipDisable]\n"
+			AYATEMPLATE.MenuItem("ツールチップを表示しない,Menu_TooltipDisable")
 		}
 	}
 	--
@@ -211,27 +217,26 @@ Menu_CONFIG {
 	if flgNoSfcnv != 1
 	{
 		if strMenuMode == "new" {
-			"\![*]\q[着せ替え・座る／立つメニューをメニューに,Menu_Classic]\n"
+			AYATEMPLATE.MenuItem("着せ替えなどのメニューをメインメニューへ", "Menu_Classic")
 		}
 		else {
-			"\![*]\q[着せ替え・座る／立つメニューを設定に,Menu_New]\n"
+			AYATEMPLATE.MenuItem("着せ替えなどのメニューを設定へ", "Menu_New")
 		}
 	}
 	--
-	"\![*]\q[アンインストール設定,Menu_VANISHCONTROL]\n"
+	AYATEMPLATE.MenuItem("アンインストール設定", "Menu_VANISHCONTROL")
 	--
 	// 見切れ設定
 	if flgMikireEnable == "1" {
-		"\![*]\q[見切れトークを無効にする,Menu_MikireDisable]\n"
+		AYATEMPLATE.MenuItem("見切れトークを無効にする", "Menu_MikireDisable")
 	}
 	else {
-		"\![*]\q[見切れトークを有効にする,Menu_MikireEnable]\n"
+		AYATEMPLATE.MenuItem("見切れトークを有効にする", "Menu_MikireEnable")
 	}
 	--
-	"[half]"
+	AYATEMPLATE.MenuItem("メニューへ戻る", "OpenMenu", 150)
 	--
-	"\n\n[half]\q[メニューへ戻る,OpenMenu]\n/
-	\q[キャンセル,CANCEL]\e"
+	AYATEMPLATE.MenuItem("キャンセル", "CANCEL")
 }
 
 // ツールチップ制御
@@ -274,16 +279,18 @@ Menu_VANISHCONTROL {
 	（現在:"
 	--
 	if vanishflg != 1 {
-		"非表示)\n/
-		\![*]\q[アンインストールメニュー表示,Menu_VANISH_TRUE]"
+		"非表示)"
+		--
+		AYATEMPLATE.MenuItem("アンインストールメニュー表示", "Menu_VANISH_TRUE")
 	} else {
-		"表示)\n/
-		\![*]\q[アンインストールメニュー非表示,Menu_VANISH_FALSE]"
+		"表示)"
+		--
+		AYATEMPLATE.MenuItem("アンインストールメニュー非表示", "Menu_VANISH_FALSE")
 	}
 	--
-	"\n\n[half]/
-	\q[設定へ戻る,Menu_CONFIG]\n/
-	\q[キャンセル,CANSEL]\e"
+	AYATEMPLATE.MenuItem("設定へ戻る", "Menu_CONFIG", 150)
+	--
+	AYATEMPLATE.MenuItem("キャンセル", "CANSEL")
 }
 
 Menu_VANISH_TRUE {
@@ -326,43 +333,43 @@ Menu_Shell
 	case shellname {
 		// 座り対応
 		when "master", "Eternity Black", "拡大鏡", "White Lolita", "銀色", "瑠璃" {
-			"%Menu_SitOrStand"
+			Menu_Master
 		}
 		// Alternative - Cassis
 		when "Alternative - Cassis" {
-			"%Menu_AlternativeCassis"
+			Menu_AlternativeCassis
 		}
 		// 月光浴
 		when "月光浴" {
-			"%Menu_MoonlightBlue"
+			Menu_MoonlightBlue
 		}
 		// Bridal_Butterfly
 		when "Bridal Butterfly", 'Bridal Butterfly 75%' {
-			"%Menu_BridalButterfly"
+			Menu_BridalButterfly
 		}
 		// 月白
 		when "月白" {
-			"%Menu_Tukisiro"
+			Menu_Tukisiro
 		}
 		// Gemini
 		when "Gemini" {
-			"%Menu_Gemini"
+			Menu_Gemini
 		}
 		// 桜吹雪
 		when "桜吹雪" {
-			"%Menu_Sakurafubuki"
+			Menu_Sakurafubuki
 		}
 		// 桃色月
 		when "桃色月" {
-			"%Menu_PinkMoon"
+			Menu_PinkMoon
 		}
 		// ll29yo
 		when "ll29yo" {
-			"%Menu_Ll29yo"
+			Menu_Ll29yo
 		}
 		// マジカル☆カシス 
 		when "マジカル☆カシス" {
-			"%Menu_Magicalcassis"
+			Menu_Magicalcassis
 		}
 	}	
 }
