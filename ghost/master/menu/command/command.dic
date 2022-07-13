@@ -7,7 +7,7 @@ Menu_COMMAND
 	\_a[Menu_COMMANDASK]「質問」\_a\n/
 	\_a[Menu_COMMANDOTHERS]「そのほか」\_a\n/
 	\n[half]\n/
-	\q[メニューへ戻る,openMenu]\n/
+	\q[メニューへ戻る,OpenMenu]\n/
 	\q[キャンセル,Menu_CANCEL]\e"
 }
 

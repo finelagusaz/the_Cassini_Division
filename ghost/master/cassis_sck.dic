@@ -11,7 +11,7 @@ OnKeyPress
 			}
 		}
 		when "m" {
-			openMenu
+			OpenMenu
 		}
 		when "c" {
 			Menu_Communicate
