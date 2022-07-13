@@ -58,7 +58,6 @@ EMMouseHitExec
 }
 
 // FIXME: シェルの判定を共通処理にする
-// TODO: 接頭辞をGecMouseとかにする
 // TODO: GEC と GEN をわかりやすくする
 EMGetPrefix
 {
@@ -69,10 +68,10 @@ EMGetPrefix
 		case GeminiSurfaceMode
 		{
 			when 1000, 4000 {
-				'MouseGEC'
+				'CastorMouse'
 			}
 			when 2000, 5000 {
-				'MouseGEN'
+				'GeminiMouse'
 			}
 			others {
 				'Mouse'
