@@ -58,7 +58,6 @@ EMMouseHitExec
 }
 
 // FIXME: シェルの判定を共通処理にする
-// TODO: GEC と GEN をわかりやすくする
 EMGetPrefix
 {
 	if sender == 'The Hand' {
