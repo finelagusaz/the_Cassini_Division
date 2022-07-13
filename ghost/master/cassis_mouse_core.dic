@@ -61,7 +61,7 @@ EMMouseHitExec
 EMGetPrefix
 {
 	if sender == 'The Hand' {
-		'MouseTH'
+		'TheHandMouse'
 	}
 	elseif shellname == 'Gemini' {
 		case GeminiSurfaceMode
