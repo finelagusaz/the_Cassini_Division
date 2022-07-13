@@ -57,6 +57,9 @@ EMMouseHitExec
 	}
 }
 
+// FIXME: シェルの判定を共通処理にする
+// TODO: 接頭辞をGecMouseとかにする
+// TODO: GEC と GEN をわかりやすくする
 EMGetPrefix
 {
 	if sender == 'The Hand' {

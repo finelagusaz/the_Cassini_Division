@@ -66,19 +66,19 @@ MouseSAK_ClickEx0Lip
 
 	case calcErosPhase(0) {
 		when "n" {
-//			_talk_array ,= arySakDoubleClick0LipPhaseN
+//			_talk_array ,= arySakurafubukiDoubleClick0LipPhaseN
 			_talk_array ,= aryDoubleClick0LipLikeCommon
 		}
 		when 0 {
-//			_talk_array ,= arySakDoubleClick0LipPhase0
+//			_talk_array ,= arySakurafubukiDoubleClick0LipPhase0
 			_talk_array ,= aryDoubleClick0LipLikeCommon
 		}
 		when 1 {
-			_talk_array ,= arySakDoubleClick0LipPhase1
+			_talk_array ,= arySakurafubukiDoubleClick0LipPhase1
 			_talk_array ,= aryDoubleClick0LipLoveCommon
 		}
 		when 2, 3 {
-			_talk_array ,= arySakDoubleClick0LipPhase2
+			_talk_array ,= arySakurafubukiDoubleClick0LipPhase2
 			_talk_array ,= aryDoubleClick0LipLoveCommon
 		}
 	}
@@ -97,16 +97,16 @@ SakurafubukiMouseMove0Fox_ears
 
 	case calcErosPhase(0) {
 		when "n" {
-			_talk_array ,= arySakNade0Fox_earsPhaseN
+			_talk_array ,= arySakurafubukiMouseMove0Fox_earsPhaseN
 		}
 		when 0 {
-			_talk_array ,= arySakNade0Fox_earsPhase0
+			_talk_array ,= arySakurafubukiMouseMove0Fox_earsPhase0
 		}
 		when 1 {
-			_talk_array ,= arySakNade0Fox_earsPhase1
+			_talk_array ,= arySakurafubukiMouseMove0Fox_earsPhase1
 		}
 		when 2, 3 {
-//			_talk_array ,= arySakNade0Fox_earsPhase2
+//			_talk_array ,= arySakurafubukiMouseMove0Fox_earsPhase2
 			_talk_array ,= arySakMousePhase2
 		}
 	}
@@ -115,7 +115,7 @@ SakurafubukiMouseMove0Fox_ears
 }
 
 // 好感度・通常
-arySakNade0Fox_earsPhaseN : array
+arySakurafubukiMouseMove0Fox_earsPhaseN : array
 {
 	"\0\s[6]くすぐったいわ。\e"
 	"\0\s[3]…\w4…\w4\e"
@@ -124,7 +124,7 @@ arySakNade0Fox_earsPhaseN : array
 }
 
 // 好感度・高・フェイズ0
-arySakNade0Fox_earsPhase0 : array
+arySakurafubukiMouseMove0Fox_earsPhase0 : array
 {
 	'\0\s[5]くすぐったいわ、\w4もう。\e'
 	'\0\s[6]ん、\w4\s[0]やっぱり、\w4気になるのかしら?\e'
@@ -133,7 +133,7 @@ arySakNade0Fox_earsPhase0 : array
 }
 
 // 好感度・高・フェイズ1
-arySakNade0Fox_earsPhase1 : array
+arySakurafubukiMouseMove0Fox_earsPhase1 : array
 {
 	'\0\s[1]く、\w4くすぐったいわ。\e'
 	'\0\s[1]こそばゆいわね。\e'
@@ -142,7 +142,7 @@ arySakNade0Fox_earsPhase1 : array
 }
 
 // 好感度・高・フェイズ2
-arySakNade0Fox_earsPhase2 : array
+arySakurafubukiMouseMove0Fox_earsPhase2 : array
 {
 }
 
@@ -155,13 +155,13 @@ SakurafubukiMouseMove0Hair
 
 	case calcErosPhase(0) {
 		when "n" {
-			_talk_array ,= arySakNade0HairPhaseN
+			_talk_array ,= arySakurafubukiMouseMove0HairPhaseN
 		}
 		when 0 {
-			_talk_array ,= arySakNade0HairPhase0
+			_talk_array ,= arySakurafubukiMouseMove0HairPhase0
 		}
 		when 1 {
-			_talk_array ,= arySakNade0HairPhase1
+			_talk_array ,= arySakurafubukiMouseMove0HairPhase1
 		}
 		when 2 {
 			_talk_array ,= arySakMousePhase2
@@ -172,13 +172,13 @@ SakurafubukiMouseMove0Hair
 }
 
 // 好感度・通常
-arySakNade0HairPhaseN : array
+arySakurafubukiMouseMove0HairPhaseN : array
 {
-	Mouse_Nade0
+	MouseMove0
 }
 
 // 好感度・高・通常
-arySakNade0HairPhase0 : array 
+arySakurafubukiMouseMove0HairPhase0 : array 
 {
 	"\1\s[10]\0\s[6]…\w4…。\e"
 	"\1\s[10]\0\s[6]優しく、\w4ね。\e"
@@ -186,7 +186,7 @@ arySakNade0HairPhase0 : array
 }
 
 // 好感度・高・フェイズ1
-arySakNade0HairPhase1 : array 
+arySakurafubukiMouseMove0HairPhase1 : array 
 {
 	"\1\s[10]\0\s[1]…\w4…。\s[6]\e"
 	"\1\s[10]\0\s[1]ぁ\w4…\w4…。\s[6]\e"
@@ -194,7 +194,7 @@ arySakNade0HairPhase1 : array
 }
 
 // 好感度・高・フェイズ2
-arySakNade0HairPhase2 : array 
+arySakurafubukiMouseMove0HairPhase2 : array 
 {
 }
 
@@ -210,19 +210,19 @@ SakurafubukiMouseMove0Head
 
 	case calcErosPhase(0) {
 		when "n" {
-//			_talk_array ,= arySakNade0HeadPhaseN
+//			_talk_array ,= arySakurafubukiMouseMove0HeadPhaseN
 			_talk_array ,= aryNade0HeadCommon
 		}
 		when 0 {
-//			_talk_array ,= arySakNade0HeadPhase0
+//			_talk_array ,= arySakurafubukiMouseMove0HeadPhase0
 			_talk_array ,= aryNade0HeadLikeCommon
 		}
 		when 1 {
-//			_talk_array ,= arySakNade0HeadPhase1
+//			_talk_array ,= arySakurafubukiMouseMove0HeadPhase1
 			_talk_array ,= arySakMousePhase1
 		}
 		when 2, 3 {
-			_talk_array ,= arySakNade0HeadPhase2
+			_talk_array ,= arySakurafubukiMouseMove0HeadPhase2
 			_talk_array ,= arySakMousePhase2
 		}
 	}
@@ -231,22 +231,22 @@ SakurafubukiMouseMove0Head
 }
 
 // 好感度・通常
-arySakNade0HeadPhaseN : array
+arySakurafubukiMouseMove0HeadPhaseN : array
 {
 }
 
 // 好感度・高・通常
-arySakNade0HeadPhase0 : array 
+arySakurafubukiMouseMove0HeadPhase0 : array 
 {
 }
 
 // 好感度・高・フェイズ1
-arySakNade0HeadPhase1 : array 
+arySakurafubukiMouseMove0HeadPhase1 : array 
 {
 }
 
 // 好感度・高・フェイズ2
-arySakNade0HeadPhase2 : array
+arySakurafubukiMouseMove0HeadPhase2 : array
 {
 	'\0\s[6]ん\w4…\w4…\s[1]優しいのね、\w4あなたは。\e'
 	'\0\s[6]悪くない\w4…\w4…\s[0]いえ、\w4良いわ\w4…\w4…。\e'
@@ -263,18 +263,18 @@ SakurafubukiMouseMove0Lip
 
 	case calcErosPhase(0) {
 		when "n" {
-//			_talk_array ,= arySakNade0LipPhaseN
-			_talk_array ,= Mouse_Nade0Lip
+//			_talk_array ,= arySakurafubukiMouseMove0LipPhaseN
+			_talk_array ,= MouseMove0Lip
 		}
 		when 0 {
-			_talk_array ,= arySakNade0LipPhase0
+			_talk_array ,= arySakurafubukiMouseMove0LipPhase0
 		}
 		when 1 {
-			_talk_array ,= arySakNade0LipPhase1
+			_talk_array ,= arySakurafubukiMouseMove0LipPhase1
 //			_talk_array ,= arySakMousePhase1
 		}
 		when 2, 3 {
-			_talk_array ,= arySakNade0LipPhase2
+			_talk_array ,= arySakurafubukiMouseMove0LipPhase2
 //			_talk_array ,= arySakMousePhase2
 		}
 	}
@@ -283,13 +283,13 @@ SakurafubukiMouseMove0Lip
 }
 
 // 好感度・通常
-arySakNade0LipPhaseN : array
+arySakurafubukiMouseMove0LipPhaseN : array
 {
 
 }
 
 // 好感度・高・通常
-arySakNade0LipPhase0 : array 
+arySakurafubukiMouseMove0LipPhase0 : array 
 {
 	"\0\s[1]ん\w4…\w4…\w4何?\e"
 	"\0\s[6]…\w4…。\w9\n/
@@ -298,7 +298,7 @@ arySakNade0LipPhase0 : array
 }
 
 // 好感度・高・フェイズ1
-arySakNade0LipPhase1 : array 
+arySakurafubukiMouseMove0LipPhase1 : array 
 {
 	"\0\s[20]ふぁ\w4…\w4…。\e"
 	"\0\s[21]ん\w4…\w4…\w4\s[1]触れるだけでいいの?\e"
@@ -306,7 +306,7 @@ arySakNade0LipPhase1 : array
 }
 
 // 好感度・高・フェイズ2
-arySakNade0LipPhase2 : array 
+arySakurafubukiMouseMove0LipPhase2 : array 
 {
 	"\0\s[20]ん、\w4はむ\w4…\w4…\w4ふぁ\w4…\w4…。\e"
 	"\0\s[20]ぁ\w4…\w4…\s[1]触れているだけでいいの?\e"
@@ -322,19 +322,19 @@ SakurafubukiMouseMove0Bust
 
 	case calcErosPhase(5) {
 		when "n" {
-//			_talk_array ,= arySakNade0BustPhaseN
+//			_talk_array ,= arySakurafubukiMouseMove0BustPhaseN
 			_talk_array ,= aryNade0BustFriendCommon
 		}
 		when 0 {
-//			_talk_array ,= arySakNade0BustPhase0
+//			_talk_array ,= arySakurafubukiMouseMove0BustPhase0
 			_talk_array ,= aryNade0BustLoveNormalCommon
 		}
 		when 1 {
-//			_talk_array ,= arySakNade0BustPhase1
+//			_talk_array ,= arySakurafubukiMouseMove0BustPhase1
 			_talk_array ,= aryNade0BustLoveErosCommon
 		}
 		when 2 {
-			_talk_array ,= arySakNade0BustPhase2
+			_talk_array ,= arySakurafubukiMouseMove0BustPhase2
 			_talk_array ,= arySakMousePhase2
 		}
 		when 3 {
@@ -346,22 +346,22 @@ SakurafubukiMouseMove0Bust
 }
 
 // 好感度・通常
-arySakNade0BustPhaseN : array
+arySakurafubukiMouseMove0BustPhaseN : array
 {
 }
 
 // 好感度・高・通常
-arySakNade0BustPhase0 : array 
+arySakurafubukiMouseMove0BustPhase0 : array 
 {
 }
 
 // 好感度・高・フェイズ1
-arySakNade0BustPhase1 : array 
+arySakurafubukiMouseMove0BustPhase1 : array 
 {
 }
 
 // 好感度・高・フェイズ2
-arySakNade0BustPhase2 : array 
+arySakurafubukiMouseMove0BustPhase2 : array 
 {
 	"\0\s[40]ん、\w4ふぁ、ぁうぅ。\e"
 	"\0\s[43]そっと、\w4触ってぇ\w4…\w4…\s[42]んぅ\w4…\w4…。\e"
@@ -377,16 +377,16 @@ SakurafubukiMouseMove0Skirt
 
 	case calcErosPhase(0) {
 		when "n" {
-			_talk_array ,= arySakNade0SkirtPhaseN
+			_talk_array ,= arySakurafubukiMouseMove0SkirtPhaseN
 		}
 		when 0 {
-			_talk_array ,= arySakNade0SkirtPhase0
+			_talk_array ,= arySakurafubukiMouseMove0SkirtPhase0
 		}
 		when 1 {
-			_talk_array ,= arySakNade0SkirtPhase1
+			_talk_array ,= arySakurafubukiMouseMove0SkirtPhase1
 		}
 		when 2, 3 {
-//			_talk_array ,= arySakNade0SkirtPhase2
+//			_talk_array ,= arySakurafubukiMouseMove0SkirtPhase2
 			_talk_array ,= arySakMousePhase2
 		}
 	}
@@ -395,7 +395,7 @@ SakurafubukiMouseMove0Skirt
 }
 
 // 好感度・通常
-arySakNade0SkirtPhaseN : array
+arySakurafubukiMouseMove0SkirtPhaseN : array
 {
 	"\0\s[0]何がしたいのかしら?\e"
 	"\0\s[8]…\w4…\w4撫でる様なところではないわ。\e"
@@ -403,7 +403,7 @@ arySakNade0SkirtPhaseN : array
 }
 
 // 好感度・高・通常
-arySakNade0SkirtPhase0 : array 
+arySakurafubukiMouseMove0SkirtPhase0 : array 
 {
 	"\0\s[0]見てのとおりなのだけど\w4…\w4…。\e"
 	"\0\s[6]…\w4…\w4好きにすればいいわ。\e"
@@ -411,7 +411,7 @@ arySakNade0SkirtPhase0 : array
 }
 
 // 好感度・高・フェイズ1
-arySakNade0SkirtPhase1 : array 
+arySakurafubukiMouseMove0SkirtPhase1 : array 
 {
 	"\0\s[1]中が気になるの\w4…\w4…?\e"
 	"\0\s[9]あっ\w9\n/
@@ -420,7 +420,7 @@ arySakNade0SkirtPhase1 : array
 }
 
 // 好感度・高・フェイズ2
-arySakNade0SkirtPhase2 : array 
+arySakurafubukiMouseMove0SkirtPhase2 : array 
 {
 }
 
@@ -429,7 +429,7 @@ arySakNade0SkirtPhase2 : array
 //----------------------------------
 SakurafubukiMouseMove0Wing
 {
-	Mouse_Nade0Wing
+	MouseMove0Wing
 }
 
 //----------------------------------
@@ -441,19 +441,19 @@ SakurafubukiMouseMove0Mystic
 
 	case calcErosPhase(7) {
 		when "n" {
-//			_talk_array ,= arySakNade0MysticPhaseN
+//			_talk_array ,= arySakurafubukiMouseMove0MysticPhaseN
 			_talk_array ,= aryNade0MysticFriendCommon
 		}
 		when 0 {
-			_talk_array ,= arySakNade0MysticPhase0
+			_talk_array ,= arySakurafubukiMouseMove0MysticPhase0
 		}
 		when 1 {
-//			_talk_array ,= arySakNade0MysticPhase1
+//			_talk_array ,= arySakurafubukiMouseMove0MysticPhase1
 			_talk_array ,= aryNade0MysticLoveCommon
 			_talk_array ,= aryCommonErosSerif
 		}
 		when 2 {
-			_talk_array ,= arySakNade0MysticPhase2
+			_talk_array ,= arySakurafubukiMouseMove0MysticPhase2
 			_talk_array ,= aryCommonErosSerif
 		}
 		when 3 {
@@ -465,12 +465,12 @@ SakurafubukiMouseMove0Mystic
 }
 
 // 好感度・通常
-arySakNade0MysticPhaseN : array
+arySakurafubukiMouseMove0MysticPhaseN : array
 {
 }
 
 // 好感度・高・通常
-arySakNade0MysticPhase0 : array 
+arySakurafubukiMouseMove0MysticPhase0 : array 
 {
 	"\0\s[9]んぅ\w4…\w4…\w4どこを触っているのかしら?\e"
 	"\0\s[3]物事には順番があるのよ。\w9\n/
@@ -479,12 +479,12 @@ arySakNade0MysticPhase0 : array
 }
 
 // 好感度・高・フェイズ1
-arySakNade0MysticPhase1 : array 
+arySakurafubukiMouseMove0MysticPhase1 : array 
 {	
 }
 
 // 好感度・高・フェイズ2
-arySakNade0MysticPhase2 : array 
+arySakurafubukiMouseMove0MysticPhase2 : array 
 {
 	"\0\s[42]%username\w4…\w4…?\e"
 	"\0\s[43]あぁ\w4…\w4…\w4\s[42]はぁ、\w4ゆっくり触ってぇ\w4…\w4…。\e"
@@ -500,16 +500,16 @@ SakurafubukiMouseMove0Fox_tail
 
 	case calcErosPhase(0) {
 		when "n" {
-			_talk_array ,= arySakNade0Fox_tailPhaseN
+			_talk_array ,= arySakurafubukiMouseMove0Fox_tailPhaseN
 		}
 		when 0 {
-			_talk_array ,= arySakNade0Fox_tailPhase0
+			_talk_array ,= arySakurafubukiMouseMove0Fox_tailPhase0
 		}
 		when 1 {
-			_talk_array ,= arySakNade0Fox_tailPhase1
+			_talk_array ,= arySakurafubukiMouseMove0Fox_tailPhase1
 		}
 		when 2, 3 {
-//			_talk_array ,= arySakNade0Fox_tailPhase2
+//			_talk_array ,= arySakurafubukiMouseMove0Fox_tailPhase2
 			_talk_array ,= arySakMousePhase2
 		}
 	}
@@ -518,7 +518,7 @@ SakurafubukiMouseMove0Fox_tail
 }
 
 // 好感度・通常
-arySakNade0Fox_tailPhaseN : array
+arySakurafubukiMouseMove0Fox_tailPhaseN : array
 {
 	'\0\s[0]…\w4…\w4好きなようにすればいいわ。\e'
 	'\0\s[6]…\w4…。\e'
@@ -526,7 +526,7 @@ arySakNade0Fox_tailPhaseN : array
 }
 
 // 好感度・高・通常
-arySakNade0Fox_tailPhase0 : array 
+arySakurafubukiMouseMove0Fox_tailPhase0 : array 
 {
 	'\0\s[5]良いさわり心地でしょう?\e'
 	'\0\s[0]そっと撫でてちょうだい。\e'
@@ -534,7 +534,7 @@ arySakNade0Fox_tailPhase0 : array
 }
 
 // 好感度・高・フェイズ1
-arySakNade0Fox_tailPhase1 : array 
+arySakurafubukiMouseMove0Fox_tailPhase1 : array 
 {
 	'\0\s[1]ん。\w9\n/
 	そっとね。\e'
@@ -543,7 +543,7 @@ arySakNade0Fox_tailPhase1 : array
 }
 
 // 好感度・高・フェイズ2
-arySakNade0Fox_tailPhase2 : array 
+arySakurafubukiMouseMove0Fox_tailPhase2 : array 
 {
 }
 
@@ -556,22 +556,22 @@ SakurafubukiMouseMove0Hip
 
 	case calcErosPhase(5) {
 		when "n" {
-//			_talk_array ,= arySakNade0HipPhaseN
+//			_talk_array ,= arySakurafubukiMouseMove0HipPhaseN
 			_talk_array ,= aryNade0HipFriendCommon
 		}
 		when 0 {
-//			_talk_array ,= arySakNade0HipPhase0
+//			_talk_array ,= arySakurafubukiMouseMove0HipPhase0
 			_talk_array ,= aryNade0HipLoveNormalCommon
 			_talk_array ,= aryCommonErosSerif
 		}
 		when 1 {
-//			_talk_array ,= arySakNade0HipPhase1
+//			_talk_array ,= arySakurafubukiMouseMove0HipPhase1
 			_talk_array ,= aryNade0HipLoveErosCommon
 			_talk_array ,= aryCommonErosSerif
 			_talk_array ,= arySakMousePhase1
 		}
 		when 2 {
-			_talk_array ,= arySakNade0HipPhase2
+			_talk_array ,= arySakurafubukiMouseMove0HipPhase2
 			_talk_array ,= aryCommonErosSerif
 			_talk_array ,= arySakMousePhase2
 		}
@@ -584,22 +584,22 @@ SakurafubukiMouseMove0Hip
 }
 
 // 好感度・通常
-arySakNade0HipPhaseN : array
+arySakurafubukiMouseMove0HipPhaseN : array
 {
 }
 
 // 好感度・高・通常
-arySakNade0HipPhase0 : array 
+arySakurafubukiMouseMove0HipPhase0 : array 
 {
 }
 
 // 好感度・高・フェイズ1
-arySakNade0HipPhase1 : array 
+arySakurafubukiMouseMove0HipPhase1 : array 
 {
 }
 
 // 好感度・高・フェイズ2
-arySakNade0HipPhase2 : array 
+arySakurafubukiMouseMove0HipPhase2 : array 
 {
 	"\0\s[40]ひゃぅっ\w9\s[41]\e"
 	"\0\s[46]手つきが\w4…\w4…ん、\w4いやらしい、\w4わね。\e"
@@ -614,19 +614,19 @@ SakurafubukiMouseMove0Leg
 
 	case calcErosPhase(0) {
 		when "n" {
-//			_talk_array ,= arySakNade0LegPhaseN
+//			_talk_array ,= arySakurafubukiMouseMove0LegPhaseN
 			_talk_array ,= aryNade0LegFriendCommon
 		}
 		when 0 {
-//			_talk_array ,= arySakNade0LegPhase0
+//			_talk_array ,= arySakurafubukiMouseMove0LegPhase0
 			_talk_array ,= aryNade0LegLoveNormalCommon
 		}
 		when 1 {
-			_talk_array ,= arySakNade0LegPhase1
+			_talk_array ,= arySakurafubukiMouseMove0LegPhase1
 			_talk_array ,= arySakMousePhase1
 		}
 		when 2, 3 {
-//			_talk_array ,= arySakNade0LegPhase2
+//			_talk_array ,= arySakurafubukiMouseMove0LegPhase2
 			_talk_array ,= arySakMousePhase2
 		}
 	}
@@ -635,17 +635,17 @@ SakurafubukiMouseMove0Leg
 }
 
 // 好感度・通常
-arySakNade0LegPhaseN : array
+arySakurafubukiMouseMove0LegPhaseN : array
 {
 }
 
 // 好感度・高・通常
-arySakNade0LegPhase0 : array 
+arySakurafubukiMouseMove0LegPhase0 : array 
 {
 }
 
 // 好感度・高・フェイズ1
-arySakNade0LegPhase1 : array
+arySakurafubukiMouseMove0LegPhase1 : array
 {
 	"\0\s[9]く、\w4くすぐったいわ。\e"
 	"\0\s[3]くすぐらないで\w4…\w4…\s[4]\s[9]あっ\e"
@@ -653,7 +653,7 @@ arySakNade0LegPhase1 : array
 }
 
 // 好感度・高・フェイズ2
-arySakNade0LegPhase2 : array 
+arySakurafubukiMouseMove0LegPhase2 : array 
 {
 }
 
@@ -991,19 +991,19 @@ SakurafubukiMouseDoubleClick0Fox_ears
 
 	case calcErosPhase(0) {
 		when "n" {
-			_talk_array ,= arySakDoubleClick0Fox_earsPhaseN
+			_talk_array ,= arySakurafubukiDoubleClick0Fox_earsPhaseN
 			_talk_array ,= aryDoubleClick0Fox_earsCommon
 		}
 		when 0 {
-			_talk_array ,= arySakDoubleClick0Fox_earsPhase0
+			_talk_array ,= arySakurafubukiDoubleClick0Fox_earsPhase0
 			_talk_array ,= aryDoubleClick0Fox_earsLikeCommon
 		}
 		when 1 {
-//			_talk_array ,= arySakDoubleClick0Fox_earsPhase1
+//			_talk_array ,= arySakurafubukiDoubleClick0Fox_earsPhase1
 			_talk_array ,= arySakMousePhase1
 		}
 		when 2, 3 {
-//			_talk_array ,= arySakDoubleClick0Fox_earsPhase2
+//			_talk_array ,= arySakurafubukiDoubleClick0Fox_earsPhase2
 			_talk_array ,= arySakMousePhase2
 		}
 	}
@@ -1012,7 +1012,7 @@ SakurafubukiMouseDoubleClick0Fox_ears
 }
 
 // 好感度・通常
-arySakDoubleClick0Fox_earsPhaseN : array
+arySakurafubukiDoubleClick0Fox_earsPhaseN : array
 {
 	'\0\s[6]何かしら?\e'
 	'\0\s[0]…\w4…\w4何?\e'
@@ -1021,7 +1021,7 @@ arySakDoubleClick0Fox_earsPhaseN : array
 }
 
 // 好感度・高・通常
-arySakDoubleClick0Fox_earsPhase0 : array 
+arySakurafubukiDoubleClick0Fox_earsPhase0 : array 
 {
 	'\0\s[3]く、\w4くすぐったいわ。\e'
 	'\0\s[6]むぅ\w4…\w4…。\e'
@@ -1030,12 +1030,12 @@ arySakDoubleClick0Fox_earsPhase0 : array
 }
 
 // 好感度・高・フェイズ1
-arySakDoubleClick0Fox_earsPhase1 : array 
+arySakurafubukiDoubleClick0Fox_earsPhase1 : array 
 {
 }
 
 // 好感度・高・フェイズ2
-arySakDoubleClick0Fox_earsPhase2 : array 
+arySakurafubukiDoubleClick0Fox_earsPhase2 : array 
 {
 }
 
@@ -1048,19 +1048,19 @@ SakurafubukiMouseDoubleClick0Head
 
 	case calcErosPhase(0) {
 		when "n" {
-			_talk_array ,= arySakDoubleClick0HeadPhaseN
+			_talk_array ,= arySakurafubukiDoubleClick0HeadPhaseN
 			_talk_array ,= MouseDoubleClick0Head
 		}
 		when 0 {
-			_talk_array ,= arySakDoubleClick0HeadPhase0
+			_talk_array ,= arySakurafubukiDoubleClick0HeadPhase0
 //			_talk_array ,= aryDoubleClick0HeadLikeCommon
 		}
 		when 1 {
-			_talk_array ,= arySakDoubleClick0HeadPhase1
+			_talk_array ,= arySakurafubukiDoubleClick0HeadPhase1
 //			_talk_array ,= arySakMousePhase1
 		}
 		when 2, 3 {
-			_talk_array ,= arySakDoubleClick0HeadPhase2
+			_talk_array ,= arySakurafubukiDoubleClick0HeadPhase2
 //			_talk_array ,= arySakMousePhase2
 		}
 	}
@@ -1069,7 +1069,7 @@ SakurafubukiMouseDoubleClick0Head
 }
 
 // 好感度・通常
-arySakDoubleClick0HeadPhaseN : array
+arySakurafubukiDoubleClick0HeadPhaseN : array
 {
 	"\0\s[0]…\w4…\w4何かしら?\e"
 	"\0\s[4]気に障るようなこと、\w4言ったかしら?\e"
@@ -1077,7 +1077,7 @@ arySakDoubleClick0HeadPhaseN : array
 }
 
 // 好感度・高・通常
-arySakDoubleClick0HeadPhase0 : array 
+arySakurafubukiDoubleClick0HeadPhase0 : array 
 {
 	"\0\s[4]…\w4…。\e"
 	"\0\s[6]髪型が崩れるわ。\e"
@@ -1085,14 +1085,14 @@ arySakDoubleClick0HeadPhase0 : array
 }
 
 // 好感度・高・フェイズ1
-arySakDoubleClick0HeadPhase1 : array 
+arySakurafubukiDoubleClick0HeadPhase1 : array 
 {
 	'\0\s[4]ん\w4…\w4…\s[9]別にいけないことは考えてないわよ。\e'
 	'\0\s[3]きっと、\w4あなたと同じことを考えていたのに残念だわ。\e'
 }
 
 // 好感度・高・フェイズ2
-arySakDoubleClick0HeadPhase2 : array 
+arySakurafubukiDoubleClick0HeadPhase2 : array 
 {
 }
 
@@ -1107,19 +1107,19 @@ SakurafubukiMouseDoubleClick0Lip
 
 	case calcErosPhase(0) {
 		when "n" {
-//			_talk_array ,= arySakDoubleClick0LipPhaseN
+//			_talk_array ,= arySakurafubukiDoubleClick0LipPhaseN
 			_talk_array ,= aryDoubleClick0LipLikeCommon
 		}
 		when 0 {
-//			_talk_array ,= arySakDoubleClick0LipPhase0
+//			_talk_array ,= arySakurafubukiDoubleClick0LipPhase0
 			_talk_array ,= aryDoubleClick0LipLikeCommon
 		}
 		when 1 {
-			_talk_array ,= arySakDoubleClick0LipPhase1
+			_talk_array ,= arySakurafubukiDoubleClick0LipPhase1
 			_talk_array ,= aryDoubleClick0LipLoveCommon
 		}
 		when 2, 3 {
-			_talk_array ,= arySakDoubleClick0LipPhase2
+			_talk_array ,= arySakurafubukiDoubleClick0LipPhase2
 			_talk_array ,= aryDoubleClick0LipLoveCommon
 		}
 	}
@@ -1128,17 +1128,17 @@ SakurafubukiMouseDoubleClick0Lip
 }
 
 // 好感度・通常
-arySakDoubleClick0LipPhaseN : array
+arySakurafubukiDoubleClick0LipPhaseN : array
 {
 }
 
 // 好感度・高・通常
-arySakDoubleClick0LipPhase0 : array 
+arySakurafubukiDoubleClick0LipPhase0 : array 
 {
 }
 
 // 好感度・高・フェイズ1
-arySakDoubleClick0LipPhase1 : array 
+arySakurafubukiDoubleClick0LipPhase1 : array 
 {
 	'\0\s[20]ん、\w4ふ\w4…\w4…ちゅぷ、\w4はむ\w4…\w4…。\e'
 	'\0\s[23]ぁ\w4…\w4…\w4ん、\w4はむ、\w4ちゅ\w4…\w4…。\e'
@@ -1147,7 +1147,7 @@ arySakDoubleClick0LipPhase1 : array
 }
 
 // 好感度・高・フェイズ2
-arySakDoubleClick0LipPhase2 : array 
+arySakurafubukiDoubleClick0LipPhase2 : array 
 {
 	'\0\s[42]ん?\w9\n/
 	\s[22]ぁ\w4…\w4…\w4ん\w4…\w4…\w4\s[46]。\e'
@@ -1193,22 +1193,22 @@ SakurafubukiMouseDoubleClick0Bust
 }
 
 // 好感度・通常
-arySakDoubleClick0BustPhaseN : array
+arySakurafubukiDoubleClick0BustPhaseN : array
 {
 }
 
 // 好感度・高・通常
-arySakDoubleClick0BustPhase0 : array 
+arySakurafubukiDoubleClick0BustPhase0 : array 
 {
 }
 
 // 好感度・高・フェイズ1
-arySakDoubleClick0BustPhase1 : array 
+arySakurafubukiDoubleClick0BustPhase1 : array 
 {
 }
 
 // 好感度・高・フェイズ2
-arySakDoubleClick0BustPhase2 : array 
+arySakurafubukiDoubleClick0BustPhase2 : array 
 {
 	'\0\s[40]あぅっ\w9\n/
 	\s[42]ら、\w4乱暴にしない、\w4で\w4…\w4…\e'
@@ -1226,19 +1226,19 @@ SakurafubukiMouseDoubleClick0Hair
 
 	case calcErosPhase(0) {
 		when "n" {
-			_talk_array ,= arySakDoubleClick0HairPhaseN
+			_talk_array ,= arySakurafubukiDoubleClick0HairPhaseN
 			_talk_array ,= MouseDoubleClick0Hair
 		}
 		when 0 {
-			_talk_array ,= arySakDoubleClick0HairPhase0
+			_talk_array ,= arySakurafubukiDoubleClick0HairPhase0
 			_talk_array ,= aryDoubleClick0HairLikeCommon
 		}
 		when 1 {
-//			_talk_array ,= arySakDoubleClick0HairPhase1
+//			_talk_array ,= arySakurafubukiDoubleClick0HairPhase1
 			_talk_array ,= arySakMousePhase1
 		}
 		when 2, 3 {
-//			_talk_array ,= arySakDoubleClick0HairPhase2
+//			_talk_array ,= arySakurafubukiDoubleClick0HairPhase2
 			_talk_array ,= arySakMousePhase2
 		}
 	}
@@ -1247,7 +1247,7 @@ SakurafubukiMouseDoubleClick0Hair
 }
 
 // 好感度・通常
-arySakDoubleClick0HairPhaseN : array
+arySakurafubukiDoubleClick0HairPhaseN : array
 {
 	'\0\s[0]変わった遊びが好きなのね。\e'
 	'\0\s[4]髪型が崩れてしまうわ。\e'
@@ -1255,7 +1255,7 @@ arySakDoubleClick0HairPhaseN : array
 }
 
 // 好感度・高・通常
-arySakDoubleClick0HairPhase0 : array 
+arySakurafubukiDoubleClick0HairPhase0 : array 
 {
 	'\0\s[0]髪を梳いてくれるの?\w9\n/
 	\s[5]ありがとう。\e'
@@ -1265,7 +1265,7 @@ arySakDoubleClick0HairPhase0 : array
 }
 
 // 好感度・高・フェイズ1
-arySakDoubleClick0HairPhase1 : array 
+arySakurafubukiDoubleClick0HairPhase1 : array 
 {
 	'\0\s[1]まるで焦らされているようね。\w9\n/
 	\s[20]…\w4…。\e'
@@ -1275,7 +1275,7 @@ arySakDoubleClick0HairPhase1 : array
 }
 
 // 好感度・高・フェイズ2
-arySakDoubleClick0HairPhase2 : array 
+arySakurafubukiDoubleClick0HairPhase2 : array 
 {
 	'\0\s[6]ん…\w4…。\w9\n/
 	\s[1]これも良いけれど\w4…\w4…\w4撫でて欲しいわ。\e'
@@ -1310,19 +1310,19 @@ SakurafubukiMouseDoubleClick0Mystic
 
 	case calcErosPhase(7) {
 		when "n" {
-//			_talk_array ,= arySakDoubleClick0MysticPhaseN
+//			_talk_array ,= arySakurafubukiDoubleClick0MysticPhaseN
 			_talk_array ,= aryDoubleClick0MysticCommon
 		}
 		when 0 {
-//			_talk_array ,= arySakDoubleClick0MysticPhase0
+//			_talk_array ,= arySakurafubukiDoubleClick0MysticPhase0
 			_talk_array ,= aryDoubleClick0MysticLoveNormalCommon
 		}
 		when 1 {
-			_talk_array ,= arySakDoubleClick0MysticPhase1
+			_talk_array ,= arySakurafubukiDoubleClick0MysticPhase1
 			_talk_array ,= aryCommonErosSerif
 		}
 		when 2 {
-			_talk_array ,= arySakDoubleClick0MysticPhase2
+			_talk_array ,= arySakurafubukiDoubleClick0MysticPhase2
 			_talk_array ,= aryDoubleClick0MysticLoveErosCommon
 			_talk_array ,= aryCommonErosSerif
 		}
@@ -1335,17 +1335,17 @@ SakurafubukiMouseDoubleClick0Mystic
 }
 
 // 好感度・通常
-arySakDoubleClick0MysticPhaseN : array
+arySakurafubukiDoubleClick0MysticPhaseN : array
 {
 }
 
 // 好感度・高・通常
-arySakDoubleClick0MysticPhase0 : array 
+arySakurafubukiDoubleClick0MysticPhase0 : array 
 {
 }
 
 // 好感度・高・フェイズ1
-arySakDoubleClick0MysticPhase1 : array 
+arySakurafubukiDoubleClick0MysticPhase1 : array 
 {
 	"\0\s[9]ぁ、\w4ん\w4…\w4…\w4ふぁ。\e"
 	"\0\s[1]つ、\w4強くしたらぁ\w4…\w4…\w4\s[9]ん、\w4ダメになっちゃう\w4…\w4…。\e"
@@ -1353,7 +1353,7 @@ arySakDoubleClick0MysticPhase1 : array
 }
 
 // 好感度・高・フェイズ2
-arySakDoubleClick0MysticPhase2 : array 
+arySakurafubukiDoubleClick0MysticPhase2 : array 
 {
 	"\0\s[42]ふぁ、\w4\s[40]んっ\w9\n/
 	ゆ、\w4指がな、\w4中にぃ\w4…\w4…。\e"
@@ -1370,17 +1370,17 @@ SakurafubukiMouseDoubleClick0Fox_tail
 
 	case calcErosPhase(0) {
 		when "n" {
-			_talk_array ,= arySakDoubleClick0Fox_tailPhaseN
+			_talk_array ,= arySakurafubukiDoubleClick0Fox_tailPhaseN
 		}
 		when 0 {
-			_talk_array ,= arySakDoubleClick0Fox_tailPhase0
+			_talk_array ,= arySakurafubukiDoubleClick0Fox_tailPhase0
 		}
 		when 1 {
-			_talk_array ,= arySakDoubleClick0Fox_tailPhase1
+			_talk_array ,= arySakurafubukiDoubleClick0Fox_tailPhase1
 			_talk_array ,= arySakMousePhase1
 		}
 		when 2, 3 {
-//			_talk_array ,= arySakDoubleClick0Fox_tailPhase2
+//			_talk_array ,= arySakurafubukiDoubleClick0Fox_tailPhase2
 			_talk_array ,= arySakMousePhase2
 		}
 	}
@@ -1389,7 +1389,7 @@ SakurafubukiMouseDoubleClick0Fox_tail
 }
 
 // 好感度・通常
-arySakDoubleClick0Fox_tailPhaseN : array
+arySakurafubukiDoubleClick0Fox_tailPhaseN : array
 {
 	'\0\s[0]何がしたいのかしら?\e'
 	'\0\s[0]…\w4…\w4毛並みが乱れるわ。\e'
@@ -1397,7 +1397,7 @@ arySakDoubleClick0Fox_tailPhaseN : array
 }
 
 // 好感度・高・通常
-arySakDoubleClick0Fox_tailPhase0 : array 
+arySakurafubukiDoubleClick0Fox_tailPhase0 : array 
 {
 	'\0\s[0]ん?\e'
 	'\0\s[0]…\w4…?\w9\n/
@@ -1406,7 +1406,7 @@ arySakDoubleClick0Fox_tailPhase0 : array
 }
 
 // 好感度・高・フェイズ1
-arySakDoubleClick0Fox_tailPhase1 : array 
+arySakurafubukiDoubleClick0Fox_tailPhase1 : array 
 {
 	'\0\s[1]いっそうのこと、\w4顔を埋めてみる?\e'
 	'\0\s[1]…\w4…\w4どう、\したいの?\e'
@@ -1414,7 +1414,7 @@ arySakDoubleClick0Fox_tailPhase1 : array
 }
 
 // 好感度・高・フェイズ2
-arySakDoubleClick0Fox_tailPhase2 : array 
+arySakurafubukiDoubleClick0Fox_tailPhase2 : array 
 {
 }
 
@@ -1427,22 +1427,22 @@ SakurafubukiMouseDoubleClick0Hip
 
 	case calcErosPhase(7) {
 		when "n" {
-//			_talk_array ,= arySakDoubleClick0HipPhaseN
+//			_talk_array ,= arySakurafubukiDoubleClick0HipPhaseN
 			_talk_array ,= aryDoubleClick0HipFriendCommon
 		}
 		when 0 {
-//			_talk_array ,= arySakDoubleClick0HipPhase0
+//			_talk_array ,= arySakurafubukiDoubleClick0HipPhase0
 			_talk_array ,= aryDoubleClick0HipLoveNormalCommon
 			_talk_array ,= aryCommonErosSerif
 		}
 		when 1 {
-//			_talk_array ,= arySakDoubleClick0HipPhase1
+//			_talk_array ,= arySakurafubukiDoubleClick0HipPhase1
 			_talk_array ,= aryDoubleClick0HipLoveErosCommon
 			_talk_array ,= aryCommonErosSerif
 
 		}
 		when 2 {
-//			_talk_array ,= arySakDoubleClick0HipPhase2
+//			_talk_array ,= arySakurafubukiDoubleClick0HipPhase2
 			_talk_array ,= aryDoubleClick0HipLoveErosCommon
 			_talk_array ,= aryCommonErosSerif
 		}
@@ -1455,22 +1455,22 @@ SakurafubukiMouseDoubleClick0Hip
 }
 
 // 好感度・通常
-arySakDoubleClick0HipPhaseN : array
+arySakurafubukiDoubleClick0HipPhaseN : array
 {
 }
 
 // 好感度・高・通常
-arySakDoubleClick0HipPhase0 : array 
+arySakurafubukiDoubleClick0HipPhase0 : array 
 {
 }
 
 // 好感度・高・フェイズ1
-arySakDoubleClick0HipPhase1 : array 
+arySakurafubukiDoubleClick0HipPhase1 : array 
 {
 }
 
 // 好感度・高・フェイズ2
-arySakDoubleClick0HipPhase2 : array 
+arySakurafubukiDoubleClick0HipPhase2 : array 
 {
 }
 
@@ -1486,19 +1486,19 @@ SakurafubukiMouseDoubleClick0Leg
 
 	case calcErosPhase(0) {
 		when "n" {
-//			_talk_array ,= arySakDoubleClick0LegPhaseN
+//			_talk_array ,= arySakurafubukiDoubleClick0LegPhaseN
 			_talk_array ,= aryDoubleClick0LegFriendCommon
 		}
 		when 0 {
-//			_talk_array ,= arySakDoubleClick0LegPhase0
+//			_talk_array ,= arySakurafubukiDoubleClick0LegPhase0
 			_talk_array ,= aryDoubleClick0LegLoveNormalCommon
 		}
 		when 1 {
-//			_talk_array ,= arySakDoubleClick0LegPhase1
+//			_talk_array ,= arySakurafubukiDoubleClick0LegPhase1
 			_talk_array ,= arySakMousePhase1
 		}
 		when 2, 3 {
-//			_talk_array ,= arySakDoubleClick0LegPhase2
+//			_talk_array ,= arySakurafubukiDoubleClick0LegPhase2
 			_talk_array ,= arySakMousePhase2
 		}
 	}
@@ -1507,22 +1507,22 @@ SakurafubukiMouseDoubleClick0Leg
 }
 
 // 好感度・通常
-arySakDoubleClick0LegPhaseN : array
+arySakurafubukiDoubleClick0LegPhaseN : array
 {
 }
 
 // 好感度・高・通常
-arySakDoubleClick0LegPhase0 : array 
+arySakurafubukiDoubleClick0LegPhase0 : array 
 {
 }
 
 // 好感度・高・フェイズ1
-arySakDoubleClick0LegPhase1 : array 
+arySakurafubukiDoubleClick0LegPhase1 : array 
 {
 }
 
 // 好感度・高・フェイズ2
-arySakDoubleClick0LegPhase2 : array 
+arySakurafubukiDoubleClick0LegPhase2 : array 
 {
 }
 
