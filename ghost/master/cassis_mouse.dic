@@ -667,7 +667,7 @@ aryNade0LegFriendCommon : array
 //----------------------------------
 // 頭ホイール
 //----------------------------------
-MouseWheelUp0Head
+MouseWheel0Head
 {
 	"\1\s[10]\0\s[1]\w5…\w5…。\e"
 	"\1\s[10]\0\s[7]何するのよっ\w9\e"
@@ -751,12 +751,7 @@ funcMouseWheel0Bust
 	parallel _talk_array
 }
 
-MouseWheelUp0Bust
-{
-	funcMouseWheel0Bust
-}
-
-MouseWheelDown0Bust
+MouseWheel0Bust
 {
 	funcMouseWheel0Bust
 }
@@ -858,18 +853,18 @@ aryWheel0WingCommon {
 
 MouseWheelUp0Wing
 {
-	aryWheel0WingCommon
+	Wheel0WingCommon
 }
 
 MouseWheelDown0Wing
 {
-	aryWheel0WingCommon
+	Wheel0WingCommon
 }
 
 //----------------------------------
 // 髪ホイール
 //----------------------------------
-MouseWheelUp0Hair
+MouseWheel0Hair
 {
 	"\1\s[10]\0\s[6]…\w4…\w4どういう扱いを心がけているのかしら?\e"
 	"\1\s[10]\0\s[0]…\w4…\w4\s[6]呆れた。\e"
@@ -880,7 +875,7 @@ MouseWheelUp0Hair
 //----------------------------------
 // 手ホイール
 //----------------------------------
-MouseWheelUp0Hand
+MouseWheel0Hand
 {
 	"\1\s[10]\0\s[0]何処かに行くの?\e"
 	"\1\s[10]\0\s[5]手なんかとって、\w4どうしたの?\e"
@@ -892,7 +887,7 @@ MouseWheelUp0Hand
 //----------------------------------
 // 神秘の領域ホイール
 //----------------------------------
-MouseWheelUp0Mystic
+MouseWheel0Mystic
 {
 	/* 指入れる感じでどーか */
 	// えろすカウンタ
@@ -967,7 +962,7 @@ aryWheel0MysticFriendCommon : array
 //----------------------------------
 // 神秘の領域ホイール（桃色月用）
 //----------------------------------
-MouseWheelUp0Xxx
+MouseWheel0Xxx
 {
 	/* 指入れる感じでどーか */
 	// えろすカウンタ
@@ -1002,7 +997,7 @@ MouseWheelUp0Xxx
 //----------------------------------
 // 尻ホイール
 //----------------------------------
-MouseWheelUp0Hip
+MouseWheel0Hip
 {
 	/* するっと撫でる感じ */
 	// えろすカウンタ
@@ -1080,7 +1075,7 @@ aryWheel0HipFriendCommon : array
 //----------------------------------
 // 足ホイール
 //----------------------------------
-MouseWheelUp0Leg
+MouseWheel0Leg
 {
 	_talk_array = IARRAY
 
@@ -1098,7 +1093,7 @@ MouseWheelUp0Leg
 }
 
 // 足ホイール（好感度高・通常・共通）
-MouseWheelUp0LegLoveNormalCommon : nonoverlap {
+MouseWheel0LegLoveNormalCommon : nonoverlap {
 	parallel aryWheel0LegLoveNormalCommon
 }
 

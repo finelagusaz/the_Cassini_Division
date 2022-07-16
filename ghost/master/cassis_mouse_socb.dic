@@ -662,9 +662,9 @@ arySakurafubukiMouseMove0LegPhase2 : array
 //----------------------------------
 // 頭ホイール
 //----------------------------------
-SakurafubukiMouseWheelUp0Head
+SakurafubukiMouseWheel0Head
 {
-	MouseWheelUp0Head
+	MouseWheel0Head
 }
 
 //----------------------------------
@@ -730,7 +730,7 @@ arySakWheel0SkirtPhase2 : array
 //----------------------------------
 // 胸ホイール
 //----------------------------------
-SakurafubukiMouseWheelUp0Bust
+SakurafubukiMouseWheel0Bust
 {
 	_talk_array = IARRAY
 
@@ -787,23 +787,23 @@ arySakWheel0BustPhase2 : array
 //----------------------------------
 // 羽ホイール
 //----------------------------------
-SakurafubukiMouseWheelUp0Wing
+SakurafubukiMouseWheel0Wing
 {
-	MouseWheelUp0Wing
+	MouseWheel0Wing
 }
 
 //----------------------------------
 // 髪ホイール
 //----------------------------------
-SakurafubukiMouseWheelUp0Hair
+SakurafubukiMouseWheel0Hair
 {
-	MouseWheelUp0Hair
+	MouseWheel0Hair
 }
 
 //----------------------------------
 // 神秘の領域ホイール
 //----------------------------------
-SakurafubukiMouseWheelUp0Mystic
+SakurafubukiMouseWheel0Mystic
 {
 	_talk_array = IARRAY
 
@@ -859,7 +859,7 @@ arySakWheel0MysticPhase2 : array
 //----------------------------------
 // 尻ホイール
 //----------------------------------
-SakurafubukiMouseWheelUp0Hip
+SakurafubukiMouseWheel0Hip
 {
 	_talk_array = IARRAY
 
@@ -916,7 +916,7 @@ arySakWheel0HipPhase2 : array
 //----------------------------------
 // 足ホイール
 //----------------------------------
-SakurafubukiMouseWheelUp0Leg
+SakurafubukiMouseWheel0Leg
 {
 	_talk_array = IARRAY
 
