@@ -45,13 +45,13 @@ Menu_Gemini
 	{
 		if HandshakeFlg != 1
 		{
-			AYATEMPLATE.MenuItem(手をつなぐ,Menu_GeminiHandshake)
+			AYATEMPLATE.MenuItem("手をつなぐ", "Menu_GeminiHandshake")
             --
             "\n\n[half]"
 		}
 		else
 		{
-			AYATEMPLATE.MenuItem(手を離す,Menu_GeminiBreak)
+			AYATEMPLATE.MenuItem("手を離す", "Menu_GeminiBreak")
             --
             "\n\n[half]"
 		}
