@@ -29,6 +29,7 @@ dic, cassis_bootend.dic					// 起動/終了辞書
 dic, cassis_communicate.dic				// コミュニケート辞書
 dic, cassis_mouse.dic					// マウス入力関連辞書
 dic, cassis_menu.dic					// メニュー処理辞書
+dic, menu/command/command.dic			// メニュー処理辞書 コマンド
 dic, menu/shell/master.dic				// メニュー処理辞書 master
 dic, menu/shell/alternative_cassis.dic	// メニュー処理辞書 Altenative - Cassis
 dic, menu/shell/moonlight_blue.dic		// メニュー処理辞書 月光浴
@@ -50,7 +51,7 @@ dic, cassis_sck.dic						// ショートカットキー
 dic, cassis_change.dic					// 切り替えトーク辞書
 dic, cassis_property.dic				// プロパティシステム辞書
 dic, cassis_shell.dic					// サーフェス値加算処理・Osuwari.dll関連処理
-dic, yaya_homeurl.txt                   // homeurl
+dic, yaya_homeurl.txt					// homeurl
 
 //---- 実行ログ -------------------------------------------------------------------------
 // log, ayame.log		// 実行ログをayame.logに記録します。開発時には記録しておいたほうが良いです。
