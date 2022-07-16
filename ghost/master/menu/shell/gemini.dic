@@ -1,0 +1,160 @@
+//------------------------------------
+// Gemini
+//------------------------------------
+// トーク
+Menu_GEMINITALK {
+	_talk_array = IARRAY
+	_talk_array ,= aryShellGeminiTalk
+
+	if flgLove == 1 {
+		_talk_array ,= aryShellGeminiLoveTalk
+	}
+	
+	parallel _talk_array
+}
+
+// 着せ替え
+Menu_Gemini
+{
+	"\n[half]"
+	--
+	if GeminiSurfaceMode >= 0 && GeminiSurfaceMode <= 2000
+	{
+		if GeminiSurfaceMode != 0 {
+			AYATEMPLATE.MenuItem("ポルックス", "Menu_GeminiPollux")
+		}
+		--
+		if GeminiSurfaceMode != 1000 {
+			AYATEMPLATE.MenuItem("カストール", "Menu_GeminiCastor")
+		}
+		--
+		if GeminiSurfaceMode != 2000 {
+			AYATEMPLATE.MenuItem("ジェミニ", "Menu_GeminiPolluxAndCastor")
+		}
+		--
+		"\n[half]"
+	}
+	else
+	{
+		AYATEMPLATE.MenuItem("服を着て", "Menu_GeminiDress")
+        --
+        "\n\n[half]"
+	}
+	--
+	if GetShellnameEx == "Gemini"
+	{
+		if HandshakeFlg != 1
+		{
+			AYATEMPLATE.MenuItem("手をつなぐ", "Menu_GeminiHandshake")
+            --
+            "\n\n[half]"
+		}
+		else
+		{
+			AYATEMPLATE.MenuItem("手を離す", "Menu_GeminiBreak")
+            --
+            "\n\n[half]"
+		}
+	}
+}
+
+Menu_GeminiPollux {
+	SurfaceModeChangeEx(0, 0)
+	"\1\s[10]\0\s[0]こうかしら?\e"
+}
+
+// Gemini/カストール
+Menu_GeminiCastor {
+	SurfaceModeChangeEx(1000, 0)
+	"\1\s[10]\0\s[0]これでいいかしら?\e"
+}
+
+// Gemini/双子
+Menu_GeminiPolluxAndCastor {
+	SurfaceModeChangeEx(2000, 0)
+	"\1\s[10]\0\s[0]では、\w4こうしましょうか。\w9\n\n[half]/
+	\1\s[10]こういう使い方もできるのよ。\e"
+	"\1\s[10]\0\s[0]私たち、\w4双子だったの、\w4知ってた?\w9\n\n[half]/
+	\1\s[10]見ればわかるじゃない。\e"
+}
+
+// Gemini/脱衣
+Menu_GeminiTuckup {
+	if flgLove == 1 && (GeminiSurfaceMode >= 0 && GeminiSurfacemode <= 2000) && shellname == "Gemini"  {
+		case GeminiSurfaceMode {
+			when 0, 1000 {
+				GeminiSurfaceMode = GeminiSurfaceMode + 3000;
+				"\0\s[1]…\w4…。\e"
+				"\0\s[1]恥ずかしい、\w4わね。\e"
+			}
+			when 2000 {
+				GeminiSurfaceMode = GeminiSurfaceMode + 3000;
+				"\0\s[0]…\w4…。\w9\n\n[half]/
+				\1\s[10]ポルックス、\w4どうしてそんなに冷静なの?\w9\n/
+				\0\s[1]少しは動揺してるのよ、\w4顔には出していないだけ。\e"
+			}
+		}
+	}
+	else {
+		case GeminiSurfaceMode {
+			when 0, 1000 {
+				"\0\s[0]やると思った?\e"
+				"\0\s[0]相手を選びなさいな。\e"
+			}
+			when 2000 {
+				"\0\s[0]信じられないわ。\w9\n\n[half]/
+				\1\s[10]ポルックス、\w4私達、\w4怒ってもいいわよね。\w9\n/
+				\0\s[6]いいと思うわ。\e"
+			}
+		}
+	}
+}
+
+// FIXME: 判定処理を汎用のものに置き換える
+Menu_GeminiDress {
+	if flgLove == 1 && (GeminiSurfaceMode >= 3000 && GeminiSurfacemode <= 6000) && shellname == "Gemini"  {
+		case GeminiSurfaceMode {
+			when 3000, 4000 {
+				GeminiSurfaceMode = GeminiSurfaceMode - 3000;
+				"\0\s[0]このほうが落ち着くわ。\e"
+			}
+			when 5000 {
+				GeminiSurfaceMode = GeminiSurfaceMode - 3000;
+				"\0\s[0]服を着たほうが落ち着くわね。\w9\n\n[half]/
+				\1\s[10]裸で落ち着くほうがどうかと思うけど。\w9\n\n[half]/
+				\0\s[0]そういう文化圏もあるそうよ。\w9\n\n[half]/
+				\1\s[10]意外だわ。\e"
+			}
+		}
+	}
+	else {
+		case GeminiSurfaceMode {
+			when 3000, 4000 {
+				"\0\s[0]?\e"
+			}
+			when 5000 {
+				"\0\s[0]どうしましょうか。\w9\n/
+				\1\s[10]どうもしなくていいわ。\e"
+			}
+		}
+	}
+}
+
+// 手をつなぐ
+Menu_GeminiHandshake
+{
+	SetFit
+	HandshakeFlg = 1
+}
+
+// 手をはなす
+Menu_GeminiBreak
+{
+	HandshakeFlg = 0
+}
+
+//---- さっきの話は
+Menu_LASTTALK
+{
+	AYATEMPLATE.LastTalk
+}

@@ -5,14 +5,19 @@ OnKeyPress
 		when "t" {
 			OnAiTalk
 		}
+		when "l" {
+			if (STRLEN(AYATEMPLATE.LastTalk) > 0) {
+				Menu_LASTTALK
+			}
+		}
 		when "m" {
-			openMenu
+			OpenMenu
 		}
 		when "c" {
-			menuCommunicate
+			Menu_Communicate
 		}
 		when "d" {
-			menuCommand
+			Menu_Command
 		}
 		when "a" {
 			StartCommunicate

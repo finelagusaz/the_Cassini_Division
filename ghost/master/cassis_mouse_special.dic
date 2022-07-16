@@ -6,63 +6,63 @@
 //Activate
 OnHandActivate
 {
-	_fname = "HandActivate_%(reference[0])_%(reference[1])"
+	_fname = "HandActivate%(reference[0])%(reference[1])"
 	if ISFUNC(_fname) {
 		EVAL(_fname)
 	}
 }
 
-HandActivate_NormalStart_Head
+HandActivateNormalStartHead
 {
 	"\1\s[10]\0\s[0]重たそうね。\w9"
 }
 
-HandActivate_NormalStart_Lip
+HandActivateNormalStartLip
 {
 	"\1\s[10]\0\s[6]物好き\w4…\w4…。\w9"
 }
 
-HandActivate_NormalStart_Bust
+HandActivateNormalStartBust
 {
 	"\1\s[10]\0\s[0]こんなの触って楽しいのかしらね\w4…\w4…。\w4"
 }
 
-HandActivate_NormalStart_Skirt
+HandActivateNormalStartSkirt
 {
 	"\1\s[10]\0\s[3]ため息しか出ないわ。\w9"
 }
 
-HandActivate_NormalStart_Hair
+HandActivateNormalStartHair
 {
 	"\1\s[10]\0\s[6]重いのでしょうね。\e"
 }
 
-HandActivate_NormalStart_Hand
+HandActivateNormalStartHand
 {
 	"\1\s[10]\0\s[0]繋ぎたく無いわ。\e"
 }
 
-HandActivate_NormalStart_Skirt_s
+HandActivateNormalStartSkirt_s
 {
-	HandActivate_NormalStart_Skirt
+	HandActivateNormalStartSkirt
 }
 
-HandActivate_NormalStart_Wing
+HandActivateNormalStartWing
 {
 	"\1\s[10]\0\s[7]羽は駄目っ\w9"
 }
 
-HandActivate_NormalStart_Mystic
+HandActivateNormalStartMystic
 {
 	"\1\s[10]\0\s[0]……。\e"
 }
 
-HandActivate_SuperStart_1
+HandActivateSuperStart1
 {
 	"\h\s[3]\c"
 }
 
-HandActivate_SuperContinue_1 : nonoverlap
+HandActivateSuperContinue1 : nonoverlap
 {
 	'\C'
 	--
@@ -73,17 +73,17 @@ HandActivate_SuperContinue_1 : nonoverlap
 	'んく '
 }
 
-HandActivate_SuperEnd_1
+HandActivateSuperEnd1
 {
 	"\1\s[10]\0\s[8]た、大したこと無いわね。\w9"
 }
 
-HandActivate_SuperStart_2
+HandActivateSuperStart2
 {
 	"\h\s[4]\c"
 }
 
-HandActivate_SuperContinue_2 : nonoverlap
+HandActivateSuperContinue2 : nonoverlap
 {
 	'\u\s[10]\h\s[4]'
 	--
@@ -93,17 +93,17 @@ HandActivate_SuperContinue_2 : nonoverlap
 	'?!'
 }
 
-HandActivate_SuperEnd_2
+HandActivateSuperEnd2
 {
 	"\1\s[10]\0\s[1]覚えてなさいよ\w4…\w4…。\w4"
 }
 
-HandActivate_SuperStart_4
+HandActivateSuperStart4
 {
 	"\1\s[10]\0\s[6]バカの一つ覚えかしら。\w9\c"
 }
 
-HandActivate_SuperContinue_4 : nonoverlap
+HandActivateSuperContinue4 : nonoverlap
 {
 	'\C'
 	--
@@ -114,7 +114,7 @@ HandActivate_SuperContinue_4 : nonoverlap
 	'…'
 }
 
-HandActivate_SuperEnd_4
+HandActivateSuperEnd4
 {
 	"\1\s[10]\0\s[0]体力の無駄遣いだったわね。\w9"
 }
@@ -129,7 +129,7 @@ TheHandResponseMessage
 }
 
 //MouseSpecial
-MouseTH_DoubleClick0
+TheHandMouseDoubleClick0
 {
 	"\1\s[10]\0\s[8]この変態。\w9\n"
 	"\1\s[10]\0\s[6]あなた、\w4ろくな死に方しないわよ。\w9\n"
@@ -138,13 +138,13 @@ MouseTH_DoubleClick0
 	TheHandResponseMessage
 }
 
-MouthTH_DoubleClick0Lip
+TheHandMouseDoubleClick0Lip
 {
 	"\1\s[10]\0\s[6]ん…\w4…\w4潮の味はするのね。\w9\n"
 	"\1\s[10]\0\s[9]…\w4…。\w9\n"
 }
 
-MouthTH_DoubleClick0Wing
+TheHandMouseDoubleClick0Wing
 {
 	"\1\s[10]\0\s[1]ひゃうっ\w9\n"
 	"\1\s[10]\0\s[1]ひゃんっ\w9\n"
@@ -152,22 +152,22 @@ MouthTH_DoubleClick0Wing
 	TheHandResponseMessage
 }
 
-MouthTH_Wheel0Skirt
+TheHandMouseWheel0Skirt
 {
 	"\1\s[10]\0\s[30]\w9\w6\s[31]油断も隙も無いわ。\w9\n"
 }
 
-MouthTH_Wheel0Skirt_s
+TheHandMouseWheel0Skirt_s
 {
-	MouthTH_Wheel0Skirt
+	TheHandMouseWheel0Skirt
 }
 
-MouthTH_Wheel0
+TheHandMouseWheel0
 {
 	TheHandResponseMessage
 }
 
-MouthTH_Nade0
+TheHandMouseMove0
 {
 	TheHandResponseMessage
 }

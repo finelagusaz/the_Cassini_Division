@@ -1,0 +1,27 @@
+//---------------------------
+// Alternative - Cassis
+//---------------------------
+Menu_AlternativeCassis
+{
+	"\n[half]"
+	--
+	if AlternativeSurfaceMode != 0 {
+		AYATEMPLATE.MenuItem("普段着", "Menu_AlternativeCassisNormal")
+	}
+	--
+	if AlternativeSurfaceMode != 1000 {
+		AYATEMPLATE.MenuItem("水着", "Menu_AlternativeCassisSwimming")
+	}
+	--
+	"\n[half]"
+}
+
+Menu_AlternativeCassisNormal {
+	SurfaceModeChangeEx(0, 0)
+	"\1\s[10]\0\s[0]ん。\e"
+}
+
+Menu_AlternativeCassisSwimming {
+	SurfaceModeChangeEx(1000, 0)
+	"\1\s[10]\0\s[6]……。\e"
+}

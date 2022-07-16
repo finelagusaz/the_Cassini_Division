@@ -1,6 +1,33 @@
-//---------------------------------------------------------------------------------------
-// 交代反応
-//---------------------------------------------------------------------------------------
+//******************************************************************************
+// YAYA　ゴーストテンプレート
+// 切り替えトーク辞書
+//******************************************************************************
+
+//******************************************************************************
+// ゴースト切り替え 
+//******************************************************************************
+/*
+関数は以下の形で記載します。
+[イベント] + [ゴースト名]
+イベントは、以下のものがあります。
+イベントによっては該当する関数が無ければOnCloseやOnBootになります。
+ゴースト名は、先頭に _が付きます。
+該当するゴースト名が無いときは、ゴースト名の部分は「Other」となります。
+
+名前の中に"や'、あるいは+-/*、半角空白など、
+システムで使われている文字が来る場合は、すべて_に変換されます。
+例：the "MobileMaster" -> OnGhostChanging_the__MobileMaster_
+
+OnGhostChanging		他のゴーストへ切り替えしようとしたとき。無ければOnCloseが呼ばれます。
+OnGhostChanged		他のゴーストから切り替わったとき。無ければOnBootが呼ばれます。
+OnGhostCalling		他のゴーストを呼び出そうとしたとき
+OnGhostCalled			他のゴーストから呼び出されたとき。無ければOnBootが呼ばれます。
+OnGhostCallComplete	他のゴーストを呼び出して、呼び出されたゴーストの起動が完了したとき、OnOtherGhostBootedの代わりに
+
+OnOtherGhostBooted	他のゴーストが呼び出されて、呼び出されたゴーストの起動が完了したとき
+OnOtherGhostClosed	他のゴーストが終了したとき
+OnOtherGhostChanged	他のゴーストが他のゴーストに 切り替わって、切り替わり先のゴーストの起動が完了したとき
+*/
 //---- カシス
 OnGhostChanging_カシス
 {
@@ -2059,82 +2086,64 @@ OnOtherGhostClosedOther
 	}
 }
 
-// 交代反応コア
-TranslateSystemChar
+eventEndLieChanged
 {
-  _text = TOSTR(_argv[0])
-  _text = RE_REPLACE(_text,"[ !%(CHR(0x22))%(CHR(0x25))#$&()*+,\-/:;<=>?@\[\]`{|}~]","_")
-  _text
+	flgEndLie = 0;
+	flgCounterAttack = 0;
 }
 
-ExecuteChangeCallTalk
-{
-  setShellInit
-  --
+//******************************************************************************
+//この下は切り替えトーク処理用
+//通常はいじる必要はありませんが、必要に応じて適宜変更してください。
+//AYATEMPLATE.ではじまる関数は _tmpl_util.dic にあります。
+//******************************************************************************
 
-  _ghostname = TranslateSystemChar(reference[0])
-  
-  _funcname = "%(_argv[0])_%(_ghostname)"
-  if ISFUNC(_funcname) {
-    _script = EVAL(_funcname)
-    if STRLEN(_script) != 0 {
-      _script
-      return
-    }
-  }
-
-  _funcname = "%(_argv[0])Other"
-  if ISFUNC(_funcname) {
-    _script = EVAL(_funcname)
-    if STRLEN(_script) != 0 {
-      _script
-      return
-    }
-  }
-
-  if _argc >= 2 {
-    _script = EVAL(_argv[1])
-    if STRLEN(_script) != 0 {
-      REPLACE(_script,"\-","")
-      return
-    }
-  }
-}
- 
 OnGhostChanging
 {
-	ExecuteChangeCallTalk("OnGhostChanging","OnClose")
+	setShellInit
+	AYATEMPLATE.ExecuteChangeCallTalk("OnGhostChanging","OnClose")
 }
 
 OnGhostChanged
 {
 	eventEndLieChanged
-	ExecuteChangeCallTalk("OnGhostChanged","OnBoot")
+	setShellInit
+	AYATEMPLATE.ExecuteChangeCallTalk("OnGhostChanged","OnBoot")
 }
 
 OnGhostCalling
 {
-	ExecuteChangeCallTalk("OnGhostCalling")
+	setShellInit
+	AYATEMPLATE.ExecuteChangeCallTalk("OnGhostCalling")
 }
 
 OnGhostCalled
 {
 	eventEndLieChanged
-	ExecuteChangeCallTalk("OnGhostCalled","OnBoot")
+	setShellInit
+	AYATEMPLATE.ExecuteChangeCallTalk("OnGhostCalled","OnBoot")
 }
 
 OnGhostCallComplete
-{
-	ExecuteChangeCallTalk("OnGhostCallComplete")
+{	
+	setShellInit
+	AYATEMPLATE.ExecuteChangeCallTalk("OnGhostCallComplete")
 }
 
 OnOtherGhostClosed
 {
-	ExecuteChangeCallTalk("OnOtherGhostClosed")
+	setShellInit
+	AYATEMPLATE.ExecuteChangeCallTalk("OnOtherGhostClosed")
 }
 
-eventEndLieChanged
+OnOtherGhostBooted
 {
-	flgEndLie = 0;
-	flgCounterAttack = 0;
+	setShellInit
+	AYATEMPLATE.ExecuteChangeCallTalk("OnOtherGhostBooted")
+}
+
+OnOtherGhostChanged
+{
+	setShellInit
+	AYATEMPLATE.ExecuteChangeCallTalk("OnOtherGhostChanged")
 }

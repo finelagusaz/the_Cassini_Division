@@ -1,0 +1,27 @@
+//---------------------------
+// bridal butterfly
+//---------------------------
+Menu_BridalButterfly
+{
+	"\n[half]"
+	--
+	if BridalButterflySurfaceMode != 0 {
+		AYATEMPLATE.MenuItem("通常", "Menu_BbNormal")
+	}
+	--
+	if BridalButterflySurfaceMode != 1000 {
+		AYATEMPLATE.MenuItem("ビスチェ", "Menu_BbBustier")
+	}
+	--
+	"\n[half]"
+}
+
+Menu_BbNormal {
+	SurfaceModeChangeEx(0, 0)
+	"\1\s[10]\0\s[0]こうかしら?\e"
+}
+
+Menu_BbBustier {
+	SurfaceModeChangeEx(1000, 0)
+	"\1\s[10]\0\s[1]…\w4…。\e"
+}

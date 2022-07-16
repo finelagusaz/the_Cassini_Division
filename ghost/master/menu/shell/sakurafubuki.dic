@@ -1,0 +1,108 @@
+//------------------------------
+// 桜吹雪
+//------------------------------
+Menu_Sakurafubuki
+{
+	"\n[half]"
+	--
+	if SakurafubukiFox < 10000
+	{
+		AYATEMPLATE.MenuItem("変化する", "Menu_SakurafubukiFox")
+	}
+	else
+	{
+		AYATEMPLATE.MenuItem("戻る", "Menu_SakurafubukiNormal")
+	}
+	--
+	if flgSakurafubukiShift != 1 {
+		AYATEMPLATE.MenuItem("時間帯で色を変える", "Menu_SakurafubukiAuto")
+		--
+		if SakurafubukiBase == 0 {
+			AYATEMPLATE.MenuItem("夜桜", "Menu_SakurafubukiYozakura")
+		} else {
+			AYATEMPLATE.MenuItem("桜", "Menu_SakurafubukiAsa")
+		}
+	} else {
+		AYATEMPLATE.MenuItem("時間帯で色を変えない", "Menu_SakurafubukiManual")
+	}
+	--
+	if SakurafubukiPhase == 1000
+	{
+		AYATEMPLATE.MenuItem("脱がす", "Menu_SakurafubukiP2")
+	}
+	elseif SakurafubukiPhase == 3000 || SakurafubukiPhase == 4000
+	{
+		AYATEMPLATE.MenuItem("シャワーを浴びさせる", "Menu_SakurafubukiPRest")
+	}
+	--
+	"\n[half]"
+}
+
+// 桜吹雪フェイズ2
+Menu_SakurafubukiP2
+{
+	SakurafubukiShiftPhase("hadaka");
+	--
+	"\0\s[-1]そうね。\w9\n/
+	そろそろ、\w4邪魔だもの、\w4ね。\x/
+	\w9\w9\s[1]お待たせ。\e"
+}
+
+// 狐耳
+Menu_SakurafubukiFox {
+	SakurafubukiFox = 10000;
+	"\0\s[-1]こう、\w4かしら。\w9\w9\n/
+	\s[5]お待たせ。\w9\n/
+	似合う?\e"
+}
+
+// 通常
+Menu_SakurafubukiNormal {
+	SakurafubukiFox = 0;
+	"\0\s[6]いつもどおり、\w4ね。\e"
+}
+
+// 夜桜
+Menu_SakurafubukiYozakura
+{
+	SakurafubukiBase = 20000;
+	flgSakurafubukiShift = 0;
+	--
+	"\1\s[10]\0\s[0]\e"
+}
+
+// 桜
+Menu_SakurafubukiAsa
+{
+	SakurafubukiBase = 0;
+	flgSakurafubukiShift = 0;
+	--
+	"\1\s[10]\0\s[0]\e"
+}
+
+// 自動変更
+Menu_SakurafubukiAuto
+{
+	flgSakurafubukiShift = 1;
+	SakurafubukiShiftBase;
+	--
+	'\1\s[10]\0\s[0]\e'
+}
+
+// 手動変更
+Menu_SakurafubukiManual
+{
+	flgSakurafubukiShift = 0;
+	--
+	'\1\s[10]\0\s[0]\e'
+}
+
+// リセット
+Menu_SakurafubukiPRest {
+	Menu_SakurafubukiPhase = 0;
+	--
+	"\0\s[-1]そうするわ。\w9\n/
+	…\w4…。\w9\n/
+	…。\x/
+	\s[6]ただいま。\e"
+}

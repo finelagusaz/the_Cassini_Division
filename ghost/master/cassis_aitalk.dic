@@ -22,36 +22,6 @@ OnTranslate
 }
 
 //**** ランダムトーク *******************************************************************
-
-//---- OnAiTalkイベント -----------------------------------------------------------------
-OnAiTalk
-{
-	if RAND(100) < communicateratio
-	{
-		//---- communicateratio % の率で他ゴーストへ話しかけ
-		StartCommunicate
-	}
-	else
-	{
-		if mikireflag == 0
-		{
-			//---- 通常のランダムトーク、ただしチェイン中はチェイントーク
-			if CHAIN.IDName == "" {
-				RandomTalk
-			}
-			else {
-				ChainTalk
-			}
-		}
-		else
-		{
-			//---- 見切れ中なので見切れ中のトークを行う
-			MikireTalk
-		}
-	}
-}
-
-//---- ランダムトーク -------------------------------------------------------------------
 RandomTalk
 {
     TOSTR(EVAL(CHR(0x22)+RandomTalkEx()+CHR(0x22)))
@@ -5093,19 +5063,10 @@ OnMinuteChange
 		{
 			"\n\n少しは休憩しないと身体に障るわ。\w9"
 		}
-		/*
-		elseif hour == 0
-		{
-			if month == 1 && day == 1
-			{
-				"\1\s[10]\0\s[6]年越し、\w4ね。\e"
-			}
-		}
-		*/
 		--
 		"\e"
 	}
-	elseif mikireflag == 1
+	elseif AYATEMPLATE.mikireflag == 1
 	{
 		//---- 分 != 0 、かつ見切れていたら見切れ中のトークを行う
 		MikireTalk
@@ -5121,12 +5082,12 @@ OnSecondChange
 	//---- 1 秒毎に実行される。ここではあまり重い処理を行わないこと
 	if flgMikireEnable == "1"
 	{
-		if (mikireflag == 1 && reference[1] == 0)
+		if AYATEMPLATE.mikireflag == 1 && reference[1] == 0
 		{
 			//---- 見切れの終了
 			EndMikireTalk
 		}
-		mikireflag = reference[1]
+		AYATEMPLATE.mikireflag = reference[1]
 	}
 }
 

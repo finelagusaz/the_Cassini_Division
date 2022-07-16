@@ -1,0 +1,82 @@
+//------------------------------
+// マジカル☆カシス
+//------------------------------
+Menu_Magicalcassis
+{
+	"\n[half]"
+	--
+	if MagicalCassisSurfaceMode != 0 {
+		AYATEMPLATE.MenuItem("魔法少女", "Menu_McMagical")
+	}
+	--
+	if MagicalCassisSurfaceMode != 1000 {
+		AYATEMPLATE.MenuItem("和服", "Menu_McJc")
+	}
+	--
+	if MagicalCassisSurfaceMode != 2000 {
+		AYATEMPLATE.MenuItem("ちゃいな", "Menu_McChina")
+	}
+	--
+	if MagicalCassisSurfaceMode != 3000 {
+		AYATEMPLATE.MenuItem("セーラー服", "Menu_McSailer")
+	}
+	--
+	if MagicalCassisSurfaceMode != 4000 {
+		AYATEMPLATE.MenuItem("軍服風", "Menu_McMu")
+	}
+	--
+	if MagicalCassisSurfaceMode != 5000 {
+		AYATEMPLATE.MenuItem("ノースリーブ", "Menu_McNosleeve")
+	}
+	--
+	"\n[half]"
+}
+
+// 魔法少女
+Menu_McMagical
+{
+	SurfaceModeChangeEx(0, 0);
+	--
+	"\0\s[6]少し恥ずかしいのだけど……。\e"
+}
+
+// 和服
+Menu_McJc
+{
+	SurfaceModeChangeEx(1000, 0);
+	--
+	"\0\s[0]これは、\w4どう?\e"
+}
+
+// ちゃいな
+Menu_McChina
+{
+	SurfaceModeChangeEx(2000, 0);
+	--
+	"\0\s[0]こういうのはどうかしら?\e"
+}
+
+// セーラー服
+Menu_McSailer
+{
+	SurfaceModeChangeEx(3000, 0);
+	--
+	"\0\s[8]はやくしないと、\w4遅れるわよ。\w9\n/
+	\s[5]なんてね。\e"
+}
+
+// 軍服
+Menu_McMu
+{
+	SurfaceModeChangeEx(4000, 0);
+	--
+	"\0\s[5]どう、\w4似合う?\e"
+}
+
+// ノースリーブ
+Menu_McNosleeve
+{
+	SurfaceModeChangeEx(5000, 0);
+	--
+	"\0\s[5]どうかしら?\e"
+}

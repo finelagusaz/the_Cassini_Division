@@ -1,0 +1,139 @@
+// コマンド
+Menu_COMMAND
+{
+	"\1\s[10]\0\s[0]\_q/
+	\_a[Menu_COMMANDGREETING]「挨拶」\_a\n/
+	\_a[Menu_COMMANDACTION]「行動」\_a\n/
+	\_a[Menu_COMMANDASK]「質問」\_a\n/
+	\_a[Menu_COMMANDOTHERS]「そのほか」\_a\n/
+	\n[half]\n/
+	\q[メニューへ戻る,OpenMenu]\n/
+	\q[キャンセル,Menu_CANCEL]\e"
+}
+
+// 挨拶
+Menu_COMMANDGREETING
+{
+	"\1\s[10]\0\s[0]\b[2]\_q/
+	【挨拶】\n/
+	\_a[comOhayo]「おはよう」\_a\n/
+	\_a[comKonnichiha]「こんにちは」\_a\n/
+	\_a[comKonbanha]「こんばんは」\_a\n/
+	\_a[comBye]「いってきます」\_a\n/
+	\_a[comTadaima]「ただいま」\_a\n/
+	\_a[comOyasumi]「おやすみ」\_a\n"
+	--
+	if flgEat == 1
+	{
+		"\_a[comGochisosama]「ごちそうさま」\_a\n"
+	}
+	--
+	"\n\n[half]\q[コマンドに戻る,Menu_COMMAND]\n/
+	\q[キャンセル,Menu_CANCEL]\e"
+}
+
+// 行動
+Menu_COMMANDACTION
+{
+	"\1\s[10]\0\s[0]\b[2]\_q/
+	【行動】\n/
+	\_a[comFood]「何か食べたい」\_a\n/
+	\_a[comTewonigiru]「手を握る」\_a\n/
+	\_a[comDakishimeru]「抱きしめる」\_a\n/
+	\_a[comLove]「愛をささやく」\_a\n/
+	\_a[comCassis]「名前を呼ぶ」\_a\n/
+	\_a[comArigato]「礼を言う」\_a\n/
+	\_a[comGomen]「謝る」\_a\n"
+	--
+	if cntHead > likelimit
+	{
+		"\_a[comPockeyGame]「ポッキーゲーム」\_a\n"
+	}
+	--
+	if Osuwari == 1 || Osuwari == 2
+	{
+		"\_a[comHizamakura]「膝枕」\_a\n"
+	}
+	--
+	"\n\n[half]\q[コマンドに戻る,Menu_COMMAND]\n/
+	\q[キャンセル,Menu_CANCEL]\e"
+}
+
+// 質問
+Menu_COMMANDASK
+{
+	"\1\s[10]\0\s[0]\b[2]\_q/
+	【質問】\n/
+	\_a[comAskFS]「FSについて」\_a\n/
+	\_a[comAskMei]「あのヒトについて」\_a\n/
+	\_a[comAskAge]「年齢について」\_a\n/
+	\_a[comAskAndroid]「アンドロイドについて」\_a\n/
+	\_a[comAskHobby]「趣味について」\_a\n/
+	\_a[comAskLodger]「同居人について」\_a\n/
+	\_a[comAskHagalaz]「あのバカについて」\_a\n/
+	\_a[comAskThreeSize]「スリーサイズについて」\_a\n/
+	"
+	--
+	if flgKnownHagalaz == 1
+	{
+		"\_a[comAskRelationHagalaz]「あのバカとの関係について」\_a\n"
+	}
+	--
+	if !("%month" == 7 && "%day" == 14)
+	{
+		"\_a[comWhenBirthday]「誕生日を教えて」\_a\n"
+	}
+
+	--
+	"\n\n[half]\q[コマンドに戻る,Menu_COMMAND]\n/
+	\q[キャンセル,Menu_CANCEL]\e"	
+}
+
+// そのほか
+Menu_COMMANDOTHERS
+{
+	"\1\s[10]\0\s[0]\b[2]\_q/
+	【そのほか】\n/
+	\_a[comNamaeOboete]名前を覚えて欲しい\_a\n/
+	\_a[comStamp]スタンプをお願いする\_a\n/
+	\_a[comKawaii]「かわいい」\_a\n/
+	\_a[comTsundere]「ツンデレ」\_a\n/
+	\_a[comTereya]「照れ屋だね」\_a\n/
+	\_a[comNadete]「撫でて」\_a\n/
+	\_a[comOenshite]「応援して」\_a\n/
+	\_a[comKekon]「結婚してくれ」\_a\n/
+	\_a[comTwitter]「Twitter」\_a\n"
+	--
+	if flgComOyasumiOther == 1
+	{
+		"\_a[resComOyasumiOther]「一緒に寝よう。」\_a\n"
+	}
+	--
+	if "%month" == 7 && "%day" == 14
+	{
+		"\_a[comBirthday]「誕生日おめでとう」\_a\n"
+	}
+	--
+	if cntEros > 10 && shellname == "月白" && TukisiroSurfaceMode != 3000
+	{
+		"\_a[Menu_TukisiroTuckup]「下着見せて」\_a\n"
+	}
+	elseif shellname == "月白" && TukisiroSurfaceMode == 3000 {
+		"\_a[Menu_TukisiroTuckdown]「満足した」\_a\n"
+	}
+	elseif shellname == "Gemini" && flgLove == 1
+	{
+		if GeminiSurfaceMode >= 0 && GeminiSurfaceMode <= 2000
+		{
+			"\_a[Menu_GeminiTuckup]「下着見せて」\_a\n"
+		}
+		else
+		{
+			"\_a[Menu_GeminiDress]「服を着て」\_a\n"
+		}
+	}
+	--
+	AYATEMPLATE.MenuItem("コマンドに戻る","Menu_COMMAND")
+	--
+	AYATEMPLATE.MenuItem("キャンセル","Menu_CANCEL",150)
+}

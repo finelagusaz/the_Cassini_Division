@@ -30,7 +30,7 @@ Mouse_ClickEx0Lip
 //----------------------------------
 // うさ耳なで（さすらいウサギ）
 //----------------------------------
-Mouse_Nade0Usamimi
+MouseMove0Usamimi
 {
 	"\1\s[10]\0\s[0]優しくなでてちょうだい。\e"
 	"\1\s[10]\0\s[6]引っ張っても取れないわよ、\w4本物だから。\e"
@@ -39,7 +39,7 @@ Mouse_Nade0Usamimi
 //----------------------------------
 // 猫耳なで
 //----------------------------------
-Mouse_Nade0Catear
+MouseMove0Catear
 {
 	"\1\s[10]\0\s[6]そう、\w4そっとよ。\e"
 	"\1\s[10]\0\s[0]撫でるなら頭のほうが\w4…\w4…\s[6]何でもないわ。\e"
@@ -50,7 +50,7 @@ Mouse_Nade0Catear
 //----------------------------------
 // 頭なで
 //----------------------------------
-Mouse_Nade0Head
+MouseMove0Head
 {
 	// 好感度加算
 	cntHead++
@@ -146,7 +146,7 @@ aryNade0HeadCommon : array
 /*
 	額に手を当てるような感じ。
 */
-Mouse_Nade0Brow
+MouseMove0Brow
 {
 	"\1\s[10]\0\s[0]…\w4…?\e"
 	"\1\s[10]\0\s[6]熱は、\w4ないわ。\w9\n/
@@ -161,7 +161,7 @@ Mouse_Nade0Brow
 //----------------------------------
 // 唇なで
 //----------------------------------
-Mouse_Nade0Lip
+MouseMove0Lip
 {
 	"\1\s[10]\0\s[6]ん…\w4…。\w9\e"
 	"\1\s[10]\0\s[0]?\e"
@@ -176,7 +176,7 @@ Mouse_Nade0Lip
 //----------------------------------
 // 胸なで
 //----------------------------------
-Mouse_Nade0Bust
+MouseMove0Bust
 {
 	// えろすカウンタ
 	cntEros = cntEros + 5
@@ -303,7 +303,7 @@ aryNade0BustFriendCommon : array
 //----------------------------------
 // スカートなで
 //----------------------------------
-Mouse_Nade0Skirt
+MouseMove0Skirt
 {
 	"\1\s[10]\0\s[0]…\w4…。\w4\e"
 	"\1\s[10]\0\s[0]スカートが気になるの?\w9\e"
@@ -318,23 +318,23 @@ Mouse_Nade0Skirt
 //----------------------------------
 // エプロンなで
 //----------------------------------
-Mouse_Nade0Apron
+MouseMove0Apron
 {
-	Mouse_Nade0Skirt
+	MouseMove0Skirt
 }
 
 //----------------------------------
 // スカートなで（座り）
 //----------------------------------
-Mouse_Nade0Skirt_s
+MouseMove0Skirt_s
 {
-	Mouse_Nade0Skirt
+	MouseMove0Skirt
 }
 
 //----------------------------------
 // 羽なで
 //----------------------------------
-Mouse_Nade0Wing
+MouseMove0Wing
 {
 	"\1\s[10]\0\s[2]\w9\w5\s[0]触らないで。\e"
 	"\1\s[10]\0\s[3]くすぐったい\w4…\w4…\w4\e"
@@ -359,7 +359,7 @@ Mouse_Nade0Wing
 //----------------------------------
 // 髪なで
 //----------------------------------
-Mouse_Nade0Hair
+MouseMove0Hair
 {
 	"\1\s[10]\0\s[6]ふふ、\w4綺麗な髪でしょう?\e"
 	"\1\s[10]\0\s[6]引っかかったりはしないと思うけれど。\e"
@@ -373,7 +373,7 @@ Mouse_Nade0Hair
 //----------------------------------
 // 手なで
 //----------------------------------
-Mouse_Nade0Hand : array
+MouseMove0Hand : array
 {
 	if flgLove == 1
 	{
@@ -404,7 +404,7 @@ Mouse_Nade0Hand : array
 //----------------------------------
 // 神秘の領域なで
 //----------------------------------
-Mouse_Nade0Mystic
+MouseMove0Mystic
 {
 	// えろすカウンタ
 	cntEros = cntEros + 7
@@ -466,7 +466,7 @@ aryNade0MysticFriendCommon : array
 //----------------------------------
 // 神秘の領域（桃色月用）
 //----------------------------------
-Mouse_Nade0xxx
+MouseMove0xxx
 {
 	// えろすカウンタ
 	cntEros = cntEros + 7
@@ -496,7 +496,7 @@ Mouse_Nade0xxx
 //----------------------------------
 // へそなで
 //----------------------------------
-Mouse_Nade0Navel
+MouseMove0Navel
 {
 	"\1\s[10]\0\s[6]くすぐったいわ。\e"
 	"\1\s[10]\0\s[0]見てのとおりだと思うけれど。\e"
@@ -507,7 +507,7 @@ Mouse_Nade0Navel
 //----------------------------------
 // 腹なで
 //----------------------------------
-Mouse_Nade0Stomach
+MouseMove0Stomach
 {
 	"\1\s[10]\0\s[1]くすぐったいわ。\e"
 	"\1\s[10]\0\s[4]…\w4…。\w9\n/
@@ -520,7 +520,7 @@ Mouse_Nade0Stomach
 //----------------------------------
 // 時計なで（さすらいウサギ）
 //----------------------------------
-Mouse_Nade0Clock
+MouseMove0Clock
 {
 	"\1\s[10]\0\s[0]時間が気になるの?\w9\n/
 	でも、\w4教えてあげない。\e"
@@ -531,7 +531,7 @@ Mouse_Nade0Clock
 //----------------------------------
 // リボンなで（White Lolita用）
 //----------------------------------
-Mouse_Nade0ribbon
+MouseMove0ribbon
 {
 	"\1\s[10]\0\s[0]直してくれたの?\w9\n/
 	\s[6]ありがとう。\e"
@@ -541,7 +541,7 @@ Mouse_Nade0ribbon
 //----------------------------------
 // 尻なで
 //----------------------------------
-Mouse_Nade0Hip
+MouseMove0Hip
 {
 	cntEros = cntEros + 5
 	_talk_array = IARRAY
@@ -616,7 +616,7 @@ aryNade0HipFriendCommon : array
 //----------------------------------
 // 足なで
 //----------------------------------
-Mouse_Nade0Leg
+MouseMove0Leg
 {
 	_talk_array = IARRAY
 
@@ -634,7 +634,7 @@ Mouse_Nade0Leg
 }
 
 // 足なで（好感度高・通常・共通）
-Mouse_Nade0LegLoveNormalCommon : nonoverlap {
+MouseMove0LegLoveNormalCommon : nonoverlap {
 	parallel aryNade0LegLoveNormalCommon
 }
 
@@ -667,7 +667,7 @@ aryNade0LegFriendCommon : array
 //----------------------------------
 // 頭ホイール
 //----------------------------------
-Mouse_Wheel0Head
+MouseWheel0Head
 {
 	"\1\s[10]\0\s[1]\w5…\w5…。\e"
 	"\1\s[10]\0\s[7]何するのよっ\w9\e"
@@ -679,7 +679,7 @@ Mouse_Wheel0Head
 //----------------------------------
 // スカートホイール
 //----------------------------------
-Mouse_Wheel0Skirt : nonoverlap
+MouseWheelUp0Skirt : nonoverlap
 {
 	"\1\s[10]\0\s[30]\w9な、\w5\s[31]何するのよっ!\e"
 	"\1\s[10]\0\s[30]\w9\w9\s[31]最悪ね…\w4…\w4\e"
@@ -692,7 +692,7 @@ Mouse_Wheel0Skirt : nonoverlap
 //----------------------------------
 // エプロンホイール
 //----------------------------------
-Mouse_Wheel0Apron : nonoverlap
+MouseWheelUp0Apron : nonoverlap
 {
 	"\1\s[10]\0\s[30]\w9\w9\s[1]な、\w4何をしていのるかしら?\e"
 	"\1\s[10]\0\s[30]\w9\w9\s[9]…\w4…。\e"
@@ -703,7 +703,7 @@ Mouse_Wheel0Apron : nonoverlap
 //----------------------------------
 // スカート(座り)ホイール
 //----------------------------------
-Mouse_Wheel0Skirt_s
+MouseWheelUp0Skirt_s
 {
 	"\1\s[10]\0\s[6]残念だったわね。\w9\e"
 	"\1\s[10]\0\s[6]抑えているのにめくるつもり?\w9\e"
@@ -714,13 +714,13 @@ Mouse_Wheel0Skirt_s
 //----------------------------------
 // 胸ホイール
 //----------------------------------
-Mouse_Wheel0Bust
+/*
+	小さなシェルだとひたすら撫で回す感じ。
+	大きなシェルだとたぷたぷする感じ。
+*/
+
+funcMouseWheel0Bust
 {
-	/*
-		小さなシェルだとひたすら撫で回す感じ。
-		大きなシェルだとたぷたぷする感じ。
-		作業BGMがスーパーカーで爽やかで落差が激しい。
-	 */
 	// えろすカウンタ
 	cntEros = cntEros + 4
 	_talk_array = IARRAY
@@ -749,6 +749,11 @@ Mouse_Wheel0Bust
 	}
 
 	parallel _talk_array
+}
+
+MouseWheel0Bust
+{
+	funcMouseWheel0Bust
 }
 
 // 胸ホイール（好感度高・えろす）
@@ -834,8 +839,11 @@ aryWheel0BustFriendCommon : array
 //----------------------------------
 // 羽ホイール
 //----------------------------------
-Mouse_Wheel0Wing
-{
+Wheel0WingCommon : nonoverlap {
+	parallel aryWheel0WingCommon
+}
+
+aryWheel0WingCommon {
 	"\1\s[10]\0\s[3]引っ張らないで…\w4…\w4。\e"
 	"\1\s[10]\0\s[3]痛いからやめて頂戴。\w9\e"
 	"\1\s[10]\0\s[7]\w9\w5\s[3]引っ張らないで。\w9\e"
@@ -843,10 +851,20 @@ Mouse_Wheel0Wing
 	"\1\s[10]\0\s[6]やめて。\w9\e"
 }
 
+MouseWheelUp0Wing
+{
+	Wheel0WingCommon
+}
+
+MouseWheelDown0Wing
+{
+	Wheel0WingCommon
+}
+
 //----------------------------------
 // 髪ホイール
 //----------------------------------
-Mouse_Wheel0Hair
+MouseWheel0Hair
 {
 	"\1\s[10]\0\s[6]…\w4…\w4どういう扱いを心がけているのかしら?\e"
 	"\1\s[10]\0\s[0]…\w4…\w4\s[6]呆れた。\e"
@@ -857,7 +875,7 @@ Mouse_Wheel0Hair
 //----------------------------------
 // 手ホイール
 //----------------------------------
-Mouse_Wheel0Hand
+MouseWheel0Hand
 {
 	"\1\s[10]\0\s[0]何処かに行くの?\e"
 	"\1\s[10]\0\s[5]手なんかとって、\w4どうしたの?\e"
@@ -869,7 +887,7 @@ Mouse_Wheel0Hand
 //----------------------------------
 // 神秘の領域ホイール
 //----------------------------------
-Mouse_Wheel0Mystic
+MouseWheel0Mystic
 {
 	/* 指入れる感じでどーか */
 	// えろすカウンタ
@@ -944,7 +962,7 @@ aryWheel0MysticFriendCommon : array
 //----------------------------------
 // 神秘の領域ホイール（桃色月用）
 //----------------------------------
-Mouse_Wheel0Xxx
+MouseWheel0Xxx
 {
 	/* 指入れる感じでどーか */
 	// えろすカウンタ
@@ -979,7 +997,7 @@ Mouse_Wheel0Xxx
 //----------------------------------
 // 尻ホイール
 //----------------------------------
-Mouse_Wheel0Hip
+MouseWheel0Hip
 {
 	/* するっと撫でる感じ */
 	// えろすカウンタ
@@ -1057,7 +1075,7 @@ aryWheel0HipFriendCommon : array
 //----------------------------------
 // 足ホイール
 //----------------------------------
-Mouse_Wheel0Leg
+MouseWheel0Leg
 {
 	_talk_array = IARRAY
 
@@ -1075,7 +1093,7 @@ Mouse_Wheel0Leg
 }
 
 // 足ホイール（好感度高・通常・共通）
-Mouse_Wheel0LegLoveNormalCommon : nonoverlap {
+MouseWheel0LegLoveNormalCommon : nonoverlap {
 	parallel aryWheel0LegLoveNormalCommon
 }
 
@@ -1116,15 +1134,15 @@ aryWheel0LegFriendCommon : array
 //----------------------------------
 // どこにもない箇所でメニューオープン
 //----------------------------------
-Mouse_DoubleClick0
+MouseDoubleClick0
 {
-	openMenu
+	OpenMenu
 }
 
 //----------------------------------
 // うさ耳つつき（さすらいウサギ）
 //----------------------------------
-Mouse_DoubleClick0Usamimi
+MouseDoubleClick0Usamimi
 {
 	"\1\s[10]\0\s[6]…\w4…。\e"
 	"\1\s[10]\0\s[6]（耳で指を払う）\e"
@@ -1133,7 +1151,7 @@ Mouse_DoubleClick0Usamimi
 //----------------------------------
 // 猫耳つつき
 //----------------------------------
-Mouse_DoubleClick0Catear
+MouseDoubleClick0Catear
 {
 	"\0\s[0]（耳をぱたぱたと動かした）\e"
 	"\0\s[8]猫パンチと甘噛みのどちらが好みかしら?"
@@ -1142,7 +1160,7 @@ Mouse_DoubleClick0Catear
 //----------------------------------
 // 頭つつき
 //----------------------------------
-Mouse_DoubleClick0Head
+MouseDoubleClick0Head
 {
 	"\1\s[10]\0\s[3]\w5…\w5…。\e"
 	"\1\s[10]\0\s[0]気に障るようなこと言ったかしら?\w9\e"
@@ -1156,7 +1174,7 @@ Mouse_DoubleClick0Head
 //----------------------------------
 // 額つつき
 //----------------------------------
-Mouse_DoubleClick0Brow
+MouseDoubleClick0Brow
 {
 	"\1\s[10]\0\s[2]…\w4…っ\w9\n/
 	\s[6]痛い、\w4わ。\e"
@@ -1171,7 +1189,7 @@ Mouse_DoubleClick0Brow
 //----------------------------------
 // 唇つつき
 //----------------------------------
-Mouse_DoubleClick0Lip
+MouseDoubleClick0Lip
 {
 	_talk_array = IARRAY
 
@@ -1291,7 +1309,7 @@ aryDoubleClick0LipLoveCommon : array
 //----------------------------------
 // 胸つつき
 //----------------------------------
-Mouse_DoubleClick0Bust
+MouseDoubleClick0Bust
 {
 	if basewarename == "斗月"
 	{
@@ -1395,7 +1413,7 @@ aryDoubleClick0BustFriendCommon : array
 //----------------------------------
 // 腹つつき
 //----------------------------------
-Mouse_DoubleClick0Stomach
+MouseDoubleClick0Stomach
 {
 	"\1\s[10]\0\s[4]…\w4…\w4何?\e"
 	"\1\s[10]\0\s[0]万死に値するわ。\e"
@@ -1405,7 +1423,7 @@ Mouse_DoubleClick0Stomach
 //----------------------------------
 // スカートつつき
 //----------------------------------
-Mouse_DoubleClick0Skirt
+MouseDoubleClick0Skirt
 {
 	"\1\s[10]\0\s[0]突付いたりする部分では無いと思うわ。\w9\n…\w4…\w4\s[6]ほかに何かされても対応に困るだけね。\e"
 	"\1\s[10]\0\s[0]突付いても何も無いわよ。\w9\e"
@@ -1417,7 +1435,7 @@ Mouse_DoubleClick0Skirt
 //----------------------------------
 // 時計つつき（さすらいウサギ）
 //----------------------------------
-Mouse_DoubleClick0Clock
+MouseDoubleClick0Clock
 {
 	"\1\s[10]\0\s[0]時計が壊れてしまうわ。\e"
 	"\1\s[10]\0\s[0]時間が知りたいの?\w9\n/
@@ -1427,23 +1445,23 @@ Mouse_DoubleClick0Clock
 //----------------------------------
 // エプロンつつき
 //----------------------------------
-Mouse_DoubleClick0Apron
+MouseDoubleClick0Apron
 {
-	Mouse_DoubleClick0Skirt
+	MouseDoubleClick0Skirt
 }
 
 //----------------------------------
 // スカート（座り）つつき
 //----------------------------------
-Mouse_DoubleClick0Skirt_s
+MouseDoubleClick0Skirt_s
 {
-	Mouse_DoubleClick0Skirt
+	MouseDoubleClick0Skirt
 }
 
 //----------------------------------
 // 羽つつき
 //----------------------------------
-Mouse_DoubleClick0Wing
+MouseDoubleClick0Wing
 {
 	"\1\s[10]\0\s[0]…\w4…\w4痛い。\w9\e"
 	"\1\s[10]\0\s[2]\w9\w5\s[1]むぅ。\w9\e"
@@ -1470,7 +1488,7 @@ Mouse_DoubleClick0Wing
 //----------------------------------
 // 髪つつき
 //----------------------------------
-Mouse_DoubleClick0Hair
+MouseDoubleClick0Hair
 {
 	"\1\s[10]\0\s[6]くしゃくしゃね。\e"
 	"\1\s[10]\0\s[0]減点ものね。\e"
@@ -1483,7 +1501,7 @@ Mouse_DoubleClick0Hair
 //----------------------------------
 // 手つつき
 //----------------------------------
-Mouse_DoubleClick0Hand
+MouseDoubleClick0Hand
 {
 	if cntHead > likelimit {
 		"\1\s[10]\0\s[0]…\w4…\w4\s[6]（ぎゅっ）\w9\n/
@@ -1503,7 +1521,7 @@ Mouse_DoubleClick0Hand
 //----------------------------------
 // 神秘の領域つつき
 //----------------------------------
-Mouse_DoubleClick0Mystic
+MouseDoubleClick0Mystic
 {
 	// えろすカウンタ
 	cntEros = cntEros + 7
@@ -1583,7 +1601,7 @@ aryDoubleClick0MystictFriendCommon : array
 //----------------------------------
 // 神秘の領域つつき（桃色月用）
 //----------------------------------
-Mouse_DoubleClick0xxx
+MouseDoubleClick0xxx
 {
 	// えろすカウンタ
 	cntEros = cntEros + 7
@@ -1617,7 +1635,7 @@ Mouse_DoubleClick0xxx
 //----------------------------------
 // へそつつき
 //----------------------------------
-Mouse_DoubleClick0Navel
+MouseDoubleClick0Navel
 {
 	if GetShellnameEx != "月白"
 	{
@@ -1633,7 +1651,7 @@ Mouse_DoubleClick0Navel
 //----------------------------------
 // リボンつつき（シェル「White Lolita」用）
 //----------------------------------
-Mouse_DoubleClick0ribbon
+MouseDoubleClick0ribbon
 {
 	"\1\s[10]\0\s[0]解こうとしないでちょうだい。\e"
 	"\1\s[10]\0\s[0]興味があるなら、\w4あなたもつけてみる?\w9\n/
@@ -1643,7 +1661,7 @@ Mouse_DoubleClick0ribbon
 //----------------------------------
 // 尻つつき
 //----------------------------------
-Mouse_DoubleClick0Hip
+MouseDoubleClick0Hip
 {
 	// えろすカウンタ
 	cntEros = cntEros + 5
@@ -1725,7 +1743,7 @@ aryDoubleClick0HipFriendCommon : array
 //----------------------------------
 // 足つつき
 //----------------------------------
-Mouse_DoubleClick0Leg
+MouseDoubleClick0Leg
 {
 	_talk_array = IARRAY
 

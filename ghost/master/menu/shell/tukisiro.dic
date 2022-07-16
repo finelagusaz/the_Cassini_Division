@@ -1,0 +1,81 @@
+//------------------------------------
+// 月白
+//------------------------------------
+Menu_Tukisiro
+{
+	"\n[half]"
+	--
+	if (TukisiroSurfaceMode != 1000 && TukisiroOsuwariMode != 0) {
+		AYATEMPLATE.MenuItem("座る", "Menu_TukisiroSit")
+	}
+	--
+	if TukisiroSurfaceMode != 1000 && TukisiroOsuwariMode != 1 {
+		AYATEMPLATE.MenuItem("タイトルバーに座る", "Menu_TukisiroSitA")
+	}
+	--
+	if TukisiroSurfaceMode != 1000 && TukisiroOsuwariMode != 2 {
+		AYATEMPLATE.MenuItem("タスクバーに座る", "Menu_TukisiroSitF")
+	}
+	--
+	if TukisiroSurfaceMode != 0 && TukisiroOsuwariMode != 0 {
+		AYATEMPLATE.MenuItem("立つ", "Menu_TukisiroStand")
+	}
+	--
+	"\n[half]"
+}
+
+// 立ち
+Menu_TukisiroStand {
+	// FIXME なんか怪しい
+	SurfaceModeChangeEx(0, 0)
+	OsuwariStop
+	if TukisiroSurfaceMode == 3000 {
+		"\1\s[10]\0\s[1]…\w4…。\e"
+		"\1\s[10]\0\s[0]…\w4…\w4はぁ。\e"
+	}
+	else {
+		"\1\s[10]\0\s[0]わかったわ。\e"
+	}
+}
+
+// 座り
+Menu_TukisiroSit {
+	SurfaceModeChangeEx(1000, 0)
+	OsuwariStop
+	"\1\s[10]\0\s[0]座らせてもらうわ。\e"
+}
+
+// 座り
+Menu_TukisiroSitA {
+	SurfaceModeChangeEx(1000, 1)
+	OsuwariStart
+	"\1\s[10]\0\s[0]座らせてもらうわ。\e"
+}
+
+// 座り
+Menu_TukisiroSitF {
+	SurfaceModeChangeEx(1000, 2)
+	OsuwariStart
+	"\1\s[10]\0\s[0]座らせてもらうわ。\e"
+}
+
+// 月白/たくし上げ
+Menu_TukisiroTuckup {
+	if flgLove == 1 && TukisiroSurfaceMode !=3000 && GetShellnameEx == "月白"  {
+		TukisiroSurfaceMode = 3000
+		"\1\s[10]\0\s[1]…\w4…\w4恥ずかしい、\w4わ。\e"
+		"\1\s[10]\0\s[6]…\w4…。\e"
+		"\1\s[10]\0\s[1]…\w4…ん。\e"
+		"\1\s[10]\0\s[1]ん\w4…\w4…。\s[6]\e"
+	}
+	else {
+		"\1\s[10]\0\s[0]…\w4…\w4断るわ。\e"
+		"\1\s[10]\0\s[6]やると、\w4思った?\e"
+	}
+}
+
+Menu_TukisiroTuckdown {
+	SurfaceModeChangeEx(0, 0)
+	"\1\s[10]\0\s[1]はぁ\w4…\w4…。\e"
+	"\1\s[10]\0\s[1]…\w4…。\e"
+}

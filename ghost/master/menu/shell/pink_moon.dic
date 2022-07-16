@@ -1,0 +1,33 @@
+//------------------------------
+//桃色月
+//------------------------------
+Menu_PinkMoon
+{
+	"\n[half]"
+	--
+	if PinkMoonSurfaceMode != 0 {
+		AYATEMPLATE.MenuItem("スリットドレス", "Menu_PmSlit")
+	}
+	--
+	if PinkMoonSurfaceMode != 1000 { 
+		AYATEMPLATE.MenuItem("ワンピース", "Menu_PmOp")
+	}
+	--
+	"\n[half]"
+}
+
+// スリットドレス
+Menu_PmSlit
+{
+	SurfaceModeChangeEx(0, 0);
+	--
+	"\0\s[0]ん?\e"
+}
+
+// ワンピース
+Menu_PmOp
+{
+	SurfaceModeChangeEx(1000, 0);
+	--
+	"\0\s[0]そう。\e"
+}

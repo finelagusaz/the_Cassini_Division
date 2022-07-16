@@ -1,0 +1,49 @@
+//---------------------------
+// 月光浴
+//---------------------------
+Menu_MoonlightBlue
+{
+	"\n\n[half]"
+	--
+	if MoonlightBlueSurfaceMode != 0 {
+		AYATEMPLATE.MenuItem("ロングスカート", "Menu_MbNormal")
+	}
+	--
+	if MoonlightBlueSurfaceMode != 2000 {
+		AYATEMPLATE.MenuItem("ショートスカート", "Menu_MbShort")
+	}
+	--
+	if MoonlightBlueSurfaceMode != 1000 {
+		AYATEMPLATE.MenuItem("スクール水着", "Menu_MbSwimming")
+	}
+	--
+	if MoonlightBlueSurfaceMode != 3000 {
+		AYATEMPLATE.MenuItem("ビキニ", "Menu_MbBikini")
+	}
+	--
+	"\n[half]"
+}
+
+// 普段着
+Menu_MbNormal {
+	SurfaceModeChangeEx(0, 0)
+	"\1\s[10]\0\s[6]ん。\e"
+}
+// ショートスカート
+Menu_MbShort {
+	SurfaceModeChangeEx(2000, 0)
+	"\1\s[10]\0\s[0]…\w4…。\w9\n/
+	\s[6]少し、\w4落ち着かないわね。\e"
+}
+
+// スクール水着
+Menu_MbSwimming {
+	SurfaceModeChangeEx(1000, 0)
+	"\1\s[10]\0\s[1]少し恥ずかしいわ。\e"
+}
+// ビキニ
+Menu_MbBikini {
+	SurfaceModeChangeEx(3000, 0)
+	"\1\s[10]\0\s[0]どう、\w4\s[5]似合う?\w9\w9\n/
+	\s[0]なんてね。\e"
+}

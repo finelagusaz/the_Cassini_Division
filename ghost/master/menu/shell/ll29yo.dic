@@ -1,0 +1,34 @@
+//------------------------------
+// ll29yo
+//------------------------------
+Menu_Ll29yo
+{
+	"\n[half]"
+	--
+	if Ll29yoSurfaceMode != 0 {
+		AYATEMPLATE.MenuItem("私服", "Menu_Ll29yoNormal")
+	}
+	--
+	if Ll29yoSurfaceMode != 1000 {
+		AYATEMPLATE.MenuItem("メイド服", "Menu_Ll29yoMaid")
+	}
+	--
+	"\n[half]"
+}
+
+// 私服
+Menu_Ll29yoNormal
+{
+	SurfaceModeChangeEx(0, 0);
+	--
+	"\0\s[0]着替えてくるわ。\e"
+}
+
+// メイド
+Menu_Ll29yoMaid
+{
+	SurfaceModeChangeEx(1000, 0);
+	--
+	"\0\s[0]これでいいのかしら、\w4ご主人様。\w9\n/
+	\s[5]なんて、ね。\e"
+}
