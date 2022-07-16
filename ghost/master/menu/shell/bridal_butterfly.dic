@@ -10,7 +10,7 @@ Menu_BridalButterfly
 	}
 	--
 	if BridalButterflySurfaceMode != 1000 {
-		AYATEMPLATE.MenuItem("ビスチェ,Menu_BbBustier")
+		AYATEMPLATE.MenuItem("ビスチェ", "Menu_BbBustier")
 	}
 	--
 	"\n[half]"
