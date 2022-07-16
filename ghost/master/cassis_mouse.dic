@@ -210,7 +210,12 @@ MouseMove0Bust
 	else
 	{
 		// 胸の大きなシェル向け
-		if GetShellnameEx == "月光浴" || GetShellnameEx == "純白" || GetShellnameEx == "瑠璃" || GetShellnameEx == "桜吹雪" || GetShellnameEx == "あの青い夏"
+		if GetShellnameEx == "月光浴" || \
+		   GetShellnameEx == "純白" || \
+		   GetShellnameEx == "瑠璃" || \
+		   GetShellnameEx == "桜吹雪" || \
+		   GetShellnameEx == "あの青い夏" || \
+		   GetShellnameEx == "青い天使"
 		{
 			_talk_array ,= aryNade0BustFriendGlamourous
 		}
