@@ -1513,7 +1513,15 @@ MouseDoubleClick0Hand
 //----------------------------------
 // 神秘の領域つつき
 //----------------------------------
-MouseDoubleClick0Mystic
+MouseDoubleClick0Mystic {
+	funcMouseDoubleClick0Mystic
+}
+
+MouseDoubleClick0xxx {
+	funcMouseDoubleClick0Mystic
+}
+
+funcMouseDoubleClick0Mystic : nonoverlap
 {
 	// えろすカウンタ
 	cntEros = cntEros + 7
@@ -1545,10 +1553,6 @@ MouseDoubleClick0Mystic
 }
 
 // 神秘の領域つつき（好感度高・えろす・共通）
-DoubleClick0MysticLoveErosCommon : nonoverlap {
-	parallel aryDoubleClick0MysticLoveErosCommon
-}
-
 aryDoubleClick0MysticLoveErosCommon : array
 {
 	"\1\s[10]\0\s[1]ん、\w4はぅ。\w9\n/
@@ -1560,10 +1564,6 @@ aryDoubleClick0MysticLoveErosCommon : array
 }
 
 // 神秘の領域つつき（好感度高・通常・共通）
-DoubleClick0MysticLoveNormalCommon : nonoverlap
-{
-	parallel aryDoubleClick0MysticLoveNormalCommon
-}
 
 aryDoubleClick0MysticLoveNormalCommon : array
 {
@@ -1576,11 +1576,6 @@ aryDoubleClick0MysticLoveNormalCommon : array
 }
 
 // 神秘の領域つつき（好感度通常・共通）
-DoubleClick0MystictFriendCommon : nonoverlap
-{
-	parallel aryDoubleClick0MystictFriendCommon
-}
-
 aryDoubleClick0MystictFriendCommon : array
 {
 	"\1\s[10]\0\s[8]何処に触れてるのかしら?\e"
@@ -1588,40 +1583,6 @@ aryDoubleClick0MystictFriendCommon : array
 	"\1\s[10]\0\s[6]……。\e"
 	"\1\s[10]\0\s[0]何を望んでいるのかしら?\e"
 	"\1\s[10]\0\s[6]その先に行く勇気はあるのかしら?\e"
-}
-
-//----------------------------------
-// 神秘の領域つつき（桃色月用）
-//----------------------------------
-MouseDoubleClick0xxx
-{
-	// えろすカウンタ
-	cntEros = cntEros + 7
-	_talk_array = IARRAY
-
-	// 好感度高
-	if flgLove == 1 {
-		if cntEros > 70
-		{
-			eventOrgMystic
-		}
-		elseif cntEros > 50
-		{
-			_talk_array ,= aryDoubleClick0MysticLoveErosCommon
-			_talk_array ,= aryCommonErosSerif
-		}
-		else
-		{
-			_talk_array ,= aryDoubleClick0MysticLoveNormalCommon
-		}
-	}
-	// 好感度通常
-	else
-	{
-		_talk_array ,= aryDoubleClick0MystictFriendCommon
-	}
-
-	parallel _talk_array
 }
 
 //----------------------------------
@@ -1689,10 +1650,6 @@ MouseDoubleClick0Hip
 	・当人としては部位が部位だけに困惑している。
 	・ユーザが望むがゆえに応じてはいるが……
 */
-DoubleClick0HipLoveErosCommon : nonoverlap {
-	parallel aryDoubleClick0HipLoveErosCommon
-}
-
 aryDoubleClick0HipLoveErosCommon : array
 {
 	"\1\s[10]\0\s[1]あう、\w4ど、\w4どうして\w4…\w4…?\e"
@@ -1706,10 +1663,6 @@ aryDoubleClick0HipLoveErosCommon : array
 }
 
 // 尻つつき（好感度高・通常・共通）
-DoubleClick0HipLoveNormalCommon : nonoverlap {
-	parallel aryDoubleClick0HipLoveNormalCommon
-}
-
 aryDoubleClick0HipLoveNormalCommon : array
 {
 	"\1\s[10]\0\s[1]ひゃう!\e"
@@ -1720,10 +1673,6 @@ aryDoubleClick0HipLoveNormalCommon : array
 }
 
 // 尻つつき（好感度通常・共通）
-DoubleClick0HipFriendCommon : nonoverlap {
-	parallel aryDoubleClick0HipFriendCommon
-}
-
 aryDoubleClick0HipFriendCommon : array
 {
 	"\1\s[10]\0\s[1]…\w4…\w4何を考えているの?\e"
@@ -1753,10 +1702,6 @@ MouseDoubleClick0Leg
 }
 
 // 足つつき（好感度高・通常・共通）
-DoubleClick0LegLoveNormalCommon : nonoverlap {
-	parallel aryDoubleClick0LegLoveNormalCommon
-}
-
 aryDoubleClick0LegLoveNormalCommon : array
 {
 	"\1\s[10]\0\s[2]ひゃうっ!?\w9\n/
@@ -1769,10 +1714,6 @@ aryDoubleClick0LegLoveNormalCommon : array
 }
 
 // 足つつき（好感度通常・共通）
-DoubleClick0LegFriendCommon : nonoverlap {
-	parallel aryDoubleClick0LegFriendCommon
-}
-
 aryDoubleClick0LegFriendCommon : array
 {
 	"\1\s[10]\0\s[1]くすぐったいわ。\e"
@@ -1787,7 +1728,9 @@ aryDoubleClick0LegFriendCommon : array
 // 共通反応
 //----------------------------------
 CommonErosSerif : nonoverlap {
-	parallel aryCommonErosSerif
+	_talk_array = IARRAY
+	_talk_array = aryCommonErosSerif
+	parallel _talk_array
 }
 
 aryCommonErosSerif : array
