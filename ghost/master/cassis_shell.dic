@@ -1,3 +1,30 @@
+//OnNotifySelfInfo
+//シェル名を取得してshellnameへ
+OnNotifySelfInfo
+{
+	getWingStatus
+	--
+	shellname = reference[3]
+}
+
+// 胸のサイズ取得
+getBustSize {
+	case shellname {
+		when "Fly High!", "ll20yo", "あの青い夏", "夏季休業", "月光浴", "月夜のうさぎ", "桃色月", "桜吹雪", "純白", "薄ピンク（試作）", "青い天使" {
+			"large"
+		}
+		when "Gemini", "さすらいウサギ", "バニスさん", "プラジャーパティ", "マジカル☆カシス", "新月", "月白", "瑠璃" {
+			"middle"
+		}
+		when "Alternative - Cassis", "Bridal Butterfly", "Whit Days Actress" {
+			"small"
+		}
+		others {
+			"flat"
+		}
+	}
+}
+
 //==== サーフィス値加算関数 ============================================================
 //シェル判定部分
 SurfaceModeChange

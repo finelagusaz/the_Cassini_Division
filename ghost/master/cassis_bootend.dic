@@ -648,12 +648,3 @@ OnWindowStateRestore
 		"\1\s[10]\0\s[6]私なんかといるのが知られたら、\w4後々が面倒そうね。\e"
 	//}
 }
-
-//OnNotifySelfInfo
-//シェル名を取得してshellnameへ
-OnNotifySelfInfo
-{
-	getWingStatus
-	--
-	shellname = reference[3]
-}
