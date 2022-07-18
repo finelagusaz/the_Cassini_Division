@@ -14,10 +14,10 @@ OnKeyPress
 			OpenMenu
 		}
 		when "c" {
-			Menu_Communicate
+			Menu_COMMUNICATE
 		}
 		when "d" {
-			Menu_Command
+			Menu_COMMAND
 		}
 		when "a" {
 			StartCommunicate
