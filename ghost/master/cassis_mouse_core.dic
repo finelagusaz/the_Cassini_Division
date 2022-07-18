@@ -90,7 +90,7 @@ EMGetPrefix
 OnMouseClickEx
 {
 	_prefix = EMGetPrefix
-	_name = "%(_prefix)_ClickEx%(reference[3])%(reference[4])"
+	_name = "%(_prefix)ClickEx%(reference[3])%(reference[4])"
 
 	_script = EMMouseHitExec(_name)
 	if STRLEN(_script) != 0 {
@@ -98,5 +98,5 @@ OnMouseClickEx
 		return
 	}
 
-	EVAL("%(_prefix)_ClickEx%(reference[3])")
+	EVAL("%(_prefix)ClickEx%(reference[3])")
 }
