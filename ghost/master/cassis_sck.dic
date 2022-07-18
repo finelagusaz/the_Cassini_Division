@@ -14,7 +14,7 @@ OnKeyPress
 			OpenMenu
 		}
 		when "c" {
-			Menu_COMMUNICATE
+			Menu_COMMUNICATEOPEN
 		}
 		when "d" {
 			Menu_COMMAND
