@@ -11,16 +11,16 @@ OnNotifySelfInfo
 getBustSize {
 	case shellname {
 		when "Fly High!", "ll20yo", "あの青い夏", "夏季休業", "月光浴", "月夜のうさぎ", "桃色月", "桜吹雪", "純白", "薄ピンク（試作）", "青い天使" {
-			"tier1"
+			"large"
 		}
 		when "Gemini", "さすらいウサギ", "バニスさん", "プラジャーパティ", "マジカル☆カシス", "新月", "月白", "瑠璃" {
-			"tier2"
+			"middle"
 		}
 		when "Alternative - Cassis", "Bridal Butterfly", "Whit Days Actress" {
-			"tier3"
+			"small"
 		}
 		others {
-			"tier4"
+			"flat"
 		}
 	}
 }
