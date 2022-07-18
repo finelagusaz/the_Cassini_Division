@@ -1600,3 +1600,69 @@ eventSakOrgHip
 	}
 
 }
+
+//-----------------------------
+// コア処理
+//-----------------------------
+// へちぃフェイズ計算
+calcErosPhase
+{
+	// 好感度制限
+	if cntHead > likelimit
+	{
+		// えろすカウンタ
+		cntEros = cntEros + _argv[0]
+
+		// 20以上50未満 フェイズ1
+		if cntEros >= 20 && cntEros < 50 && flgLove == 1 {
+			1
+		}
+		// 50以上100未満 フェイズ2
+		elseif cntEros >= 50 && cntEros < 100 && flgLove == 1 {
+			2
+		}
+		// 100以上 フェイズ3
+		elseif cntEros >= 100 && flgLove == 1 {
+			3
+		}
+		// それ以外 通常
+		else {
+			0
+		}
+	}
+	else
+	{
+		"n"
+	}
+}
+
+// 【桜吹雪】サーフェス値加算時間判定
+SakurafubukiShiftBase
+{
+	if flgSakurafubukiShift != 0 {
+		if hour >= 6 && hour <= 18 {
+			SakurafubukiBase = 0;
+		} else {
+			SakurafubukiBase = 20000;
+		}
+	}
+}
+
+// 【桜吹雪】サーフェス値加算フェイズ判定
+SakurafubukiShiftPhase
+{
+	// スカートめくり
+	if (SakurafubukiPhase < 1000) && (_argv[0] == "skirt")
+	{
+		SakurafubukiPhase = 1000;
+	}
+	// 裸
+	elseif (SakurafubukiPhase >= 1000) && (SakurafubukiPhase < 2000) && (_argv[0] == "hadaka") {
+		SakurafubukiPhase = 2000;
+	}
+	// 濡
+	elseif (SakurafubukiPhase >= 1000) && ( SakurafubukiPhase < 3000) && (_argv[0] == "org")
+	{
+		SakurafubukiPhase = SakurafubukiPhase + 2000;
+	}
+}
