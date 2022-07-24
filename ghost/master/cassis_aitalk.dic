@@ -86,6 +86,9 @@ RandomTalkEx : nonoverlap
 	when "ll29yo" {
 		_talk_array ,= aryShellLl29yoTalk
 	}
+	when "青い天使" {
+		_talk_array ,= aryShellBlueAngelTalk
+	}
 	}
 
 	//----------------------------------------
@@ -4672,7 +4675,21 @@ aryShellSummerSkyTalk : array {
 	if _seasonslot == "夏" {
 		'\1\s[10]\0\s[4]どうして、\w4こうも暑いのかしら。\w9\n/
 		\s[6]湿度が低ければ過ごしやすいのでしょうけど。\e'
+		'\1\s[10]\0\s[0]プールの授業でもあれば、\w4少しは涼しくなるのかしらね。\e'
 	}
+}
+
+// 青い天使
+ShellBlueAngel : nonoverlap {
+	parallel aryShellBlueAngelTalk
+}
+
+aryShellBlueAngelTalk : array {
+	'\1\s[10]\0\s[0]あなたは何処まで潜れるかしら?\e'
+	'\1\s[10]\0\s[0]潜ろうと思えば、\w4何処までも潜っていけるわ。\w9\n/
+	光の届かない深海までだって。\e'
+	'\1\s[10]\0\s[0]潜るときは、\w4私から離れないことね。\e'
+	'\1\s[10]\0\s[6]この羽も見た目よりもずっと軽いのよ。\e'
 }
 
 //-----------------------
@@ -4750,6 +4767,7 @@ arySummerTalk : array
 	'\1\s[10]\0\s[0]…\w4…\w4はやく、\w4涼しくならないかしら?\e'
 	'\1\s[10]\0\s[0]夕立はどこへ行ってしまったのかしら?\e'
 	'\1\s[10]\0\s[6]イクサイスになるのも悪くなさそうね\w4…\w4…。\e'
+	'\1\s[10]\0\s[6]都市空調のひとつふたつ作ってもいいでしょうに。\e'
 }
 
 // 季節トーク：秋
