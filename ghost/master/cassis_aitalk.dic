@@ -22,6 +22,12 @@ OnTranslate
 }
 
 //**** ランダムトーク *******************************************************************
+/*
+	書き方参考
+	https://nobml.hatenablog.jp/entry/20101213/1292174411
+	https://ponapalt.hatenablog.com/entry/20101225/1291723187
+*/
+
 RandomTalk
 {
     TOSTR(EVAL(CHR(0x22)+RandomTalkEx()+CHR(0x22)))
@@ -34,10 +40,6 @@ RandomTalkEx : nonoverlap
 
 	_timeslot = GetTimeSlot // 時間帯取得
 	_seasonslot = GetSeasonSlot // 季節取得
-
-	//----------------------------------------
-	// 時間帯ごとのトーク
-	//----------------------------------------
 
 	//----------------------------------------
 	// 季節ごとのトーク
@@ -83,8 +85,14 @@ RandomTalkEx : nonoverlap
 	when "Gemini" {
 		_talk_array ,= aryShellGeminiTalk
 	}
+	when "マジカル☆カシス" {
+		_talk_array ,= aryShellMagicalCassisTalk
+	}
 	when "ll29yo" {
 		_talk_array ,= aryShellLl29yoTalk
+	}
+	when "あの青い夏" {
+		_talk_array ,= aryShellSummerSkyTalk
 	}
 	when "青い天使" {
 		_talk_array ,= aryShellBlueAngelTalk
@@ -103,6 +111,9 @@ RandomTalkEx : nonoverlap
 		_talk_array ,= aryFriendTalk
 	}
 
+	//----------------------------------------
+	// 羽種類別
+	//----------------------------------------
 	if (flgWing == 1 || flgWing == 2) {
 		_talk_array ,= aryWingTalk
 	}

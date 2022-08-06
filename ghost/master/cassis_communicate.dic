@@ -1668,7 +1668,7 @@ comTwitter {
 
 // いってきます。
 comBye {
-	if flgLive == "1" {
+	if flgLove == "1" {
 		"\1\s[10]\0\s[1]はやく、\w4帰ってきて、\w4ね?\w9\w9\w9\n/
 		\s[6]冗談よ。\w9\n/
 		\s[0]いってらっしゃい、\w4気を付けて。"
@@ -1763,6 +1763,7 @@ comSumTalk
 	Gemini固有トーク（フェーズ2）：  %(ARRAYSIZE(aryShellGeminiLoveTalk))\n/
 	マジカル☆カシス固有トーク: %(ARRAYSIZE(aryShellMagicalCassisTalk))\n/
 	あの青い夏固有トーク: %(ARRAYSIZE(aryShellSummerSkyTalk))\n/
+	青い天使固有トーク: %(ARRAYSIZE(aryShellBlueAngelTalk))\n/
 	\n合計: %(ARRAYSIZE(aryWingTalk) + /
 	ARRAYSIZE(aryNormalTalk) + /
 	ARRAYSIZE(arySpringTalk) + /
@@ -1778,7 +1779,8 @@ comSumTalk
 	ARRAYSIZE(aryShellGeminiTalk) + /
 	ARRAYSIZE(aryShellGeminiTalk) + /
 	ARRAYSIZE(aryShellMagicalCassisTalk) + /
-	ARRAYSIZE(aryShellSummerSkyTalk) /
+	ARRAYSIZE(aryShellSummerSkyTalk) + /
+	ARRAYSIZE(aryShellBlueAngelTalk) /
 	)/
 	\e"
 }
