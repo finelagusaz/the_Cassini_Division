@@ -416,17 +416,16 @@ GetShellnameEx
 	// ジェミニ
 	if shellname == "Gemini"
 	{
-		if GeminiSurfaceMode == 2000 || GeminiSurfaceMode == 5000
-		{
-			"Gemini"
-		}
-		elseif GeminiSurfaceMode == 0 || GeminiSurfaceMode == 3000
-		{
-			"Pollux"
-		}
-		elseif GeminiSurfaceMode == 1000 || GeminiSurfaceMode == 4000
-		{
-			"Castor"
+		case GeminiSurfaceMode {
+			when 0, 3000 {
+				"Pollux"
+			}
+			when 1000, 4000 {
+				"Castor"
+			}
+			when 2000, 5000{
+				"Gemini"
+			}
 		}
 	}
 	else

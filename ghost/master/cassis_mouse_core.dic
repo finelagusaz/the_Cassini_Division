@@ -57,19 +57,18 @@ EMMouseHitExec
 	}
 }
 
-// FIXME: シェルの判定を共通処理にする
 EMGetPrefix
 {
 	if sender == 'The Hand' {
 		'TheHandMouse'
 	}
 	elseif shellname == 'Gemini' {
-		case GeminiSurfaceMode
+		case GetShellnameEx
 		{
-			when 1000, 4000 {
+			when 'Castor' {
 				'CastorMouse'
 			}
-			when 2000, 5000 {
+			when 'Gemini' {
 				'GeminiMouse'
 			}
 			others {
