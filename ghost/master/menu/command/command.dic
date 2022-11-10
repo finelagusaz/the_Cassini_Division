@@ -37,9 +37,13 @@ Menu_COMMANDACTION
 {
 	"\1\s[10]\0\s[0]\b[2]\_q/
 	【行動】\n/
-	\_a[comFood]「何か食べたい」\_a\n/
-	\_a[comTewonigiru]「手を握る」\_a\n/
-	\_a[comDakishimeru]「抱きしめる」\_a\n/
+	\_a[comFood]「何か食べたい」\_a\n"
+	--
+	if shellname != 'Gemini' {
+		"\_a[comTewonigiru]「手を握る」\_a\n"
+	}
+	--
+	"\_a[comDakishimeru]「抱きしめる」\_a\n/
 	\_a[comLove]「愛をささやく」\_a\n/
 	\_a[comCassis]「名前を呼ぶ」\_a\n/
 	\_a[comArigato]「礼を言う」\_a\n/

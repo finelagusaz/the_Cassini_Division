@@ -1495,7 +1495,7 @@ comDakishimeru {
 }
 
 comTewonigiru {
-	Mouse_DoubleClick0Hand
+	MouseDoubleClick0Hand
 }
 
 // 応援して
