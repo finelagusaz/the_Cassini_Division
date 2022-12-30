@@ -727,10 +727,10 @@ getWingStatus
 {
 	case shellname {
 		// 鳥の羽以外の形状
-		when "master", "Alternative - Cassis", "Eternity Black", "White Days Actress", "White Lolita", "スプートニクを探して", "拡大鏡", "蒼月", "銀色","Gemini","桜吹雪","マジカル☆カシス", "Fly High!","新月"
+		when "master", "Alternative - Cassis", "Eternity Black", "White Days Actress", "White Lolita", "スプートニクを探して", "拡大鏡", "蒼月", "銀色","Gemini","桜吹雪","マジカル☆カシス", "Fly High!","新月", "あの青い夏"
 			flgWing = 1
 		// 鳥の羽
-		when "純白","瑠璃","月白","プラジャーパティ","桃色月","さすらいウサギ","ほわいときゃっと"
+		when "あの淡い冬", "純白","瑠璃","月白","プラジャーパティ","桃色月","さすらいウサギ","ほわいときゃっと"
 			flgWing = 2
 		// それ以外
 		others {
