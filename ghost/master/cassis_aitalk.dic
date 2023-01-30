@@ -91,8 +91,8 @@ RandomTalkEx : nonoverlap
 	when "ll29yo" {
 		_talk_array ,= aryShellLl29yoTalk
 	}
-	when "あの青い夏" {
-		_talk_array ,= aryShellSummerSkyTalk
+	when "あの青い夏", "あの淡い冬" {
+		_talk_array ,= aryThatSeasonTalk
 	}
 	when "青い天使" {
 		_talk_array ,= aryShellBlueAngelTalk
@@ -4670,12 +4670,12 @@ aryShellLl29yoTalk : array {
 	成長も老いも、\w4ね。\e'
 }
 
-// あの青い夏
-ShellSummerSky : nonoverlap {
-	parallel aryShellSummerSkyTalk
+// あの青い夏 / あの淡い冬
+ThatSeason : nonoverlap {
+	parallel aryThatSeasonTalk
 }
 
-aryShellSummerSkyTalk : array {
+aryThatSeasonTalk : array {
 	_seasonslot = GetSeasonSlot // 季節取得
 
 	"\1\s[10]\0\s[0]学校の屋上にあるプールは防火水槽の役割も兼ねているそうよ。\e"
@@ -4689,14 +4689,21 @@ aryShellSummerSkyTalk : array {
 	先生のほうが折れて、実際にやらないまま終わるの。\w9\n/
 	\s[6]その度胸を別のものに使えないのかしら?\e'
 	'\1\s[10]\0\s[0]学校で専用のタブレットを使っているの。\w9\n/
-	思いのほか、性能が良くて、制限も申請すれば解除される。\w9\n/
+	思いのほか、\w4性能が良くて、\w4制限も申請すれば解除される。\w9\n/
 	ゲームも短い時間なら遊んでいいみたい。\w9\n/
 	\s[6]きっと、\w4興味を持たせたいのでしょうね。\e'
 
-	if _seasonslot == "夏" {
-		'\1\s[10]\0\s[4]どうして、\w4こうも暑いのかしら。\w9\n/
-		\s[6]湿度が低ければ過ごしやすいのでしょうけど。\e'
-		'\1\s[10]\0\s[0]プールの授業でもあれば、\w4少しは涼しくなるのかしらね。\e'
+	case _seasonslot {
+		when "夏" {
+			'\1\s[10]\0\s[4]どうして、\w4こうも暑いのかしら。\w9\n/
+			\s[6]湿度が低ければ過ごしやすいのでしょうけど。\e'
+			'\1\s[10]\0\s[0]プールの授業でもあれば、\w4少しは涼しくなるのかしらね。\e'
+		}
+		when "冬" {
+			'\1\s[10]\0\s[0]お洒落は我慢というけれど、\w4限界を感じるわ。\e'
+			'\1\s[10]\0\s[0]教室に暖房があってありがたいわ。\w9\n/
+			なかったら、\w4と考えるとちょっと困るわね。\e'
+		}
 	}
 }
 
