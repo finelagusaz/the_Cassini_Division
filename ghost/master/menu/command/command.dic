@@ -47,7 +47,8 @@ Menu_COMMANDACTION
 	\_a[comLove]「愛をささやく」\_a\n/
 	\_a[comCassis]「名前を呼ぶ」\_a\n/
 	\_a[comArigato]「礼を言う」\_a\n/
-	\_a[comGomen]「謝る」\_a\n"
+	\_a[comGomen]「謝る」\_a\n/
+	\_a[comAtamanadete]「頭撫でて」\_a\n"
 	--
 	if cntHead > likelimit
 	{
