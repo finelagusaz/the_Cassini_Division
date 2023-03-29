@@ -104,6 +104,10 @@ SurfaceModeChange
 		SurfaceMode = "%(MagicalCassisSurfaceMode)"
 		flgNoSfcnv  = 0
 	}
+	elseif shellname == "空后 / Himmel Königin" {
+		SurfaceMode = "%(HimmelKoniginSurfaceMode)"
+		flgNoSfcnv  = 0
+	}
 	else
 	{
 		SurfaceMode = 0
@@ -330,6 +334,21 @@ OsuwariStart
 			{
 				OsuwariStop
 			}
+		} when "空后 / Himmel Königin" {
+			if HimmelKoniginOsuwariMode == 1
+			{
+				// TODO: 座標調整
+				_dmy = FUNCTIONEX("osuwari.dll","START",sakurahwnd,"ACTIVE","TR",80,-260,190,"XMOVE","BOTTOM WORKAREA");
+			}
+			elseif HimmelKoniginOsuwariMode == 2
+			{
+				// TODO: 座標調整
+				_dmy = FUNCTIONEX("osuwari.dll","START",sakurahwnd,"FIX","TR",80,-260,200,"XMOVE,NOCLIP","BOTTOM WORKAREA");
+			}
+			else
+			{
+				OsuwariStop
+			}
 		} others {
 			OsuwariStop
 		}
@@ -406,6 +425,10 @@ SurfaceModeChangeEx
 		when "マジカル☆カシス" {
 			MagicalCassisSurfaceMode = _argv[0]
 			MagicalCassisOsuwariMode = _argv[1]
+		}
+		when "空后 / Himmel Königin" {
+			HimmelKoniginSurfaceMode = _argv[0]
+			HimmelKoniginOsuwariMode = _argv[1]
 		}
 	}
 }
