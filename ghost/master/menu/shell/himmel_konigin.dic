@@ -1,0 +1,43 @@
+//------------------------------
+// 空后 / Himmel Königin
+//------------------------------
+Menu_HimmelKonigin
+{
+	"\n[half]"
+	--
+	AYATEMPLATE.MenuItem("座る", "Menu_HimmelKoniginSit")
+	--
+	AYATEMPLATE.MenuItem("タイトルバーに座る", "Menu_HimmelKoniginSitA")
+	--
+	AYATEMPLATE.MenuItem("タスクバーに座る", "Menu_HimmelKoniginSitF")
+	--
+	if (HimmelKoniginSurfaceMode != 0) {
+		AYATEMPLATE.MenuItem("立つ", "Menu_HimmelKoniginStand")
+	}
+	--
+	"\n[half]"
+}
+
+Menu_HimmelKoniginStand {
+	SurfaceModeChangeEx(0, 0)
+	OsuwariStop
+	"\1\s[10]\0\s[0]ん。\w9\e"
+}
+
+Menu_HimmelKoniginSit {
+	SurfaceModeChangeEx(1000, 0)
+	OsuwariStop
+	"\1\s[10]\0\s[6]座らせてもらうわ。\w9\e"
+} 
+
+Menu_HimmelKoniginSitA {
+	SurfaceModeChangeEx(1000, 1)
+	OsuwariStart
+	"\1\s[10]\0\s[6]座らせてもらうわ。\w9\e"
+}
+
+Menu_HimmelKoniginSitF {
+	SurfaceModeChangeEx(1000, 2)
+	OsuwariStart
+	"\1\s[10]\0\s[6]座らせてもらうわ。\w9\e"
+}
