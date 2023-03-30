@@ -201,8 +201,13 @@ MouseMove0Bust : nonoverlap {
 		}
 		// えろす
 		elseif cntEros > 40 {
-			if GetShellnameEx == "純白" {
-				_talk_array ,= aryMouseMouve0BustLoveErosShellPurewhite
+			case GetShellnameEx {
+				when 'large' {
+					_talk_array ,= aryMouseMouve0BustLoveErosLarge
+				}
+				when 'extra_large' {
+					_talk_array ,= aryMouseMouve0BustLoveErosExtraLarge
+				}
 			}
 
 			_talk_array ,= aryMouseMouve0BustLoveErosCommon
@@ -227,8 +232,16 @@ MouseMove0Bust : nonoverlap {
 	parallel _talk_array
 }
 
-// 胸なで（好感度高・えろす・銀色）
-aryMouseMouve0BustLoveErosShellPurewhite : array {
+// 胸なで（好感度高・えろす・エクストララージ）
+aryMouseMouve0BustLoveErosExtraLarge : array {
+	"\1\s[10]\0\s[6]ん、\w4ふ、\w4\s[1]はぁ\w4…\w4…。\w9\n/
+	そっと、\w4なでるように、\w4ね?"
+	"\1\s[10]\0\s[1]…\w4…\w4んぅ。\e"
+	"\1\s[10]\0\s[1]ん、\w4はぁ、\w4ふふ、\w4もっと、\w4触ってちょうだい。\e"
+}
+
+// 胸なで（好感度高・えろす・ラージ）
+aryMouseMouve0BustLoveErosLarge : array {
 	"\1\s[10]\0\s[6]んっ\w9\n/
 	\s[1]ぁ\w4…\w4…。\e"
 	"\1\s[10]\0\s[1]%username\w4…\w4…?\w9\n/
@@ -699,6 +712,7 @@ aryWheel0BustLoveErosCommon : array {
 			'\1\s[10]\0\s[1]ん、\w4揺らすのも大変でしょう?\w9\n/
 			それとも、\w4楽しい、\w4のかしら?'
 			'\1\s[10]\0\s[1]ん、\w4はぁ、\w4はぁ\w4…\w4…ふふ\w4…\w4…。\e'
+			'\1\s[10]\0\s[1]ふふ、\w4重たいかしら?\e'
 		}
 		when "large" {
 			'\1\s[10]\0\s[1]ん、\w4あまり、\w4強くしないで\w4…\w4…。\e'
