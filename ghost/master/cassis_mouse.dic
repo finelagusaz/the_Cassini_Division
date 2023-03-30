@@ -216,7 +216,7 @@ MouseMove0Bust : nonoverlap {
 	// 好感度通常
 	else {
 		// 胸の大きなシェル向け
-		if getBustSize == 'large' {
+		if getBustSize == 'large' || getBustSize == 'extra_large' {
 			_talk_array ,= aryMouseMouve0BustFriendGlamourous
 		}
 
@@ -695,6 +695,11 @@ MouseWheel0Bust {
 // 胸ホイール（好感度高・えろす）
 aryWheel0BustLoveErosCommon : array {
 	case getBustSize {
+		when "extra_large" {
+			'\1\s[10]\0\s[1]ん、\w4揺らすのも大変でしょう?\w9\n/
+			それとも、\w4楽しい、\w4のかしら?'
+			'\1\s[10]\0\s[1]ん、\w4はぁ、\w4はぁ\w4…\w4…ふふ\w4…\w4…。\e'
+		}
 		when "large" {
 			'\1\s[10]\0\s[1]ん、\w4あまり、\w4強くしないで\w4…\w4…。\e'
 			'\1\s[10]\0\s[1]強くしないで、\w4ね。\w9\n/
@@ -716,7 +721,7 @@ aryWheel0BustLoveErosCommon : array {
 //胸ホイール（好感度高・通常）
 aryWheel0BustLoveNormalCommon : array {
 	case getBustSize {
-		when "large" {
+		when "large","extra_large" {
 			'\1\s[10]\0\s[1]何を、\w4しているのかしら?\e'
 			'\1\s[10]\0\s[1]…\w4…\w4手、\w4離してちょうだい。\e'
 			'\1\s[10]\0\s[1]%username、\w4あなたは何をしたいの?\e'
