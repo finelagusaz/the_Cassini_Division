@@ -334,21 +334,6 @@ OsuwariStart
 			{
 				OsuwariStop
 			}
-		} when "空后 / Himmel Königin" {
-			if HimmelKoniginOsuwariMode == 1
-			{
-				// TODO: 座標調整
-				_dmy = FUNCTIONEX("osuwari.dll","START",sakurahwnd,"ACTIVE","TR",80,-260,190,"XMOVE","BOTTOM WORKAREA");
-			}
-			elseif HimmelKoniginOsuwariMode == 2
-			{
-				// TODO: 座標調整
-				_dmy = FUNCTIONEX("osuwari.dll","START",sakurahwnd,"FIX","TR",80,-260,200,"XMOVE,NOCLIP","BOTTOM WORKAREA");
-			}
-			else
-			{
-				OsuwariStop
-			}
 		} others {
 			OsuwariStop
 		}
