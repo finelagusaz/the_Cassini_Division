@@ -109,6 +109,10 @@ Menu_COMMANDOTHERS
 	\_a[comKekon]「結婚してくれ」\_a\n/
 	\_a[comTwitter]「Twitter」\_a\n"
 	--
+	if shellname == '空后 / Himmel Königin' && cntEros > 40 {
+		"\_a[comSasotte]「誘って」\_a\n"
+	}
+	--
 	if flgComOyasumiOther == 1
 	{
 		"\_a[resComOyasumiOther]「一緒に寝よう。」\_a\n"
