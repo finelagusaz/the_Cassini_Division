@@ -201,7 +201,7 @@ MouseMove0Bust : nonoverlap {
 		}
 		// えろす
 		elseif cntEros > 40 {
-			case GetShellnameEx {
+			case getBustSize {
 				when 'large' {
 					_talk_array ,= aryMouseMouve0BustLoveErosLarge
 				}
