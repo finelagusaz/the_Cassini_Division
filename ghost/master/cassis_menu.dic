@@ -371,5 +371,9 @@ Menu_Shell
 		when "マジカル☆カシス" {
 			Menu_Magicalcassis
 		}
+		// 空后 / Himmel Königin
+		when "空后 / Himmel Königin" {
+			Menu_HimmelKonigin
+		}
 	}	
 }
