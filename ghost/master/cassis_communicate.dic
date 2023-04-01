@@ -240,6 +240,10 @@ TalkToUser
 	{
 		comAtamanadete
 	}
+	elseif "誘って" _in_ reference[1] && shellname == '空后 / Himmel Königin' && cntEros > 40
+	{
+		comSasotte
+	}
 	else
 	{
 		"\1\s[10]\0\s[0]なんて言ったの?\e"
@@ -2067,6 +2071,14 @@ comAtamanadete
 		きっと頑張っているのでしょうね。\w9\n/
 		\s[6]少しでも疲れが取れるよう祈っているわ。\e"
 	}
+}
+
+// 誘って
+comSasotte {
+	"\1\s[10]\0\s[1]…\w4…。\w9\n\n[half]/
+	\s[40]…\w4…\w4したくなってきたでしょう?\w9\n/
+	いいのよ、\w4我慢しなくて\w4…\w4…。\w9\n\n[half]/
+	\s[9]こう、\w4かしら?\e"
 }
 
 //----------------------------------------------
