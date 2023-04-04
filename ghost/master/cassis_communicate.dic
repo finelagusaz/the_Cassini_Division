@@ -1770,8 +1770,9 @@ comSumTalk
 	Gemini固有トーク：  %(ARRAYSIZE(aryShellGeminiTalk))\n/
 	Gemini固有トーク（フェーズ2）：  %(ARRAYSIZE(aryShellGeminiLoveTalk))\n/
 	マジカル☆カシス固有トーク: %(ARRAYSIZE(aryShellMagicalCassisTalk))\n/
-	あの青い夏固有トーク: %(ARRAYSIZE(aryShellSummerSkyTalk))\n/
+	あの青い夏/あの淡い冬固有トーク: %(ARRAYSIZE(aryThatSeasonTalk))\n/
 	青い天使固有トーク: %(ARRAYSIZE(aryShellBlueAngelTalk))\n/
+	空后 / Himmel Königinトーク: %(ARRAYSIZE(aryShellHimmelKoniginTalk))\n/
 	\n合計: %(ARRAYSIZE(aryWingTalk) + /
 	ARRAYSIZE(aryNormalTalk) + /
 	ARRAYSIZE(arySpringTalk) + /
@@ -1787,8 +1788,9 @@ comSumTalk
 	ARRAYSIZE(aryShellGeminiTalk) + /
 	ARRAYSIZE(aryShellGeminiTalk) + /
 	ARRAYSIZE(aryShellMagicalCassisTalk) + /
-	ARRAYSIZE(aryShellSummerSkyTalk) + /
-	ARRAYSIZE(aryShellBlueAngelTalk) /
+	ARRAYSIZE(aryThatSeasonTalk) + /
+	ARRAYSIZE(aryShellBlueAngelTalk) + /
+	ARRAYSIZE(aryShellHimmelKoniginTalk) /
 	)/
 	\e"
 }
