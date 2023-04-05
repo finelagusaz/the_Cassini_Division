@@ -723,6 +723,39 @@ getWingStatus
 	}
 }
 
+//--------------------------
+// 翼の種類を取得する
+//--------------------------
+getWingType
+{
+		case shellname {
+		// 魔王
+		when "空后 / Himmel Königin"
+			wingType = "lucifer"
+		// 悪魔
+		when "master", "Alternative - Cassis", "Eternity Black", "White Days Actress", "White Lolita", "スプートニクを探して", "拡大鏡","月夜のうさぎ","新月","拡大鏡","さすらいウサギ","あの青い夏", "White Lolita 2nd", "White Lolita", "Fly High!"
+			wingType = "devil"
+		// 半透明
+		when "Gemini","桜吹雪"
+			wingType = "energy"
+		// メカ・無機系
+		when "蒼月"
+			wingType = "inorganic"
+		// 鳥
+		when "あの淡い冬", "純白","瑠璃","月白","プラジャーパティ","桃色月","さすらいウサギ","ほわいときゃっと","銀色","月光浴","夏季休業","バニスさん"
+			wingType = "bird"
+		// ひれ
+		when "青い天使"
+			wingType = "fin"
+		// 蝶
+		when "Titania","マジカル☆カシス"
+			wingType = "butterfly"
+		// それ以外
+		others
+			wingType = "other"
+	}
+}
+
 //-------------------------
 // 初期値設定
 //-------------------------
