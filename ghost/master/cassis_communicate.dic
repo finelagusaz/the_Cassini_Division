@@ -1772,6 +1772,7 @@ comSumTalk
 	マジカル☆カシス固有トーク: %(ARRAYSIZE(aryShellMagicalCassisTalk))\n/
 	あの青い夏/あの淡い冬固有トーク: %(ARRAYSIZE(aryThatSeasonTalk))\n/
 	青い天使固有トーク: %(ARRAYSIZE(aryShellBlueAngelTalk))\n/
+	Titania固有トーク: %(ARRAYSIZE(aryShellTitaniaTalk))\n/
 	空后 / Himmel Königinトーク: %(ARRAYSIZE(aryShellHimmelKoniginTalk))\n/
 	\n合計: %(ARRAYSIZE(aryWingTalk) + /
 	ARRAYSIZE(aryNormalTalk) + /
@@ -1790,6 +1791,7 @@ comSumTalk
 	ARRAYSIZE(aryShellMagicalCassisTalk) + /
 	ARRAYSIZE(aryThatSeasonTalk) + /
 	ARRAYSIZE(aryShellBlueAngelTalk) + /
+	ARRAYSIZE(aryShellTitaniaTalk) + /
 	ARRAYSIZE(aryShellHimmelKoniginTalk) /
 	)/
 	\e"
