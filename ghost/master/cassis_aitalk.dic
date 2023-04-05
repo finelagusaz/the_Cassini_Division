@@ -100,6 +100,9 @@ RandomTalkEx : nonoverlap
 	when "空后 / Himmel Königin" {
 		_talk_array ,= aryShellHimmelKoniginTalk
 	}
+	when "Titania" {
+		_talk_array ,= aryShellTitaniaTalk
+	}
 	}
 
 	//----------------------------------------
@@ -4740,6 +4743,19 @@ aryShellHimmelKoniginTalk : array {
 	// とりたい姿は無数にある
 	'\1\s[10]\0\s[0]服ではなくて、\w4私のイメージを形にしたの。\w9\n/
 	なりたい私の一つよ。\e'
+}
+
+// Titania
+ShellTitaniaTalk : nonoverlap {
+	parallel aryShellTitaniaTalk
+}
+
+aryShellTitaniaTalk {
+	'\1\s[10]\0\s[0]同じ地域で語られている妖精も時代によって内容が変わるの。\w9\n/
+	いつの時代のそれなのか、\w4を調べると面白い発見があると思うわ。\e'
+	'\1\s[10]\0\s[0]妖精の容姿も絵画の題材になると美しいものに変わるようね。\e'
+	'\1\s[10]\0\s[0]妖精は力を失った神とも言われているそうよ。\w9\n/
+	日本の妖怪と神の関係にも近そうね。\e'
 }
 
 //-----------------------
