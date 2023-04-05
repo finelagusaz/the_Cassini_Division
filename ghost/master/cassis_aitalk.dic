@@ -5150,7 +5150,7 @@ OnMinuteChange
 		--
 		"\e"
 	}
-	elseif AYATEMPLATE.mikireflag == 1
+	elseif AYATEMPLATE.mikireflag == 1 && flgMikireEnable == "1"
 	{
 		//---- 分 != 0 、かつ見切れていたら見切れ中のトークを行う
 		MikireTalk
@@ -5164,15 +5164,12 @@ OnMinuteChange
 OnSecondChange
 {
 	//---- 1 秒毎に実行される。ここではあまり重い処理を行わないこと
-	if flgMikireEnable == "1"
+	if AYATEMPLATE.mikireflag == 1 && reference[1] == 0 && flgMikireEnable == "1"
 	{
-		if AYATEMPLATE.mikireflag == 1 && reference[1] == 0
-		{
-			//---- 見切れの終了
-			EndMikireTalk
-		}
-		AYATEMPLATE.mikireflag = reference[1]
+		//---- 見切れの終了
+		EndMikireTalk
 	}
+	AYATEMPLATE.mikireflag = reference[1]
 }
 
 //---- 見切れ中 -------------------------------------------------------------------------
