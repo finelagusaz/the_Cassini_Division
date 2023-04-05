@@ -4750,7 +4750,7 @@ ShellTitaniaTalk : nonoverlap {
 	parallel aryShellTitaniaTalk
 }
 
-aryShellTitaniaTalk {
+aryShellTitaniaTalk : array {
 	'\1\s[10]\0\s[0]同じ地域で語られている妖精も時代によって内容が変わるの。\w9\n/
 	いつの時代のそれなのか、\w4を調べると面白い発見があると思うわ。\e'
 	'\1\s[10]\0\s[0]妖精の容姿も絵画の題材になると美しいものに変わるようね。\e'
