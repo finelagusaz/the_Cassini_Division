@@ -120,7 +120,7 @@ RandomTalkEx : nonoverlap
 	//----------------------------------------
 	// 羽種類別
 	//----------------------------------------
-	_talk_array ,= aryWingTalk
+	_talk_array ,= aryWingCommonTalk
 
 	parallel _talk_array 
 }
