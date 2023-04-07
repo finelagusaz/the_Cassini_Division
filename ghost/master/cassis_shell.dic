@@ -259,6 +259,7 @@ getWingType
 {
 		case shellname {
 		// 魔王
+		// NOTE: 元ネタはストレイト・ジャケットの魔王（ルシフェル）級
 		when "空后 / Himmel Königin"
 			"lucifer"
 		// 悪魔
