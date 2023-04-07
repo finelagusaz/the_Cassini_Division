@@ -211,11 +211,11 @@ SakurafubukiMouseMove0Head
 	case calcErosPhase(0) {
 		when "n" {
 //			_talk_array ,= arySakurafubukiMouseMove0HeadPhaseN
-			_talk_array ,= aryNade0HeadCommon
+			_talk_array ,= aryMouseMove0HeadCommon
 		}
 		when 0 {
 //			_talk_array ,= arySakurafubukiMouseMove0HeadPhase0
-			_talk_array ,= aryNade0HeadLikeCommon
+			_talk_array ,= aryMouseMove0HeadLikeCommon
 		}
 		when 1 {
 //			_talk_array ,= arySakurafubukiMouseMove0HeadPhase1
@@ -323,15 +323,15 @@ SakurafubukiMouseMove0Bust
 	case calcErosPhase(5) {
 		when "n" {
 //			_talk_array ,= arySakurafubukiMouseMove0BustPhaseN
-			_talk_array ,= aryNade0BustFriendCommon
+			_talk_array ,= aryMouseMove0BustFriendCommon
 		}
 		when 0 {
 //			_talk_array ,= arySakurafubukiMouseMove0BustPhase0
-			_talk_array ,= aryNade0BustLoveNormalCommon
+			_talk_array ,= aryMouseMove0BustLoveNormalCommon
 		}
 		when 1 {
 //			_talk_array ,= arySakurafubukiMouseMove0BustPhase1
-			_talk_array ,= aryNade0BustLoveErosCommon
+			_talk_array ,= aryMouseMove0BustLoveErosCommon
 		}
 		when 2 {
 			_talk_array ,= arySakurafubukiMouseMove0BustPhase2
@@ -442,14 +442,14 @@ SakurafubukiMouseMove0Mystic
 	case calcErosPhase(7) {
 		when "n" {
 //			_talk_array ,= arySakurafubukiMouseMove0MysticPhaseN
-			_talk_array ,= aryNade0MysticFriendCommon
+			_talk_array ,= aryMouseMove0MysticFriendCommon
 		}
 		when 0 {
 			_talk_array ,= arySakurafubukiMouseMove0MysticPhase0
 		}
 		when 1 {
 //			_talk_array ,= arySakurafubukiMouseMove0MysticPhase1
-			_talk_array ,= aryNade0MysticLoveCommon
+			_talk_array ,= aryMouseMove0MysticLoveCommon
 			_talk_array ,= aryCommonErosSerif
 		}
 		when 2 {
@@ -557,16 +557,16 @@ SakurafubukiMouseMove0Hip
 	case calcErosPhase(5) {
 		when "n" {
 //			_talk_array ,= arySakurafubukiMouseMove0HipPhaseN
-			_talk_array ,= aryNade0HipFriendCommon
+			_talk_array ,= aryMouseMove0HipFriendCommon
 		}
 		when 0 {
 //			_talk_array ,= arySakurafubukiMouseMove0HipPhase0
-			_talk_array ,= aryNade0HipLoveNormalCommon
+			_talk_array ,= aryMouseMove0HipLoveNormalCommon
 			_talk_array ,= aryCommonErosSerif
 		}
 		when 1 {
 //			_talk_array ,= arySakurafubukiMouseMove0HipPhase1
-			_talk_array ,= aryNade0HipLoveErosCommon
+			_talk_array ,= aryMouseMove0HipLoveErosCommon
 			_talk_array ,= aryCommonErosSerif
 			_talk_array ,= arySakMousePhase1
 		}
@@ -615,11 +615,11 @@ SakurafubukiMouseMove0Leg
 	case calcErosPhase(0) {
 		when "n" {
 //			_talk_array ,= arySakurafubukiMouseMove0LegPhaseN
-			_talk_array ,= aryNade0LegFriendCommon
+			_talk_array ,= aryMouseMove0LegFriendCommon
 		}
 		when 0 {
 //			_talk_array ,= arySakurafubukiMouseMove0LegPhase0
-			_talk_array ,= aryNade0LegLoveNormalCommon
+			_talk_array ,= aryMouseMove0LegLoveNormalCommon
 		}
 		when 1 {
 			_talk_array ,= arySakurafubukiMouseMove0LegPhase1
