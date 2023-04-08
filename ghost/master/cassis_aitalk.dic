@@ -120,7 +120,17 @@ RandomTalkEx : nonoverlap
 	//----------------------------------------
 	// 羽種類別
 	//----------------------------------------
+	_tmp_wing_type = getWingType
 	_talk_array ,= aryWingCommonTalk
+	_talk_array ,= EVAL(("aryWing" + _tmp_wing_type + "Talk"))
+
+	if _tmp_wing_type != 'Brid' {
+		_talk_array ,= WingNotBirdTalk
+	}
+
+	if _tmp_wing_type != 'Inorganic' {
+		_talk_array ,= WingNotInorganicTalk
+	}
 
 	parallel _talk_array 
 }
@@ -4549,18 +4559,46 @@ aryWingNotInorganicTalk : nonoverlap {
 }
 
 // 魔王
+aryWingLuciferTalk : nonoverlap {
+	"\1\s[10]\0\s[0]この羽?\w9\n/
+	空に抗って飛ぶイメージのあらわれよ。\e"
+}
 
 // 悪魔
+aryWingDevilTalk : nonoverlap {
+	"\1\s[10]\0\s[0]羽の形は悪魔で、\w4色が白なのは意味があるのよ。\w9\n/
+	もとになった物語を読んでもらうのがよいのだけれど\w4…\w4…\w4今もあるのかしら?"
+}
 
 // 半透明
+aryWingEnergyTalk : nonoverlap {
+	"\1\s[10]\0\s[0]綺麗な羽でしょう?\w9\n/
+	\s[6]これでも飛べるのよ。\e"
+}
 
 // メカ・無機系
+aryWingInorganicTalk : nonoverlap {
+	"\1\s[10]\0\s[6]このタイプの羽はちょっと評判悪いのよね。\w9\n/
+	\s[0]私が飛ぶのに不自由ないのだからそれでいいでしょう?\e"
+}
 
 // 鳥
+aryWingBirdTalk : nonoverlap {
+	"\1\s[10]\0\s[0]基本と言えば基本よね、\w4鳥の羽は。\e"
+}
 
 // ひれ
+aryWingFinTalk : nonoverlap {
+	"\1\s[10]\0\s[0]これでも飛べるのよ。\w9\n/
+	\s[6]ほかとは違う感触でしょうね。\e"
+}
 
 // 蝶
+aryWingButterfly : nonoverlap {
+	"\1\s[10]\0\s[0]この羽はウスバシロチョウを参考にしたの。\w9\n/
+	そうね、\w4透明な羽が気に入ったのが理由よ。\w9\n/
+	実物が見たくて自然公園までいってきたわ。\e"
+}
 
 //------------------
 // シェルごとのトーク群
