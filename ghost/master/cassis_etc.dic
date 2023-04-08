@@ -704,25 +704,6 @@ tooltipMaster0Wing
 	'羽、飛ぶのに必要でしょう。\n形だけでも。'
 }
 
-//--------------------------
-// 翼の有無判定
-//--------------------------
-getWingStatus
-{
-	case shellname {
-		// 鳥の羽以外の形状
-		when "master", "Alternative - Cassis", "Eternity Black", "White Days Actress", "White Lolita", "スプートニクを探して", "拡大鏡", "蒼月", "銀色","Gemini","桜吹雪","マジカル☆カシス", "Fly High!","新月", "あの青い夏", "空后 / Himmel Königin"
-			flgWing = 1
-		// 鳥の羽
-		when "あの淡い冬", "純白","瑠璃","月白","プラジャーパティ","桃色月","さすらいウサギ","ほわいときゃっと"
-			flgWing = 2
-		// それ以外
-		others {
-			flgWing = 0
-		}
-	}
-}
-
 //-------------------------
 // 初期値設定
 //-------------------------
@@ -733,9 +714,6 @@ setInit
 
 	// 座り関連処理
 	OsuwariStart
-
-	// 羽状態取得
-	getWingStatus
 
 	// 他ゴーストトーク取得有効
 	"\![set,otherghosttalk,true]"

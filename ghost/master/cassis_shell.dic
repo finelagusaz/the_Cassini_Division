@@ -227,12 +227,12 @@ OnShellChanged
 //シェル名を取得してshellnameへ
 OnNotifySelfInfo
 {
-	getWingStatus
-	--
 	shellname = reference[3]
 }
 
+//--------------------------
 // 胸のサイズ取得
+//--------------------------
 getBustSize {
 	case shellname {
 		when "空后 / Himmel Königin", "あの淡い冬", "あの青い夏"
@@ -249,6 +249,40 @@ getBustSize {
 		others {
 			"flat"
 		}
+	}
+}
+
+//--------------------------
+// 翼の種類を取得する
+//--------------------------
+getWingType
+{
+		case shellname {
+		// 魔王
+		// NOTE: 元ネタはストレイト・ジャケットの魔王（ルシフェル）級
+		when "空后 / Himmel Königin"
+			"Lucifer"
+		// 悪魔
+		when "master", "Eternity Black", "White Days Actress", "White Lolita", "スプートニクを探して", "拡大鏡","月夜のうさぎ","新月","拡大鏡","さすらいウサギ","あの青い夏", "White Lolita 2nd", "White Lolita", "Fly High!"
+			"Devil"
+		// 半透明
+		when "Gemini","桜吹雪"
+			"Energy"
+		// メカ・無機系
+		when "蒼月", "Alternative - Cassis"
+			"Inorganic"
+		// 鳥
+		when "あの淡い冬", "純白","瑠璃","月白","プラジャーパティ","桃色月","さすらいウサギ","ほわいときゃっと","銀色","月光浴","夏季休業","バニスさん"
+			"Bird"
+		// ひれ
+		when "青い天使"
+			"Fin"
+		// 蝶
+		when "Titania","マジカル☆カシス"
+			"Butterfly"
+		// それ以外
+		others
+			"Other"
 	}
 }
 

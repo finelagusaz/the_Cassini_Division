@@ -120,8 +120,16 @@ RandomTalkEx : nonoverlap
 	//----------------------------------------
 	// 羽種類別
 	//----------------------------------------
-	if (flgWing == 1 || flgWing == 2) {
-		_talk_array ,= aryWingTalk
+	_tmp_wing_type = getWingType
+	_talk_array ,= aryWingCommonTalk
+	_talk_array ,= EVAL(("aryWing" + _tmp_wing_type + "Talk"))
+
+	if _tmp_wing_type != 'Brid' {
+		_talk_array ,= WingNotBirdTalk
+	}
+
+	if _tmp_wing_type != 'Inorganic' {
+		_talk_array ,= WingNotInorganicTalk
 	}
 
 	parallel _talk_array 
@@ -4488,19 +4496,14 @@ aryNormalTalk : array
 //羽に関するトーク
 /*
 	シェル事のトークで呼び出すことで、容姿とトークの矛盾を防ぐ。
+	制御は RandomTalkEx : nonoverlap で行う。
 */
-WingTalk : nonoverlap {
-	parallel aryWingTalk
+WingCommonTalk : nonoverlap {
+	parallel aryCommonWingTalk
 }
 
-aryWingTalk : array
+aryWingCommonTalk : array
 {
-	// 鳥の羽以外の場合
-	if flgWing == 1 {
-		'\1\s[10]\0\s[0]私の羽を見てあのヒトは「鳥の羽でなくて良かった」と笑っていたわ。\w9\n/
-		羽毛アレルギーだったのよ。\e'
-	}
-
 	// 共通
 	'\1\s[10]\0\s[0]この羽、\w4ちゃんと飛べるのよ。\w9\n/
 	この姿だとあまり、\w4速く飛べないのが残念ね。\e:chain=飛んでるときの話'
@@ -4527,13 +4530,74 @@ aryWingTalk : array
 	'\1\s[10]\0\s[6]ヒトではない存在だと暗に言っているようなものよね、\w4背中の羽は。\e'
 	'\1\s[10]\0\s[0]風を掴めば力を使わなくても高く舞い上がれる。\w9\n/
 	\s[6]たまに予想してない高さまであがってしまうけれど。\e'
+	'\1\s[10]\0\s[0]空は自由、\w4ではないわ。\w9\n/
+	\s[6]そう見えているだけ。\e'
+	'\1\s[10]\0\s[0]羽はヒト以外のものの象徴、\w4というと直接的すぎるかしら?\e'
+}
+
+// 鳥の羽以外
+WingNotBirdTalk : nonoverlap {
+	parallel aryCommonWingTalk
+}
+
+aryWingNotBirdTalk : array
+{
+	'\1\s[10]\0\s[0]私の羽を見てあのヒトは「鳥の羽でなくて良かった」と笑っていたわ。\w9\n/
+	羽毛アレルギーだったのよ。\e'
+}
+
+// メカ系の羽以外
+WingNotInorganicTalk : nonoverlap {
+	parallel aryWingNotInorganicTalk
+}
+
+aryWingNotInorganicTalk : nonoverlap {
 	// スリットスラスターがついたMSチックな羽。感覚器をセンサー類として再実装したので触れても反応が可愛くないから
 	'\1\s[10]\0\s[0]いくつか機械のような形の羽も考えたの。\w9\n/
 	\s[6]あまり、\w4評価が良くないから使うことはほとんどないわ。\w9\n/
 	違いは形だけなのかしら\w4…\w4…?\e'
-	'\1\s[10]\0\s[0]空は自由、\w4ではないわ。\w9\n/
-	\s[6]そう見えているだけ。\e'
-	'\1\s[10]\0\s[0]羽はヒト以外のものの象徴、\w4というと直接的すぎるかしら?\e'
+}
+
+// 魔王
+aryWingLuciferTalk : nonoverlap {
+	"\1\s[10]\0\s[0]この羽?\w9\n/
+	空に抗って飛ぶイメージのあらわれよ。\e"
+}
+
+// 悪魔
+aryWingDevilTalk : nonoverlap {
+	"\1\s[10]\0\s[0]羽の形は悪魔で、\w4色が白なのは意味があるのよ。\w9\n/
+	もとになった物語を読んでもらうのがよいのだけれど\w4…\w4…\w4今もあるのかしら?"
+}
+
+// 半透明
+aryWingEnergyTalk : nonoverlap {
+	"\1\s[10]\0\s[0]綺麗な羽でしょう?\w9\n/
+	\s[6]これでも飛べるのよ。\e"
+}
+
+// メカ・無機系
+aryWingInorganicTalk : nonoverlap {
+	"\1\s[10]\0\s[6]このタイプの羽はちょっと評判悪いのよね。\w9\n/
+	\s[0]私が飛ぶのに不自由ないのだからそれでいいでしょう?\e"
+}
+
+// 鳥
+aryWingBirdTalk : nonoverlap {
+	"\1\s[10]\0\s[0]基本と言えば基本よね、\w4鳥の羽は。\e"
+}
+
+// ひれ
+aryWingFinTalk : nonoverlap {
+	"\1\s[10]\0\s[0]これでも飛べるのよ。\w9\n/
+	\s[6]ほかとは違う感触でしょうね。\e"
+}
+
+// 蝶
+aryWingButterfly : nonoverlap {
+	"\1\s[10]\0\s[0]この羽はウスバシロチョウを参考にしたの。\w9\n/
+	そうね、\w4透明な羽が気に入ったのが理由よ。\w9\n/
+	実物が見たくて自然公園までいってきたわ。\e"
 }
 
 //------------------
