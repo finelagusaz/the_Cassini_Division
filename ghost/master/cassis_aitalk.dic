@@ -4561,8 +4561,10 @@ aryWingNotInorganicTalk : nonoverlap {
 
 // 魔王
 aryWingLuciferTalk : nonoverlap {
-	"\1\s[10]\0\s[0]この羽?\w9\n/
-	空に抗って飛ぶイメージのあらわれよ。\e"
+	'\1\s[10]\0\s[0]この羽?\w9\n/
+	空に抗って飛ぶイメージのあらわれよ。\e'
+	'\1\s[10]\0\s[0]空も自由ではあるのよ。\w9\n/
+	あるところまでは。\e'
 }
 
 // 悪魔
