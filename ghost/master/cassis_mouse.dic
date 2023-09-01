@@ -86,8 +86,7 @@ MouseMove0Head : nonoverlap {
 
 	// シェルごとの反応
 	case GetShellnameEx {
-		when "銀色"
-		{
+		when "銀色"{
 			_talk_array ,= aryMouseMove0HeadShellGiniro
 		}
 	}
@@ -96,6 +95,13 @@ MouseMove0Head : nonoverlap {
 	if cntHead > likelimit
 	{
 		_talk_array ,= aryMouseMove0HeadLikeCommon
+
+		case GetShellnameEx {
+		when "空后 / Himmel Königin" {
+			_talk_array ,= aryMouseMove0HeadLikeShellHimmelKonigin
+		}
+
+		}
 	}
 
 	// 共通
@@ -112,6 +118,17 @@ aryMouseMove0HeadShellGiniro : array {
 	"\1\s[10]\0\s[1]…\w4…\w4少し、\w4恥ずかしいわ。\e"
 	"\1\s[10]\0\s[1]子ども扱いね。\e"
 	"\1\s[10]\0\s[5]…\w4…。\e"
+}
+
+// TODO: シェル固有の頭なでられ反応を追加する
+//       身長の高いシェル用のものがあるといいかもしれない
+
+// 頭なで（空后）
+aryMouseMove0HeadLikeShellHimmelKonigin : array {
+	"\1\s[10]\0\s[5]ふふ、同じように撫でてあげる。\e"
+	"\1\s[10]\0\s[6]背があると撫でるの大変でしょう?\e"
+	"\1\s[10]\0\s[1]ん…\w4…\w4\s[2]\w9\w9\s[6]何でも、\w4ないわ。\e"
+	"\1\s[10]\0\s[6]…\w4…\w4安らぎを感じるのは、\w4変わらないのね。\e"
 }
 
 // 頭なで（好感度高）
