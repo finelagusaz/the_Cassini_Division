@@ -319,7 +319,7 @@ OnInputWebclap
 	"\1\s[10]\0\s[6]\![execute,http-post,https://blankrune.sakura.ne.jp/patipati/index.cgi,--param-charset=Shift_JIS"
 	--
 	if reference[0] != '' {
-		",--param=com=" + reference[0] + "（カッシーニの空隙）"
+		",--param=com=" + REPLACE(reference[0], '"','\"') + "（カッシーニの空隙）"
 	}
 	--
 	",--async=patipati]"

@@ -107,7 +107,8 @@ Menu_COMMANDOTHERS
 	\_a[comNadete]「撫でて」\_a\n/
 	\_a[comOenshite]「応援して」\_a\n/
 	\_a[comKekon]「結婚してくれ」\_a\n/
-	\_a[comTwitter]「Twitter」\_a\n"
+	\_a[comTwitter]「Twitter」\_a\n/
+	\_a[comFlirt]「甘えたい」\_a\n"
 	--
 	if shellname == '空后 / Himmel Königin' && cntEros > 40 {
 		"\_a[comSasotte]「誘って」\_a\n"
