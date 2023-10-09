@@ -5,13 +5,15 @@ Menu_Master
 {
 	"\n[half]"
 	--
-	AYATEMPLATE.MenuItem("座る", "Menu_Sit")
+	if (MasterSurfaceMode != 1000 || GiniroSurfaceMode != 1000 || EternityBlackSurfaceMode != 1000 || KakudaikyoSurfaceMode != 1000 || WhiteLolitaSurfaceMode != 1000 ) {
+		AYATEMPLATE.MenuItem("座る", "Menu_Sit")
+		--
+		AYATEMPLATE.MenuItem("タイトルバーに座る", "Menu_SitA")
+		--
+		AYATEMPLATE.MenuItem("タスクバーに座る", "Menu_SitF")
+	}
 	--
-	AYATEMPLATE.MenuItem("タイトルバーに座る", "Menu_SitA")
-	--
-	AYATEMPLATE.MenuItem("タスクバーに座る", "Menu_SitF")
-	--
-	if (MasterSurfaceMode != 0) {
+	if (MasterSurfaceMode != 0 || GiniroSurfaceMode != 0 || EternityBlackSurfaceMode != 0 || KakudaikyoSurfaceMode != 0 || WhiteLolitaSurfaceMode != 0 ) {
 		AYATEMPLATE.MenuItem("立つ", "Menu_Stand")
 	}
 	--
