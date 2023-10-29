@@ -68,6 +68,10 @@ OnShellChanging
 		when "空后 / Himmel Königin" {
 			"\1\s[10]\0\s[0]そうね、\w4せっかくだから、\w4色々変えてみましょうか。\w9\w9\w9\e"
 		}
+		when "竜后 / Drachen Königin" {
+			"\1\s[10]\0\s[0]どこで噂を聞いたのかしら。\w9\n/
+			\s[0]着替えて、\s[6]いえ、装備してくるわ。\w9\w9\w9\e"
+		}
 		others {
 			"\1\s[10]\0\s[0]どんな姿になるのかしらね。\w9\w9\w9\e"
 			"\1\s[10]\0\s[6]これなら、\w4あの形がいいかしら。\w9\w9\w9\e"
@@ -215,6 +219,10 @@ OnShellChanged
 			"\1\s[10]\0\s[5]どうかしら?\w9\n/
 			\s[3]―\w4―\w4色々変えると言ったでしょう?\e"
 		}
+		when "竜后 / Drachen Königin" {
+			"\1\s[10]\0\s[0]噂通りだったかしら?\e"
+			"\1\s[10]\0\s[1]どう、かしら?\e"
+		}
 		others {
 			"\1\s[10]\0\s[0]っと、どうかしら?\e"
 			"\1\s[10]\0\s[0]お待たせ。\e"
@@ -235,7 +243,7 @@ OnNotifySelfInfo
 //--------------------------
 getBustSize {
 	case shellname {
-		when "空后 / Himmel Königin", "あの淡い冬", "あの青い夏"
+		when "竜后 / Drachen Königin", "空后 / Himmel Königin", "あの淡い冬", "あの青い夏"
 			"extra_large"
 		when "Fly High!", "ll20yo", "夏季休業", "月光浴", "月夜のうさぎ", "桃色月", "桜吹雪", "純白", "薄ピンク（試作）", "青い天使" {
 			"large"
