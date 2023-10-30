@@ -123,8 +123,20 @@ RandomTalkEx : nonoverlap
 	//----------------------------------------
 	// 羽種類別
 	//----------------------------------------
-	_tmp_wing_types = SPLIT(getWingType, ",")
-	
+	_tmp_wing_type = getWingType
+
+	// 鳥の羽ではないトーク
+	if _tmp_wing_type !_in_ 'Brid' {
+		_talk_array ,= WingNotBirdTalk
+	}
+
+	// 機械の羽ではないトーク
+	if _tmp_wing_type !_in_ 'Inorganic' {
+		_talk_array ,= WingNotInorganicTalk
+	}
+
+	// 各種類ごとのトーク
+	_tmp_wing_types = SPLIT(_tmp_wing_type, ",")
 	for _i=0; _i < TOINT(ARRAYSIZE(_tmp_wing_types)); _i++ {
 		// NOTE: 空后と竜后は高速で飛べそうなので除外
 		case shellname {
@@ -133,14 +145,6 @@ RandomTalkEx : nonoverlap
 		}
 
 		_talk_array ,= EVAL(("aryWing" + _tmp_wing_types[i] + "Talk"))
-
-		if _tmp_wing_types !_in_ 'Brid' {
-			_talk_array ,= WingNotBirdTalk
-		}
-
-		if _tmp_wing_type !_in_ 'Inorganic' {
-			_talk_array ,= WingNotInorganicTalk
-		}
 	}
 
 	parallel _talk_array 
