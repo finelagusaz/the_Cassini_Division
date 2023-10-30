@@ -126,7 +126,12 @@ RandomTalkEx : nonoverlap
 	_tmp_wing_types = SPLIT(getWingType, ",")
 	
 	for _i=0; _i < TOINT(ARRAYSIZE(_tmp_wing_types)); _i++ {
-		_talk_array ,= aryWingCommonTalk
+		// NOTE: 空后と竜后は高速で飛べそうなので除外
+		case shellname {
+			when '竜后 / Drachen Königin', '空后 / Himmel Königin'
+				_talk_array ,= aryWingCommonTalk
+		}
+
 		_talk_array ,= EVAL(("aryWing" + _tmp_wing_types[i] + "Talk"))
 
 		if _tmp_wing_types !_in_ 'Brid' {
