@@ -231,11 +231,31 @@ OnShellChanged
 	}
 }
 
-//OnNotifySelfInfo
-//シェル名を取得してshellnameへ
+// シェル名取得
+// シェル名を取得してshellnameへ
 OnNotifySelfInfo
 {
 	shellname = reference[3]
+}
+
+// 着せ替え状態取得
+OnDressupChanged
+{
+	if shellname == '竜后 / Drachen Königin'
+	{
+		// reference[1] パーツ名称（日本語）
+		// reference[2] パーツの有効・無効（0: 無効 / 1: 有効）
+		// reference[3] パーツのカテゴリ名（日本語）
+
+		case reference[1] {
+			when "天使" {
+				drachenKoniginWingTypeAgenlFlg = reference[2]
+			}
+			when "メカ" {
+				drachenKoniginWingTypeMechaFlg = reference[2]
+			}
+		}
+	}
 }
 
 //--------------------------
@@ -270,6 +290,8 @@ getWingType
 		// NOTE: 元ネタはストレイト・ジャケットの魔王（ルシフェル）級
 		when "空后 / Himmel Königin"
 			"Lucifer"
+		when "竜后 / Drachen Königin"
+			getWingTypeForDrachenKoningin
 		// 悪魔
 		when "master", "Eternity Black", "White Days Actress", "White Lolita", "スプートニクを探して", "拡大鏡","月夜のうさぎ","新月","拡大鏡","さすらいウサギ","あの青い夏", "White Lolita 2nd", "White Lolita", "Fly High!"
 			"Devil"
@@ -291,6 +313,19 @@ getWingType
 		// それ以外
 		others
 			"Other"
+	}
+}
+
+// NOTE: 羽が混在している竜后用の分岐処理
+getWingTypeForDrachenKoningin {
+	if (drachenKoniginWingTypeAgenlFlg == 1 && drachenKoniginWingTypeMechaFlg == 1) {
+		"Bird,Inorganic"
+	} elseif drachenKoniginWingTypeAgenlFlg == 1 {
+		"Bird"
+	} elseif drachenKoniginWingTypeMechaFlg == 1 {
+		"Inorganic"
+	} else {
+		"Nonthing"
 	}
 }
 
