@@ -68,6 +68,10 @@ OnShellChanging
 		when "空后 / Himmel Königin" {
 			"\1\s[10]\0\s[0]そうね、\w4せっかくだから、\w4色々変えてみましょうか。\w9\w9\w9\e"
 		}
+		when "竜后 / Drachen Königin" {
+			"\1\s[10]\0\s[0]どこで噂を聞いたのかしら。\w9\n/
+			\s[0]着替えて、\s[6]いえ、装備してくるわ。\w9\w9\w9\e"
+		}
 		others {
 			"\1\s[10]\0\s[0]どんな姿になるのかしらね。\w9\w9\w9\e"
 			"\1\s[10]\0\s[6]これなら、\w4あの形がいいかしら。\w9\w9\w9\e"
@@ -215,6 +219,10 @@ OnShellChanged
 			"\1\s[10]\0\s[5]どうかしら?\w9\n/
 			\s[3]―\w4―\w4色々変えると言ったでしょう?\e"
 		}
+		when "竜后 / Drachen Königin" {
+			"\1\s[10]\0\s[0]噂通りだったかしら?\e"
+			"\1\s[10]\0\s[1]どう、かしら?\e"
+		}
 		others {
 			"\1\s[10]\0\s[0]っと、どうかしら?\e"
 			"\1\s[10]\0\s[0]お待たせ。\e"
@@ -223,11 +231,31 @@ OnShellChanged
 	}
 }
 
-//OnNotifySelfInfo
-//シェル名を取得してshellnameへ
+// シェル名取得
+// シェル名を取得してshellnameへ
 OnNotifySelfInfo
 {
 	shellname = reference[3]
+}
+
+// 着せ替え状態取得
+OnDressupChanged
+{
+	if shellname == '竜后 / Drachen Königin'
+	{
+		// reference[1] パーツ名称（日本語）
+		// reference[2] パーツの有効・無効（0: 無効 / 1: 有効）
+		// reference[3] パーツのカテゴリ名（日本語）
+
+		case reference[1] {
+			when "天使" {
+				drachenKoniginWingTypeAgenlFlg = reference[2]
+			}
+			when "メカ" {
+				drachenKoniginWingTypeMechaFlg = reference[2]
+			}
+		}
+	}
 }
 
 //--------------------------
@@ -235,7 +263,7 @@ OnNotifySelfInfo
 //--------------------------
 getBustSize {
 	case shellname {
-		when "空后 / Himmel Königin", "あの淡い冬", "あの青い夏"
+		when "竜后 / Drachen Königin", "空后 / Himmel Königin", "あの淡い冬", "あの青い夏"
 			"extra_large"
 		when "Fly High!", "ll20yo", "夏季休業", "月光浴", "月夜のうさぎ", "桃色月", "桜吹雪", "純白", "薄ピンク（試作）", "青い天使" {
 			"large"
@@ -262,6 +290,8 @@ getWingType
 		// NOTE: 元ネタはストレイト・ジャケットの魔王（ルシフェル）級
 		when "空后 / Himmel Königin"
 			"Lucifer"
+		when "竜后 / Drachen Königin"
+			getWingTypeForDrachenKoningin
 		// 悪魔
 		when "master", "Eternity Black", "White Days Actress", "White Lolita", "スプートニクを探して", "拡大鏡","月夜のうさぎ","新月","拡大鏡","さすらいウサギ","あの青い夏", "White Lolita 2nd", "White Lolita", "Fly High!"
 			"Devil"
@@ -283,6 +313,19 @@ getWingType
 		// それ以外
 		others
 			"Other"
+	}
+}
+
+// NOTE: 羽が混在している竜后用の分岐処理
+getWingTypeForDrachenKoningin {
+	if (drachenKoniginWingTypeAgenlFlg == 1 && drachenKoniginWingTypeMechaFlg == 1) {
+		"Bird,Inorganic"
+	} elseif drachenKoniginWingTypeAgenlFlg == 1 {
+		"Bird"
+	} elseif drachenKoniginWingTypeMechaFlg == 1 {
+		"Inorganic"
+	} else {
+		"Nonthing"
 	}
 }
 

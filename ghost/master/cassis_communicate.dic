@@ -1465,7 +1465,7 @@ comDakishimeru {
 	// シェル個別
 	case shellname {
 		// 背の高いシェル向け
-		when "Alternative - Cassis", "Eternity Black", "空后 / Himmel Königin"
+		when "Alternative - Cassis", "Eternity Black", "空后 / Himmel Königin", "竜后 / Drachen Königin"
 		{
 			"\1\s[10]\0\s[5]ふふ、\w4どうしたの?\e"
 			"\1\s[10]\0\s[5]抱き返してあげましょうか?\w9\w9\w9\n/
