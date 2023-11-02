@@ -291,6 +291,7 @@ getWingType
 		when "空后 / Himmel Königin"
 			"Lucifer"
 		when "竜后 / Drachen Königin"
+			// 竜后だけはメカと天使の羽の組み合わせなので分岐処理で取得する
 			getWingTypeForDrachenKoningin
 		// 悪魔
 		when "master", "Eternity Black", "White Days Actress", "White Lolita", "スプートニクを探して", "拡大鏡","月夜のうさぎ","新月","拡大鏡","さすらいウサギ","あの青い夏", "White Lolita 2nd", "White Lolita", "Fly High!"
