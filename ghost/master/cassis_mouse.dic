@@ -1198,7 +1198,7 @@ MouseDoubleClick0Bust {
 			eventOrgBust
 		}
 		elseif cntEros > 40 {
-			if GetShellnameEx == "月光浴" || GetShellnameEx == "純白" || GetShellnameEx == "あの青い夏" {
+			if getBustSize == 'large' || getBustSize == 'extra_large' {
 				_talk_array ,= aryDoubleClick0BustLoveErosGlamourous
 			}
 			else {
