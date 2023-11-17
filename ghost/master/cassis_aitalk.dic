@@ -107,7 +107,7 @@ RandomTalkEx : nonoverlap
 		_talk_array ,= aryShellDrachenKoniginTalk
 	}
 	when "スワロウテイル" {
-		_talk_array ,= arySHellSwallowTailTalk
+		_talk_array ,= aryShellSwallowTailTalk
 	}
 	}
 
@@ -4878,10 +4878,10 @@ aryShellDrachenKoniginTalk : array {
 
 // スワロウテイル
 ShellSwallowTailTalk : nonoverlap {
-	parallel arySHellSwallowTailTalk
+	parallel aryShellSwallowTailTalk
 }
 
-arySHellSwallowTailTalk : array {
+aryShellSwallowTailTalk : array {
 	if swallowTailHavWingFlg == 1
 	{
 		'\1\s[10]\0\s[0]この腕?\w9\n/
