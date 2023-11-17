@@ -72,6 +72,10 @@ OnShellChanging
 			"\1\s[10]\0\s[0]どこで噂を聞いたのかしら。\w9\n/
 			\s[0]着替えて、\s[6]いえ、装備してくるわ。\w9\w9\w9\e"
 		}
+		when "スワロウテイル" {
+			"\1\s[10]\0\s[0]そう、\w4なら、\w4見せてあげる。\w9\n/
+			\s[6]少し待ってて。\w9\w9\w9\e"
+		}
 		others {
 			"\1\s[10]\0\s[0]どんな姿になるのかしらね。\w9\w9\w9\e"
 			"\1\s[10]\0\s[6]これなら、\w4あの形がいいかしら。\w9\w9\w9\e"
@@ -223,6 +227,9 @@ OnShellChanged
 			"\1\s[10]\0\s[0]噂通りだったかしら?\e"
 			"\1\s[10]\0\s[1]どう、かしら?\e"
 		}
+		when "スワロウテイル" {
+			"\1\s[10]\0\s[50]一緒に踊ってもらえないかしら\w4…\w4…\w4\s[54]なんてね。\e"
+		}
 		others {
 			"\1\s[10]\0\s[0]っと、どうかしら?\e"
 			"\1\s[10]\0\s[0]お待たせ。\e"
@@ -241,8 +248,8 @@ OnNotifySelfInfo
 // 着せ替え状態取得
 OnDressupChanged
 {
-	if shellname == '竜后 / Drachen Königin'
-	{
+	case shellname {
+	when '竜后 / Drachen Königin' {
 		// reference[1] パーツ名称（日本語）
 		// reference[2] パーツの有効・無効（0: 無効 / 1: 有効）
 		// reference[3] パーツのカテゴリ名（日本語）
@@ -256,6 +263,24 @@ OnDressupChanged
 			}
 		}
 	}
+	when 'スワロウテイル' {
+		// reference[1] パーツ名称（日本語）
+		// reference[2] パーツの有効・無効（0: 無効 / 1: 有効）
+		// reference[3] パーツのカテゴリ名（日本語）
+
+		case reference[1] {
+			when "翼持つ者" {
+				swallowTailHavWingFlg = reference[2]
+				--
+				if reference[2] == 1 {
+					"\0\s[0]この翼でも飛べるのよ。\e"
+					"\0\s[0]驚かないのね。\e"
+				}
+
+			}
+		}
+	}
+	}
 }
 
 //--------------------------
@@ -263,7 +288,7 @@ OnDressupChanged
 //--------------------------
 getBustSize {
 	case shellname {
-		when "竜后 / Drachen Königin", "空后 / Himmel Königin", "あの淡い冬", "あの青い夏"
+		when "竜后 / Drachen Königin", "空后 / Himmel Königin", "あの淡い冬", "あの青い夏", "スワロウテイル"
 			"extra_large"
 		when "Fly High!", "ll20yo", "夏季休業", "月光浴", "月夜のうさぎ", "桃色月", "桜吹雪", "純白", "薄ピンク（試作）", "青い天使" {
 			"large"
