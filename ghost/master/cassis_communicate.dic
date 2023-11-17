@@ -1779,6 +1779,7 @@ comSumTalk
 	冬限定トーク: %(ARRAYSIZE(aryWinterTalk))\n/
 	フェーズ1トーク: %(ARRAYSIZE(aryFriendTalk))\n/
 	フェーズ2トーク: %(ARRAYSIZE(aryLoveTalk))\n/
+	\n[half]/
 	masterシェル固有トーク: %(ARRAYSIZE(aryShellMasterTalk))\n/
 	Eternity Blackシェル固有トーク: %(ARRAYSIZE(aryShellEternityBlackTalk))\n/
 	Alternative - Cassisシェル固有トーク: %(ARRAYSIZE(aryShellAlternativeCassisTalk))\n/
@@ -1792,7 +1793,9 @@ comSumTalk
 	Titania固有トーク: %(ARRAYSIZE(aryShellTitaniaTalk))\n/
 	空后 / Himmel Königinトーク: %(ARRAYSIZE(aryShellHimmelKoniginTalk))\n/
 	竜后 / Drachen Königinトーク: %(ARRAYSIZE(aryShellDrachenKoniginTalk))\n/
-	\n合計: %(ARRAYSIZE(aryWingCommonTalk) + /
+	スワロウテイルトーク: %(ARRAYSIZE(aryShellSwallowTailTalk))\n/
+	\n[half]/
+	合計: %(ARRAYSIZE(aryWingCommonTalk) + /
 	ARRAYSIZE(aryNormalTalk) + /
 	ARRAYSIZE(arySpringTalk) + /
 	ARRAYSIZE(arySummerTalk) + /
@@ -1811,7 +1814,8 @@ comSumTalk
 	ARRAYSIZE(aryShellBlueAngelTalk) + /
 	ARRAYSIZE(aryShellTitaniaTalk) + /
 	ARRAYSIZE(aryShellHimmelKoniginTalk) + /
-	ARRAYSIZE(aryShellDrachenKoniginTalk)/
+	ARRAYSIZE(aryShellDrachenKoniginTalk) + /
+	ARRAYSIZE(arySHellSwallowTailTalk)/
 	)/
 	\e"
 }
