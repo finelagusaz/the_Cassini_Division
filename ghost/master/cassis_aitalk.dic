@@ -106,6 +106,9 @@ RandomTalkEx : nonoverlap
 	when "竜后 / Drachen Königin" {
 		_talk_array ,= aryShellDrachenKoniginTalk
 	}
+	when "スワロウテイル" {
+		_talk_array ,= aryShellSwallowTailTalk
+	}
 	}
 
 	//----------------------------------------
@@ -4871,6 +4874,23 @@ aryShellDrachenKoniginTalk : array {
 	'\1\s[10]\0\s[0]ベースは共通、\w4共通規格のパーツを組み合わせられる。\w9\n/
 	\s[6]今後の展開も考えられているようのではないかしら。\w9\n/
 	\s[0]…\w4…\4w\s[1]このきわどい恰好はちょっと思うものがあるけれど。\e'
+}
+
+// スワロウテイル
+ShellSwallowTailTalk : nonoverlap {
+	parallel aryShellSwallowTailTalk
+}
+
+aryShellSwallowTailTalk : array {
+	if swallowTailHavWingFlg == 1
+	{
+		'\1\s[10]\0\s[0]この腕?\w9\n/
+		見た目よりずっと丈夫よ。\w9\n/
+		\s[50]あなたを抱きしめて眠っても変わらないぐらいには。\e'
+	}
+
+	'\1\s[10]\0\s[0]目の色は、\w4そうね。\w9\n/
+	そういう気分だったのよ。\e'
 }
 
 //-----------------------
