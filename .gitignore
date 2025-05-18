@@ -1,3 +1,4 @@
+.DS_Store
 ghost/master/yaya_variable.cfg
 ghost/master/profile/*
 shell/master/profile/*
@@ -40,3 +41,4 @@ shell/titania/*
 shell/swallowtail/*
 shell/Drachen_Konigin
 shell/Himmel_Konigin
+shell/tateseta
