@@ -297,7 +297,7 @@ OnDressupChanged
 //--------------------------
 getBustSize {
 	case shellname {
-		when "竜后 / Drachen Königin", "空后 / Himmel Königin", "あの淡い冬", "あの青い夏", "スワロウテイル"
+		when "竜后 / Drachen Königin", "空后 / Himmel Königin", "あの淡い冬", "あの青い夏", "スワロウテイル","たてセタ"
 			"extra_large"
 		when "Fly High!", "ll20yo", "夏季休業", "月光浴", "月夜のうさぎ", "桃色月", "桜吹雪", "純白", "薄ピンク（試作）", "青い天使" {
 			"large"
@@ -331,7 +331,7 @@ getWingType
 		when "master", "Eternity Black", "White Days Actress", "White Lolita", "スプートニクを探して", "拡大鏡","月夜のうさぎ","新月","拡大鏡","さすらいウサギ","あの青い夏", "White Lolita 2nd", "White Lolita", "Fly High!"
 			"Devil"
 		// 半透明
-		when "Gemini","桜吹雪"
+		when "Gemini","桜吹雪","たてセタ"
 			"Energy"
 		// メカ・無機系
 		when "蒼月", "Alternative - Cassis"
