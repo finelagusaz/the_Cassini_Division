@@ -1817,7 +1817,7 @@ comSumTalk
 	ARRAYSIZE(aryShellHimmelKoniginTalk) + /
 	ARRAYSIZE(aryShellDrachenKoniginTalk) + /
 	ARRAYSIZE(arySHellSwallowTailTalk)/ + /
-	ARRAYSIZE(aryShellTateSweaterTalk)
+	ARRAYSIZE(aryShellTateSweaterTalk)/
 	)/
 	\e"
 }
