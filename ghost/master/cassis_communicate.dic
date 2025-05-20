@@ -1791,9 +1791,10 @@ comSumTalk
 	あの青い夏/あの淡い冬固有トーク: %(ARRAYSIZE(aryThatSeasonTalk))\n/
 	青い天使固有トーク: %(ARRAYSIZE(aryShellBlueAngelTalk))\n/
 	Titania固有トーク: %(ARRAYSIZE(aryShellTitaniaTalk))\n/
-	空后 / Himmel Königinトーク: %(ARRAYSIZE(aryShellHimmelKoniginTalk))\n/
-	竜后 / Drachen Königinトーク: %(ARRAYSIZE(aryShellDrachenKoniginTalk))\n/
-	スワロウテイルトーク: %(ARRAYSIZE(aryShellSwallowTailTalk))\n/
+	空后 / Himmel Königin固有トーク: %(ARRAYSIZE(aryShellHimmelKoniginTalk))\n/
+	竜后 / Drachen Königin固有トーク: %(ARRAYSIZE(aryShellDrachenKoniginTalk))\n/
+	スワロウテイル固有トーク: %(ARRAYSIZE(aryShellSwallowTailTalk))\n/
+	たてセタ固有トーク: %(ARRAYSIZE(aryShellTateSweaterTalk))\n/
 	\n[half]/
 	合計: %(ARRAYSIZE(aryWingCommonTalk) + /
 	ARRAYSIZE(aryNormalTalk) + /
@@ -1815,7 +1816,8 @@ comSumTalk
 	ARRAYSIZE(aryShellTitaniaTalk) + /
 	ARRAYSIZE(aryShellHimmelKoniginTalk) + /
 	ARRAYSIZE(aryShellDrachenKoniginTalk) + /
-	ARRAYSIZE(arySHellSwallowTailTalk)/
+	ARRAYSIZE(arySHellSwallowTailTalk)/ + /
+	ARRAYSIZE(aryShellTateSweaterTalk)
 	)/
 	\e"
 }
