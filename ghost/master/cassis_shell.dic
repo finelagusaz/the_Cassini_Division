@@ -76,6 +76,10 @@ OnShellChanging
 			"\1\s[10]\0\s[0]そう、\w4なら、\w4見せてあげる。\w9\n/
 			\s[6]少し待ってて。\w9\w9\w9\e"
 		}
+		when "たてセタ" {
+			"\1\s[10]\0\s[0]少し待ってて。\w9\n/
+			\s[6]すぐ戻るわ。\w9\w9\e"
+		}
 		others {
 			"\1\s[10]\0\s[0]どんな姿になるのかしらね。\w9\w9\w9\e"
 			"\1\s[10]\0\s[6]これなら、\w4あの形がいいかしら。\w9\w9\w9\e"
@@ -230,6 +234,11 @@ OnShellChanged
 		when "スワロウテイル" {
 			"\1\s[10]\0\s[50]一緒に踊ってもらえないかしら\w4…\w4…\w4\s[54]なんてね。\e"
 		}
+		when "たてセタ" {
+			// 作者的には不満ありません。
+			"\1\s[10]\0\s[0]似合ってるかしら?\w9\n/
+			\s[6]少し、\w4丈が足りないかもしれないけど\w4…\w4…。\e"
+		}
 		others {
 			"\1\s[10]\0\s[0]っと、どうかしら?\e"
 			"\1\s[10]\0\s[0]お待たせ。\e"
@@ -288,7 +297,7 @@ OnDressupChanged
 //--------------------------
 getBustSize {
 	case shellname {
-		when "竜后 / Drachen Königin", "空后 / Himmel Königin", "あの淡い冬", "あの青い夏", "スワロウテイル"
+		when "竜后 / Drachen Königin", "空后 / Himmel Königin", "あの淡い冬", "あの青い夏", "スワロウテイル","たてセタ"
 			"extra_large"
 		when "Fly High!", "ll20yo", "夏季休業", "月光浴", "月夜のうさぎ", "桃色月", "桜吹雪", "純白", "薄ピンク（試作）", "青い天使" {
 			"large"
@@ -322,7 +331,7 @@ getWingType
 		when "master", "Eternity Black", "White Days Actress", "White Lolita", "スプートニクを探して", "拡大鏡","月夜のうさぎ","新月","拡大鏡","さすらいウサギ","あの青い夏", "White Lolita 2nd", "White Lolita", "Fly High!"
 			"Devil"
 		// 半透明
-		when "Gemini","桜吹雪"
+		when "Gemini","桜吹雪","たてセタ"
 			"Energy"
 		// メカ・無機系
 		when "蒼月", "Alternative - Cassis"
