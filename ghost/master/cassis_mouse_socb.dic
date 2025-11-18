@@ -1409,7 +1409,7 @@ arySakurafubukiDoubleClick0Fox_tailPhase0 : array
 arySakurafubukiDoubleClick0Fox_tailPhase1 : array 
 {
 	'\0\s[1]いっそうのこと、\w4顔を埋めてみる?\e'
-	'\0\s[1]…\w4…\w4どう、\したいの?\e'
+	'\0\s[1]…\w4…\w4どう、したいの?\e'
 	'\0\s[3]…\w4…。\e'
 }
 
