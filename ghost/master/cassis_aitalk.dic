@@ -133,7 +133,7 @@ RandomTalkEx : nonoverlap
 	_tmp_wing_type = getWingType
 
 	// 鳥の羽ではないトーク
-	if _tmp_wing_type !_in_ 'Brid' {
+	if _tmp_wing_type !_in_ 'Bird' {
 		_talk_array ,= WingNotBirdTalk
 	}
 
@@ -151,7 +151,7 @@ RandomTalkEx : nonoverlap
 				_talk_array ,= aryWingCommonTalk
 		}
 
-		_talk_array ,= EVAL(("aryWing" + _tmp_wing_types[i] + "Talk"))
+		_talk_array ,= EVAL(("aryWing" + _tmp_wing_types[_i] + "Talk"))
 	}
 
 	parallel _talk_array 

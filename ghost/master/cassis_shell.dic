@@ -206,13 +206,13 @@ OnShellChanged
 		when "Fly High!" {
 			"\1\s[10]\0\s[0]たまにはこういう格好も悪くないわね。\w9\n/
 			珍しい?\w9\n/
-			ふふ、\w4ラフな格好も似あうでしょう?。\e"
+			ふふ、\w4ラフな格好も似あうでしょう?\e"
 		}
 		when "青い天使" {
 			"\1\s[10]\0\s[0]ウミウシの要素を取り入れてみたの。\w9\n/
 			どうかしら?\e"
 			"\1\s[10]\0\s[0]…\w4…\w4甘辛く煮付けて食べたい?\w9\n/
-			理解できないはけではないけれど、おいしくないと思うわよ。\e"
+			理解できないわけではないけれど、おいしくないと思うわよ。\e"
 		}
 		when "あの淡い冬" {
 			"\1\s[10]\0\s[0]これぐらい着込めば寒くもないでしょうね。\w9\n/
@@ -305,7 +305,7 @@ getBustSize {
 		when "Gemini", "さすらいウサギ", "バニスさん", "プラジャーパティ", "マジカル☆カシス", "新月", "月白", "瑠璃", "Titania" {
 			"middle"
 		}
-		when "Alternative - Cassis", "Bridal Butterfly", "Whit Days Actress" {
+		when "Alternative - Cassis", "Bridal Butterfly", "White Days Actress" {
 			"small"
 		}
 		others {
@@ -360,7 +360,7 @@ getWingTypeForDrachenKoningin {
 	} elseif drachenKoniginWingTypeMechaFlg == 1 {
 		"Inorganic"
 	} else {
-		"Nonthing"
+		"Nothing"
 	}
 }
 
@@ -544,7 +544,7 @@ ShellCompatibility
 		when 'Bridal Butterfly','Bridal Butterfly 75%'
 		{
 			if BridalButterflySurfaceMode < 9 {
-				BridalButterflySurfaceModeaceMode = BridalButterflySurfaceMode * 1000;
+				BridalButterflySurfaceMode = BridalButterflySurfaceMode * 1000;
 			}
 		}
 		when '月白'
