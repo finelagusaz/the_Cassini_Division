@@ -248,6 +248,9 @@ TalkToUser
 	{
 		comFlirt
 	}
+	elseif ("仕事" _in_ reference[1] || "バイト" _in_ reference[1]) && ("している" _in_ reference[1] || "は何" _in_ reference[1] ) {
+		comAskWork
+	}
 	else
 	{
 		"\1\s[10]\0\s[0]なんて言ったの?\e"
@@ -1779,6 +1782,7 @@ comSumTalk
 	冬限定トーク: %(ARRAYSIZE(aryWinterTalk))\n/
 	フェーズ1トーク: %(ARRAYSIZE(aryFriendTalk))\n/
 	フェーズ2トーク: %(ARRAYSIZE(aryLoveTalk))\n/
+	本屋トーク: %(ARRAYSIZE(aryBookStoreTalk))\n/
 	\n[half]/
 	masterシェル固有トーク: %(ARRAYSIZE(aryShellMasterTalk))\n/
 	Eternity Blackシェル固有トーク: %(ARRAYSIZE(aryShellEternityBlackTalk))\n/
@@ -1804,6 +1808,7 @@ comSumTalk
 	ARRAYSIZE(aryWinterTalk) + /
 	ARRAYSIZE(aryFriendTalk) + /
 	ARRAYSIZE(aryLoveTalk) + /
+	ARRAYSIZE(aryBookStoreTalk) + /
 	ARRAYSIZE(aryShellMasterTalk) + /
 	ARRAYSIZE(aryShellEternityBlackTalk) + /
 	ARRAYSIZE(aryShellAlternativeCassisTalk) + /
@@ -2309,4 +2314,24 @@ comAskThreeSize
 	--
 	"\n\n[half]\q[質問に戻る,menuCommandAsk]\n/
 	\q[キャンセル,CANCEL]\e"
+}
+
+// 仕事について
+comAskWork
+{
+	if GetShellnameEx == "Gemini"
+	{
+		"\1\s[10]\0\s[0]何もしてないわ。\w9\n\n[half]/
+		\1\s[16]何かしたほうがいいとは思わないの？\w9\n\n[half]/
+		\0\s[0]別に困ってもいないでしょう？\w9\n\n[half]/
+		\1\s[10]それは、\w9そうだけど。"
+	}
+	else
+	{
+		"\0\s[0]本屋で手伝いをしているの。\w9\n/
+		本好きにはちょうどいいでしょう？"
+	}
+	--
+	"\n\n[half]\q[質問に戻る,menuCommandAsk]\n/
+	\q[キャンセル,CANCEL]\e:eval=flgBookStoreTalk=1"
 }
