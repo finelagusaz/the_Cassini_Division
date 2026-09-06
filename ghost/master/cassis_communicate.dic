@@ -2139,7 +2139,7 @@ comAskFS
 		もう、\w4滅んでいることになっているわ。\w9\n"
 	}
 	--
-	"\n[half]\q[質問に戻る,menuCommandAsk]\n/
+	"\n[half]\q[質問に戻る,Menu_COMMANDASK]\n/
 	\q[キャンセル,CANCEL]\e"
 }
 
@@ -2160,7 +2160,7 @@ comAskMei
 		何でも楽しむ変わったヒトだったわ。\n"
 	}
 	--
-	"\n[half]\q[質問に戻る,menuCommandAsk]\n/
+	"\n[half]\q[質問に戻る,Menu_COMMANDASK]\n/
 	\q[キャンセル,CANCEL]\e"
 }
 
@@ -2178,7 +2178,7 @@ comAskAge
 		\s[6]年数だけ言えば、\w4あなたより年上だと思うけど。\n"
 	}
 	--
-	"\n[half]\q[質問に戻る,menuCommandAsk]\n/
+	"\n[half]\q[質問に戻る,Menu_COMMANDASK]\n/
 	\q[キャンセル,CANCEL]\e"
 }
 
@@ -2200,7 +2200,7 @@ comAskAndroid
 		身体的な能力や仮想情報空間との親和性以外はヒトと同じよ。\n"
 	}
 	--
-	"\n[half]\q[質問に戻る,menuCommandAsk]\n/
+	"\n[half]\q[質問に戻る,Menu_COMMANDASK]\n/
 	\q[キャンセル,CANCEL]\e"
 }
 
@@ -2219,7 +2219,7 @@ comAskHobby
 		見ていて飽きないわ。\n"
 	}
 	--
-	"\n[half]\q[質問に戻る,menuCommandAsk]\n/
+	"\n[half]\q[質問に戻る,Menu_COMMANDASK]\n/
 	\q[キャンセル,CANCEL]\e"
 }
 
@@ -2238,7 +2238,7 @@ comAskLodger
 		そのシェア相手のことね。\n"
 	}
 	--
-	"\n[half]\q[質問に戻る,menuCommandAsk]\n/
+	"\n[half]\q[質問に戻る,Menu_COMMANDASK]\n/
 	\q[キャンセル,CANCEL]\e"
 }
 
@@ -2261,7 +2261,7 @@ comAskHagalaz
 		だから、\w4あのバカ。\n"
 	}
 	--
-	"\n[half]\q[質問に戻る,menuCommandAsk]\n/
+	"\n[half]\q[質問に戻る,Menu_COMMANDASK]\n/
 	\q[キャンセル,CANCEL]\e:eval=flgKnownHagalaz=1"
 }
 
@@ -2287,7 +2287,7 @@ comAskRelationHagalaz
 		\s[6]FSとFSを倒すための研究をしていたヒトとFSを殺すために作られたアンドロイドが共同生活をしていたのだから。\w9\n"
 	}
 	--
-	"\n[half]\q[質問に戻る,menuCommandAsk]\n/
+	"\n[half]\q[質問に戻る,Menu_COMMANDASK]\n/
 	\q[キャンセル,CANCEL]\e"
 }
 
@@ -2312,7 +2312,7 @@ comAskThreeSize
 		"好きなように変えられるのだから、聞いても意味がないと思うわ。"
 	}
 	--
-	"\n\n[half]\q[質問に戻る,menuCommandAsk]\n/
+	"\n\n[half]\q[質問に戻る,Menu_COMMANDASK]\n/
 	\q[キャンセル,CANCEL]\e"
 }
 
@@ -2332,6 +2332,6 @@ comAskWork
 		本好きにはちょうどいいでしょう？"
 	}
 	--
-	"\n\n[half]\q[質問に戻る,menuCommandAsk]\n/
+	"\n\n[half]\q[質問に戻る,Menu_COMMANDASK]\n/
 	\q[キャンセル,CANCEL]\e:eval=flgBookStoreTalk=1"
 }
