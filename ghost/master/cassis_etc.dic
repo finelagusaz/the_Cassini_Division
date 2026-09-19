@@ -307,13 +307,13 @@ OnHeadlinesense.OnFind
 		//---- 次のページがある場合
 		"\q0[][次のページ]/
 		\q1[%reference[1]][サイトへ]/
-		\q2[HEADLINECANCEL][やめ]\e"
+		\q2[Menu_HEADLINECANCEL][やめ]\e"
 	}
 	else
 	{
 		//---- 次のページがない場合
 		"\q0[%reference[1]][サイトへ]/
-		\q1[HEADLINECANCEL][やめ]\e"
+		\q1[Menu_HEADLINECANCEL][やめ]\e"
 	}
 }
 

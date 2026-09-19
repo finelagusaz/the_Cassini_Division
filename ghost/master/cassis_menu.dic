@@ -105,13 +105,13 @@ TALKINTERVAL {
 	//---- トーク頻度の調整
 	"\1\s[10]\0\s[0]どのくらいがいいの?"
 	--
-	AYATEMPLATE.MenuItem("うるさいくらい", "TALKMAX", 200)
+	AYATEMPLATE.MenuItem("うるさいくらい", "Menu_TALKMAX", 200)
 	--
-	AYATEMPLATE.MenuItem("ふつう", "TALKNORMAL")
+	AYATEMPLATE.MenuItem("ふつう", "Menu_TALKNORMAL")
 	--
-	AYATEMPLATE.MenuItem("静か", "TALKPOOR")
+	AYATEMPLATE.MenuItem("静か", "Menu_TALKPOOR")
 	--
-	AYATEMPLATE.MenuItem("黙ってて", "TALKNONE")
+	AYATEMPLATE.MenuItem("黙ってて", "Menu_TALKNONE")
 	--
 	AYATEMPLATE.MenuItem("戻る", "OpenMenu", 150)
 }
@@ -164,11 +164,11 @@ Menu_HEADLINECANCEL {
 Menu_WCC {
 	"\1\s[10]\0\s[0]"
 	--
-	AYATEMPLATE.MenuItem("早く", "WCFAST")
+	AYATEMPLATE.MenuItem("早く", "Menu_WCFAST")
 	--
-	AYATEMPLATE.MenuItem("普通", "WCNORMAL")
+	AYATEMPLATE.MenuItem("普通", "Menu_WCNORMAL")
 	--
-	AYATEMPLATE.MenuItem("遅く", "WCSLOW")
+	AYATEMPLATE.MenuItem("遅く", "Menu_WCSLOW")
 	--
 	AYATEMPLATE.MenuItem("設定へ戻る","Menu_CONFIG", 150)
 }
