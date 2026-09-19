@@ -129,7 +129,7 @@ RandomTalkEx : nonoverlap
 	//----------------------------------------
 	// 本屋トーク
 	//----------------------------------------
-	if flgBookStoreTalk == 1 && GetShellName != "Gemini"
+	if flgBookStoreTalk == 1 && shellname != "Gemini"
 	{
 		_talk_array ,= aryBookStoreTalk
 	}
