@@ -25,7 +25,7 @@
 
 ## 辞書の構成
 
-- 文字コード: 辞書は UTF-8。`ghost/master/descript.txt`、`system_config.txt`、`shell/*/descript.txt`、`surfacetable.txt` は Shift_JIS なので、文字コードを変えない。
+- 文字コード: 辞書は UTF-8。`ghost/master/descript.txt` と `install.txt` は UTF-8（先頭に `charset,UTF-8`、改行は CRLF）。`ghost/master/system_config.txt`、`shell/*/descript.txt`、`surfacetable.txt`、`t_c_d/descript.txt` は Shift_JIS なので、文字コードを変えない。
 - 読み込む辞書（`ghost/master/yaya.txt` の `dic` / `dicdir`）: `yaya_tmpl_util.dic`、`cassis_*.dic`（下の表）、`dicdir, menu/shell`、`dicdir, menu/command`、`yaya_homeurl.txt`。辞書は `ghost/master/` の直下にあり、`dic/` フォルダは無い。
 - 緊急モード（`yaya_emerg.txt`）: `yaya_emerg_dic.txt` と `yaya_homeurl.txt`
 - システム辞書: `ghost/master/system/`（`system_config.txt` の `dicdir, system`。submodule ではなく普通のファイル。2026-09 に yaya-dic の最新へ更新済み。lint が動く）
