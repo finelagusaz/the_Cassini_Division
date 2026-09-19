@@ -1058,8 +1058,8 @@ SakurafubukiMouseDoubleClick0Head
 //			_talk_array ,= arySakMousePhase1
 		}
 		when 2, 3 {
-			_talk_array ,= arySakurafubukiDoubleClick0HeadPhase2
-//			_talk_array ,= arySakMousePhase2
+//			_talk_array ,= arySakurafubukiDoubleClick0HeadPhase2
+			_talk_array ,= arySakMousePhase2
 		}
 	}
 
@@ -1164,21 +1164,21 @@ SakurafubukiMouseDoubleClick0Bust
 
 	case calcErosPhase(3) {
 		when "n" {
-//			_talk_array ,= arySakWheel0BustPhaseN
+//			_talk_array ,= arySakurafubukiDoubleClick0BustPhaseN
 			_talk_array ,= aryDoubleClick0BustFriendCommon
 		}
 		when 0 {
-//			_talk_array ,= arySakWheel0BustPhase0
+//			_talk_array ,= arySakurafubukiDoubleClick0BustPhase0
 			_talk_array ,= aryDoubleClick0BustLoveNormalCommon
 			_talk_array ,= aryCommonErosSerif
 		}
 		when 1 {
-//			_talk_array ,= arySakWheel0BustPhase1
+//			_talk_array ,= arySakurafubukiDoubleClick0BustPhase1
 			_talk_array ,= aryDoubleClick0BustLoveErosGlamourous
 			_talk_array ,= aryDoubleClick0BustLoveErosCommon
 		}
 		when 2 {
-			_talk_array ,= arySakWheel0BustPhase2
+			_talk_array ,= arySakurafubukiDoubleClick0BustPhase2
 			_talk_array ,= aryDoubleClick0BustLoveErosGlamourous
 			_talk_array ,= aryDoubleClick0BustLoveErosCommon
 		}
@@ -1232,11 +1232,11 @@ SakurafubukiMouseDoubleClick0Hair
 			_talk_array ,= MouseDoubleClick0Hair
 		}
 		when 1 {
-//			_talk_array ,= arySakurafubukiDoubleClick0HairPhase1
+			_talk_array ,= arySakurafubukiDoubleClick0HairPhase1
 			_talk_array ,= arySakMousePhase1
 		}
 		when 2, 3 {
-//			_talk_array ,= arySakurafubukiDoubleClick0HairPhase2
+			_talk_array ,= arySakurafubukiDoubleClick0HairPhase2
 			_talk_array ,= arySakMousePhase2
 		}
 	}
