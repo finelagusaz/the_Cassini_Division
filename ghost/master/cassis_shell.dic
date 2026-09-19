@@ -461,19 +461,52 @@ sfcnv
 	_script = _argv[0];
 	_script = REPLACE(_script,"\\",CHR(1));
 
-	//_countは捨て変数(余分な出力をしないための措置)
-
-	_count = RE_GREP(_script,"\\s\[(\d+)\]");
-	_grep = RE_GETSTR;
-	foreach _grep;_string {
-		_count = RE_GREP(_string,"\d+");
-		_surface = TOINT(RE_GETSTR[0]);
-		_surface += SurfaceMode * 1; //ここが変換部
-		_script = REPLACE(_script,_string,"\s[%(_surface)]");
+	// 加算値。\1 側に足すのは、\1 にも表情差分を持つシェル (Gemini) だけ。
+	// それ以外のシェルで足すと \s[1010] のような存在しないサーフェスになる。
+	_offset = TOINT(SurfaceMode);
+	_kero_offset = 0;
+	if shellname == "Gemini" {
+		_kero_offset = _offset;
 	}
 
-	_script = REPLACE(_script,CHR(1),"\\");
-	_script;
+	// スコープ切り替え (\0 \h \1 \u \p[n]) と \s[n] を、出現順に拾う
+	//_countは捨て変数(余分な出力をしないための措置)
+	_count = RE_GREP(_script,'\\(?:[01hu]|p\[\d+\]|s\[\d+\])');
+	_tags = RE_GETSTR;
+	_poss = RE_GETPOS;
+	_lens = RE_GETLEN;
+
+	_result = '';
+	_cursor = 0;
+	_scope = 0;
+	for _n = 0; _n < _count; _n++ {
+		_tag = _tags[_n];
+		_kind = SUBSTR(_tag,1,1);
+		if _kind == 's' {
+			_surface = TOINT(SUBSTR(_tag,3,STRLEN(_tag) - 4));
+			if _scope == 1 {
+				_surface += _kero_offset;
+			}
+			else {
+				_surface += _offset; //ここが変換部
+			}
+			_result += SUBSTR(_script,_cursor,_poss[_n] - _cursor) + "\s[%(_surface)]";
+			_cursor = _poss[_n] + _lens[_n];
+		}
+		elseif _kind == '0' || _kind == 'h' {
+			_scope = 0;
+		}
+		elseif _kind == '1' || _kind == 'u' {
+			_scope = 1;
+		}
+		else {
+			_scope = TOINT(SUBSTR(_tag,3,STRLEN(_tag) - 4));
+		}
+	}
+	_result += SUBSTR(_script,_cursor,STRLEN(_script) - _cursor);
+
+	_result = REPLACE(_result,CHR(1),"\\");
+	_result;
 }
 
 // 互換処理
