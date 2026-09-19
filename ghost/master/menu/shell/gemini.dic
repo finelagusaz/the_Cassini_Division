@@ -80,7 +80,7 @@ Menu_GeminiPolluxAndCastor {
 
 // Gemini/脱衣
 Menu_GeminiTuckup {
-	if flgLove == 1 && (GeminiSurfaceMode >= 0 && GeminiSurfacemode <= 2000) && shellname == "Gemini"  {
+	if flgLove == 1 && (GeminiSurfaceMode >= 0 && GeminiSurfaceMode <= 2000) && shellname == "Gemini"  {
 		case GeminiSurfaceMode {
 			when 0, 1000 {
 				GeminiSurfaceMode = GeminiSurfaceMode + 3000;
@@ -112,7 +112,7 @@ Menu_GeminiTuckup {
 
 // FIXME: 判定処理を汎用のものに置き換える
 Menu_GeminiDress {
-	if flgLove == 1 && (GeminiSurfaceMode >= 3000 && GeminiSurfacemode <= 6000) && shellname == "Gemini"  {
+	if flgLove == 1 && (GeminiSurfaceMode >= 3000 && GeminiSurfaceMode <= 6000) && shellname == "Gemini"  {
 		case GeminiSurfaceMode {
 			when 3000, 4000 {
 				GeminiSurfaceMode = GeminiSurfaceMode - 3000;

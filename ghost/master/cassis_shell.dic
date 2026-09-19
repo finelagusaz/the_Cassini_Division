@@ -755,6 +755,33 @@ SurfaceModeChangeEx
 	}
 }
 
+// 現在のシェルのお座りモードを返す
+/*
+	戻り値: 1 発窓追撃 / 2 TB固定 / 0 停止・お座り非対応
+*/
+GetOsuwariMode
+{
+	case shellname
+	{
+		when "master" { TOINT(MasterOsuwariMode) }
+		when "Eternity Black" { TOINT(EternityBlackOsuwariMode) }
+		when "拡大鏡" { TOINT(KakudaikyoOsuwariMode) }
+		when "銀色" { TOINT(GiniroOsuwariMode) }
+		when "White Lolita" { TOINT(WhiteLolitaOsuwariMode) }
+		when "瑠璃" { TOINT(RuriOsuwariMode) }
+		when "Alternative - Cassis" { TOINT(AlternativeOsuwariMode) }
+		when "月光浴" { TOINT(MoonlightBlueOsuwariMode) }
+		when "Bridal Butterfly",'Bridal Butterfly 75%' { TOINT(BridalButterflyOsuwariMode) }
+		when "月白" { TOINT(TukisiroOsuwariMode) }
+		when "Gemini" { TOINT(GeminiOsuwariMode) }
+		when "桃色月" { TOINT(PinkMoonOsuwariMode) }
+		when "ll29yo" { TOINT(Ll29yoOsuwariMode) }
+		when "マジカル☆カシス" { TOINT(MagicalCassisOsuwariMode) }
+		when "空后 / Himmel Königin" { TOINT(HimmelKoniginOsuwariMode) }
+		others { 0 }
+	}
+}
+
 //-----------------------------
 // シェル判定
 //-----------------------------

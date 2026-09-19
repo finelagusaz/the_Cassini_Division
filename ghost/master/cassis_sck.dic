@@ -24,7 +24,7 @@ OnKeyPress
 		}
 		when "g" {
 			if GetShellnameEx == "Gemini" {
-				GEMINITALK
+				Menu_GEMINITALK
 			}
 		}
 	}

@@ -217,7 +217,7 @@ OnUpdateComplete
 		{
 			"\1\s[10]\0\s[6]終わったわ。\w9\e"
 		}
-		elseif refenrece3 == "balloon"
+		elseif reference[3] == "balloon"
 		{
 			"\1\s[10]\0\s[5]\w9\w5\s[0]何?\w9\e"
 		}

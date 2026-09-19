@@ -4570,7 +4570,7 @@ aryNormalTalk : array
 	制御は RandomTalkEx : nonoverlap で行う。
 */
 WingCommonTalk : nonoverlap {
-	parallel aryCommonWingTalk
+	parallel aryWingCommonTalk
 }
 
 aryWingCommonTalk : array
@@ -4608,7 +4608,7 @@ aryWingCommonTalk : array
 
 // 鳥の羽以外
 WingNotBirdTalk : nonoverlap {
-	parallel aryCommonWingTalk
+	parallel aryWingCommonTalk
 }
 
 aryWingNotBirdTalk : array

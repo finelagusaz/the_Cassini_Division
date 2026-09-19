@@ -375,9 +375,9 @@ CastorMouseWheel0Head
 //----------------------------------
 // スカートホイール
 //----------------------------------
-CastorMouseWheel0Skirt
+CastorMouseWheelUp0Skirt
 {
-	MouseWheel0Skirt
+	MouseWheelUp0Skirt
 }
 
 //----------------------------------
