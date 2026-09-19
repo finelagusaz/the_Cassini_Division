@@ -58,7 +58,7 @@
 //----------------------------------
 // 唇ホイールクリック
 //----------------------------------
-MouseSAK_ClickEx0Lip
+SakurafubukiMouseClickEx0Lip
 {
 	_talk_array = IARRAY
 
