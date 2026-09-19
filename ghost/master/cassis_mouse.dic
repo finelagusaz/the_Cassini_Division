@@ -1176,10 +1176,6 @@ aryDoubleClick0LipLikeCommon : array {
 }
 
 // 唇つつき（相思相愛・共通）
-DoubleClick0LipLoveCommon : nonoverlap {
-	parallel aryDoubleClick0LipLoveCommon
-}
-
 aryDoubleClick0LipLoveCommon : array {
 	// 最初のころのユーザと比較して
 	'\1\s[10]\0\s[0]ん\w4…\w4…\w4\s[6]。\w9\n/

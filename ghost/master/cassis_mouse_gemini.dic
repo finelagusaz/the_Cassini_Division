@@ -65,10 +65,6 @@ CastorMouseMove0Head : nonoverlap
 }
 
 // 頭なで（好感度高）
-CastorMouseMove0HeadLike : nonoverlap {
-	parallel aryCastorMouseMove0HeadLike
-}
-
 aryCastorMouseMove0HeadLike : array
 {
 	"\0\s[1]…\w4…。"
@@ -80,10 +76,6 @@ aryCastorMouseMove0HeadLike : array
 }
 
 // 頭なで（共通）
-CastorMouseMove0HeadFriend : nonoverlap {
-	parallel aryCastorMouseMove0HeadFriend
-}
-
 aryCastorMouseMove0HeadFriend : array
 {
 	"\0\s[0]…\w4…。\e"
@@ -153,10 +145,6 @@ CastorMouseMove0Bust : nonoverlap
 }
 
 // 胸なで（好感度高・えろす）
-CastorMouseMove0BustLoveErosCommon : nonoverlap {
-	parallel aryCastorMouseMove0BustLoveErosCommon
-}
-
 aryCastorMouseMove0BustLoveErosCommon : array
 {
 	"\0\s[1]ん、\w4はぁ\w4…\w4…。\e"
@@ -165,10 +153,6 @@ aryCastorMouseMove0BustLoveErosCommon : array
 }
 
 // 胸なで（好感度高・通常）
-CastorMouseMove0BustLoveNormalCommon : nonoverlap {
-	parallel aryCastorMouseMove0BustLoveNormalCommon
-}
-
 aryCastorMouseMove0BustLoveNormalCommon : array
 {
 	"\0\s[2]―\w4―\w4\s[1]な、\w4何をするのよ。\e"
@@ -180,10 +164,6 @@ aryCastorMouseMove0BustLoveNormalCommon : array
 }
 
 // 胸なで（好感度通常）
-CastorMouseMove0BustFriendCommon : nonoverlap {
-	parallel aryCastorMouseMove0BustFriendCommon
-}
-
 aryCastorMouseMove0BustFriendCommon : array
 {
 	"\0\s[0]…\w4…\w4セクハラ反対。\e"
@@ -276,10 +256,6 @@ CastorMouseMove0Hip : nonoverlap
 }
 
 // 尻なで（好感度高・えろす）
-CastorMouseMove0HipLoveErosCommon : nonoverlap {
-	parallel aryCastorMouseMove0HipLoveErosCommon
-}
-
 aryCastorMouseMove0HipLoveErosCommon : array
 {
 	"\0\s[1]ん\w4…\w4…\w4そこじゃ、\w4なくて\w4…\w4…。\e"
@@ -289,10 +265,6 @@ aryCastorMouseMove0HipLoveErosCommon : array
 }
 
 // 尻なで（好感度高）
-CastorMouseMove0HipLoveNormalCommon : nonoverlap {
-	parallel aryCastorMouseMove0HipLoveNormalCommon
-}
-
 aryCastorMouseMove0HipLoveNormalCommon : array
 {
 	"\0\s[1]…\w4…\w4変な趣味ね。\e"
@@ -302,10 +274,6 @@ aryCastorMouseMove0HipLoveNormalCommon : array
 }
 
 // 尻なで（通常）
-CastorMouseMove0HipFriendCommon : nonoverlap {
-	parallel aryCastorMouseMove0HipFriendCommon
-}
-
 aryCastorMouseMove0HipFriendCommon : array
 {
 	"\0\s[0]…\w4…\w4変態。\e"
@@ -335,10 +303,6 @@ CastorMouseMove0Leg : nonoverlap
 }
 
 // 足なで（好感度高・通常・共通）
-CastorMouseMove0LegLoveNormalCommon : nonoverlap {
-	parallel aryCastorMouseMove0LegLoveNormalCommon
-}
-
 aryCastorMouseMove0LegLoveNormalCommon : array
 {
 	"\0\s[1]…\w4…\w4くすぐったいわ。\e"
@@ -350,10 +314,6 @@ aryCastorMouseMove0LegLoveNormalCommon : array
 }
 
 // 足つつき（好感度通常・共通）
-CastorMouseMove0LegFriendCommon : nonoverlap {
-	parallel aryCastorMouseMove0LegFriendCommon
-}
-
 aryCastorMouseMove0LegFriendCommon : array
 {
 	"\0\s[0]やめてもらえるかしら?\e"
@@ -416,10 +376,6 @@ CastorMouseWheel0Bust : nonoverlap
 }
 
 // 胸ホイール（好感度高・えろす）
-CastorMouseWheel0BustLoveErosCommon : nonoverlap {
-	parallel aryCastorMouseWheel0BustLoveErosCommon
-}
-
 aryCastorMouseWheel0BustLoveErosCommon : array
 {
 	"\0\s[1]あう、\w4強く\w4…\w4…ぁ\w4…\w4…\w4揉まない、\w4で\w4…\w4…。\e"
@@ -430,10 +386,6 @@ aryCastorMouseWheel0BustLoveErosCommon : array
 }
 
 //胸ホイール（好感度高・通常）
-CastorMouseWheel0BustLoveNormalCommon : nonoverlap {
-	parallel aryCastorMouseWheel0BustLoveNormalCommon
-}
-
 aryCastorMouseWheel0BustLoveNormalCommon : array
 {
 	"\0\s[1]ん、\w4%username\w4…\w4…\w4ダメ。\e"
@@ -443,10 +395,6 @@ aryCastorMouseWheel0BustLoveNormalCommon : array
 }
 
 // 胸ホイール（好感度通常）
-CastorMouseWheel0BustFriendCommon : nonoverlap {
-	parallel aryCastorMouseWheel0BustFriendCommon
-}
-
 aryCastorMouseWheel0BustFriendCommon : array
 {
 	"\0\s[8]いい度胸ね。\e"
@@ -510,10 +458,6 @@ CastorMouseWheel0Hip : nonoverlap
 }
 
 // 尻ホイール（好感度高・えろす）
-CastorMouseWheel0HipLoveErosCommon : nonoverlap {
-	parallel aryCastorMouseWheel0HipLoveErosCommon
-}
-
 aryCastorMouseWheel0HipLoveErosCommon : array
 {
 	"\0\s[1]にゃ、\w4そんなに触らないで。\e"
@@ -522,10 +466,6 @@ aryCastorMouseWheel0HipLoveErosCommon : array
 }
 
 //尻ホイール（好感度高・通常）
-CastorMouseWheel0HipLoveNormalCommon : nonoverlap {
-	parallel aryCastorMouseWheel0HipLoveNormalCommon
-}
-
 aryCastorMouseWheel0HipLoveNormalCommon : array
 {
 	"\0\s[1]にゃ、\w4にゃうん。\w9\n/
@@ -537,10 +477,6 @@ aryCastorMouseWheel0HipLoveNormalCommon : array
 }
 
 // 尻ホイール（好感度通常）
-CastorMouseWheel0HipFriendCommon : nonoverlap {
-	parallel aryCastorMouseWheel0HipFriendCommon
-}
-
 aryCastorMouseWheel0HipFriendCommon : array
 {
 	"\0\s[0]…\w4…\w4柔らかい?\w9\n/
@@ -571,10 +507,6 @@ CastorMouseWheel0Leg : nonoverlap
 }
 
 // 足ホイール（好感度高・通常・共通）
-CastorMouseWheel0LegLoveNormalCommon : nonoverlap {
-	parallel aryCastorMouseWheel0LegLoveNormalCommon
-}
-
 aryCastorMouseWheel0LegLoveNormalCommon : array
 {
 	"\0\s[1]く、\w4くすぐったいわ。\e"
@@ -585,10 +517,6 @@ aryCastorMouseWheel0LegLoveNormalCommon : array
 }
 
 // 足ホイール（好感度通常・共通）
-CastorMouseWheel0LegFriendCommon : nonoverlap {
-	parallel aryCastorMouseWheel0LegFriendCommon
-}
-
 aryCastorMouseWheel0LegFriendCommon : array
 {
 	"\0\s[0]脱がしたいの?\w9\n/
@@ -664,10 +592,6 @@ CastorMouseDoubleClick0Lip : nonoverlap
 }
 
 // 唇つつき（好感度関係なし共通）
-CastorDoubleClick0LipCommon : nonoverlap {
-	parallel aryCastorDoubleClick0LipCommon
-}
-
 aryCastorDoubleClick0LipCommon : array
 {
 	'\0\s[7]食いちぎられたいの?\e'
@@ -678,10 +602,6 @@ aryCastorDoubleClick0LipCommon : array
 }
 
 // 唇つつき（好感度高・共通）
-CastorDoubleClick0LipLikeCommon : nonoverlap {
-	parallel aryCastorDoubleClick0LipLikeCommon
-}
-
 aryCastorDoubleClick0LipLikeCommon : array
 {
 	'\0\s[6]ん\w4…\w4…\w4柔らかいわ。\w9\n/
@@ -695,10 +615,6 @@ aryCastorDoubleClick0LipLikeCommon : array
 }
 
 // 唇つつき（相思相愛・共通）
-CastorDoubleClick0LipLoveCommon : nonoverlap {
-	parallel aryCastorDoubleClick0LipLoveCommon
-}
-
 aryCastorDoubleClick0LipLoveCommon : array
 {
 	'\0\s[6]ん、\w4\s[1]ふ\w4…\w4…\w4ふぁ\w4…\w4…。\e'
@@ -754,10 +670,6 @@ CastorMouseDoubleClick0Bust : nonoverlap
 
 
 // 胸つつき（好感度高・えろす・共通）
-CastorDoubleClick0BustLoveErosCommon : nonoverlap {
-	parallel aryCastorDoubleClick0BustLoveErosCommon
-}
-
 aryCastorDoubleClick0BustLoveErosCommon : array
 {
 	'\0\s[1]にゃ、\w4にゃう\w4…\w4…\w4突っつき過ぎよ?\e'
@@ -767,10 +679,6 @@ aryCastorDoubleClick0BustLoveErosCommon : array
 }
 
 // 胸つつき（好感度高・通常・共通）
-CastorDoubleClick0BustLoveNormalCommon : nonoverlap {
-	parallel aryCastorDoubleClick0BustLoveNormalCommon
-}
-
 aryCastorDoubleClick0BustLoveNormalCommon : array
 {
 	'\0\s[1]ん\w4…\w4…\w4\s[9]な、\w4何?\e'
@@ -782,10 +690,6 @@ aryCastorDoubleClick0BustLoveNormalCommon : array
 }
 
 // 胸つつき（好感度通常・共通）
-CastorDoubleClick0BustFriendCommon : nonoverlap {
-	parallel aryCastorDoubleClick0BustFriendCommon
-}
-
 aryCastorDoubleClick0BustFriendCommon : array
 {
 	'\0\s[8]ふぅん、\w4いい度胸ね。\e'
@@ -856,10 +760,6 @@ CastorMouseDoubleClick0Hip
 /*
 	・当人としては部位が部位だけに困惑している
 */
-CastorDoubleClick0HipLoveErosCommon : nonoverlap {
-	parallel aryCastorDoubleClick0HipLoveErosCommon
-}
-
 aryCastorDoubleClick0HipLoveErosCommon : array
 {
 	'\0\s[1]にゃあ、\w4ん。\w9\n/
@@ -871,10 +771,6 @@ aryCastorDoubleClick0HipLoveErosCommon : array
 }
 
 // 尻つつき（好感度高・通常・共通）
-CastorDoubleClick0HipLoveNormalCommon : nonoverlap {
-	parallel aryCastorDoubleClick0HipLoveNormalCommon
-}
-
 aryCastorDoubleClick0HipLoveNormalCommon : array
 {
 	'\0\s[6]あまり、\w4そうやって触るところではないわ。\e'
@@ -886,10 +782,6 @@ aryCastorDoubleClick0HipLoveNormalCommon : array
 }
 
 // 尻つつき（好感度通常・共通）
-CastorDoubleClick0HipFriendCommon : nonoverlap {
-	parallel aryCastorDoubleClick0HipFriendCommon
-}
-
 aryCastorDoubleClick0HipFriendCommon : array
 {
 	'\0\s[0]蹴られたい?\w9\n/
@@ -920,10 +812,6 @@ CastorMouseDoubleClick0Leg : nonoverlap
 }
 
 // 足つつき（好感度高・通常・共通）
-CastorDoubleClick0LegLoveNormalCommon : nonoverlap {
-	parallel aryCastorDoubleClick0LegLoveNormalCommon
-}
-
 aryCastorDoubleClick0LegLoveNormalCommon : array
 {
 	'\0\s[0]マッサージ?\w9\n/
@@ -935,10 +823,6 @@ aryCastorDoubleClick0LegLoveNormalCommon : array
 }
 
 // 足つつき（好感度通常・共通）
-CastorDoubleClick0LegFriendCommon : nonoverlap {
-	parallel aryCastorDoubleClick0LegFriendCommon
-}
-
 aryCastorDoubleClick0LegFriendCommon : array
 {
 	'\0\s[8]蹴ってもいいかしら?\e'
@@ -950,10 +834,6 @@ aryCastorDoubleClick0LegFriendCommon : array
 //---------------------------------
 // 共通反応・えろす
 //---------------------------------
-CastorCommonErosSerif : nonoverlap {
-	parallel aryCastorCommonErosSerif
-}
-
 aryCastorCommonErosSerif
 {
 	"\0\s[1]はぅ\w4…\w4…\w4はぁ、\w4んっ\w4…\w4…。\e"
@@ -1030,10 +910,6 @@ GeminiMouseMove0Head : nonoverlap
 }
 
 // 頭なで（好感度高）
-GeminiMouseMove0HeadLikeCommon : nonoverlap {
-	parallel aryGeminiMouseMove0HeadLikeCommon
-}
-
 aryGeminiMouseMove0HeadLikeCommon : array
 {
 	'\0\s[1]…\w4…\w4ふふ。\w9\n\n[half]/
@@ -1054,10 +930,6 @@ aryGeminiMouseMove0HeadLikeCommon : array
 }
 
 // 頭なで（共通）
-GeminiMouseMove0HeadCommon : nonoverlap {
-	parallel aryGeminiMouseMove0HeadCommon
-}
-
 aryGeminiMouseMove0HeadCommon : array
 {
 	'\0\s[6]ふふ\w4…\w4…。\w9\n\n[half]/
@@ -1160,10 +1032,6 @@ GeminiMouseMove0Bust : nonoverlap
 }
 
 // 胸なで（好感度高・えろす）
-GeminiMouseMove0BustLoveErosCommon : nonoverlap {
-	parallel aryGeminiMouseMove0BustLoveErosCommon
-}
-
 aryGeminiMouseMove0BustLoveErosCommon : array
 {
 	"\0\s[1]ん\w4、はぅ\w4…\w4…。\w9\n\n[half]/
@@ -1181,10 +1049,6 @@ aryGeminiMouseMove0BustLoveErosCommon : array
 }
 
 // 胸なで（好感度高・通常）
-GeminiMouseMove0BustLoveNormalCommon : nonoverlap {
-	parallel aryGeminiMouseMove0BustLoveNormalCommon
-}
-
 aryGeminiMouseMove0BustLoveNormalCommon : array
 {
 	"\0\s[0]\s[1]ん\w4…\w4…。\w9\n\n[half]/
@@ -1202,10 +1066,6 @@ aryGeminiMouseMove0BustLoveNormalCommon : array
 }
 
 // 胸なで（好感度通常）
-GeminiMouseMove0BustFriendCommon : nonoverlap {
-	parallel aryGeminiMouseMove0BustFriendCommon
-}
-
 aryGeminiMouseMove0BustFriendCommon : array
 {
 	"\0\s[8]何処を触っているのかしら?\w9\n\n[half]/
@@ -1364,10 +1224,6 @@ GeminiMouseMove0Mystic : nonoverlap
 }
 
 // 神秘の領域なで（好感度高・えろす）
-GeminiMouseMove0MysticLoveCommon : nonoverlap {
-	parallel aryGeminiMouseMove0MysticLoveCommon
-}
-
 aryGeminiMouseMove0MysticLoveCommon : array
 {
 	"\0\s[1]ん\w4…\w4…っ\w4…\w4…はぁっ\w9\n\n[half]/
@@ -1384,10 +1240,6 @@ aryGeminiMouseMove0MysticLoveCommon : array
 }
 
 // 神秘の領域なで（好感度通常）
-GeminiMouseMove0MysticFriendCommon : nonoverlap {
-	parallel aryGeminiMouseMove0MysticFriendCommon
-}
-
 aryGeminiMouseMove0MysticFriendCommon : array
 {
 	"\0\s[8]いい度胸ね。\w9\n\n[half]/
@@ -1422,10 +1274,6 @@ GeminiMouseMove0Leg : nonoverlap
 }
 
 // 足なで（好感度高・通常・共通）
-GeminiMouseMove0LegLoveNormalCommon : nonoverlap {
-	parallel aryGeminiMouseMove0LegLoveNormalCommon
-}
-
 aryGeminiMouseMove0LegLoveNormalCommon : array
 {
 	"\0\s[1]くすぐったいからやめてちょうだい。\w9\n\n[half]/
@@ -1440,10 +1288,6 @@ aryGeminiMouseMove0LegLoveNormalCommon : array
 }
 
 // 足なで（好感度通常・共通）
-GeminiMouseMove0LegFriendCommon : nonoverlap {
-	parallel aryGeminiMouseMove0LegFriendCommon
-}
-
 aryGeminiMouseMove0LegFriendCommon : array
 {
 	"\0\s[0]触って楽しい?\w9\n\n[half]/
@@ -1536,10 +1380,6 @@ GeminiMouseWheel0Bust : nonoverlap
 }
 
 // 胸ホイール（好感度高・えろす）
-GeminiMouseWheel0BustLoveErosCommon : nonoverlap {
-	parallel aryGeminiMouseWheel0BustLoveErosCommon
-}
-
 aryGeminiMouseWheel0BustLoveErosCommon : array
 {
 	"\0\s[1]ん、\w4そんなに、\w4強く\w4…\w4…ぁ\w4しない、\w4で…\w4…。\w9\n\n[half]/
@@ -1550,10 +1390,6 @@ aryGeminiMouseWheel0BustLoveErosCommon : array
 }
 
 //胸ホイール（好感度高・通常）
-GeminiMouseWheel0BustLoveNormalCommon : nonoverlap {
-	parallel aryGeminiMouseWheel0BustLoveNormalCommon
-}
-
 aryGeminiMouseWheel0BustLoveNormalCommon : array
 {
 	"\0\s[1]ん\w4…\w4…\w4そんなに胸に触るのが好きなの?\w9\n\n[half]/
@@ -1572,10 +1408,6 @@ aryGeminiMouseWheel0BustLoveNormalCommon : array
 }
 
 // 胸ホイール（好感度通常）
-GeminiMouseWheel0BustFriendCommon : nonoverlap {
-	parallel aryGeminiMouseWheel0BustFriendCommon
-}
-
 aryGeminiMouseWheel0BustFriendCommon : array
 {
 	"\0\s[6]ふぅん、\w4あれば、\w4触るのね。\w9\n\n[half]/
@@ -1649,10 +1481,6 @@ GeminiMouseWheel0Mystic : nonoverlap
 }
 
 // 神秘の領域ホイール（好感度高・えろす）
-GeminiMouseWheel0MysticLoveErosCommon : nonoverlap {
-	parallel aryGeminiMouseWheel0MysticLoveErosCommon
-}
-
 aryGeminiMouseWheel0MysticLoveErosCommon : array
 {
 	"\0\s[1]ひゃぅ、\w4指が\w4…\w4…\w4弱いところを\w4…\w4…\w4あんっ\w9\n\n[half]/
@@ -1667,10 +1495,6 @@ aryGeminiMouseWheel0MysticLoveErosCommon : array
 }
 
 //神秘の領域ホイール（好感度高・通常）
-GeminiMouseWheel0MysticLoveNormalCommon : nonoverlap {
-	parallel aryGeminiMouseWheel0MysticLoveNormalCommon
-}
-
 aryGeminiMouseWheel0MysticLoveNormalCommon : array
 {
 	"\0\s[1]ん、\w4ふぅ\w4…\w4…\w4%username?\w9\n\n[half]/
@@ -1685,10 +1509,6 @@ aryGeminiMouseWheel0MysticLoveNormalCommon : array
 }
 
 // 神秘の領域ホイール（好感度通常）
-GeminiMouseWheel0MysticFriendCommon : nonoverlap {
-	parallel aryGeminiMouseWheel0MysticFriendCommon
-}
-
 aryGeminiMouseWheel0MysticFriendCommon : array
 {
 	"\0\s[6]何処に触れているか、\w4わかっているのかしら?\w9\n\n[half]/
@@ -1721,10 +1541,6 @@ GeminiMouseWheel0Leg : nonoverlap
 }
 
 // 足ホイール（好感度高・通常・共通）
-GeminiMouseWheel0LegLoveNormalCommon : nonoverlap {
-	parallel aryGeminiMouseWheel0LegLoveNormalCommon
-}
-
 aryGeminiMouseWheel0LegLoveNormalCommon : array
 {
 	"\0\s[1]もう、\w4くすぐったいからやめてちょうだい。\w9\n\n[half]/
@@ -1742,10 +1558,6 @@ aryGeminiMouseWheel0LegLoveNormalCommon : array
 }
 
 // 足ホイール（好感度通常・共通）
-GeminiMouseWheel0LegFriendCommon : nonoverlap {
-	parallel aryGeminiMouseWheel0LegFriendCommon
-}
-
 aryGeminiMouseWheel0LegFriendCommon : array
 {
 	"\0\0\s[8]…\w4…\w4ふぅん。\w9\n\n[half]/
@@ -1862,10 +1674,6 @@ GeminiMouseDoubleClick0Lip : nonoverlap
 }
 
 // 唇つつき（好感度関係なし共通）
-GeminiDoubleClick0LipCommon : nonoverlap {
-	parallel aryGeminiDoubleClick0LipCommon
-}
-
 aryGeminiDoubleClick0LipCommon : array
 {
 	"\0\s[6]ん、\w4ふ、\w4…\w4…\w4\s[1]はぁ\w4…\w4…\w4強引ね\w4…\w4…。\w9\n\n[half]/
@@ -1876,10 +1684,6 @@ aryGeminiDoubleClick0LipCommon : array
 }
 
 // 唇つつき（好感度通常・共通）
-GeminiDoubleClick0LipNormal : nonoverlap {
-	parallel aryGeminiDoubleClick0LipNormal
-}
-
 aryGeminiDoubleClick0LipNormal : array
 {
 	"\0\s[6]ん\w4…\w4…。\w9\n/
@@ -1889,10 +1693,6 @@ aryGeminiDoubleClick0LipNormal : array
 }
 
 // 唇つつき（好感度関係なし指・共通）
-GeminiDoubleClick0LipFinger : nonoverlap {
-	parallel aryGeminiDoubleClick0LipFinger
-}
-
 aryGeminiDoubleClick0LipFinger : array
 {
 	"\0\s[6]はむ、\w4ちゅぷ、\w4ん\w4…\w4…。\w9\n/
@@ -1905,10 +1705,6 @@ aryGeminiDoubleClick0LipFinger : array
 }
 
 // 唇つつき（好感度高・共通）
-GeminiDoubleClick0LipLikeCommon : nonoverlap {
-	parallel aryGeminiDoubleClick0LipLikeCommon
-}
-
 aryGeminiDoubleClick0LipLikeCommon : array
 {
 	"\0\s[6]（ちゅ）\w9\n/
@@ -1928,10 +1724,6 @@ aryGeminiDoubleClick0LipLikeCommon : array
 }
 
 // 唇つつき（相思相愛・共通）
-GeminiDoubleClick0LipLoveCommon : nonoverlap {
-	parallel aryGeminiDoubleClick0LipLoveCommon
-}
-
 aryGeminiDoubleClick0LipLoveCommon : array
 {
 	"\0\s[1]ん\w4…\w4…。\w9\n/
@@ -1950,10 +1742,6 @@ aryGeminiDoubleClick0LipLoveCommon : array
 }
 
 // 唇つつき（両方・相思相愛・共通）
-GeminiDoubleClick0LipBothLoveCommon : nonoverlap {
-	parallel aryGeminiDoubleClick0LipBothLoveCommon
-}
-
 aryGeminiDoubleClick0LipBothLoveCommon : array {
 	'\0\s[0]ふふ、\w4三人でするの?\w9\n\n[half]/
 	\1\s[10]え、\w4するの?\w9\n\n[half]/
@@ -2016,10 +1804,6 @@ GeminiMouseDoubleClick0Bust : nonoverlap
 
 
 // 胸つつき（好感度高・えろす・共通）
-GeminiDoubleClick0BustLoveErosCommon : nonoverlap {
-	parallel aryGeminiDoubleClick0BustLoveErosCommon
-}
-
 aryGeminiDoubleClick0BustLoveErosCommon : array
 {
 	"\0\s[1]はう、\w4指が、\w4食い込んでる\w4…\w4…。\w9\n\n[half]/
@@ -2034,10 +1818,6 @@ aryGeminiDoubleClick0BustLoveErosCommon : array
 }
 
 // 胸つつき（好感度高・通常・共通）
-GeminiDoubleClick0BustLoveNormalCommon : nonoverlap {
-	parallel aryGeminiDoubleClick0BustLoveNormalCommon
-}
-
 aryGeminiDoubleClick0BustLoveNormalCommon : array
 {
 	"\0\s[1]ぁ、\w4そんなに強くしないで。\w9\n\n[half]/
@@ -2058,10 +1838,6 @@ aryGeminiDoubleClick0BustLoveNormalCommon : array
 }
 
 // 胸つつき（好感度通常・共通）
-GeminiDoubleClick0BustFriendCommon : nonoverlap {
-	parallel aryGeminiDoubleClick0BustFriendCommon
-}
-
 aryGeminiDoubleClick0BustFriendCommon : array
 {
 	"\0\s[8]死ぬ覚悟はあるのかしら?\w9\n\n[half]/
@@ -2209,10 +1985,6 @@ GeminiMouseDoubleClick0Mystic : nonoverlap
 }
 
 // 神秘の領域つつき（好感度高・えろす・共通）
-GeminiDoubleClick0MysticLoveErosCommon : nonoverlap {
-	parallel aryGeminiDoubleClick0MysticLoveErosCommon
-}
-
 aryGeminiDoubleClick0MysticLoveErosCommon : array
 {
 	"\0\s[1]ん、\w4はぅ。\w9\n/
@@ -2227,11 +1999,6 @@ aryGeminiDoubleClick0MysticLoveErosCommon : array
 }
 
 // 神秘の領域つつき（好感度高・通常・共通）
-GeminiDoubleClick0MysticLoveNormalCommon : nonoverlap
-{
-	parallel aryGeminiDoubleClick0MysticLoveNormalCommon
-}
-
 aryGeminiDoubleClick0MysticLoveNormalCommon : array
 {
 	"\0\s[1]ら、\w4乱暴にしないで。\w9\n\n[half]/
@@ -2253,11 +2020,6 @@ aryGeminiDoubleClick0MysticLoveNormalCommon : array
 }
 
 // 神秘の領域つつき（好感度通常・共通）
-GeminiDoubleClick0MystictFriendCommon : nonoverlap
-{
-	parallel aryGeminiDoubleClick0MystictFriendCommon
-}
-
 aryGeminiDoubleClick0MystictFriendCommon : array
 {
 	"\0\s[8]何処に触れているのかしら?\w9\n\n[half]/
@@ -2290,10 +2052,6 @@ GeminiMouseDoubleClick0Leg : nonoverlap
 }
 
 // 足つつき（好感度高・通常・共通）
-GeminiDoubleClick0LegLoveNormalCommon : nonoverlap {
-	parallel aryGeminiDoubleClick0LegLoveNormalCommon
-}
-
 aryGeminiDoubleClick0LegLoveNormalCommon : array
 {
 	"\0\s[2]ひゃぅっ!?\w9\n\n[half]/
@@ -2309,10 +2067,6 @@ aryGeminiDoubleClick0LegLoveNormalCommon : array
 }
 
 // 足つつき（好感度通常・共通）
-GeminiDoubleClick0LegFriendCommon : nonoverlap {
-	parallel aryGeminiDoubleClick0LegFriendCommon
-}
-
 aryGeminiDoubleClick0LegFriendCommon : array
 {
 	"\0\s[1]くすぐったいわ。\w9\n\n[half]/
@@ -2329,10 +2083,6 @@ aryGeminiDoubleClick0LegFriendCommon : array
 //----------------------------------
 // ポルックス/共通反応
 //----------------------------------
-GEN_0CommonErosSerif : nonoverlap {
-	parallel aryCommonErosSerif
-}
-
 aryGemini0CommonErosSerif : array
 {
 	"\1\s[10]\0\s[1]はぅ。\w9\n/
@@ -2421,10 +2171,6 @@ GeminiMouseMove1Head : nonoverlap
 }
 
 // 頭なで（好感度高）
-GeminiMouseMove1HeadLikeCommon : nonoverlap {
-	parallel aryGeminiMouseMove1HeadLikeCommon
-}
-
 aryGeminiMouseMove1HeadLikeCommon : array
 {
 	"\1\s[16]…\w4…\w4\s[11]。\w9\n\n[half]/
@@ -2438,10 +2184,6 @@ aryGeminiMouseMove1HeadLikeCommon : array
 }
 
 // 頭なで（共通）
-GeminiMouseMove1HeadCommon : nonoverlap {
-	parallel aryGeminiMouseMove1HeadCommon
-}
-
 aryGeminiMouseMove1HeadCommon : array
 {
 	"\1\s[10]そうやって懐柔するつもり?\w9\n\n[half]/
@@ -2525,10 +2267,6 @@ GeminiMouseMove1Bust : nonoverlap
 }
 
 // 胸なで（好感度高・えろす）
-GeminiMouseMove1BustLoveErosCommon : nonoverlap {
-	parallel aryGeminiMouseMove1BustLoveErosCommon
-}
-
 aryGeminiMouseMove1BustLoveErosCommon : array
 {
 	"\1\s[11]ふにゃぁ\w4…\w4…。\w9\n\n[half]/
@@ -2543,10 +2281,6 @@ aryGeminiMouseMove1BustLoveErosCommon : array
 }
 
 // 胸なで（好感度高・通常）
-GeminiMouseMove1BustLoveNormalCommon : nonoverlap {
-	parallel aryGeminiMouseMove1BustLoveNormalCommon
-}
-
 aryGeminiMouseMove1BustLoveNormalCommon : array
 {
 	"\1\s[12]―\w4―\w4\s[11]な、\w4何をするのよ、\w4バカ。\w9\n\n[half]/
@@ -2560,10 +2294,6 @@ aryGeminiMouseMove1BustLoveNormalCommon : array
 }
 
 // 胸なで（好感度通常）
-GeminiMouseMove1BustFriendCommon : nonoverlap {
-	parallel aryGeminiMouseMove1BustFriendCommon
-}
-
 aryGeminiMouseMove1BustFriendCommon : array
 {
 	"\1\s[10]セクハラもいいところだわ。\w9\n\n[half]/
@@ -2712,10 +2442,6 @@ GeminiMouseMove1Hip : nonoverlap
 }
 
 // 尻なで（好感度高・えろす）
-GeminiMouseMove1HipLoveErosCommon : nonoverlap {
-	parallel aryGeminiMouseMove1HipLoveErosCommon
-}
-
 aryGeminiMouseMove1HipLoveErosCommon : array
 {
 	"\1\s[11]にゃぅ、\w4にゃぁ\w4…\w4…\w4変な感じね。\w9\n\n[half]/
@@ -2731,10 +2457,6 @@ aryGeminiMouseMove1HipLoveErosCommon : array
 }
 
 // 尻なで（好感度高）
-GeminiMouseMove1HipLoveNormalCommon : nonoverlap {
-	parallel aryGeminiMouseMove1HipLoveNormalCommon
-}
-
 aryGeminiMouseMove1HipLoveNormalCommon : array
 {
 	"\1\s[11]ふにゃぅっ\w9\n/
@@ -2750,10 +2472,6 @@ aryGeminiMouseMove1HipLoveNormalCommon : array
 }
 
 // 尻なで（通常）
-GeminiMouseMove1HipFriendCommon : nonoverlap {
-	parallel aryGeminiMouseMove1HipFriendCommon
-}
-
 aryGeminiMouseMove1HipFriendCommon : array
 {
 	"\1\s[10]…\w4…\w4マニアックだわ。\w9\n\n[half]/
@@ -2787,10 +2505,6 @@ GeminiMouseMove1Leg : nonoverlap
 }
 
 // 足なで（好感度高・通常・共通）
-GeminiMouseMove1LegLoveNormalCommon : nonoverlap {
-	parallel aryGeminiMouseMove1LegLoveNormalCommon
-}
-
 aryGeminiMouseMove1LegLoveNormalCommon : array
 {
 	"\1\s[15]くすぐったいわ、\w4もう。\w9\n\n[half]/
@@ -2804,10 +2518,6 @@ aryGeminiMouseMove1LegLoveNormalCommon : array
 }
 
 // 足なで（好感度通常・共通）
-GeminiMouseMove1LegFriendCommon : nonoverlap {
-	parallel aryGeminiMouseMove1LegFriendCommon
-}
-
 aryGeminiMouseMove1LegFriendCommon : array
 {
 	'\1\s[16]…\w4…\w4楽しいの、\w4と聞くだけ無駄なのでしょうね。\w9\n\n[half]/
@@ -2884,10 +2594,6 @@ GeminiMouseWheel1Bust : nonoverlap
 }
 
 // 胸ホイール（好感度高・えろす）
-GeminiMouseWheel1BustLoveErosCommon : nonoverlap {
-	parallel aryGeminiMouseWheel1BustLoveErosCommon
-}
-
 aryGeminiMouseWheel1BustLoveErosCommon : array
 {
 	'\1\s[11]うにゃう、\w4にゃぁ\w4…\w4…\w4んっ\w9\n\n[half]/
@@ -2902,10 +2608,6 @@ aryGeminiMouseWheel1BustLoveErosCommon : array
 }
 
 //胸ホイール（好感度高・通常）
-GeminiMouseWheel1BustLoveNormalCommon : nonoverlap {
-	parallel aryGeminiMouseWheel1BustLoveNormalCommon
-}
-
 aryGeminiMouseWheel1BustLoveNormalCommon : array
 {
 	'\1\s[11]そんな、\w4激しく\w4…\w4…。\w9\n\n[half]/
@@ -2925,10 +2627,6 @@ aryGeminiMouseWheel1BustLoveNormalCommon : array
 }
 
 // 胸ホイール（好感度通常）
-GeminiMouseWheel1BustFriendCommon : nonoverlap {
-	parallel aryGeminiMouseWheel1BustFriendCommon
-}
-
 aryGeminiMouseWheel1BustFriendCommon : array
 {
 	'\1\s[10]…\w4…\w4堂々としたものね。\w9\n\n[half]/
@@ -3009,10 +2707,6 @@ GeminiMouseWheel1Hip : nonoverlap
 }
 
 // 尻ホイール（好感度高・えろす）
-GeminiMouseWheel1HipLoveErosCommon : nonoverlap {
-	parallel aryGeminiMouseWheel1HipLoveErosCommon
-}
-
 aryGeminiMouseWheel1HipLoveErosCommon : array
 {
 	'\1\s[11]ん、\w4にゃう\w4…\w4…\w4そんな\w4…\w4…。\w9\n\n[half]/
@@ -3031,10 +2725,6 @@ aryGeminiMouseWheel1HipLoveErosCommon : array
 }
 
 //尻ホイール（好感度高・通常）
-GeminiMouseWheel1HipLoveNormalCommon : nonoverlap {
-	parallel aryGeminiMouseWheel1HipLoveNormalCommon
-}
-
 aryGeminiMouseWheel1HipLoveNormalCommon : array
 {
 	"\1\s[19]…\w4…っ\w9\n\n[half]/
@@ -3050,10 +2740,6 @@ aryGeminiMouseWheel1HipLoveNormalCommon : array
 }
 
 // 尻ホイール（好感度通常）
-GeminiMouseWheel1HipFriendCommon : nonoverlap {
-	parallel aryGeminiMouseWheel1HipFriendCommon
-}
-
 aryGeminiMouseWheel1HipFriendCommon : array
 {
 	"\1\s[18]ふぅん。\w9\n\n[half]/
@@ -3086,10 +2772,6 @@ GeminiMouseWheel1Leg : nonoverlap
 }
 
 // 足ホイール（好感度高・通常・共通）
-GeminiMouseWheel1LegLoveNormalCommon : nonoverlap {
-	parallel aryGeminiMouseWheel1LegLoveNormalCommon
-}
-
 aryGeminiMouseWheel1LegLoveNormalCommon : array
 {
 	"\1\s[12]にゃっ\w9\n/
@@ -3104,10 +2786,6 @@ aryGeminiMouseWheel1LegLoveNormalCommon : array
 }
 
 // 足ホイール（好感度通常・共通）
-GeminiMouseWheel1LegFriendCommon : nonoverlap {
-	parallel aryGeminiMouseWheel1LegFriendCommon
-}
-
 aryGeminiMouseWheel1LegFriendCommon : array
 {
 	"\1\s[10]くすぐったいわ。\w9\n/
@@ -3227,10 +2905,6 @@ GeminiMouseDoubleClick1Lip
 }
 
 // 唇つつき（好感度関係なし共通）
-GeminiDoubleClick1LipCommon : nonoverlap {
-	parallel aryGeminiDoubleClick1LipCommon
-}
-
 aryGeminiDoubleClick1LipCommon : array
 {
 	'\1\s[16]ん\w4…\w4…っ\w9\n\n[half]/
@@ -3246,10 +2920,6 @@ aryGeminiDoubleClick1LipCommon : array
 }
 
 // 唇つつき（好感度高・共通）
-GeminiDoubleClick1LipLikeCommon : nonoverlap {
-	parallel aryGeminiDoubleClick1LipLikeCommon
-}
-
 aryGeminiDoubleClick1LipLikeCommon : array
 {
 	'\1\s[16]ん…\w4…。\w9\n\n[half]/
@@ -3266,10 +2936,6 @@ aryGeminiDoubleClick1LipLikeCommon : array
 }
 
 // 唇つつき（相思相愛・共通）
-GeminiDoubleClick1LipLoveCommon : nonoverlap {
-	parallel aryGeminiDoubleClick1LipLoveCommon
-}
-
 aryGeminiDoubleClick1LipLoveCommon : array
 {
 	'\1\s[16]ん、\w4ふ\w4…\w4…\w4\s[11]にゃぁ。\w9\n\n[half]/
@@ -3286,10 +2952,6 @@ aryGeminiDoubleClick1LipLoveCommon : array
 }
 
 // 唇つつき（二人同時・相思相愛・共通）
-GeminiDoubleClick1LipBothLoveCommon : nonoverlap {
-	parallel aryGeminiDoubleClick1LipBothLoveCommon
-}
-
 aryGeminiDoubleClick1LipBothLoveCommon : array
 {
 	'\1\s[11]三人でするのはちょっと\w4…\w4…\s[16]ん…\w4…。\w9\n\n[half]/
@@ -3352,10 +3014,6 @@ GeminiMouseDoubleClick1Bust : nonoverlap
 
 
 // 胸つつき（好感度高・えろす・共通）
-GeminiDoubleClick1BustLoveErosCommon : nonoverlap {
-	parallel aryGeminiDoubleClick1BustLoveErosCommon
-}
-
 aryGeminiDoubleClick1BustLoveErosCommon : array
 {
 	'\1\s[11]ふにゃぁんっ\w9\n\n[half]/
@@ -3373,10 +3031,6 @@ aryGeminiDoubleClick1BustLoveErosCommon : array
 }
 
 // 胸つつき（好感度高・通常・共通）
-GeminiDoubleClick1BustLoveNormalCommon : nonoverlap {
-	parallel aryGeminiDoubleClick1BustLoveNormalCommon
-}
-
 aryGeminiDoubleClick1BustLoveNormalCommon : array
 {
 	'\1\s[11]も、\w4もう、しょうがないにゃあ。\w9\n\n[half]/
@@ -3390,10 +3044,6 @@ aryGeminiDoubleClick1BustLoveNormalCommon : array
 }
 
 // 胸つつき（好感度通常・共通）
-GeminiDoubleClick1BustFriendCommon : nonoverlap {
-	parallel aryGeminiDoubleClick1BustFriendCommon
-}
-
 aryGeminiDoubleClick1BustFriendCommon : array
 {
 	'\1\s[10]…\w4…\w4その手が二度と使えないようにしましょうか。\w9\n\n[half]/
@@ -3527,10 +3177,6 @@ GeminiMouseDoubleClick1Hip : nonoverlap
 	・当人としては部位が部位だけに困惑している。
 	・ユーザが望むがゆえに応じてはいるが……
 */
-GeminiDoubleClick1HipLoveErosCommon : nonoverlap {
-	parallel aryGeminiDoubleClick1HipLoveErosCommon
-}
-
 aryGeminiDoubleClick1HipLoveErosCommon : array
 {
 	'\1\s[11]ふにゃぅ\w4…\w4…\w4にゃ、\w4にゃぁ。\w9\n\n[half]/
@@ -3545,10 +3191,6 @@ aryGeminiDoubleClick1HipLoveErosCommon : array
 }
 
 // 尻つつき（好感度高・通常・共通）
-GeminiDoubleClick1HipLoveNormalCommon : nonoverlap {
-	parallel aryGeminiDoubleClick1HipLoveNormalCommon
-}
-
 aryGeminiDoubleClick1HipLoveNormalCommon : array
 {
 	'\1\s[11]にゃ。\w9\n/
@@ -3562,10 +3204,6 @@ aryGeminiDoubleClick1HipLoveNormalCommon : array
 }
 
 // 尻つつき（好感度通常・共通）
-GeminiDoubleClick1HipFriendCommon : nonoverlap {
-	parallel aryGeminiDoubleClick1HipFriendCommon
-}
-
 aryGeminiDoubleClick1HipFriendCommon : array
 {
 	'\1\s[10]…\w4…。\w9\n\n[half]/
@@ -3599,10 +3237,6 @@ GeminiMouseDoubleClick1Leg : nonoverlap
 }
 
 // 足つつき（好感度高・通常・共通）
-GeminiDoubleClick1LegLoveNormalCommon : nonoverlap {
-	parallel aryGeminiDoubleClick1LegLoveNormalCommon
-}
-
 aryGeminiDoubleClick1LegLoveNormalCommon : array
 {
 	'\1\s[12]にゃっ\w9\n/
@@ -3618,10 +3252,6 @@ aryGeminiDoubleClick1LegLoveNormalCommon : array
 }
 
 // 足つつき（好感度通常・共通）
-GeminiDoubleClick1LegFriendCommon : nonoverlap {
-	parallel aryGeminiDoubleClick1LegFriendCommon
-}
-
 aryGeminiDoubleClick1LegFriendCommon : array
 {
 	'\1\s[10]蹴られたいの?\w9\n\n[half]/
@@ -3635,10 +3265,6 @@ aryGeminiDoubleClick1LegFriendCommon : array
 //----------------------------------
 // カストール/共通反応
 //----------------------------------
-GEN_1CommonErosSerif : nonoverlap {
-	parallel aryGEN_1CommonErosSerif
-}
-
 aryGEN_1CommonErosSerif : array
 {
 	'\1\s[11]にゃぅ\w4…\w4…\w4はぁ、\w4はぁ。\w9\n/

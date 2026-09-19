@@ -168,11 +168,6 @@ RandomTalkEx : nonoverlap
 //----------------------------------------
 // 通常のランダムトーク
 //----------------------------------------
-NormalTalk : nonoverlap
-{
-	parallel aryNormalTalk
-}
-
 aryNormalTalk : array
 {
 	'\1\s[10]\0\s[6]ヒトは難儀な生き物ね。\n\w9自ら作り出したもので溺れるのだから。\e'
@@ -4569,10 +4564,6 @@ aryNormalTalk : array
 	シェル事のトークで呼び出すことで、容姿とトークの矛盾を防ぐ。
 	制御は RandomTalkEx : nonoverlap で行う。
 */
-WingCommonTalk : nonoverlap {
-	parallel aryWingCommonTalk
-}
-
 aryWingCommonTalk : array
 {
 	// 共通
@@ -4680,10 +4671,6 @@ aryWingButterfly : nonoverlap {
 // シェルごとのトーク群
 //------------------
 // マスターシェル
-ShellMasterTalk : nonoverlap {
-	parallel aryShellMasterTalk
-}
-
 aryShellMasterTalk : array
 {
 	'\1\s[10]\0\s[0]この服の黒色のもあるの。\w9\n/
@@ -4712,10 +4699,6 @@ aryShellMasterTalk : array
 	玄ノ糸さま作の追加シェル。
 */
 
-ShellEternityBlackTalk : nonoverlap {
-	parallel aryShellEternityBlackTalk
-}
-
 aryShellEternityBlackTalk : array
 {
 	'\1\s[10]\0\s[6]姿形なんて幾らでも変えられるのよ。\w9\n/
@@ -4730,10 +4713,6 @@ aryShellEternityBlackTalk : array
 }
 
 // Alternative - Cassis
-ShellAlternativeCassisTalk : nonoverlap {
-	parallel aryShellAlternativeCassisTalk
-}
-
 aryShellAlternativeCassisTalk : array
 {
 	'\1\s[10]\0\s[0]高さが変われば、\w4見える景色も変わるものね。\w9\n/
@@ -4753,10 +4732,6 @@ aryShellAlternativeCassisTalk : array
 /*
 	吉野桜さま作
 */
-ShellMoonlightTalk : nonoverlap {
-	parallel aryShellMoonlightTalk
-}
-
 aryShellMoonlightTalk : array
 {
 	'\1\s[10]\0\s[0]この姿で買い物にいくと奥さんと呼び止められるの。\w9\n/
@@ -4774,10 +4749,6 @@ aryShellMoonlightTalk : array
 /*
 	ボトル猫さま作
 */
-ShellPurewhiteTalk : nonoverlap {
-	parallel aryShellPurewhiteTalk
-}
-
 aryShellPurewhiteTalk : array
 {
 	// 振る舞いが悪くて伝線させてしまう、と考えているらしい
@@ -4793,10 +4764,6 @@ aryShellPurewhiteTalk : array
 }
 
 // マジカル☆カシス
-ShellMagicalCassisTalk : nonoverlap {
-	parallel aryShellMagicalCassisTalk
-}
-
 aryShellMagicalCassisTalk : array
 {
 	// TODO: モードごとにトーク
@@ -4808,20 +4775,12 @@ aryShellMagicalCassisTalk : array
 }
 
 // ll29yo
-ShellLl29yoTalk : nonoverlap {
-	parallel aryShellMagicalCassisTalk
-}
-
 aryShellLl29yoTalk : array {
 	'\1\s[10]\0\s[0]一緒に年を重ねられるのは、\w4幸いだと思うわ。\w9\n/
 	成長も老いも、\w4ね。\e'
 }
 
 // あの青い夏 / あの淡い冬
-ThatSeason : nonoverlap {
-	parallel aryThatSeasonTalk
-}
-
 aryThatSeasonTalk : array {
 	_seasonslot = GetSeasonSlot // 季節取得
 
@@ -4860,10 +4819,6 @@ aryThatSeasonTalk : array {
 }
 
 // 青い天使
-ShellBlueAngel : nonoverlap {
-	parallel aryShellBlueAngelTalk
-}
-
 aryShellBlueAngelTalk : array {
 	'\1\s[10]\0\s[0]あなたは何処まで潜れるかしら?\e'
 	'\1\s[10]\0\s[0]潜ろうと思えば、\w4何処までも潜っていけるわ。\w9\n/
@@ -4873,10 +4828,6 @@ aryShellBlueAngelTalk : array {
 }
 
 // 空后 / Himmel Königin
-ShellHimmelKoniginTalk : nonoverlap {
-	parallel aryShellHimmelKoniginTalk
-}
-
 aryShellHimmelKoniginTalk : array {
 	'\1\s[10]\0\s[0]目線の位置が変わるだけでこんなに見え方が変わるなんてね。\e'
 	'\1\s[10]\0\s[0]知り合いに見せたら魔王と呼ばれたのだけど、\w4\s[3]可愛いと言われたと解釈していいのかしら?\e'
@@ -4890,10 +4841,6 @@ aryShellHimmelKoniginTalk : array {
 }
 
 // Titania
-ShellTitaniaTalk : nonoverlap {
-	parallel aryShellTitaniaTalk
-}
-
 aryShellTitaniaTalk : array {
 	'\1\s[10]\0\s[0]同じ地域で語られている妖精も時代によって内容が変わるの。\w9\n/
 	いつの時代のそれなのか、\w4を調べると面白い発見があると思うわ。\e'
@@ -4903,10 +4850,6 @@ aryShellTitaniaTalk : array {
 }
 
 // 竜后 / Drachen Königin
-ShellDrachenKoniginTalk : nonoverlap {
-	parallel aryShellDrachenKoniginTalk
-}
-
 aryShellDrachenKoniginTalk : array {
 	'\1\s[10]\0\s[0]魔法やテクニックを再構築した術式を利用した装備よ。\w9\n/
 	その場で術式を組み換え、\w4最大限に魔法を行使できる。\w9\n/
@@ -4936,10 +4879,6 @@ aryShellDrachenKoniginTalk : array {
 }
 
 // スワロウテイル
-ShellSwallowTailTalk : nonoverlap {
-	parallel aryShellSwallowTailTalk
-}
-
 aryShellSwallowTailTalk : array {
 	if swallowTailHavWingFlg == 1
 	{
@@ -4953,10 +4892,6 @@ aryShellSwallowTailTalk : array {
 }
 
 // たてセタ
-ShellTateSweaterTalk : nonoverlap {
-	parallel aryShellTateSweaterTalk
-}
-
 aryShellTateSweaterTalk : array {
 	'\1\s[10]\0\s[0]見た目より動きやすいのよ、\w4この服。\w9\n/
 	ゆるくもないけど、\w4締め付けも感じなくて。\e'
@@ -4966,10 +4901,6 @@ aryShellTateSweaterTalk : array {
 // 時間帯ごとのトーク群
 //-----------------------
 // 冬・深夜
-WinterMidnightTalk : nonoverlap {
-	parallel aryWinterMidnightTalk
-}
-
 aryWinterMidnightTalk : array
 {
 	'\0\s[0]寒い部屋で考え事してもいい考えは思いつかないわ。\w9\n/
@@ -4984,10 +4915,6 @@ aryWinterMidnightTalk : array
 // 季節ごとのトーク群
 //-----------------------
 // 季節トーク：春
-SpringTalk : nonoverlap {
-	parallel arySpringTalk
-}
-
 arySpringTalk : array
 {
 	'\1\s[10]\0\s[0]良い季節ね。\e'
@@ -5002,10 +4929,6 @@ arySpringTalk : array
 }
 
 // 季節トーク：夏
-SummerTalk : nonoverlap {
-	parallel arySummerTalk
-}
-
 arySummerTalk : array
 {
 	'\1\s[10]\0\s[0]…\w4…。\w9\n/
@@ -5041,10 +4964,6 @@ arySummerTalk : array
 }
 
 // 季節トーク：秋
-AutumnTalk : nonoverlap {
-	parallel aryAutumnTalk
-}
-
 aryAutumnTalk : array
 {
 	'\1\s[10]\0\s[0]いい空ね。\e'
@@ -5057,10 +4976,6 @@ aryAutumnTalk : array
 }
 
 // 季節トーク：冬
-WinterTalk : nonoverlap {
-	parallel aryWinterTalk
-}
-
 aryWinterTalk : array
 {
 	'\1\s[10]\0\s[6]少し、\w4冷えるわね\w4…\w4…。\e'
@@ -5094,10 +5009,6 @@ aryWinterTalk : array
 // フラグ別
 //------------------------------------
 // 高好感度
-LoveTalk : nonoverlap {
-	parallel aryLoveTalk
-}
-
 aryLoveTalk : array
 {
 	'\1\s[10]\0\s[0]穏やかなものね。\e'
@@ -5157,10 +5068,6 @@ aryLoveTalk : array
 }
 
 // 通常
-FriendTalk : nonoverlap {
-	parallel aryFriendTalk
-}
-
 aryFriendTalk : array
 {
 	'\1\s[10]\0\s[6]何も知らないのに恋愛相談されても困るわ。\w9\n/
@@ -5180,10 +5087,6 @@ aryFriendTalk : array
 }
 
 // 本屋
-BookStoreTalk : nonoverlap {
-	parallel aryBookStoreTalk
-}
-
 aryBookStoreTalk : array
 {
 	'\1\s[10]\0\s[0]本を買いに来るヒトもいろいろね。\w9\n/

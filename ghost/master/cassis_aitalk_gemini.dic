@@ -2,10 +2,6 @@
 /*
 	ベルクエルさま作
 */
-ShellGeminiTalk : nonoverlap {
-	parallel aryShellGeminiTalk
-}
-
 aryShellGeminiTalk : array
 {
 	// 雑談
@@ -233,10 +229,6 @@ aryShellGeminiTalk : array
 	\0\s[6]ヒトの歴史だもの。\w9\n/
 	\s[5]私たちにとっては、\w4進化の前夜といったところかしら?\w9\n\n[half]/
 	\1\s[15]いいわね、\w4その表現。\e'
-}
-
-ShellGeminiLoveTalk : nonoverlap {
-	parallel aryShellGeminiLoveTalk
 }
 
 aryShellGeminiLoveTalk : array
