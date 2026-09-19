@@ -2329,10 +2329,12 @@ comAskWork
 	}
 	else
 	{
+		// 本屋の話を聞いた後は、ランダムトークに本屋トークが加わる
+		flgBookStoreTalk = 1
 		"\0\s[0]本屋で手伝いをしているの。\w9\n/
 		本好きにはちょうどいいでしょう？"
 	}
 	--
 	"\n\n[half]\q[質問に戻る,Menu_COMMANDASK]\n/
-	\q[キャンセル,CANCEL]\e:eval=flgBookStoreTalk=1"
+	\q[キャンセル,CANCEL]\e"
 }
