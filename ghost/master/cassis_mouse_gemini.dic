@@ -1460,7 +1460,7 @@ aryGeminiMouseMove0LegFriendCommon : array
 //-----------------------------------
 // 髪ホイール
 //-----------------------------------
-GeminiMouse_Whee0Hair : nonoverlap
+GeminiMouseWheel0Hair : nonoverlap
 {
 	"\0\s[6]…\w4…\w4どういう扱いを心がけているのかしら?\w9\n\n[half]/
 	\1\s[16]本当、\w4感心できないわね。\e"
@@ -1762,7 +1762,7 @@ aryGeminiMouseWheel0LegFriendCommon : array
 //----------------------------------
 // ポルックス唇ホイールクリック
 //----------------------------------
-GeminiMouse_ClickEx0Lip
+GeminiMouseClickEx0Lip
 {
 	_talk_array = IARRAY
 
@@ -3123,7 +3123,7 @@ aryGeminiMouseWheel1LegFriendCommon : array
 //-----------------------------------
 // カストール唇ホイールクリック
 //-----------------------------------
-GeminiMouse_ClickEx1Lip
+GeminiMouseClickEx1Lip
 {
 	_talk_array = IARRAY
 
