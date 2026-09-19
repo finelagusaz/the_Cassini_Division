@@ -189,9 +189,9 @@ TalkToUser
 	{
 		resComOyasumiOther
 	}
-	elseif "質問" _in_reference[1] || "尋ねたい" _in_ reference[1]
+	elseif "質問" _in_ reference[1] || "尋ねたい" _in_ reference[1]
 	{
-		menuCommand
+		Menu_COMMANDASK
 	}
 	elseif "おなか減った" _in_ reference[1] || "お腹空いた" _in_ reference[1] || "何か食べたい" _in_ reference[1]	
 	{
@@ -212,27 +212,27 @@ TalkToUser
 	elseif ("下着見せて" _in_ reference[1] || "パンツ見せて" _in_ reference[1]) && (shellname == "月白" || shellname == "Gemini")
 	{
 		if shellname == "月白" {
-			menuTukisiroTuckup
+			Menu_TukisiroTuckup
 		}
 		elseif shellname == "Gemini" {
-			menuGeminiTuckup
+			Menu_GeminiTuckup
 		}
 	}
 	elseif ("服を着て" _in_ reference[1] || "服着て" _in_ reference[1]) && (shellname == "Gemini")
 	{
 		if shellname == "Gemini" {
-			menuGeminiDress
+			Menu_GeminiDress
 		}
 	}
 	elseif ("スカートを下ろして" _in_ reference[1] || "満足した" _in_ reference[1]) && (shellname == "月白")
 	{
-		menuTukisiroTuckdown
+		Menu_TukisiroTuckdown
 	}
 	elseif ("ポッキーゲーム" _in_ reference[1]) && (cntHead > likelimit)
 	{
 		comPockeyGame
 	}
-	elseif "膝枕" _in_ reference[1] && (Osuwari == 1 || Osuwari == 2)
+	elseif "膝枕" _in_ reference[1] && (GetOsuwariMode == 1 || GetOsuwariMode == 2)
 	{
 		comHizamakura
 	}
@@ -1821,7 +1821,7 @@ comSumTalk
 	ARRAYSIZE(aryShellTitaniaTalk) + /
 	ARRAYSIZE(aryShellHimmelKoniginTalk) + /
 	ARRAYSIZE(aryShellDrachenKoniginTalk) + /
-	ARRAYSIZE(arySHellSwallowTailTalk)/ + /
+	ARRAYSIZE(aryShellSwallowTailTalk)/ + /
 	ARRAYSIZE(aryShellTateSweaterTalk)/
 	)/
 	\e"
@@ -2245,6 +2245,7 @@ comAskLodger
 // あのバカについて
 comAskHagalaz
 {
+	flgKnownHagalaz = 1
 	if GetShellnameEx == "Gemini"
 	{
 		"\1\s[10]ハガラズ、\w4だったわね。\w9\n\n[half]/
@@ -2262,7 +2263,7 @@ comAskHagalaz
 	}
 	--
 	"\n[half]\q[質問に戻る,Menu_COMMANDASK]\n/
-	\q[キャンセル,CANCEL]\e:eval=flgKnownHagalaz=1"
+	\q[キャンセル,CANCEL]\e"
 }
 
 // あのバカとの関係について

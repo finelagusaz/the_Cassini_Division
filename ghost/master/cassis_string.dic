@@ -190,6 +190,11 @@ On_sakura.portalsites
 	AYATEMPLATE.LinkMenuConvert(On_sakura.portalsites_EX)
 }
 
+//---- kero側おすすめサイトのリスト (なし) ----
+On_kero.recommendsites_EX : array
+{
+}
+
 On_kero.recommendsites
 {
 	AYATEMPLATE.LinkMenuConvert(On_kero.recommendsites_EX)

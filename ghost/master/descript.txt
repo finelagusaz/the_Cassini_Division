@@ -1,8 +1,9 @@
-name,ƒJƒbƒV[ƒj‚Ì‹óŒ„
+charset,UTF-8
+name,ã‚«ãƒƒã‚·ãƒ¼ãƒ‹ã®ç©ºéš™
 type,ghost
 
-sakura.name,ƒJƒVƒX
-kero.name,ŠÔŒ„
+sakura.name,ã‚«ã‚·ã‚¹
+kero.name,é–“éš™
 
 sstp.allowunspecifiedsend,0
 

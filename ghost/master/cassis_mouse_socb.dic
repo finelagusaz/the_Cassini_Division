@@ -174,7 +174,7 @@ SakurafubukiMouseMove0Hair
 // 好感度・通常
 arySakurafubukiMouseMove0HairPhaseN : array
 {
-	MouseMove0
+	MouseMove0Hair
 }
 
 // 好感度・高・通常
@@ -576,7 +576,7 @@ SakurafubukiMouseMove0Hip
 			_talk_array ,= arySakMousePhase2
 		}
 		when 3 {
-			evetOrgHip
+			eventOrgHip
 		}
 	}
 
@@ -883,7 +883,7 @@ SakurafubukiMouseWheel0Hip
 			_talk_array ,= aryCommonErosSerif
 		}
 		when 3 {
-			evetOrgHip
+			eventOrgHip
 		}
 	}
 
@@ -992,11 +992,9 @@ SakurafubukiMouseDoubleClick0Fox_ears
 	case calcErosPhase(0) {
 		when "n" {
 			_talk_array ,= arySakurafubukiDoubleClick0Fox_earsPhaseN
-			_talk_array ,= aryDoubleClick0Fox_earsCommon
 		}
 		when 0 {
 			_talk_array ,= arySakurafubukiDoubleClick0Fox_earsPhase0
-			_talk_array ,= aryDoubleClick0Fox_earsLikeCommon
 		}
 		when 1 {
 //			_talk_array ,= arySakurafubukiDoubleClick0Fox_earsPhase1
@@ -1231,7 +1229,7 @@ SakurafubukiMouseDoubleClick0Hair
 		}
 		when 0 {
 			_talk_array ,= arySakurafubukiDoubleClick0HairPhase0
-			_talk_array ,= aryDoubleClick0HairLikeCommon
+			_talk_array ,= MouseDoubleClick0Hair
 		}
 		when 1 {
 //			_talk_array ,= arySakurafubukiDoubleClick0HairPhase1
@@ -1311,7 +1309,7 @@ SakurafubukiMouseDoubleClick0Mystic
 	case calcErosPhase(7) {
 		when "n" {
 //			_talk_array ,= arySakurafubukiDoubleClick0MysticPhaseN
-			_talk_array ,= aryDoubleClick0MysticCommon
+			_talk_array ,= aryDoubleClick0MystictFriendCommon
 		}
 		when 0 {
 //			_talk_array ,= arySakurafubukiDoubleClick0MysticPhase0

@@ -55,7 +55,7 @@ Menu_COMMANDACTION
 		"\_a[comPockeyGame]「ポッキーゲーム」\_a\n"
 	}
 	--
-	if Osuwari == 1 || Osuwari == 2
+	if GetOsuwariMode == 1 || GetOsuwariMode == 2
 	{
 		"\_a[comHizamakura]「膝枕」\_a\n"
 	}
