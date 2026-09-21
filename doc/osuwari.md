@@ -40,10 +40,16 @@
   - 1:アクティブウィンドウのタイトルバーに座る
   - 2:タスクバーに座る
 
-#### SurfaceModeChange
+#### GetSurfaceOffset
 
-- シェルごとのサーフェイス値加算を変数「`SurfaceMode`」に代入する
-- `SurfaceModeChangeEx`で作成したシェルごとの加算したいサーフェイス値を`SurfaceMode`に代入
+- 現在のシェルの加算したいサーフェイス値（`SurfaceModeChangeEx`で指定したhogeSurfaceMode）を返す。変数は書き換えない
+- サーフェイス値加算に対応していないシェルでは-1を返す
+- シェルを足したら、ここにも`when`の行を足す。足し忘れると、そのシェルでは加算されず、座り関連、着せ替え関連メニューも出ない
+
+#### IsSfcnvShell
+
+- 現在のシェルがサーフェイス値加算に対応しているか（`GetSurfaceOffset`が0以上か）を返す
+- 座り関連、着せ替え関連メニューの表示非表示の判定に使う。シェルごとの記述は要らない
 
 #### GetOsuwariMode
 

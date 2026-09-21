@@ -15,7 +15,6 @@ OnFirstBoot
 	communicateratio = 0	// コミュニケート開始率[%]
 	shellname        = "master" //シェルの名前
 	likelimit        = 50   // 好感度基準値
-	flgNoSfcnv       = 1    // サーフィス加算フラグ
 
 	//---- Vanishカウントを見て、真の初回か否かを判定する
 	if reference[0] == 0
