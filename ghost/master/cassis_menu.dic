@@ -209,12 +209,12 @@ Menu_CONFIG {
 		}
 	}
 	--
-	if strMenuMode == "new" && flgNoSfcnv != 1
+	if strMenuMode == "new" && IsSfcnvShell
 	{
 		Menu_Shell
 	}
 	--
-	if flgNoSfcnv != 1
+	if IsSfcnvShell
 	{
 		if strMenuMode == "new" {
 			AYATEMPLATE.MenuItem("着せ替えなどのメニューをメインメニューへ", "Menu_Classic")

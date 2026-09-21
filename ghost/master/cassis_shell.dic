@@ -365,105 +365,59 @@ getWingTypeForDrachenKoningin {
 }
 
 //==== サーフィス値加算関数 ============================================================
-//シェル判定部分
-SurfaceModeChange
+// 現在のシェルのサーフェス加算値を返す
+/*
+	戻り値: 加算値 (0 以上) / -1 サーフィス加算に対応していないシェル
+	変数は書き換えない。メニューなどがシェル別の変数を直接書き換えるので、呼ばれるたびに読み直す。
+*/
+GetSurfaceOffset
 {
-	if shellname == "master"
+	case shellname
 	{
-		SurfaceMode = "%(MasterSurfaceMode)"
-		flgNoSfcnv  = 0
+		when "master" { TOINT(MasterSurfaceMode) }
+		when "Eternity Black" { TOINT(EternityBlackSurfaceMode) }
+		when "拡大鏡" { TOINT(KakudaikyoSurfaceMode) }
+		when "銀色" { TOINT(GiniroSurfaceMode) }
+		when "White Lolita" { TOINT(WhiteLolitaSurfaceMode) }
+		when "瑠璃" { TOINT(RuriSurfaceMode) }
+		when "Alternative - Cassis" { TOINT(AlternativeSurfaceMode) }
+		when "月光浴" { TOINT(MoonlightBlueSurfaceMode) }
+		when "Bridal Butterfly",'Bridal Butterfly 75%' { TOINT(BridalButterflySurfaceMode) }
+		when "月白" { TOINT(TukisiroSurfaceMode) }
+		when "Gemini" { TOINT(GeminiSurfaceMode) }
+		when "桜吹雪" { TOINT(SakurafubukiBase) + TOINT(SakurafubukiFox) + TOINT(SakurafubukiPhase) }
+		when "桃色月" { TOINT(PinkMoonSurfaceMode) }
+		when "ll29yo" { TOINT(Ll29yoSurfaceMode) }
+		when "マジカル☆カシス" { TOINT(MagicalCassisSurfaceMode) }
+		when "空后 / Himmel Königin" { TOINT(HimmelKoniginSurfaceMode) }
+		others { -1 }
 	}
-	elseif shellname == "Eternity Black"
-	{
-		SurfaceMode = "%(EternityBlackSurfaceMode)"
-		flgNoSfcnv  = 0
-	}
-	elseif shellname == "拡大鏡"
-	{
-		SurfaceMode = "%(KakudaikyoSurfaceMode)"
-		flgNoSfcnv  = 0
-	}
-	elseif shellname == "銀色"
-	{
-		SurfaceMode = "%(GiniroSurfaceMode)"
-		flgNoSfcnv  = 0
-	}
-	elseif shellname == "White Lolita"
-	{
-		SurfaceMode = "%(WhiteLolitaSurfaceMode)"
-		flgNoSfcnv  = 0
-	}
-	elseif shellname == "瑠璃"
-	{
-		SurfaceMode = "%(RuriSurfaceMode)"
-		flgNoSfcnv  = 0
-	}
-	elseif shellname == "Alternative - Cassis"
-	{
-		SurfaceMode = "%(AlternativeSurfaceMode)"
-		flgNoSfcnv  = 0
-	}
-	elseif shellname == "月光浴"
-	{
-		SurfaceMode = "%(MoonlightBlueSurfaceMode)"
-		flgNoSfcnv  = 0
-	}
-	elseif shellname == "Bridal Butterfly" || shellname == "Bridal Butterfly 75%"
-	{
-		SurfaceMode = "%(BridalButterflySurfaceMode)"
-		flgNoSfcnv  = 0
-	}
-	elseif shellname == "月白"
-	{
-		SurfaceMode = "%(TukisiroSurfaceMode)"
-		flgNoSfcnv  = 0
-	}
-	elseif shellname == "Gemini"
-	{
-		SurfaceMode = "%(GeminiSurfaceMode)"
-		flgNoSfcnv  = 0
-	}
-	elseif shellname == "桜吹雪"
-	{
-		SakurafubukiSurfaceMode = (SakurafubukiBase + SakurafubukiFox + SakurafubukiPhase)
-		SurfaceMode = "%(SakurafubukiSurfaceMode)"
-		flgNoSfcnv  = 0
-	}
-	elseif shellname == "桃色月" {
-		SurfaceMode = "%(PinkMoonSurfaceMode)"
-		flgNoSfcnv  = 0
-	}
-	elseif shellname == "ll29yo" {
-		SurfaceMode = "%(Ll29yoSurfaceMode)"
-		flgNoSfcnv  = 0
-	}
-	elseif shellname == "マジカル☆カシス" {
-		SurfaceMode = "%(MagicalCassisSurfaceMode)"
-		flgNoSfcnv  = 0
-	}
-	elseif shellname == "空后 / Himmel Königin" {
-		SurfaceMode = "%(HimmelKoniginSurfaceMode)"
-		flgNoSfcnv  = 0
-	}
-	else
-	{
-		SurfaceMode = 0
-		// サーフィス加算しない
-		flgNoSfcnv = 1
-	}
+}
+
+// 現在のシェルがサーフィス加算 (すわり、着せ替えのメニュー) に対応しているか
+/*
+	戻り値: 1 対応 / 0 非対応
+*/
+IsSfcnvShell
+{
+	GetSurfaceOffset >= 0
 }
 
 //計算部分
 sfcnv
 {
-	SurfaceModeChange;
+	// 加算値。足すものが無い (0、または非対応シェルの -1) なら、何も変えずに返す
+	_offset = GetSurfaceOffset;
+	if _offset <= 0 {
+		_argv[0];
+		return;
+	}
 
 	_script = _argv[0];
 	_script = REPLACE(_script,"\\",CHR(1));
 
-	// 加算値。\1 側に足すのは、\1 にも表情差分を持つシェル (Gemini) だけ。
+	// \1 側に足すのは、\1 にも表情差分を持つシェル (Gemini) だけ。
 	// それ以外のシェルで足すと \s[1010] のような存在しないサーフェスになる。
-	_offset = TOINT(SurfaceMode);
 	_kero_offset = 0;
 	if shellname == "Gemini" {
 		_kero_offset = _offset;
