@@ -116,7 +116,7 @@ OnShellChanged
 			"\1\s[10]\0\s[1]たまにはこういうのも良いでしょう?\e"
 			"\1\s[10]\0\s[0]似合うかしら?\e"
 		}
-		when "White Day Actress" {
+		when "White Days Actress" {
 			"\1\s[10]\0\s[5]どうかしら?\e"
 			"\1\s[10]\0\s[0]誰かとお揃いね。\e"
 		}
