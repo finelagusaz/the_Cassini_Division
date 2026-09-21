@@ -13,7 +13,7 @@ OnFirstBoot
 	teachusername    = 0	// ユーザー名覚え用
 	mikireflag       = 0	// 見切れ処理用
 	communicateratio = 0	// コミュニケート開始率[%]
-	shellname        = master //シェルの名前
+	shellname        = "master" //シェルの名前
 	likelimit        = 50   // 好感度基準値
 	flgNoSfcnv       = 1    // サーフィス加算フラグ
 

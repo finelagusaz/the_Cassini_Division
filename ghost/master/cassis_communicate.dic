@@ -270,7 +270,7 @@ ReplyToGhost
 	{
 		//---- 奈留へ返事
 		res_reference[0] = ""
-		"\1\s[10]\0\s0はい。\e"
+		"\1\s[10]\0\s[0]はい。\e"
 	}
 	elseif res_reference[0] == "さくら"
 	{
@@ -278,11 +278,11 @@ ReplyToGhost
 		if "うるさい" _in_ reference[1]
 		{
 			res_reference[0] = ""
-			"\1\s[10]\0\s0きつい言い方ね。\e"
+			"\1\s[10]\0\s[0]きつい言い方ね。\e"
 		}
 		elseif "こんにちは" _in_ reference[1]
 		{
-			"\1\s[10]\0\s0こんちは。\e"
+			"\1\s[10]\0\s[0]こんちは。\e"
 		}
 		elseif "また今度" _in_ reference[1]
 		{
@@ -291,7 +291,7 @@ ReplyToGhost
 		}
 		else
 		{
-			"\1\s[10]\0\s0そういうもの?。\e"
+			"\1\s[10]\0\s[0]そういうもの?。\e"
 		}
 	}
 	elseif res_reference[0] == "Hand"
