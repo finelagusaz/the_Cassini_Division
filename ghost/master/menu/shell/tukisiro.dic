@@ -13,16 +13,10 @@ Menu_Tukisiro
 
 // 立ち
 Menu_TukisiroStand {
-	// FIXME なんか怪しい
+	// 3000 (スカートのたくし上げ) のあいだは「立つ」の項目が出ないので、ここに来るのは座りからだけ
 	SurfaceModeChangeEx(0, 0)
 	OsuwariStop
-	if TukisiroSurfaceMode == 3000 {
-		"\1\s[10]\0\s[1]…\w4…。\e"
-		"\1\s[10]\0\s[0]…\w4…\w4はぁ。\e"
-	}
-	else {
-		"\1\s[10]\0\s[0]わかったわ。\e"
-	}
+	"\1\s[10]\0\s[0]わかったわ。\e"
 }
 
 // 座り
@@ -49,7 +43,9 @@ Menu_TukisiroSitF {
 // 月白/たくし上げ
 Menu_TukisiroTuckup {
 	if flgLove == 1 && TukisiroSurfaceMode !=3000 && GetShellnameEx == "月白"  {
-		TukisiroSurfaceMode = 3000
+		// 3000 (スカートのたくし上げ) は立ち姿なので、座っていたら座りも解く
+		SurfaceModeChangeEx(3000, 0)
+		OsuwariStop
 		"\1\s[10]\0\s[1]…\w4…\w4恥ずかしい、\w4わ。\e"
 		"\1\s[10]\0\s[6]…\w4…。\e"
 		"\1\s[10]\0\s[1]…\w4…ん。\e"
