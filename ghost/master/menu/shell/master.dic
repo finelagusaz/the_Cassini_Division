@@ -5,19 +5,40 @@ Menu_Master
 {
 	"\n[half]"
 	--
-	if (MasterSurfaceMode != 1000 || GiniroSurfaceMode != 1000 || EternityBlackSurfaceMode != 1000 || KakudaikyoSurfaceMode != 1000 || WhiteLolitaSurfaceMode != 1000 ) {
-		AYATEMPLATE.MenuItem("座る", "Menu_Sit")
-		--
-		AYATEMPLATE.MenuItem("タイトルバーに座る", "Menu_SitA")
-		--
-		AYATEMPLATE.MenuItem("タスクバーに座る", "Menu_SitF")
-	}
-	--
-	if (MasterSurfaceMode != 0 || GiniroSurfaceMode != 0 || EternityBlackSurfaceMode != 0 || KakudaikyoSurfaceMode != 0 || WhiteLolitaSurfaceMode != 0 ) {
-		AYATEMPLATE.MenuItem("立つ", "Menu_Stand")
-	}
+	Menu_SitStandItems("Menu_Sit", "Menu_SitA", "Menu_SitF", "Menu_Stand")
 	--
 	"\n[half]"
+}
+
+// 座る・立つのメニュー項目 (座り対応シェルで共用)
+/*
+	引数: 「座る」「タイトルバーに座る」「タスクバーに座る」「立つ」を選んだときに呼ぶ関数名
+	状態は、現在のシェルの加算値 (1000 なら座っている) とお座りモード (0 その場 / 1 タイトルバー / 2 タスクバー) の組。
+	今の状態と同じ項目だけを出さない。「立つ」は、座っているか、Osuwari.dll が動いているときに出す。
+*/
+Menu_SitStandItems
+{
+	_sitting = 0
+	if GetSurfaceOffset == 1000 {
+		_sitting = 1
+	}
+	_mode = GetOsuwariMode
+
+	if _sitting == 0 || _mode != 0 {
+		AYATEMPLATE.MenuItem("座る", _argv[0])
+	}
+	--
+	if _sitting == 0 || _mode != 1 {
+		AYATEMPLATE.MenuItem("タイトルバーに座る", _argv[1])
+	}
+	--
+	if _sitting == 0 || _mode != 2 {
+		AYATEMPLATE.MenuItem("タスクバーに座る", _argv[2])
+	}
+	--
+	if _sitting == 1 || _mode != 0 {
+		AYATEMPLATE.MenuItem("立つ", _argv[3])
+	}
 }
 
 Menu_Stand {

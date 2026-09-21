@@ -5,21 +5,8 @@ Menu_Tukisiro
 {
 	"\n[half]"
 	--
-	if (TukisiroSurfaceMode != 1000 && TukisiroOsuwariMode != 0) {
-		AYATEMPLATE.MenuItem("座る", "Menu_TukisiroSit")
-	}
-	--
-	if TukisiroSurfaceMode != 1000 && TukisiroOsuwariMode != 1 {
-		AYATEMPLATE.MenuItem("タイトルバーに座る", "Menu_TukisiroSitA")
-	}
-	--
-	if TukisiroSurfaceMode != 1000 && TukisiroOsuwariMode != 2 {
-		AYATEMPLATE.MenuItem("タスクバーに座る", "Menu_TukisiroSitF")
-	}
-	--
-	if TukisiroSurfaceMode != 0 && TukisiroOsuwariMode != 0 {
-		AYATEMPLATE.MenuItem("立つ", "Menu_TukisiroStand")
-	}
+	// 今の状態と同じ項目だけを出さない (menu/shell/master.dic)
+	Menu_SitStandItems("Menu_TukisiroSit", "Menu_TukisiroSitA", "Menu_TukisiroSitF", "Menu_TukisiroStand")
 	--
 	"\n[half]"
 }
