@@ -363,6 +363,35 @@ getWingTypeForDrachenKoningin {
 }
 
 //==== サーフィス値加算関数 ============================================================
+// 現在のシェルの、シェル別変数の接頭辞を返す
+/*
+	戻り値: 接頭辞 ("Master" なら MasterSurfaceMode と MasterOsuwariMode) / 空文字 シェル別変数を持たないシェル
+	シェル名と変数の対応はここだけに書く。シェルを足したら、ここに when の行を足す。
+	桜吹雪は 3 つの変数の合算なので、ここには載せない (GetSurfaceOffset を参照)。
+*/
+GetShellVarPrefix
+{
+	case shellname
+	{
+		when "master" { "Master" }
+		when "Eternity Black" { "EternityBlack" }
+		when "拡大鏡" { "Kakudaikyo" }
+		when "銀色" { "Giniro" }
+		when "White Lolita" { "WhiteLolita" }
+		when "瑠璃" { "Ruri" }
+		when "Alternative - Cassis" { "Alternative" }
+		when "月光浴" { "MoonlightBlue" }
+		when "Bridal Butterfly",'Bridal Butterfly 75%' { "BridalButterfly" }
+		when "月白" { "Tukisiro" }
+		when "Gemini" { "Gemini" }
+		when "桃色月" { "PinkMoon" }
+		when "ll29yo" { "Ll29yo" }
+		when "マジカル☆カシス" { "MagicalCassis" }
+		when "空后 / Himmel Königin" { "HimmelKonigin" }
+		others { "" }
+	}
+}
+
 // 現在のシェルのサーフェス加算値を返す
 /*
 	戻り値: 加算値 (0 以上) / -1 サーフィス加算に対応していないシェル
@@ -370,26 +399,17 @@ getWingTypeForDrachenKoningin {
 */
 GetSurfaceOffset
 {
-	case shellname
-	{
-		when "master" { TOINT(MasterSurfaceMode) }
-		when "Eternity Black" { TOINT(EternityBlackSurfaceMode) }
-		when "拡大鏡" { TOINT(KakudaikyoSurfaceMode) }
-		when "銀色" { TOINT(GiniroSurfaceMode) }
-		when "White Lolita" { TOINT(WhiteLolitaSurfaceMode) }
-		when "瑠璃" { TOINT(RuriSurfaceMode) }
-		when "Alternative - Cassis" { TOINT(AlternativeSurfaceMode) }
-		when "月光浴" { TOINT(MoonlightBlueSurfaceMode) }
-		when "Bridal Butterfly",'Bridal Butterfly 75%' { TOINT(BridalButterflySurfaceMode) }
-		when "月白" { TOINT(TukisiroSurfaceMode) }
-		when "Gemini" { TOINT(GeminiSurfaceMode) }
-		when "桜吹雪" { TOINT(SakurafubukiBase) + TOINT(SakurafubukiFox) + TOINT(SakurafubukiPhase) }
-		when "桃色月" { TOINT(PinkMoonSurfaceMode) }
-		when "ll29yo" { TOINT(Ll29yoSurfaceMode) }
-		when "マジカル☆カシス" { TOINT(MagicalCassisSurfaceMode) }
-		when "空后 / Himmel Königin" { TOINT(HimmelKoniginSurfaceMode) }
-		others { -1 }
+	if shellname == "桜吹雪" {
+		TOINT(SakurafubukiBase) + TOINT(SakurafubukiFox) + TOINT(SakurafubukiPhase);
+		return;
 	}
+
+	_prefix = GetShellVarPrefix;
+	if _prefix == "" {
+		-1;
+		return;
+	}
+	TOINT(EVAL(_prefix + "SurfaceMode"));
 }
 
 // 現在のシェルがサーフィス加算 (すわり、着せ替えのメニュー) に対応しているか
@@ -672,72 +692,16 @@ OsuwariStop
 /*
 	第1引数: サーフェス加算値
 	第2引数: お座りモード
+	シェル別変数を持たないシェルでは何もしない。
 */
 SurfaceModeChangeEx
 {
-	case shellname
-	{
-		when "master" {
-			MasterSurfaceMode = _argv[0]
-			MasterOsuwariMode = _argv[1]
-		}
-		when "Eternity Black" {
-			EternityBlackSurfaceMode = _argv[0]
-			EternityBlackOsuwariMode = _argv[1]
-		}
-		when "拡大鏡" {
-			KakudaikyoSurfaceMode = _argv[0]
-			KakudaikyoOsuwariMode = _argv[1]
-		}
-		when "銀色" {
-			GiniroSurfaceMode = _argv[0]
-			GiniroOsuwariMode = _argv[1]
-		}
-		when "White Lolita" {
-			WhiteLolitaSurfaceMode = _argv[0]
-			WhiteLolitaOsuwariMode = _argv[1]
-		}
-		when "瑠璃" {
-			RuriSurfaceMode = _argv[0]
-			RuriOsuwariMode = _argv[1]
-		}
-		when "Alternative - Cassis" {
-			AlternativeSurfaceMode = _argv[0]
-			AlternativeOsuwariMode = _argv[1]
-		}
-		when "月光浴" {
-			MoonlightBlueSurfaceMode = _argv[0]
-			MoonlightBlueOsuwariMode = _argv[1]
-		}
-		when "Bridal Butterfly",'Bridal Butterfly 75%' {
-			BridalButterflySurfaceMode = _argv[0]
-			BridalButterflyOsuwariMode = _argv[1]
-		}
-		when "月白" {
-			TukisiroSurfaceMode = _argv[0]
-			TukisiroOsuwariMode = _argv[1]
-		}
-		when "Gemini" {
-			GeminiSurfaceMode = _argv[0]
-			GeminiOsuwariMode = _argv[1]
-		}
-		when "桃色月" {
-			PinkMoonSurfaceMode = _argv[0]
-			PinkMoonOsuwariMode = _argv[1]
-		}
-		when "ll29yo" {
-			Ll29yoSurfaceMode = _argv[0]
-			Ll29yoOsuwariMode = _argv[1]
-		}
-		when "マジカル☆カシス" {
-			MagicalCassisSurfaceMode = _argv[0]
-			MagicalCassisOsuwariMode = _argv[1]
-		}
-		when "空后 / Himmel Königin" {
-			HimmelKoniginSurfaceMode = _argv[0]
-			HimmelKoniginOsuwariMode = _argv[1]
-		}
+	_prefix = GetShellVarPrefix;
+	if _prefix == "" {
+		return;
 	}
+	LETTONAME(_prefix + "SurfaceMode", _argv[0]);
+	LETTONAME(_prefix + "OsuwariMode", _argv[1]);
 }
 
 // 現在のシェルのお座りモードを返す
@@ -746,25 +710,12 @@ SurfaceModeChangeEx
 */
 GetOsuwariMode
 {
-	case shellname
-	{
-		when "master" { TOINT(MasterOsuwariMode) }
-		when "Eternity Black" { TOINT(EternityBlackOsuwariMode) }
-		when "拡大鏡" { TOINT(KakudaikyoOsuwariMode) }
-		when "銀色" { TOINT(GiniroOsuwariMode) }
-		when "White Lolita" { TOINT(WhiteLolitaOsuwariMode) }
-		when "瑠璃" { TOINT(RuriOsuwariMode) }
-		when "Alternative - Cassis" { TOINT(AlternativeOsuwariMode) }
-		when "月光浴" { TOINT(MoonlightBlueOsuwariMode) }
-		when "Bridal Butterfly",'Bridal Butterfly 75%' { TOINT(BridalButterflyOsuwariMode) }
-		when "月白" { TOINT(TukisiroOsuwariMode) }
-		when "Gemini" { TOINT(GeminiOsuwariMode) }
-		when "桃色月" { TOINT(PinkMoonOsuwariMode) }
-		when "ll29yo" { TOINT(Ll29yoOsuwariMode) }
-		when "マジカル☆カシス" { TOINT(MagicalCassisOsuwariMode) }
-		when "空后 / Himmel Königin" { TOINT(HimmelKoniginOsuwariMode) }
-		others { 0 }
+	_prefix = GetShellVarPrefix;
+	if _prefix == "" {
+		0;
+		return;
 	}
+	TOINT(EVAL(_prefix + "OsuwariMode"));
 }
 
 //-----------------------------

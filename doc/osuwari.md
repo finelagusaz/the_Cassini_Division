@@ -31,6 +31,13 @@
 
 ### cassis_shell.dic
 
+#### GetShellVarPrefix
+
+- 現在のシェルの、シェルごとの変数の接頭辞（hogeSurfaceModeとhogeOsuwariModeの「hoge」）を返す
+- シェル名と変数の対応は、ここだけに書く。シェルを足したら、ここに`when`の行を足す。足し忘れると、そのシェルでは加算されず、座り関連、着せ替え関連メニューも出ない
+- `SurfaceModeChangeEx`、`GetSurfaceOffset`、`GetOsuwariMode`がここから変数名を組み立てて読み書きするので、この3つにシェルごとの記述は要らない
+- 桜吹雪は3つの変数の合算なので載せない（`GetSurfaceOffset`が直接扱う）
+
 #### SurfaceModeChangeEx
 
 - シェルごとに加算したいサーフェイス値（hogeSurfaceMode）とお座りの状態（hogeOsuwariMode）を指定する
@@ -43,8 +50,7 @@
 #### GetSurfaceOffset
 
 - 現在のシェルの加算したいサーフェイス値（`SurfaceModeChangeEx`で指定したhogeSurfaceMode）を返す。変数は書き換えない
-- サーフェイス値加算に対応していないシェルでは-1を返す
-- シェルを足したら、ここにも`when`の行を足す。足し忘れると、そのシェルでは加算されず、座り関連、着せ替え関連メニューも出ない
+- サーフェイス値加算に対応していないシェル（`GetShellVarPrefix`に載っていないシェル）では-1を返す
 
 #### IsSfcnvShell
 
@@ -55,7 +61,7 @@
 
 - 現在のシェルのお座りの状態（hogeOsuwariMode）を返す
 - 「膝枕」のように、座っているときだけ出す反応の判定に使う
-- シェルを足したら、ここにも`when`の行を足す。足し忘れると、そのシェルでは0（停止）が返る
+- `GetShellVarPrefix`に載っていないシェルでは0（停止）を返す
 
 #### OsuwariStart
 
