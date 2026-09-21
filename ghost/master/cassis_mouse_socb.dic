@@ -685,8 +685,6 @@ SakurafubukiMouseWheelUp0Skirt
 			_talk_array ,= arySakWheel0SkirtPhase1
 			--
 			SakurafubukiShiftPhase("skirt");
-//			SakurafubukiSurfaceMode = SakurafubukiSurfaceMode + 1000
-
 		}
 //		when 2 {
 //			_talk_array ,= arySakWheel0SkirtPhase2
