@@ -13,7 +13,6 @@ Menu_Tukisiro
 
 // 立ち
 Menu_TukisiroStand {
-	// FIXME なんか怪しい
 	// 3000 (スカートのたくし上げ) のあいだは「立つ」の項目が出ないので、ここに来るのは座りからだけ
 	SurfaceModeChangeEx(0, 0)
 	OsuwariStop
