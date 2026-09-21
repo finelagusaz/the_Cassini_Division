@@ -90,8 +90,6 @@ OnShellChanging
 //---- シェルチェンジ完了 ---------------------------------------------------------------
 OnShellChanged
 {
-	"\![set,otherghosttalk,(true)]"
-	--
 	//シェル名取得
 	shellname = reference[0]
 	--
