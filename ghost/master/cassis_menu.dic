@@ -205,7 +205,7 @@ Menu_CONFIG {
 			AYATEMPLATE.MenuItem("ツールチップを表示する", "Menu_TooltipEnable")
 		}
 		else {
-			AYATEMPLATE.MenuItem("ツールチップを表示しない,Menu_TooltipDisable")
+			AYATEMPLATE.MenuItem("ツールチップを表示しない", "Menu_TooltipDisable")
 		}
 	}
 	--
