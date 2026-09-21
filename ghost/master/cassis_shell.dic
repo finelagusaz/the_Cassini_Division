@@ -564,12 +564,6 @@ ShellCompatibility
 				GeminiSurfaceMode = GeminiSurfaceMode * 1000;
 			}
 		}
-		when '桜吹雪'
-		{
-			if SakurafubukiSurfaceMode < 9 {
-				SakurafubukiSurfaceMode = SakurafubukiSurfaceMode * 1000;
-			}
-		}
 	}
 }
 
