@@ -38,8 +38,6 @@ OnGhostChanging_カシス
 OnGhostChanged_カシス
 {
 	//自分から切り替わり
-	setInit
-	--
 	"\1\s[10]\0\s[0]ただいま。\e"
 }
 
@@ -54,8 +52,6 @@ OnGhostChanging_オフィーリア
 OnGhostChanged_オフィーリア
 {
 	//オフィーリアから切り替わり
-	setInit
-	--
 	if "変わった空気" _in_ reference[1]
 	{
 		"\1\s[10]\0\s[6]変わった空気があるのはお互い様よ。\w9\e"
@@ -75,8 +71,6 @@ OnGhostChanging_Hand
 
 OnGhostChanged_Hand
 {
-	setInit
-	--
 	"\1\s[10]\0\s[0]…\w4…\w4The Hand、\w4お疲れ様。\e"
 }
 
@@ -127,8 +121,6 @@ OnGhostChanging_エインスル
 
 OnGhostChanged_エインスル
 {
-	setInit
-	--
 	//エインスルから切り替わり
 	savedatacheck("%(reference[3])ghost\master\satori_savedata.txt","unknown")
 	//..\..\..\unknown\
@@ -203,8 +195,6 @@ OnGhostChanging_現象67号
 
 OnGhostChanged_現象67号
 {
-	setInit
-	--
 	//現象67号から切り替わり
 	//殺伐と切り返し。
 	if "燃やしてやる" _in_ reference[1]
@@ -241,8 +231,6 @@ OnGhostChanging_織芽
 
 OnGhostChanged_織芽
 {
-	setInit
-	--
 	//織芽から切り替わり
 	"\1\s[10]\0\s[6]変わったヒトね。\w9\e"
 }
@@ -269,8 +257,6 @@ OnGhostChanging_ヴィイ
 
 OnGhostChanged_ヴィイ
 {
-	setInit
-	--
 	//ヴィイから切り替わり
 	if "妹にいたらなぁ" _in_ reference[1]
 	{
@@ -310,8 +296,6 @@ OnGhostChanging_ノルネ
 
 OnGhostChanged_ノルネ
 {
-	setInit
-	--
 	//ノルネから切り替わり
 	if "絞らないで！" _in_ reference[1]
 	{
@@ -332,8 +316,6 @@ OnGhostChanging_シャープ
 
 OnGhostChanged_シャープ
 {
-	setInit
-	--
 	//シャープから切り替わり
 	if "人のようで人では無い……。" _in_ reference[1]
 	{
@@ -364,8 +346,6 @@ OnGhostChanging_deadend
 
 OnGhostChanged_deadend
 {
-	setInit
-	--
 	if "頼るの" _in_ reference[1]
 	{
 		"\1\s[10]\0\s[0]頼ってるのは私の方よ。\w9\n/
@@ -389,8 +369,6 @@ OnGhostChanging_アファーム_デニアル
 OnGhostChanged_アファーム_デニアル
 {
 	//アファーム/デニアルから切り替え
-	setInit
-	--
 	if "苦しみはまだ" _in_ reference[1]
 	{
 		"\1\s[10]\0\s[6]終わったといったら嘘になるわね。\w9\e"
@@ -416,8 +394,6 @@ OnGhostChanging_ルディス
 OnGhostChanged_ルディス
 {
 	//ルディスから切り替え
-	setInit
-	--
 	if "こびと…\w6ではないよな。" _in_ reference[1]
 	{
 		//70cmちょっとぐらい。絶対に日常生活が大変。
@@ -453,8 +429,6 @@ OnGhostChanging_ハムスたん
 OnGhostChanged_ハムスたん
 {
 	// ハムスたんから切り替え
-	setInit
-	--
 	if "母さん" _in_ reference[1]
 	{
 		"\1\s[10]\0\s[2]\w9\w5\s[3]誰が母さんなのよ、\w4誰が。\w9\e"
@@ -478,8 +452,6 @@ OnGhostChanging_マロン
 OnGhostChanged_マロン
 {
 	//マロンから切り替え
-	setInit
-	--
 	if "私たちの命とは" _in_ reference[1]
 	{
 		"\1\s[10]\0\s[0]生きてると思っている限りは、\w4命がある、\w4ね。\w9\n/
@@ -502,8 +474,6 @@ OnGhostChanging_桔飴
 
 OnGhostChanged_桔飴
 {
-	setInit
-	--
 	//桔飴から切り替え
 	"\1\s[10]\0\s[0]私を食べるだけ身体を壊すだけよ。\w9\n/
 	\s[8]むしろ、\w4壊させてもらうわ。\w9\e"
@@ -520,8 +490,6 @@ OnGhostChanging_ちびすけ
 OnGhostChanged_ちびすけ
 {
 	//ちびすけから切り替え
-	setInit
-	--
 	if "台詞や喋り方や立ち振る舞い" _in_ reference[1]
 	{
 		"\1\s[10]\0\s[0]そういう点では同類といえるわね。\w9\n/
@@ -545,8 +513,6 @@ OnGhostChanging_リーライナ
 OnGhostChanged_リーライナ
 {
 	//リーライナから切り替え
-	setInit
-	--
 	if "私と同類の方なのかもしれませんね。" _in_ reference[1]
 	{
 		"\1\s[10]\0\s[6]そうね。\w9\n/
@@ -577,8 +543,6 @@ OnGhostChanging_てでぃめりー
 OnGhostChanged_てでぃめりー
 {
 	//てでぃめりーから切り替わり
-	setInit
-	--
 	if "誰も助けてくれない。" _in_ reference[1]
 	{
 		"\1\s[10]\0\s[6]助かる気すら無い癖に。\w9\e"
@@ -617,8 +581,6 @@ OnGhostChanging_泡影
 
 OnGhostChanged_泡影
 {
-	setInit
-	--
 	//泡影から切り替わり
 	if "言葉は厳しく思えますがの" _in_ reference[1]
 	{
@@ -655,8 +617,6 @@ OnGhostChanging_神殿の猫
 OnGhostChanged_神殿の猫
 {
 	//神殿の猫から切り替わり
-	setInit
-	--
 	if "あんな小さな子に手を出すのはちょっと" _in_ reference[1]
 	{
 		"\1\s[10]\0\s[8]悪いけど、\w4すべて禁止よ。\w9\e"
@@ -687,8 +647,6 @@ OnGhostChanging_くろやぎ
 OnGhostChanged_くろやぎ
 {
 	//くろやぎから切り替わり
-	setInit
-	--
 	if "甘酸っぱそう。" _in_ reference[1]
 	{
 		"\1\s[10]\0\s[6]甘酸っぱくもないし目にも良くないわよ。\w9\e"
@@ -738,8 +696,6 @@ OnGhostChanging_クロツ
 OnGhostChanged_クロツ
 {
 	//クロツたちから切り替わり
-	setInit
-	--
 	savedatacheck("..\..\..\vanishing\ghost\master\satori_savedata.txt","Vanishing")
 	--
 	if record=="familiar"
@@ -806,8 +762,6 @@ OnGhostChanged_クロツ
 OnGhostChanged_ヒュールフリス
 {
 	//ヒュールフリスたちから切り替わり
-	setInit
-	--
 	if "住んでいる世界" _in_ reference[1]
 	{
 		"\1\s[10]\0\s[0]住む世界の違いなんて些細なものよ。\w9\n/
@@ -832,8 +786,6 @@ OnGhostChanging_恵理
 OnGhostChanged_恵理
 {
 	//恵理たちから切り替わり
-	setInit
-	--
 	if "この世界を見つめ見守るのでしょうか" _in_ reference[1]
 	{
 		"\1\s[10]\0\s[0]…\w4…\w4私は見守る柄じゃないわ。\w9\n/
@@ -856,8 +808,6 @@ OnGhostChanging_スグリ
 OnGhostChanged_スグリ
 {
 	//スグリから切り替わり
-	setInit
-	--
 	"\1\s[10]\0\s[6]何とか間に合ったようね\w4…\w4…。\w9\e"
 }
 
@@ -872,8 +822,6 @@ OnGhostChanging_54
 OnGhostChanged_54
 {
 	//54から切り替わり
-	setInit
-	--
 	if "ちいさい" _in_ reference[1]
 	{
 		"\1\s[10]\0\s[6]背丈はきっと、\w4関係なくそうしてくると思うわ。\w9\e"
@@ -898,8 +846,6 @@ OnGhostChanging_ウィラ・ジーン
 OnGhostChanged_ウィラ・ジーン
 {
 	//ウィラ・ジーンから切り替わり
-	setInit
-	--
 	"\1\s[10]\0\s[6]惹かれるのは構わないけれど、\w4どうなっても知らないわ。\w9\e"
 	"\1\s[10]\0\s[0]強い意見そのものに価値は無いわ。\w9\n/
 	\s[6]行動が伴って初めて、\w4価値が生まれるのよ。\w9\n/
@@ -918,8 +864,6 @@ OnGhostChanging_黒田
 OnGhostChanged_黒田
 {
 	//黒田から切り替わり
-	setInit
-	--
 	"\1\s[10]\0\s[0]われはわれである、\w4と答えれば良いのかしら?\w9\e"
 	"\1\s[10]\0\s[6]理解する為に言葉が生まれたのか。\w9\n/
 	それとも、\w4言葉があるから理解できるのか。\w9\n/
@@ -939,8 +883,6 @@ OnGhostChanging_Eris
 OnGhostChanged_Eris
 {
 	//Erisから切り替わり
-	setInit
-	--
 	"\1\s[10]\0\s[0]伝言は確かに聞いたわ。\w9\n/
 	\s[6]こんなことするなんてエリスも変わったのね\w4…\w4…。\w9\e"
 }
@@ -956,8 +898,6 @@ OnGhostChanging_アン
 OnGhostChanged_アン
 {
 	//アンから切り替わり
-	setInit
-	--
 	"\1\s[10]\0\s[0]吹いてもそよ風が良いところかしら?\w9\n/
 	\s[6]いろいろな音が聞こえるわ。\w9\n/
 	言葉にはしたくないものまでもね。\w9\e"
@@ -982,8 +922,6 @@ OnGhostChanging_アルルカン
 OnGhostChanged_アルルカン
 {
 	//アルルカンから切り替わり
-	setInit
-	--
 	if "幼き天使よ" _in_ reference[1]
 	{
 		"\1\s[10]\0\s[6]何処へ行こうかしら?\w9\n/
@@ -1018,8 +956,6 @@ OnGhostChanging_遼子
 OnGhostChanged_遼子
 {
 	//遼子から切り替わり
-	setInit
-	--
 	"\1\s[10]\0\s[0]私の経験は私のモノ。\w9\n/
 	あなたの経験はあなたのモノ。\w9\n/
 	\s[6]言葉や文章にして伝えるしかないのよ。\w9\e"
@@ -1037,8 +973,6 @@ OnGhostChanging_瞬子
 OnGhostChanged_瞬子
 {
 	//瞬子から切り替わり
-	setInit
-	--
 	"\1\s[10]\0\s[0]苺のショートケーキ、\w4ね。\w9\n/
 	\s[6]ふふ、\w4良く作るわ。\w9\n/
 	\s[0]折角だから頂きましょう。\e"
@@ -1065,8 +999,6 @@ OnGhostChanged_新子
 		幾ら本人の選択でも将来が心配だわ。」
 		が心の中の声。
 	*/
-	setInit
-	--
 	"\1\s[10]\0\s[6]相も変わらずのようね…\w4…。\e"
 }
 
@@ -1089,8 +1021,6 @@ OnGhostChanged_ウィンディア
 	/*
 		何となく見えてくるカシスの正体。
 	*/
-	setInit
-	--
 	if "不定形" _in_ reference[1]
 	{
 		"\1\s[10]\0\s[0]凍らすのは大変でしょうね、\w4きっと。\w9\n/
@@ -1137,8 +1067,6 @@ OnGhostChanged_実梅
 	/*
 		彼女自身は軽くからかった程度の認識らしい。
 	*/
-	setInit
-	--
 	if "ちょっと、ね" _in_ reference[1]
 	{
 		"\1\s[10]\0\s[6]何を気にしているのかしらね。\e"
@@ -1172,8 +1100,6 @@ OnGhostChanged_狼姫
 		ユーザは見えてない、と仮定。
 		見えていても、このような流れだとは思う。
 	*/
-	setInit
-	--
 	"\1\s[10]\0\s[0]変わった知り合いがいるのね。\w9\n/
 	…\w4…\w4\s[6]見えて無いのならその方が良いのかも知れないわ。\e"
 }
@@ -1192,8 +1118,6 @@ OnGhostChanging_蝙
 OnGhostChanged_蝙
 {
 	//蝙から切り替わり
-	setInit
-	--
 	"\1\s[10]\0\s[0]ご明察ね。\w9\n/
 	\s[6]ヒトでは無いわ。\e"
 }
@@ -1212,8 +1136,6 @@ OnGhostChanging_耶美
 OnGhostChanged_耶美
 {
 	//耶美から切り替わり
-	setInit
-	--
 	"\1\s[10]\0\s[0]意外ね。\w9\n/
 	\s[6]戻ってこないと思っていたわ。\e"
 }
@@ -1228,8 +1150,6 @@ OnGhostChanging_あす
 OnGhostChanged_あす
 {
 	//あすから切り替わり
-	setInit
-	--
 	if "随分と小さいな" _in_ reference[1]
 	{
 		if shellname == "master"
@@ -1270,8 +1190,6 @@ OnGhostChanging_カトル
 OnGhostChanged_カトル
 {
 	// カトルから切り替わり
-	setInit
-	--
 	"\1\s[10]\0\s[0]…\w4…\w4あなたは相手を選ばないのね。\e"
 }
 
@@ -1287,8 +1205,6 @@ OnGhostChanging_澪央
 OnGhostChanged_澪央
 {
 	// 澪央から切り替わり
-	setInit
-	--
 	if "友好的な出会いだったら" _in_ reference[1]
 	{
 		"\1\s[10]\0\s[0]友好的な出会いだったら、\w4こうやって話せなかったでしょうね。\w9\n/
@@ -1314,8 +1230,6 @@ OnGhostChanging_羅裸
 OnGhostChanged_羅裸
 {
 	// 羅裸から切り替わり
-	setInit
-	--
 	"\1\s[10]\0\s[0]言葉は短くても長くても伝わらないものよ。\w9\n/
 	話し手の意図したように聞き手が考えてくれるとも限らない。\w9\n/
 	\s[6]便利で不便な道具ね、\w4言葉と言うものは。\e"
@@ -1337,8 +1251,6 @@ OnGhostChanging_ゆかり
 OnGhostChanged_ゆかり
 {
 	// ゆかりから切り替わり
-	setInit
-	--
 	if "ロリコンか" _in_ reference[1] {
 		"\1\s[10]\0\s[6]それは見た目に騙されているでしょうね。\e"
 		"\1\s[10]\0\s[0]さて、\w4どうかしら。\e"
@@ -1379,8 +1291,6 @@ OnGhostChanged_律花
 	/*
 		彼女としては交代するのに抵抗があるようだ。	
 	*/
-	setInit
-	--
 	"\1\s[10]\0\s[6]…\w4…。\e"
 	"\1\s[10]\0\s[0]あら、\w4おかえりなさい。\e"
 	"\1\s[10]\0\s[0]いいの?\w9\n/
@@ -1407,8 +1317,6 @@ OnGhostChanging_あざみ
 
 OnGhostChanged_あざみ
 {
-	setInit
-	--
 	if "ところてん" _in_ reference[1]
 	{
 		"\1\s[10]\0\s[0]お腹が空いているのかしら?\e"
@@ -1472,8 +1380,6 @@ OnGhostChanged_安治野
 		安治野のやっていることそのものには問題視していない。
 		ユーザの身が心配。
 	*/
-	setInit
-	--
 	'\1\s[10]\0\s[0]おかえりなさい、\w4%username。\e'
 	'\1\s[10]\0\s[0]おかえりなさい。\e'
 }
@@ -1497,8 +1403,6 @@ OnGhostChanged_瑠璃
 	/*
 		
 	*/
-	setInit
-	--
 	'\1\s[10]\0\s[0]おかえりなさい、\w4%username。\w9\n/
 	彼女は元気にしてたかしら?\e'
 	'\1\s[10]\0\s[0]こちらに来て最初に会った人があなたでよかったわ。\w9\n/
@@ -1529,8 +1433,6 @@ OnGhostChanged_コウコ
 		・においと言動の類から推測しているようだ
 		・彼女の価値観としては別にこれぐらい些細な出来事に過ぎないので気を使ってはいる。が、それが裏目に出ている空気。
 	*/
-	setInit
-	--
 	if ("変なにおい" _in_ reference[1] || "お疲れ様です。" _in_ reference[1] || "そこのトイレで汚れとか落とせ" _in_ reference[1] || "下着は返して" _in_ reference[1]) && flgLove == "1"
 	{
 		'\1\s[10]\0\s[0]シャワー、\w4浴びてきたらどうかしら?\e'
@@ -1566,8 +1468,6 @@ OnGhostChanging_あいり
 
 OnGhostChanged_あいり
 {
-	setInit
-	--
 	'\1\s[10]\0\s[0]FSだってことはわかってるのでしょうね。\w9\n/
 	\s[6]でも、\w4たとえの意味がわからないわ\w9…\w9…。\w9\n/
 	\s[0]%usernameはどういう意味かわかる?\e'
@@ -1583,8 +1483,6 @@ OnGhostChanging_エーファ
 
 OnGhostChanged_エーファ
 {
-	setInit
-	--
 	'\1\s[10]\0\s[6]それってこういうこと、\w4ね。\w9\n/
 	私からは場所も時間も渡っているように見えるけど、\w4あなたからは別の形に見えているのかしら?\e'
 }
@@ -1598,8 +1496,6 @@ OnGhostChanging_ルゥ
 
 OnGhostChanged_ルゥ
 {
-	setInit
-	--
 	'\0\s[6]空隙は、\w4欲には際限がないわ。\w9\n/
 	すべて満たされるなんてことはきっとないのよ。\w9\n/
 	\s[0]満たされてもいつかは飢えがやってくる。\e'
@@ -1625,7 +1521,6 @@ OnGhostChanging_ルストリカ
 OnGhostChanged_ルストリカ
 {
 	_tmp_reference = RemoveSakuraScript(reference[1])
-	setInit
 	flglys = 1
 	
 	if "大局的な観点で見てみれば" _in_ _tmp_reference
@@ -1656,7 +1551,6 @@ OnGhostChanging_ルゥ・F
 
 OnGhostChanged_ルゥ・F
 {
-	setInit
 	_tmp_reference = RemoveSakuraScript(reference[1])
 	
 	// 彼女にとっての空隙を埋める方法はいくつもある
@@ -1683,8 +1577,6 @@ OnGhostChanging_琉笑
 
 OnGhostChanged_琉笑
 {
-	setInit
-	--
 	'\1\s[10]\0\s[0]おかえりなさい。\w9\n/
 	あら、\w4おみやげ?\w9\n/
 	紅茶でも淹れましょうか。\e'
@@ -1699,8 +1591,6 @@ OnGhostChanging_スクルド
 
 OnGhostChanged_スクルド
 {
-	setInit
-	--
 	'\1\1\s[10]\0\s[6]あなたたちも良い航海を。\e'
 }
 
@@ -1716,7 +1606,6 @@ OnGhostChanging_コヨーテ
 /*
 OnGhostChanged_コヨーテ
 {
-	setInit	
 }
 */
 
@@ -1729,8 +1618,6 @@ OnGhostChangingOther
 
 OnGhostChangedOther
 {
-	setInit
-	--
 	"\1\s[10]\0\s[0]おかえりなさい、\w4%username。\e"
 	"\1\s[10]\0\s[6]おかえりなさい。\w9\n/
 	\s[0]待っていたわ、\w4%username。\e"
@@ -1822,7 +1709,6 @@ OnGhostCallCompleteOther
 OnGhostCalledOther
 //呼び出された
 {
-	setInit
 	eventEndLieChanged
 	--
 	if reference[0] == "Hand"
@@ -1942,6 +1828,8 @@ OnGhostChanging
 OnGhostChanged
 {
 	eventEndLieChanged
+	setInit
+	--
 	setShellInit
 	AYATEMPLATE.ExecuteChangeCallTalk("OnGhostChanged","OnBoot")
 }
@@ -1955,6 +1843,8 @@ OnGhostCalling
 OnGhostCalled
 {
 	eventEndLieChanged
+	setInit
+	--
 	setShellInit
 	AYATEMPLATE.ExecuteChangeCallTalk("OnGhostCalled","OnBoot")
 }
