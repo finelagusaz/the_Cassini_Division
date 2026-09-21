@@ -66,19 +66,19 @@ ObjectHitSakura
 {
 	if reference[2][0] == "pain" || reference[2][0] == "stab"
 	{
-		"\1\s[10]\0\s0痛い。\e"
+		"\1\s[10]\0\s[0]痛い。\e"
 	}
 	elseif reference[2][0] == "surprise" || reference[2][0] == "huge"
 	{
-		"\1\s[10]\0\s0!\e"
+		"\1\s[10]\0\s[0]!\e"
 	}
 	elseif reference[2][0] == "love" || reference[2][0] == "elegant" || /
 		reference[2][0] == "pretty" || reference[2][0] == "food"
 	{
-		"\1\s[10]\0\s0……。\e"
+		"\1\s[10]\0\s[0]……。\e"
 	}
 	else
 	{
-		"\1\s[10]\0\s0…\w2…\w2ん。\e"
+		"\1\s[10]\0\s[0]…\w2…\w2ん。\e"
 	}
 }
