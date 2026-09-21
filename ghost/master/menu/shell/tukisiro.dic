@@ -14,9 +14,14 @@ Menu_Tukisiro
 // 立ち
 Menu_TukisiroStand {
 	// FIXME なんか怪しい
+	// 3000 かどうかは、SurfaceModeChangeEx で 0 に戻す前に見ておく
+	_tuckup = 0
+	if TukisiroSurfaceMode == 3000 {
+		_tuckup = 1
+	}
 	SurfaceModeChangeEx(0, 0)
 	OsuwariStop
-	if TukisiroSurfaceMode == 3000 {
+	if _tuckup == 1 {
 		"\1\s[10]\0\s[1]…\w4…。\e"
 		"\1\s[10]\0\s[0]…\w4…\w4はぁ。\e"
 	}
