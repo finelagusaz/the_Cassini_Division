@@ -5296,7 +5296,14 @@ OnMinuteChange
 OnSecondChange
 {
 	//---- 1 秒毎に実行される。ここではあまり重い処理を行わないこと
-	if AYATEMPLATE.mikireflag == 1 && reference[1] == 0 && flgMikireEnable == "1" && GetOsuwariMode == 0
+	//---- すわりモード中はタスクバーに重なって常に見切れ扱いになるので、見切れとして記録しない
+	//---- （記録すると、立ち上がった直後に「見切れの終了」と判定されて EndMikireTalk が出る）
+	if GetOsuwariMode != 0
+	{
+		AYATEMPLATE.mikireflag = 0
+		return
+	}
+	if AYATEMPLATE.mikireflag == 1 && reference[1] == 0 && flgMikireEnable == "1"
 	{
 		//---- 見切れの終了
 		EndMikireTalk
