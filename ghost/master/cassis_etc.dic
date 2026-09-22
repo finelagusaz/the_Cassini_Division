@@ -710,6 +710,7 @@ tooltipMaster0Wing
 setInit
 {
 	// 好感度閾値
+	// リリース後に追加した値。OnFirstBoot を通っていない既存の保存データにも入るよう、ここでも設定する
 	likelimit = 50
 
 	// 座り関連処理
@@ -722,6 +723,9 @@ setInit
 	ShellCompatibility
 
 	// 桜吹雪：サーフェス切り替え
+	// 起動、シェルの切り替え、ほかのゴーストからの切り替わりのたびに、フェイズを最初へ戻す（意図した動作）
+	// 見た目のフェイズは cntEros が 20 以上でないと進まない作りなので、cntEros も対で 0 に戻す
+	// （ほかのシェルから切り替えてきたときに、前のシェルで溜めた値を持ち込ませない）
 	if GetShellnameEx == "桜吹雪" {
 		SakurafubukiShiftBase;
 		SakurafubukiPhase = 0;

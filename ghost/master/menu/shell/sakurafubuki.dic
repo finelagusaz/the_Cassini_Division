@@ -99,7 +99,7 @@ Menu_SakurafubukiManual
 
 // リセット
 Menu_SakurafubukiPRest {
-	Menu_SakurafubukiPhase = 0;
+	SakurafubukiPhase = 0;
 	--
 	"\0\s[-1]そうするわ。\w9\n/
 	…\w4…。\w9\n/
