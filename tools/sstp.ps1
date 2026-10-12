@@ -5,10 +5,12 @@
     By default the request is addressed to this ghost (ReceiverGhostName = sakura.name in
     ghost/master/descript.txt). Use -Ghost to address another ghost, or -AnyGhost for the active one.
     For -Script, -Event and -Reload, the entries that SSP added to its error log in the meantime
-    (dictionary errors reported by YAYA, script errors, ...) are shown afterwards. This needs an SSP
-    that has the developer.log properties; -NoLog skips it. See also tools/ssp-log.ps1.
+    (dictionary errors reported by YAYA, script errors, ...) are shown afterwards. -NoLog skips
+    it. See also tools/ssp-log.ps1.
     -Script and -Event send "Option: strict", so SSP logs each tag of the played script that
     it could not interpret as "[GHOST/Script] reason (detail) at position n : excerpt".
+    -Script, -Reload and the -Balloon dump also send "Option: notranslate", so the script is played as sent even
+    by a ghost whose OnTranslate rewrites or refuses SSTP scripts.
     SSP answers before the script is played. The log is read after the ghost has stopped talking
     ("EXECUTE GetStatus"; up to -TimeoutSeconds), so errors late in a long script are included. When GetStatus
     does not answer (for example while the ghost is being loaded), a fixed short wait is used instead.
@@ -20,7 +22,9 @@
     looked at. After the ghost has stopped talking, it sends "\C\![execute,dumpballoon,...]" (\C keeps the
     balloons as they are). SSP writes the images only under the folders it manages, so they are written to a
     temporary folder under ghost/master of the running ghost first, then moved to ghost-devkit/balloons-<hash> in the
-    temp folder (its PNG files are removed before each run). A scope without a balloon writes no image.
+    temp folder (its PNG files are removed before each run). The SSTP marker ("from ghost-devkit (local)") and the
+    balloonnum display are left out of the images (--hide, SSP 2.9.08 or later). A scope without a balloon writes
+    no image.
     When -Balloon writes no image, the exit code is 2.
 .EXAMPLE
     powershell -NoProfile -ExecutionPolicy Bypass -File tools/sstp.ps1 -Reload ghost
@@ -120,8 +124,13 @@ $headers.Add('Charset: UTF-8')
 $headers.Add('Sender: ghost-devkit')
 if ($mode -ne 'Execute' -and -not $AnyGhost -and $Ghost) { $headers.Add('ReceiverGhostName: ' + $Ghost) }
 if ($ghostId) { $headers.Add('ID: ' + $ghostId) }
-# SSP logs the places of the script that it could not interpret.
-if ($mode -eq 'Script' -or $mode -eq 'Event') { $headers.Add('Option: strict') }
+# strict: SSP logs the places of the script that it could not interpret.
+# notranslate: SEND scripts skip the ghost's OnTranslate, so a ghost that rewrites or refuses SSTP scripts
+# there still plays them as sent.
+$options = @()
+if ($mode -eq 'Script' -or $mode -eq 'Reload') { $options += 'notranslate' }
+if ($mode -eq 'Script' -or $mode -eq 'Event') { $options += 'strict' }
+if ($options.Count -gt 0) { $headers.Add('Option: ' + ($options -join ',')) }
 switch ($mode) {
     'Execute' { $headers.Add('Command: ' + $Execute) }
     'Event' {
@@ -167,7 +176,7 @@ if ($response.TimedOut) {
 
 $talkWait = $null
 if ($watchLog -and -not $marker) {
-    Write-Host 'sstp: the SSP error log cannot be read (this SSP has no developer.log properties; update SSP to see it)'
+    Write-Host 'sstp: the SSP error log could not be read'
 } elseif ($watchLog) {
     if ($statusAvailable -and $exitCode -eq 0) {
         # Wait for the reload and for the talk, so that every error of the script is in the log.
@@ -205,7 +214,7 @@ if ($Balloon -and $response.TimedOut) {
     if ($ghostEntry) { $ghostPath = [string]$ghostEntry.Fields['ghostpath'] }
     if (-not $talkWait) {
         $talkWait = Wait-DevkitSspTalkEnd -TimeoutSeconds $TimeoutSeconds -Port $Port
-        if ($talkWait -eq 'unsupported') { Start-Sleep -Milliseconds 500 }
+        if ($talkWait -eq 'nostatus') { Start-Sleep -Milliseconds 500 }
     }
     if (-not $ghostPath) {
         Write-Host "sstp: the balloons were not written - the folder of '$Ghost' was not found with GetFMO"
@@ -232,8 +241,9 @@ if ($Balloon -and $response.TimedOut) {
     $workName = 'devkit-balloon-' + [guid]::NewGuid().ToString('N')
     $work = Join-Path (Join-Path (Join-Path $ghostPath.TrimEnd('\', '/') 'ghost') 'master') $workName
     $dump = '\C'
-    foreach ($scope in $BalloonScope) { $dump += '\![execute,dumpballoon,' + $workName + ',' + $scope + ']' }
-    $lines = @('SEND SSTP/1.4', 'Charset: UTF-8', 'Sender: ghost-devkit', ('ReceiverGhostName: ' + $Ghost), ('ID: ' + $ghostId), ('Script: ' + $dump))
+    # --hide redraws the balloon without the SSTP marker ("from ...") and the balloonnum display (SSP 2.9.08).
+    foreach ($scope in $BalloonScope) { $dump += '\![execute,dumpballoon,--dir=' + $workName + ',--scope=' + $scope + ',"--hide=balloonmarker,balloonnum"]' }
+    $lines = @('SEND SSTP/1.4', 'Charset: UTF-8', 'Sender: ghost-devkit', ('ReceiverGhostName: ' + $Ghost), ('ID: ' + $ghostId), 'Option: notranslate', ('Script: ' + $dump))
     $images = @()
     try {
         $dumpResponse = Invoke-DevkitSstp -Lines $lines -Port $Port -TimeoutSeconds $TimeoutSeconds
@@ -272,7 +282,7 @@ if ($Balloon -and $response.TimedOut) {
     }
     foreach ($image in $images) { Write-Host "balloon: $image" }
     if ($images.Count -eq 0) {
-        Write-Host 'sstp: no balloon image was written (SSP 2.9.02 or later is needed for \![execute,dumpballoon])'
+        Write-Host "sstp: no balloon image was written (no balloon was shown for scope $($BalloonScope -join ', '))"
         if ($exitCode -eq 0) { $exitCode = 2 }
     }
 }

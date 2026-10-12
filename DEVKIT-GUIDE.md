@@ -13,8 +13,8 @@ git で管理しているフォルダでも、nar を SSP にインストール�
 - `AGENTS.md` : エージェント向けの指示書（作業のルール、YAYA とさくらスクリプトの要点、依頼の言い回しと手順書の対応、仕様の調べ方）。人が読んでもわかるように書いてあります
 - `docs/agents/` : `AGENTS.md` から分けた資料（開発コマンドの一覧、ディレクトリ構成、キットのファイルの持ち主、独立ゴーストにするときのチェックリスト）と、`workflows/` の作業手順書。エージェントは必要になったときに読みます
 - `GHOST.md` : このゴーストに固有の情報（キャラクター、サーフェス、ライセンス、辞書の構成）。エージェントは作業の前に必ず読みます
-- `CLAUDE.md` / `.claude/` / `.mcp.json` : Claude Code 用の設定（編集後の自動チェック、起動時の診断、仕様調査用サブエージェント、ドキュメント検索 MCP）
-- `tools/` : 辞書チェック（tamac）、シェルチェック（SSP）、エージェントが表情を目で確かめるためのサーフェスの画像化（SSP）、シェル画像の編集（32bit PNG で書き出す）、辞書の lint（システム辞書の `SHIORI3FW.Lint` を tamac で実行）、SSP を使わない SHIORI リクエストの送信と YAYA のコードの評価（tamac）、SSTP での実機確認（エージェントがトークの吹き出しを画像で確かめる機能つき）と SSP のログ取得、nar とネットワーク更新ファイルの作成（SSP）、yaya.dll・システム辞書と開発キットの更新のスクリプト
+- `CLAUDE.md` / `.claude/` / `.mcp.json` : Claude Code 用の設定（起動時の診断、仕様調査用サブエージェント、ドキュメント検索 MCP）
+- `tools/` : 辞書チェック（tamacs）、シェルチェック（SSP）、エージェントが表情を目で確かめるためのサーフェスの画像化（SSP）、シェル画像の編集（32bit PNG で書き出す）、辞書の lint（システム辞書の `SHIORI3FW.Lint` を tamacs で実行）、SSP を使わない SHIORI リクエストの送信と YAYA のコードの評価（tamacs）、SSTP での実機確認（エージェントがトークの吹き出しを画像で確かめる機能つき）と SSP のログ取得、nar とネットワーク更新ファイルの作成（SSP）、yaya.dll・システム辞書と開発キットの更新のスクリプト
 
 AI エージェントを使わずに、`tools/` のスクリプトだけを使うこともできます。
 
@@ -22,13 +22,13 @@ AI エージェントを使わずに、`tools/` のスクリプトだけを使�
 
 ## あらかじめ入れておくもの
 
-開発キットは Windows を前提にしています（YAYA、SSP、辞書チェックに使う tamac.exe が Windows 用のため）。
+開発キットは Windows を前提にしています（YAYA、SSP、辞書チェックに使う tamacs.exe が Windows 用のため）。
 
 | もの | 必要か | 用途 | 入手先 |
 |---|---|---|---|
 | AI コーディングエージェント | AI に頼むなら必須 | Claude Code、Codex、GitHub Copilot など。キットの指示書と手順書に沿って、開発を手伝います | 各ツールの案内に従ってください |
 | PowerShell | 必須 | `tools/` のスクリプト | Windows には最初から入っています（Windows PowerShell 5.1）。mac・Linux は下の「mac・Linux で使う場合」 |
-| SSP 2.9.02 以降 | 推奨 | シェルのチェック、実際のゴーストでの確認、nar とネットワーク更新ファイルの作成。ふだん使っている SSP の設定を変えない試験用の SSP でゴーストを動かします。開発キットのスクリプトはこの版を前提にしていて、古い版では動かなかったり、問題を見落としたりします | https://ssp.shillest.net/ |
+| SSP 2.9.08 以降 | 推奨 | シェルのチェック、実際のゴーストでの確認、nar とネットワーク更新ファイルの作成。ふだん使っている SSP の設定を変えない試験用の SSP でゴーストを動かします。開発キットのスクリプトはこの版を前提にしていて、古い版では動かなかったり、問題を見落としたりします | https://ssp.shillest.net/ |
 | Git | 推奨 | 変更履歴、GitHub での自動チェック、システム辞書（submodule）の取得 | https://git-scm.com/ |
 
 Windows で最初に入れておく必要があるのは、AI エージェントだけです。SSP と Git は、AI エージェントに「セットアップして」と頼めば、足りないものを調べて入手方法を案内します（インストールは確認を取ってから行います）。
@@ -41,7 +41,7 @@ PowerShell 7 を入れてください。mac は、Microsoft の案内（https://
 
 - 使えるもの: `AGENTS.md` と `GHOST.md` に沿った AI エージェントでの辞書の編集、開発キットの導入と更新（`tools/update-devkit.ps1`）、nar の作成（`tools/build-nar.ps1 -Builtin`。git が追跡しているファイルだけを入れる）
 - 使えないもの: 辞書・シェルのチェックと lint（`tools/check.ps1` など）、サーフェスの画像化（`tools/dump-surface.ps1`）、画像の編集（`tools/image.ps1`。Windows の System.Drawing を使う）、SSP を使わない SHIORI リクエストの送信（`tools/shiori.ps1`）、SSP での起動と確認（`tools/run-ssp.ps1`、`tools/sstp.ps1`、`tools/ssp-log.ps1`）、チェック用ツールの取得（`tools/setup.ps1`。取得するツールが Windows 用）、yaya.dll とシステム辞書の更新（`tools/update-yaya.ps1`）、SSP でのネットワーク更新ファイルの作成（`tools/build-nar.ps1` の既定の動作）
-- Claude Code の編集後の自動チェックと起動時の診断（hooks）は Windows PowerShell（`powershell.exe`）を呼ぶので、mac・Linux ではエラーが表示されます。
+- Claude Code の起動時の診断（hooks）は Windows PowerShell（`powershell.exe`）を呼ぶので、mac・Linux ではエラーが表示されます。
 - `tools/doctor.ps1` は、Windows と Windows PowerShell が無いことを「必須が足りない」と表示します。
 - このファイルのコマンドにある `powershell -NoProfile -ExecutionPolicy Bypass -File` は、`pwsh -NoProfile -File` に読み替えてください。
 - 辞書にエラーがあると、ゴーストは緊急モードで起動してしまいます。配布する前に、Windows でチェックしてください。
@@ -60,7 +60,7 @@ powershell -NoProfile -ExecutionPolicy Bypass -File tools/check.ps1
 ```
 
 - `tools/doctor.ps1` は、必要なものがそろっているかと、足りないものの入手方法を表示します（何も変更しません）。
-- `tools/setup.ps1` は、git clone したフォルダなら submodule を取得し、チェック用ツール（tamac）をダウンロードします。
+- `tools/setup.ps1` は、git clone したフォルダなら submodule を取得し、チェック用ツール（tamacs）をビルドします。tamacs は Windows に入っている .NET Framework のコンパイラでビルドするので、ダウンロードはありません。setup を実行しなくても、初めて使うときに自動でビルドされます。
 - `tools/check.ps1` は、辞書のチェック、シェルのチェック、辞書の lint（未定義・未使用の変数と関数の検出。yaya.dll Tc574-1 以降と、`yaya_base/lint.dic` のあるシステム辞書が必要）を順に実行します。
 - SSP の場所は `.nar` の関連付けなどから自動で探します。見つからない場合は環境変数 `SSP_PATH` か `tools/local.json`（`tools/local.example.json` を複製）で指定してください。
 - ドキュメント検索 MCP（ukagaka-doc）は、オンラインのサーバー `https://ssp.shillest.net/ukadoc/mcp` に接続します。インストールするものはありません。
