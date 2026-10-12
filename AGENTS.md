@@ -25,7 +25,7 @@ AI コーディングエージェント（Claude Code、Codex、GitHub Copilot�
 | 「SSP で試して」「動かして見せて」「このトークを再生して」 | `docs/agents/workflows/try-in-ssp.md` |
 | 「シェルの画像を直して」「画像を編集して」「表情のパーツを作って」「32bit PNG にして」 | `docs/agents/workflows/edit-shell-image.md` |
 | 「nar を作って」「配布用のファイルを作って」「リリースしたい」「更新ファイルを作って」 | `docs/agents/workflows/build-nar.md` |
-| 「YAYA を更新して」「yaya.dll を更新して」「システム辞書を更新して」「yaya-dic を更新して」「YAYA のベータ版（600 系）にして」 | `docs/agents/workflows/update-yaya.md` |
+| 「YAYA を更新して」「yaya.dll を更新して」「システム辞書を更新して」「yaya-dic を更新して」「YAYA 6（600 系）にして」 | `docs/agents/workflows/update-yaya.md` |
 | 「開発キットを更新して」「別のゴーストにキットを入れて」 | `docs/agents/workflows/update-devkit.md` |
 | 「自分のゴーストを作りたい」「テンプレートから独立させたい」 | `docs/agents/workflows/new-ghost.md` |
 
@@ -46,7 +46,7 @@ AI コーディングエージェント（Claude Code、Codex、GitHub Copilot�
 
 1. **辞書や `ghost/master/*.txt` を変更したら、必ず `tools/check-dic.ps1` を通す。** エラーが残ったゴーストは緊急モードで起動し、ほとんど話さなくなる。`shell/` を変更したら `tools/check-shell.ps1` も通す。辞書の関数を書いたり直したりしたら、`tools/shiori.ps1 -Eval '関数名'` で呼び出して、返すスクリプトと、実行時のエラー（存在しない関数の呼び出しなど。読み込みのチェックでは見つからない）も確かめる（ファイルの書き込みや外部プログラムの実行をする関数は本当に動くので、中身を読んでから呼ぶ）。SSP で動かして確かめるときは、**先に `tools/run-ssp.ps1` で試験用の SSP（readonly）を立ててから** `tools/sstp.ps1` で送り（立てていないと、作者がふだん使っている SSP に送ってしまう）、`tools/sstp.ps1` や `tools/run-ssp.ps1` が表示する SSP のエラーログ（終了コード 2）も見る。書いたトークを `tools/sstp.ps1 -Script` や `-Event` で再生すると、解釈できなかったタグが `[GHOST/Script]` のエラーとして出るので、それも直す。
 2. 仕様（さくらスクリプトのタグ、SHIORI イベントの名前と Reference、YAYA の関数、descript.txt や surfaces.txt の項目）を**推測で書かない**。確かでないときは「仕様の調べ方」に従って確かめる。
-3. 文字コードは UTF-8（BOM なし）、改行は LF、辞書のインデントはタブ（`.editorconfig` 参照）。ただし `readme-aya.txt` と `readme-yaya.txt` は Shift_JIS なので、文字コードを変えない。
+3. 文字コードは UTF-8（BOM なし）、改行は LF、辞書のインデントはタブ（`.editorconfig` 参照）。
 4. 編集しないもの: `ghost/master/dic/system/` または `ghost/master/system/`（システム辞書。submodule のことも普通のファイルのこともある。変更が必要なら上流の yaya-dic に提案する）、`yaya.dll`、実行時に作られるファイル。yaya.dll とシステム辞書の更新は `docs/agents/workflows/update-yaya.md` の手順で行う。
 5. 開発キットのファイル（`docs/agents/devkit-files.md` の表）は、頼まれない限り変えない。`tools/` に自分のスクリプトを足すときは、Windows PowerShell 5.1 でも動くように書き、**ASCII 文字だけで書く**（BOM のないファイルに日本語を書くと 5.1 で文字化けするため）。
 6. 既存のトークや作者が書いた台詞を、頼まれていないのに大量に書き換えたり消したりしない。未使用の関数や変数が見つかっても、報告するだけにする。
@@ -65,8 +65,9 @@ AI コーディングエージェント（Claude Code、Codex、GitHub Copilot�
 - 行末に `/` を書くと、次の行に続けて書ける。
 - `_` で始まる変数はローカル変数。それ以外はグローバル変数で、`yaya_variable.cfg` に自動で保存され、次に起動したときに戻る。
 - イベントの引数は `reference[0]`、`reference[1]`、…（`reference0` の形でも読める）。
-- 制御構文は `if` / `elseif` / `else`、`case 値 { when 'a' { ... } others { ... } }`、`while`、`for`、`foreach`。条件に `( )` は要らない。
+- 制御構文は `if` / `elseif` / `else`、`case 値 { when 'a' { ... } others { ... } }`、`while`、`for`、`foreach`。条件に `( )` は要らない（付けてもよい。600 系の Tc603-6 からは `for` / `foreach` のヘッダ全体も `( )` で囲める）。
 - コメントは `//` と `/* */`。
+- yaya.dll には 500 系（Tc5xx）と 600 系（Tc6xx、YAYA 6）がある。どちらかは `tools/doctor.ps1` の `yaya.dll 6, 03, …` の先頭の数で分かる。600 系では、ハッシュ（`IHASH()` で作る）、配列やハッシュの入れ子と `_a[x][y] = v`、`foreach 式 ; _k, _v`、JSON や SQLite の関数などが使える。500 系では読み込みエラーになるので、500 系のゴーストでは使わない（両方で動かす辞書は `#ifdef __AYA_SYSTEM_YAYA6__` で書き分ける）。入れ子の途中の段のハッシュは自動では作られないので、先に `IHASH()` で作っておく。
 - チェイントーク: トークの最後に `\e:chain=ラベル` と書くと、その後のランダムトークが `ラベル {{CHAIN ... }}CHAIN` に並べたトークから順に選ばれる。`{ }` で囲んだ部分はその中からランダムに選ばれる。
 - 新しいイベントに反応させるには、イベント名と同じ名前の関数を書く。どの辞書ファイルに書くかは `GHOST.md` の「イベントと辞書ファイルの対応」を見る。`yaya.txt` が読み込むフォルダに新しい `.dic` ファイルを置いた場合も自動で読み込まれる。
 - 関数の一覧や細かい文法は yaya-docs で確かめる。
@@ -124,5 +125,5 @@ YAYA の関数の戻り値や細かい挙動は、調べたうえで、`tools/sh
 ## ツールごとの補足
 
 - この指示書、`GHOST.md`、`docs/agents/` 以下の文書は、どのエージェントでも同じように読める素のテキストにしてある。ツール固有の設定は、それだけでは足りないものを補うためだけに置いている。
-- Claude Code: `CLAUDE.md` がこのファイルと `GHOST.md` を読み込む。加えて、編集後の自動チェックと起動時の診断（hooks、`.claude/settings.json`）、仕様調査用のサブエージェント（`.claude/agents/`）、仕様検索 MCP（`.mcp.json`）が使える。
-- それ以外のツール: `GHOST.md` を自分で読む。編集後の自動チェックがないので、辞書やシェルを変更するたびに `tools/check-dic.ps1` や `tools/check-shell.ps1` を自分で実行する。`.mcp.json` と同じ MCP サーバーは、そのツールの設定に登録すれば使える（「仕様の調べ方」）。
+- Claude Code: `CLAUDE.md` がこのファイルと `GHOST.md` を読み込む。加えて、起動時の診断（hooks、`.claude/settings.json`）、仕様調査用のサブエージェント（`.claude/agents/`）、仕様検索 MCP（`.mcp.json`）が使える。
+- それ以外のツール: `GHOST.md` を自分で読む。自動チェックは置いていないので、辞書やシェルを変更したら `tools/check-dic.ps1` や `tools/check-shell.ps1` を自分で実行する。`.mcp.json` と同じ MCP サーバーは、そのツールの設定に登録すれば使える（「仕様の調べ方」）。

@@ -1,20 +1,22 @@
 <#
 .SYNOPSIS
-    Sends one SHIORI request to the ghost's yaya.dll with tamac.exe, without SSP.
+    Sends one SHIORI request to the ghost's yaya.dll with tamacs.exe, without SSP.
 .DESCRIPTION
-    tamac.exe loads the dictionaries, sends the request, prints the response and unloads YAYA (tamac -r).
+    tamacs.exe loads the dictionaries, sends the request, prints the response and unloads YAYA (tamacs -r).
     SSP does not need to be running, and nothing appears on the desktop.
 
     -Eval evaluates YAYA code through the system dictionary (yaya-dic answers "?? code" with "!! result").
     Give a function name to see what it returns (a talk, for example), or a built-in function to see how it
-    behaves with this yaya.dll. Array results are joined with commas. Several lines are evaluated one by one
-    and their results are joined; local variables (_name) do not carry over to the next line.
+    behaves with this yaya.dll. Array results are joined with commas. With yaya.dll Tc574-6 / Tc602-9 or later,
+    the code is written as in a function body: statements separated by ";" or line breaks, if / foreach, and
+    local variables (_name) that carry over to the next line (here-documents need Tc574-8 / Tc603-1). With an
+    older yaya.dll or system dictionary, several lines are evaluated one by one and their results are joined.
 
     -Event sends "GET SHIORI/3.0" (NOTIFY with -Notify) with ID and References, as SSP does for an event or a
     resource. Sender is SSP, SecurityLevel is local, and Charset is charset.output of ghost/master/yaya.txt
     (the system dictionary switches its output charset to the Charset header). -Header adds or replaces headers.
 
-    -Request sends the given text as it is. tamac.exe turns the line breaks into CRLF and adds the blank line.
+    -Request sends the given text as it is. tamacs.exe turns the line breaks into CRLF and adds the blank line.
 
     Each call loads the ghost from scratch: no OnBoot or other event is sent before the request, and global
     variables are the ones saved in ghost/master/yaya_variable.cfg. The file is put back afterwards, so nothing
@@ -24,7 +26,8 @@
     Errors that YAYA logs are shown after the response (warnings and notes too with -Level).
     Exit codes: 0 = OK, 1 = failed (yaya.dll could not be loaded, the dictionaries have load errors, no or an
     error response, or -Eval was not answered by the system dictionary), 2 = YAYA logged an error while handling
-    the request (the response may be incomplete), 3 = tamac.exe is not installed or has no -r option.
+    the request (the response may be incomplete), 3 = tamacs.exe could not be built or yaya.dll has no
+    Set_loghandler.
 .EXAMPLE
     powershell -NoProfile -ExecutionPolicy Bypass -File tools/shiori.ps1 -Eval 'OnBoot'
 .EXAMPLE
@@ -63,7 +66,7 @@ param(
 
     # Folder that contains yaya.dll (default: ghost/master).
     [string]$GhostDir,
-    # Lowest level of the YAYA messages to show (tamac -l; default: error).
+    # Lowest level of the YAYA messages to show (tamacs -l; default: error).
     [ValidateSet('fatal', 'error', 'warning', 'note')]
     [string]$Level,
     # Also print the whole YAYA log (load, request and unload).
@@ -81,14 +84,9 @@ if (-not (Test-Path -LiteralPath (Join-Path $GhostDir 'yaya.dll'))) {
     exit 1
 }
 
-$tamac = Get-DevkitToolPath 'tamac'
-if (-not (Test-Path -LiteralPath $tamac)) {
-    Write-Host 'shiori: SKIPPED - tamac.exe is not installed. Run: powershell -NoProfile -ExecutionPolicy Bypass -File tools/setup.ps1'
-    exit 3
-}
-# An older tamac.exe than minimumVersion in tools/tools.json may not have -r (added in v1.0.3.25); it would ignore it.
-if ((Test-DevkitToolCurrent 'tamac') -eq $false) {
-    Write-Host 'shiori: SKIPPED - this tamac.exe is too old. Run: powershell -NoProfile -ExecutionPolicy Bypass -File tools/setup.ps1 -Tool tamac'
+$tamacs = Get-DevkitTamacs
+if (-not $tamacs.Path) {
+    Write-Host "shiori: SKIPPED - $($tamacs.Error)"
     exit 3
 }
 
@@ -157,8 +155,8 @@ $firstLine = ($requestText -split "\r\n|\r|\n")[0].TrimEnd()
 
 $tamacArgs = @('-r')
 if ($Level) { $tamacArgs += @('-l', $Level) }
-# On GitHub Actions tamac.exe switches to its --ci output by itself; keep the plain output that is read below.
-$result = Invoke-DevkitTamac -GhostDir $GhostDir -Arguments $tamacArgs -InputText $requestText -UnsetEnvironment @('GITHUB_ACTIONS') -TimeoutSeconds $TimeoutSeconds
+# On GitHub Actions tamacs.exe switches to its --ci output by itself; keep the plain output that is read below.
+$result = Invoke-DevkitTamacs -GhostDir $GhostDir -Arguments $tamacArgs -InputText $requestText -UnsetEnvironment @('GITHUB_ACTIONS') -TimeoutSeconds $TimeoutSeconds
 
 # Paths in the output are shown relative to the ghost root (the folder with ghost/ and shell/).
 $base = Split-Path (Split-Path $GhostDir -Parent) -Parent
@@ -183,7 +181,7 @@ for ($i = 0; $i -lt $logLines.Count; $i++) {
         } else {
             $requestMessages.Add($text)
         }
-    } elseif ($line -match '^\[tamac\]') {
+    } elseif ($line -match '^\[tamacs\]') {
         $requestMessages.Add($line)
     }
 }
@@ -220,15 +218,19 @@ if ($requestMessages.Count -gt 0) {
 }
 
 if ($result.TimedOut) {
-    Write-Host "shiori: FAILED - tamac.exe did not finish within $TimeoutSeconds seconds"
+    Write-Host "shiori: FAILED - tamacs.exe did not finish within $TimeoutSeconds seconds"
     exit 1
+}
+if ($result.ExitCode -eq 3) {
+    Write-Host 'shiori: SKIPPED - yaya.dll has no Set_loghandler, which tamacs.exe needs. Update yaya.dll: docs/agents/workflows/update-yaya.md'
+    exit 3
 }
 if ($loadErrors -gt 0) {
     Write-Host 'shiori: FAILED - the dictionaries have load errors, so YAYA answered in emergency mode. Fix them first (tools/check-dic.ps1).'
     exit 1
 }
 if ($result.ExitCode -ne 0 -and $result.ExitCode -ne 2) {
-    Write-Host "shiori: FAILED (tamac.exe exit code $($result.ExitCode))"
+    Write-Host "shiori: FAILED (tamacs.exe exit code $($result.ExitCode))"
     exit 1
 }
 if ($failure) {
