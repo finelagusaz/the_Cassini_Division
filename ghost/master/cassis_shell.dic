@@ -326,7 +326,7 @@ getWingType
 			// 竜后だけはメカと天使の羽の組み合わせなので分岐処理で取得する
 			getWingTypeForDrachenKoningin
 		// 悪魔
-		when "master", "Eternity Black", "White Days Actress", "White Lolita", "スプートニクを探して", "拡大鏡","月夜のうさぎ","新月","拡大鏡","さすらいウサギ","あの青い夏", "White Lolita 2nd", "White Lolita", "Fly High!"
+		when "master", "Eternity Black", "White Days Actress", "White Lolita", "スプートニクを探して", "拡大鏡","月夜のうさぎ","新月","あの青い夏", "White Lolita 2nd", "Fly High!"
 			"Devil"
 		// 半透明
 		when "Gemini","桜吹雪","たてセタ"
@@ -578,108 +578,45 @@ ShellCompatibility
 */
 OsuwariStart
 {
-	case shellname { 
-		when "master"{
-			if MasterOsuwariMode == 1
-			{
-				_dmy = FUNCTIONEX("osuwari.dll","START",sakurahwnd,"ACTIVE","TR",-80,-107,100,"XMOVE","BOTTOM WORKAREA");
-			}
-			elseif MasterOsuwariMode == 2
-			{
-				_dmy =FUNCTIONEX("osuwari.dll","START",sakurahwnd,"FIX","TR",-80,-107,100,"XMOVE,NOCLIP","BOTTOM WORKAREA");
-			}
-			else
-			{
-				OsuwariStop
-			}
-		} when "Eternity Black" {
-			if EternityBlackOsuwariMode == 1
-			{
-				_dmy = FUNCTIONEX("osuwari.dll","START",sakurahwnd,"ACTIVE","TR",80,-160,200,"XMOVE","BOTTOM WORKAREA");
-			}
-			elseif EternityBlackOsuwariMode == 2
-			{
-				_dmy =FUNCTIONEX("osuwari.dll","START",sakurahwnd,"FIX","TR",80,-160,200,"XMOVE,NOCLIP","BOTTOM WORKAREA");
-			}
-			else
-			{
-				OsuwariStop
-			}
-		} when "拡大鏡" {
-			if KakudaikyoOsuwariMode == 1
-			{
-				_dmy = FUNCTIONEX("osuwari.dll","START",sakurahwnd,"ACTIVE","TR",80,-53,200,"XMOVE","BOTTOM WORKAREA");
-			}
-			elseif KakudaikyoOsuwariMode == 2
-			{
-				_dmy = FUNCTIONEX("osuwari.dll","START",sakurahwnd,"FIX","TR",80,-53,200,"XMOVE,NOCLIP","BOTTOM WORKAREA");
-			}
-			else
-			{
-				OsuwariStop
-			}
-		} when "White Lolita" {
-			if WhiteLolitaOsuwariMode == 1
-			{
-				_dmy = FUNCTIONEX("osuwari.dll","START",sakurahwnd,"ACTIVE","TR",80,-200,200,"XMOVE","BOTTOM WORKAREA");
-			}
-			elseif WhiteLolitaOsuwariMode == 2
-			{
-				_dmy = FUNCTIONEX("osuwari.dll","START",sakurahwnd,"FIX","TR",80,-200,200,"XMOVE,NOCLIP","BOTTOM WORKAREA");
-			}
-			else
-			{
-				OsuwariStop
-			}
-		} when "銀色" {
-			if GiniroOsuwariMode == 1
-			{
-				_dmy = FUNCTIONEX("osuwari.dll","START",sakurahwnd,"ACTIVE","TR",80,-190,190,"XMOVE","BOTTOM WORKAREA");
-			}
-			elseif GiniroOsuwariMode == 2
-			{
-				_dmy = FUNCTIONEX("osuwari.dll","START",sakurahwnd,"FIX","TR",80,-190,200,"XMOVE,NOCLIP","BOTTOM WORKAREA");
-			}
-			else
-			{
-				OsuwariStop
-			}
-		} when "瑠璃" {
-			if RuriOsuwariMode == 1
-			{
-				_dmy = FUNCTIONEX("osuwari.dll","START",sakurahwnd,"ACTIVE","TR",80,-260,190,"XMOVE","BOTTOM WORKAREA");
-			}
-			elseif RuriOsuwariMode == 2
-			{
-				_dmy = FUNCTIONEX("osuwari.dll","START",sakurahwnd,"FIX","TR",80,-260,200,"XMOVE,NOCLIP","BOTTOM WORKAREA");
-			}
-			else
-			{
-				OsuwariStop
-			}
-		} when "月白" {
-			if TukisiroOsuwariMode == 1
-			{
-				_dmy = FUNCTIONEX("osuwari.dll","START",sakurahwnd,"ACTIVE","TR",80,-260,190,"XMOVE","BOTTOM WORKAREA");
-			}
-			elseif TukisiroOsuwariMode == 2
-			{
-				_dmy = FUNCTIONEX("osuwari.dll","START",sakurahwnd,"FIX","TR",80,-260,200,"XMOVE,NOCLIP","BOTTOM WORKAREA");
-			}
-			else
-			{
-				OsuwariStop
-			}
-		} others {
-			OsuwariStop
-		}
+	_mode = GetOsuwariMode
+	_pos = GetOsuwariPosition(shellname)
+	if (_mode != 1 && _mode != 2) || ARRAYSIZE(_pos) < 4 {
+		OsuwariStop
+		return
 	}
+
+	if _mode == 1 {
+		void FUNCTIONEX("osuwari.dll", "START", sakurahwnd, "ACTIVE", "TR", _pos[0], _pos[1], _pos[2], "XMOVE", "BOTTOM WORKAREA")
+	}
+	else {
+		void FUNCTIONEX("osuwari.dll", "START", sakurahwnd, "FIX", "TR", _pos[0], _pos[1], _pos[3], "XMOVE,NOCLIP", "BOTTOM WORKAREA")
+	}
+}
+
+// シェルごとの座る位置
+/*
+	第1引数: シェル名
+	戻り値: (X, Y, 発窓追撃の第6引数, TB固定の第6引数)。FUNCTIONEX の START にそのまま渡す
+	        座れないシェルでは空
+	座れるシェルを足すときは、ここに 1 行足す（GetShellVarPrefix にも載せる）
+*/
+GetOsuwariPosition
+{
+	_pos = IHASH()
+	_pos["master"]         = (-80, -107, 100, 100)
+	_pos["Eternity Black"] = (80, -160, 200, 200)
+	_pos["拡大鏡"]         = (80, -53, 200, 200)
+	_pos["White Lolita"]   = (80, -200, 200, 200)
+	_pos["銀色"]           = (80, -190, 190, 200)
+	_pos["瑠璃"]           = (80, -260, 190, 200)
+	_pos["月白"]           = (80, -260, 190, 200)
+	_pos[_argv[0]]
 }
 
 //座り終了
 OsuwariStop
 {
-	_dmy = FUNCTIONEX("osuwari.dll","STOP")
+	void FUNCTIONEX("osuwari.dll", "STOP")
 }
 
 // サーフェスモード切替補助

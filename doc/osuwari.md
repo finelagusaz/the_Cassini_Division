@@ -16,7 +16,7 @@
 ## 対応の範囲
 
 - サーフェイス値加算だけを使うシェルと、Osuwari.dllで実際に座るシェルがある
-- Osuwari.dllで座れるのは、`OsuwariStart`に座標を書いたシェルだけ（master、Eternity Black、拡大鏡、White Lolita、銀色、瑠璃、月白）
+- Osuwari.dllで座れるのは、`GetOsuwariPosition`に座標を書いたシェルだけ（master、Eternity Black、拡大鏡、White Lolita、銀色、瑠璃、月白）
 - それ以外のシェルは、サーフェイス値加算による着せ替えだけを使っている
 
 ## Osuwari.dllに対応させるには
@@ -66,7 +66,14 @@
 #### OsuwariStart
 
 - 座り制御関数
-- シェルごとに座った座標を指定する
+- `GetOsuwariMode`のお座りの状態と、`GetOsuwariPosition`の座標でOsuwari.dllを呼ぶ。シェルごとの記述は要らない
+- 状態が停止か、座標の無いシェルでは`OsuwariStop`を呼ぶ
+
+#### GetOsuwariPosition
+
+- シェル名から、座る座標を返す。`(X, Y, 発窓追撃の第6引数, TB固定の第6引数)`の4つで、`FUNCTIONEX`の`START`にそのまま渡す
+- 座れるシェルを足すときは、ここに1行足す（`GetShellVarPrefix`にも載せる）
+- 座標の表はハッシュ（YAYA 600系の機能）で書いている
 - 使い方は[Osuwari.dll version 2 取り扱い説明書 version2.1.0.0 - Ukiwiki](http://ukiya.sakura.ne.jp/index.php?%E8%87%AA%E4%BD%9CSAORI%2F%E3%81%8A%E5%BA%A7%E3%82%8A%E3%83%9E%E3%83%8B%E3%83%A5%E3%82%A2%E3%83%AB)を参照
 
 #### OsuwariStop
