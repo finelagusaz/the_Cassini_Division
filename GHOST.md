@@ -1,7 +1,7 @@
 # GHOST.md
 
 このゴーストに固有の情報です。AI エージェントは、作業の前に `AGENTS.md` とあわせて読みます。
-作者が自由に書き換えるファイルで、開発キットの更新（`tools/update-devkit.ps1`）で上書きされることはありません。
+作者が自由に書き換えるファイルで、スキル `ukagaka-developer` の更新で上書きされることはありません。
 
 ## このゴーストについて
 
@@ -25,7 +25,9 @@
 - 文字コード: 辞書は UTF-8。`ghost/master/descript.txt` と `install.txt` は UTF-8（先頭に `charset,UTF-8`、改行は CRLF）。`ghost/master/system_config.txt`、`shell/*/descript.txt`、`surfacetable.txt`、`t_c_d/descript.txt` は Shift_JIS なので、文字コードを変えない。
 - 読み込む辞書（`ghost/master/yaya.txt` の `dic` / `dicdir`）: `yaya_tmpl_util.dic`、`cassis_*.dic`（下の表）、`dicdir, menu/shell`、`dicdir, menu/command`、`yaya_homeurl.txt`。辞書は `ghost/master/` の直下にあり、`dic/` フォルダは無い。
 - 緊急モード（`yaya_emerg.txt`）: `yaya_emerg_dic.txt` と `yaya_homeurl.txt`
-- システム辞書: `ghost/master/system/`（`system_config.txt` の `dicdir, system`。submodule ではなく普通のファイル。2026-09 に yaya-dic の最新へ更新済み。lint が動く）
+- システム辞書: `ghost/master/system/`（`system_config.txt` の `dicdir, system` で読み込む）
+  - submodule ではなく、普通のファイルとして置いてある。
+  - 更新は、yaya.dll と組にして `ukagaka-developer` の手順で行う。lint（`yaya_base/lint.dic`）も、このシステム辞書が提供する。
 
 ## イベントと辞書ファイルの対応
 
@@ -65,9 +67,15 @@
 ## トークの書き方
 
 - 通常のシェルでは、頭は必ず `\1\s[10]\0\s[番号]`。間隙を表示してから、カシスが話す。最後は `\e`。
-- Gemini の掛け合い: 追加シェル「Gemini」では `\0`（ポルックス）と `\1`（カストール）の二人とも話す。書く場所は `cassis_aitalk_gemini.dic`、`cassis_mouse_gemini.dic`、`menu/shell/gemini.dic` と、`cassis_bootend.dic`・`cassis_communicate.dic` の `GetShellnameEx == "Gemini"` の分岐の中。話し手を替えるときは `\w9\n\n[half]` で区切ってから `\1\s[16]` のようにスコープと表情を書く。どちらから話し始めてもよい。二人ともカシスが元で、ポルックスはカシスの性格をややマイルドに、カストールは切れ味を少し増した人物として書き分ける。
+- Gemini の掛け合い: 追加シェル「Gemini」では、`\0`（ポルックス）と `\1`（カストール）の二人とも話す。
+  - 書く場所: `cassis_aitalk_gemini.dic`、`cassis_mouse_gemini.dic`、`menu/shell/gemini.dic`。ほかに `cassis_bootend.dic` と `cassis_communicate.dic` の、`GetShellnameEx == "Gemini"` の分岐の中。
+  - 話し手を替えるときは、`\w9\n\n[half]` で区切ってから、`\1\s[16]` のようにスコープと表情を書く。どちらから話し始めてもよい。
+  - 二人の書き分けは、上の「キャラクターとサーフェス」の表のとおり。
 - ランダムトークは `aryNormalTalk : array` などの配列に `'...'` で 1 行 1 トーク。長いものは行末の `/` で次の行に続ける。`RandomTalk` が EVAL で展開するので、`'...'` の中でも `%username` が使える。
-- 間は手で入れる。読点「、」の後に `\w4`、句点や「?」の後に `\w9`、続けて `\n`。「…」は `\w4…\w4…` のように刻む。（`WC` の設定によって `TextOnlyTranslatorFunc` が句読点にウェイトを足すこともある）
+- 間は手で入れる。（`WC` の設定によって `TextOnlyTranslatorFunc` が句読点にウェイトを足すこともある）
+  - 読点「、」の後に `\w4` を入れる。
+  - 句点や「?」の後に `\w9` を入れ、改行（`\n`）する。
+  - 「…」は `\w4…\w4…` のように刻む。
 - 途中の表情替えは `\s[6]` のように番号だけを書く。
 - チェイントークは末尾を `\e:chain=ラベル` にする。
 - 例:
@@ -81,6 +89,32 @@
 - サーフェス番号に 1000 を足した値を自分で書かない（上の `sfcnv` の仕組みを壊す）。
 - readme の「注意」のとおり、マウス反応には性的な表現を含むものがある。既存の台詞を頼まれずに和らげたり書き換えたりしない。
 - キャラクターの設定や仕様の一部は `doc/*.md` と `memo.txt` にある。下の「資料」の表で、作業に当てはまるものを読んでから始める。
+- 多くの関数は、名前を文字列で組み立てて `EVAL` で呼ばれる。
+  - マウス反応: `MouseMove0Head` のように、接頭辞・操作・スコープ・部位をつなげた名前
+  - 羽のトーク: `aryWing{種類}Talk`
+  - セーブデータの確認: `savedatacheck_{相手}`
+- lint はこの呼び出しを追えないので、こうした関数を「使われていない関数」と報告する。報告の大半はこれに当たるので、報告されても消さない。
+- 名前が並びから外れた関数（末尾の `Talk` が抜けているなど）は、どこからも呼ばれていない不具合かもしれない。呼び出し側が組み立てる名前と照らし合わせる。
+
+## リリース
+
+- 版の番号は `changelog.txt` にしかない。
+- PR ごとに、先頭の最新版の項目へ 1 行ずつ短く書き足す。新しい版を始めるときは、次の形の項目を先頭に作る。
+
+  ```
+  2026/11/03 Ver.1.140
+  YAYA 600系の Tc607-3 に更新
+  羽のトークの不具合修正
+  ```
+
+- GitHub のリリースは、タグ名とタイトルを `Ver.1.xxx` にする。本文は自動生成にし、ファイルは添付しない。
+
+  ```
+  gh release create Ver.1.xxx --target master --title Ver.1.xxx --generate-notes --notes-start-tag <前のタグ>
+  ```
+
+- `--target` には、ブランチ名か 40 桁の SHA を指定する。短い SHA は GitHub に受け付けられない。
+- タグの無い版もある（Ver.1.139 など）。`--notes-start-tag` には、直前の「タグのある版」を指定する。
 
 ## 資料
 
@@ -89,7 +123,17 @@
 | `memo.txt` | カシスの人物設定（由来、食事、趣味、服、能力、生活、年齢、口調）と用語解説 | トークを書く前 |
 | `doc/others.md` | 裏設定（羽、子供、ハガラズとの関係、空隙） | 設定に触れるトークを書くとき |
 | `doc/condition.md` | 好感度の条件と、好感度で変わるもの | マウス反応や好感度別のトークを書くとき |
-| `doc/addshell1.md` | master シェルのサーフィス一覧 | master のサーフェスを選ぶとき |
-| `doc/addshell2.md` | Alternative - Cassis のサーフィス一覧 | 同シェルのサーフェスを選ぶとき |
+| `doc/addshell1.md` | master シェルのサーフェス一覧 | master のサーフェスを選ぶとき |
+| `doc/addshell2.md` | Alternative - Cassis のサーフェス一覧 | 同シェルのサーフェスを選ぶとき |
 | `doc/shell.md` | サーフェス値の加算による着せ替え、追加シェルごとの特殊対応（Gemini ほか） | シェル関連の辞書を触るとき |
 | `doc/osuwari.md` | Osuwari.dll 対応の仕組みと、シェルを対応させる手順 | 追加シェルをすわりに対応させるとき |
+
+## SSP で試すとき
+
+- SSP がこのフォルダのゴーストを動かしている間は、yaya.dll が使用中になる。
+  - yaya.dll の版が違うブランチには、`git switch` も `git rebase` もできない（途中で止まり、作業フォルダにファイルが中途半端に残る）。
+  - 作者に SSP を閉じてもらうか、`git worktree` で別のフォルダに取り出して作業する。
+- 試験の前に `ghost/master/yaya_variable.cfg` を控え、試験用 SSP を閉じた後に戻す（着せ替えやすわりの状態が保存されるため）。
+- Osuwari.dll は、座り対応のシェル（`doc/osuwari.md` の一覧）に切り替えてから試す。
+- 座ったかどうかは、SSP の応答やエラーログでは分からない。SSP の `Tmainform` のウィンドウの下端を、タスクバーの上端と比べて確かめる。
+- アクティブウィンドウ座りは、作者の環境ではタスクバーに残る（2026-11 に確かめた。書き換え前の辞書でも同じ）。不具合と決めつけない。
