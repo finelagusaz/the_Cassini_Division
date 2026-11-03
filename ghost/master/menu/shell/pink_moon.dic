@@ -5,11 +5,11 @@ Menu_PinkMoon
 {
 	"\n[half]"
 	--
-	if PinkMoonSurfaceMode != 0 {
+	if GetSurfaceOffset != 0 {
 		AYATEMPLATE.MenuItem("スリットドレス", "Menu_PmSlit")
 	}
 	--
-	if PinkMoonSurfaceMode != 1000 { 
+	if GetSurfaceOffset != 1000 {
 		AYATEMPLATE.MenuItem("ワンピース", "Menu_PmOp")
 	}
 	--

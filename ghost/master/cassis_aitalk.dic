@@ -4602,7 +4602,7 @@ aryWingCommonTalk : array
 
 // 鳥の羽以外
 WingNotBirdTalk : nonoverlap {
-	parallel aryWingCommonTalk
+	parallel aryWingNotBirdTalk
 }
 
 aryWingNotBirdTalk : array
@@ -4664,7 +4664,7 @@ aryWingFinTalk : nonoverlap {
 }
 
 // 蝶
-aryWingButterfly : nonoverlap {
+aryWingButterflyTalk : nonoverlap {
 	"\1\s[10]\0\s[0]この羽はウスバシロチョウを参考にしたの。\w9\n/
 	そうね、\w4透明な羽が気に入ったのが理由よ。\w9\n/
 	実物が見たくて自然公園までいってきたわ。\e"
